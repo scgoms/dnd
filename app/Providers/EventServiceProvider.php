@@ -14,7 +14,10 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         'App\Events\MessageReceived' => [
-            'App\Listeners\SendToAllUsers',
+            'App\Listeners\SendMessageToAllUsers',
+        ],
+        'App\Events\BackgroundImageReceived'=> [
+            'App\Listeners\SendBackgroundToAllUsers'
         ],
     ];
 

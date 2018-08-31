@@ -21,6 +21,8 @@ Route::post('/game', function () {
 
 Route::post('/messages', 'MessageController@receiveAndSend');
 
+Route::post('/background', 'BackgroundController@receiveAndSend');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

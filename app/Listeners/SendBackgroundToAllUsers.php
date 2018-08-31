@@ -2,11 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\MessageReceived;
+use App\Events\BackgroundImageReceived;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendToAllUsers
+class SendBackgroundToAllUsers
 {
     /**
      * Create the event listener.
@@ -21,10 +21,10 @@ class SendToAllUsers
     /**
      * Handle the event.
      *
-     * @param  MessageReceived  $event
+     * @param  BackgroundImageReceived  $event
      * @return void
      */
-    public function handle(MessageReceived $event)
+    public function handle(BackgroundImageReceived $event)
     {
         //
     }

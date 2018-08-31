@@ -1,6 +1,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.Event = new Vue();
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -9,6 +10,7 @@ window.Vue = require('vue');
  */
 
  Vue.component('Lobby', require('./components/Lobby'));
+ Vue.component('GameMasterToolbar', require('./components/GameMasterToolbar'));
 
 const app = new Vue({
     el: '#app'

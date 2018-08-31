@@ -4,6 +4,11 @@
 {{ session('status') }}
 @endif
 <div class="flex flex-col flex-1">
-    <lobby></lobby>
+    <lobby
+        @if(Auth::check())
+        :user="{{ Auth::user() }}"
+        @endif
+    >
+    </lobby>
 </div>
 @endsection
