@@ -23772,7 +23772,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 from: this.name,
                 message: this.message
             }).then(function (response) {
-                alert("It success");
                 _this.message = '';
             }).catch(function (error) {
                 alert("There was an error");
