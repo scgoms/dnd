@@ -10,7 +10,6 @@ class MessageController extends Controller
 {
     public function receiveAndSend(Request $request)
     {
-        dd("Hi");
         $message = new Message($request->message, $request->name);
         event(new MessageReceived(new Message($request->message, $request->from)));
     }
