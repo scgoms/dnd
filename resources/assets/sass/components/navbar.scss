@@ -1,0 +1,18 @@
+.navbar{
+    @apply .py-2 .mx-auto .flex .flex-col .items-center
+}
+.navbar-brand{
+    @apply .font-medium .text-2xl .no-underline .text-grey-darkest .uppercase
+}
+.navbar-links{
+
+}
+.navbar-link{
+    @apply .no-underline .text-grey-darkest
+}
+
+@screen md{
+    .navbar{
+        @apply .flex-row .justify-between
+    }
+}

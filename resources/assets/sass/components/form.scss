@@ -1,0 +1,36 @@
+.form-header{
+    @apply .text-grey-darkest .text-2xl .text-center
+}
+.form-group{
+    @apply .flex .flex-col .pb-2
+}
+.form-label{
+    @apply .uppercase .font-semibold .text-sm .text-grey-darkest .py-1
+}
+.form-control{
+    @apply .p-2 .bg-grey-lighter .rounded
+}
+.form-control-error{
+    @apply .border-solid .border-red-dark .border-b-2 .rounded-b-none
+}
+.form-message{
+    @apply .uppercase .font-semibold .text-xs .py-2 .text-center
+}
+.error{
+    @apply .text-red-dark
+}
+.checkbox{
+    @apply .py-2 .uppercase .font-semibold .text-sm
+}
+.btn{
+    @apply .rounded .py-2 .px-4 .font-semibold .uppercase .w-full .mb-2 .no-underline .text-sm .text-center
+}
+.btn-blue{
+    @apply .bg-blue .text-white
+}
+.btn-blue:hover{
+    @apply .bg-blue-dark
+}
+.btn-grey-lightest{
+    @apply .bg-grey-lightest .text-grey-darkest
+}

@@ -1,0 +1,12 @@
+@tailwind preflight;
+@tailwind components;
+
+@import "components/general";
+@import "components/navbar";
+@import "components/form";
+
+body{
+    overflow:hidden;
+}
+
+@tailwind utilities;
