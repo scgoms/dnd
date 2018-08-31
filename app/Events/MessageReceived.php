@@ -24,6 +24,7 @@ class MessageReceived implements ShouldBroadcast
      */
     public function __construct(Message $message)
     {
+        dd($message);
         $this->message = $message;
     }
 
