@@ -33,7 +33,7 @@
                     from: this.name,
                     message: this.message
                 }).then(response =>{
-                    this.messages.push(response);
+                    this.message = '';
                 }).catch(error => {
                     alert("There was an error");
                 })
@@ -42,7 +42,7 @@
         mounted(){
             Echo.channel('chat')
                 .listen('MessageReceived', (e) => {
-                    console.log(e);
+                    this.messages.push(e.message);
                 });
             Echo.channel('activity')
                 .listen('UserJoined', (e) => {

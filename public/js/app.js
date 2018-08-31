@@ -23752,30 +23752,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['name'],
     data: function data() {
         return {
-            message: ''
+            message: '',
+            messages: []
         };
     },
 
     methods: {
         sendMessage: function sendMessage() {
+            var _this = this;
+
             axios.post('/messages', {
                 from: this.name,
                 message: this.message
             }).then(function (response) {
-                alert("It success");
+                _this.message = '';
             }).catch(function (error) {
                 alert("There was an error");
             });
         }
     },
     mounted: function mounted() {
+        var _this2 = this;
+
         Echo.channel('chat').listen('MessageReceived', function (e) {
-            console.log(e);
+            _this2.messages.push(e.message);
         });
         Echo.channel('activity').listen('UserJoined', function (e) {
             console.log(e.user.name);
@@ -23795,9 +23802,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "flex-1 flex flex-col" }, [
-    _c("div", { staticClass: "flex-1 pt-2 pl-2 pr-2" }, [
-      _vm._v("\n        Some messages\n    ")
-    ]),
+    _c(
+      "div",
+      { staticClass: "flex-1 pt-2 pl-2 pr-2" },
+      _vm._l(_vm.messages, function(message) {
+        return _c("span", [
+          _c("strong", [_vm._v(_vm._s(message.user) + ":")]),
+          _vm._v(_vm._s(message.body) + "\n        ")
+        ])
+      })
+    ),
     _vm._v(" "),
     _c("div", { staticClass: "h-auto" }, [
       _c("div", { staticClass: "form-group" }, [
