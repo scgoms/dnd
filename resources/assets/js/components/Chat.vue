@@ -33,6 +33,7 @@
                     from: this.name,
                     message: this.message
                 }).then(response =>{
+                    alert("It success");
                     this.message = '';
                 }).catch(error => {
                     alert("There was an error");
