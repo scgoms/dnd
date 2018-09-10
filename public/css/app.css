@@ -676,6 +676,10 @@ button,
   margin-right: auto;
 }
 
+body {
+  background-color: #f8fafc;
+}
+
 .navbar {
   padding-top: .5rem;
   padding-bottom: .5rem;
@@ -691,19 +695,44 @@ button,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-image: url("/storage/images/bar_background.png");
+}
+
+.navbar-start {
+  position: absolute;
+  top: -2px;
+  left: -60px;
+  height: 100px;
+}
+
+.navbar-end {
+  position: absolute;
+  top: -2px;
+  right: -60px;
+  height: 100px;
 }
 
 .navbar-brand {
   font-weight: 500;
   font-size: 1.5rem;
   text-decoration: none;
-  color: #3d4852;
+  color: #dae1e7;
   text-transform: uppercase;
+  margin-left: .5rem;
+}
+
+.navbar-links {
+  margin-right: .5rem;
 }
 
 .navbar-link {
   text-decoration: none;
-  color: #3d4852;
+  color: #dae1e7;
+}
+
+.navbar-border {
+  height: 25px;
+  background-image: url("/storage/images/bar_border.png");
 }
 
 @media (min-width: 768px) {

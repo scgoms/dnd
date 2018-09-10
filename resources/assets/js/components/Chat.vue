@@ -1,16 +1,18 @@
 <template>
-    <div class="absolute pin-r pin-t pin-b w-96 flex flex-col overflow-hidden " style="z-index: 1000">
-        <div class="bg-red shadow rounded-b h-8 text-center flex justify-center items-center" @click.prevent="show = !show">Arrow down</div>
-        <transition name="slide">
-            <div class="flex-1 flex flex-col" style="background: rgb(0,0,0); background: rgba(0,0,0, 0.75);" v-if="show">
+    <div>
+        <div class="absolute pin-t pin-r pin-b w-1/6 flex sidebar-right" :class="{'sidebar-right-open':show}" style="z-index:1000">
+            <div class="bg-red w-8" @click.prevent="show = !show">T</div>
+            <div class="flex-1 flex flex-col" style="background: rgb(0,0,0); background: rgba(0,0,0, 0.75)">
                 <div class="flex-1 pt-2 pl-2 pr-2">
-                    <span v-for="message in messages">
-                        <strong>{{ message.user }}:</strong>{{ message.body}}
-                    </span>
+                    <div v-for="message in messages">
+                        <span class="text-white">
+                            <strong>{{ message.user }}: </strong>{{ message.body}}
+                        </span>
+                    </div>
                 </div>
                 <div class="h-auto">
                     <div class="form-group">
-                        <label class="pl-2 form-label">Message</label>
+                        <label class="pl-2 form-label text-white">Message</label>
                         <textarea class="form-control" placeholder="Message" v-model="message"></textarea>
                     </div>
                     <div class="form-group">
@@ -18,7 +20,7 @@
                     </div>
                 </div>
             </div>
-        </transition>
+        </div>
     </div>
 </template>
 <script>
@@ -39,10 +41,11 @@
                     from: this.name,
                     message: this.message
                 }).then(response =>{
-                    this.message = '';
+
                 }).catch(error => {
                     alert("There was an error");
                 })
+                this.message = '';
             }
         },
         mounted(){
@@ -62,16 +65,11 @@
     }
 </script>
 <style>
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-enter-active {
-  transition: all .3s;
-}
-.slide-leave-active {
-  transition: all .3s;
-}
-.slide-enter, .slide-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateY(-100%);
-}
+    .sidebar-right{
+        margin-right: -14.6%;
+        transition:all 700ms;
+    }
+    .sidebar-right-open{
+        margin-right: 0;
+    }
 </style>

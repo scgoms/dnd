@@ -1,16 +1,32 @@
 .navbar{
-    @apply .py-2 .mx-auto .flex .flex-col .items-center
+    @apply .py-2 .mx-auto .flex .flex-col .items-center;
+    background-image: url('/storage/images/bar_background.png');
+}
+.navbar-start{
+    position: absolute;
+    top: -2px;
+    left: -60px;
+    height: 100px;
+}
+.navbar-end{
+    position:absolute;
+    top: -2px;
+    right: -60px;
+    height: 100px;
 }
 .navbar-brand{
-    @apply .font-medium .text-2xl .no-underline .text-grey-darkest .uppercase
+    @apply .font-medium .text-2xl .no-underline .text-grey-light .uppercase .ml-2
 }
 .navbar-links{
-
+    @apply .mr-2
 }
 .navbar-link{
-    @apply .no-underline .text-grey-darkest
+    @apply .no-underline .text-grey-light
 }
-
+.navbar-border{
+    height: 25px;
+    background-image:url('/storage/images/bar_border.png');
+}
 @screen md{
     .navbar{
         @apply .flex-row .justify-between
