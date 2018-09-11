@@ -1,9 +1,10 @@
 <template>
-    <div class="flex flex-1 flex-col">
+    <div class="flex flex-1">
         <new-player v-if="!joined" @joined="joinLobby($event)"></new-player>
-        <div v-else class="h-100 flex flex-1">
+        <div v-else class="h-100 flex flex-1 flex-col">
             <game-map></game-map>
             <chat :name="name"></chat>
+            <dice-tray></dice-tray>
         </div>
     </div>
 </template>
@@ -11,6 +12,7 @@
     import NewPlayer from './NewPlayer';
     import Chat from './Chat';
     import GameMap from './GameMap';
+    import DiceTray from './DiceTray';
     export default {
         props: [
             'user'
@@ -18,7 +20,8 @@
         components: {
             NewPlayer,
             Chat,
-            GameMap
+            GameMap,
+            DiceTray
         },
         data(){
             return {

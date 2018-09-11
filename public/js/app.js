@@ -1386,7 +1386,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(68);
+module.exports = __webpack_require__(71);
 
 
 /***/ }),
@@ -1405,7 +1405,7 @@ window.Event = new Vue();
  */
 
 Vue.component('Lobby', __webpack_require__(39));
-Vue.component('GameMasterToolbar', __webpack_require__(65));
+Vue.component('GameMasterToolbar', __webpack_require__(68));
 
 var app = new Vue({
   el: '#app'
@@ -23364,7 +23364,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(40)
 /* template */
-var __vue_template__ = __webpack_require__(64)
+var __vue_template__ = __webpack_require__(67)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -23414,6 +23414,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Chat___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Chat__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__GameMap__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__GameMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__GameMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__DiceTray__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__DiceTray___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__DiceTray__);
 //
 //
 //
@@ -23423,6 +23425,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
@@ -23432,7 +23436,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: {
         NewPlayer: __WEBPACK_IMPORTED_MODULE_0__NewPlayer___default.a,
         Chat: __WEBPACK_IMPORTED_MODULE_1__Chat___default.a,
-        GameMap: __WEBPACK_IMPORTED_MODULE_2__GameMap___default.a
+        GameMap: __WEBPACK_IMPORTED_MODULE_2__GameMap___default.a,
+        DiceTray: __WEBPACK_IMPORTED_MODULE_3__DiceTray___default.a
     },
     data: function data() {
         return {
@@ -38164,13 +38169,134 @@ if (false) {
 /* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(65)
+/* template */
+var __vue_template__ = __webpack_require__(66)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\DiceTray.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5000e774", Component.options)
+  } else {
+    hotAPI.reload("data-v-5000e774", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "bg-red p-4 w-full flex flex-row justify-center" },
+      [
+        _c("button", { staticClass: "btn btn-blue mr-1 w-auto" }, [
+          _vm._v("4")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-blue ml-1 mr-1 w-auto" }, [
+          _vm._v("6")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-blue ml-1 mr-1 w-auto" }, [
+          _vm._v("8")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-blue ml-1 mr-1 w-auto" }, [
+          _vm._v("10")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-blue ml-1 mr-1 w-auto" }, [
+          _vm._v("12")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "btn btn-blue ml-1 w-auto" }, [
+          _vm._v("20")
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5000e774", module.exports)
+  }
+}
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "flex flex-1 flex-col" },
+    { staticClass: "flex flex-1" },
     [
       !_vm.joined
         ? _c("new-player", {
@@ -38182,11 +38308,13 @@ var render = function() {
           })
         : _c(
             "div",
-            { staticClass: "h-100 flex flex-1" },
+            { staticClass: "h-100 flex flex-1 flex-col" },
             [
               _c("game-map"),
               _vm._v(" "),
-              _c("chat", { attrs: { name: _vm.name } })
+              _c("chat", { attrs: { name: _vm.name } }),
+              _vm._v(" "),
+              _c("dice-tray")
             ],
             1
           )
@@ -38205,15 +38333,15 @@ if (false) {
 }
 
 /***/ }),
-/* 65 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(66)
+var __vue_script__ = __webpack_require__(69)
 /* template */
-var __vue_template__ = __webpack_require__(67)
+var __vue_template__ = __webpack_require__(70)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -38252,7 +38380,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 66 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38296,7 +38424,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 67 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -38306,8 +38434,7 @@ var render = function() {
   return _c(
     "nav",
     {
-      staticClass:
-        "container navbar shadow-inner mx-auto bg-green flex -my-2 px-8 pt-2",
+      staticClass: "container navbar shadow-inner mx-auto flex -my-2 px-8 pt-2",
       staticStyle: { "clip-path": "polygon(0% 0%, 1% 100%, 99% 100%, 100% 0%)" }
     },
     [
@@ -38342,7 +38469,7 @@ if (false) {
 }
 
 /***/ }),
-/* 68 */
+/* 71 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
