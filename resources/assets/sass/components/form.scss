@@ -31,6 +31,12 @@
 .btn-blue:hover{
     @apply .bg-blue-dark
 }
+.btn-red{
+    @apply .bg-red .text-white
+}
+.btn-red:hover{
+    @apply .bg-red-dark
+}
 .btn-grey-lightest{
     @apply .bg-grey-lightest .text-grey-darkest
 }

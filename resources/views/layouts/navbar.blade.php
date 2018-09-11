@@ -1,6 +1,5 @@
 <nav class="w-full flex flex-col">
     <div class="container navbar md:navbar h-12 relative">
-
         <img src="/storage/images/topleft_bookend.png" class="navbar-start" style="z-index:1000">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'DND') }}

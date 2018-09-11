@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-1 flex-col">
         <new-player v-if="!joined" @joined="joinLobby($event)"></new-player>
-        <div v-else class="h-100 flex flex-1 relative">
+        <div v-else class="h-100 flex flex-1">
             <game-map></game-map>
             <chat :name="name"></chat>
         </div>

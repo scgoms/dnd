@@ -23781,7 +23781,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.sidebar-right {\n  margin-right: -14.6%;\n  -webkit-transition: all 700ms;\n  transition: all 700ms;\n}\n.sidebar-right-open {\n  margin-right: 0;\n}\n", ""]);
+exports.push([module.i, "\n.sidebar-right {\n  margin-right: -15.8%;\n  -webkit-transition: all 700ms;\n  transition: all 700ms;\n}\n.sidebar-right-open {\n  margin-right: 0;\n}\n", ""]);
 
 // exports
 
@@ -23792,6 +23792,9 @@ exports.push([module.i, "\n.sidebar-right {\n  margin-right: -14.6%;\n  -webkit-
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -23862,99 +23865,109 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "absolute pin-t pin-r pin-b w-1/6 flex sidebar-right",
-        class: { "sidebar-right-open": _vm.show },
-        staticStyle: { "z-index": "1000" }
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "bg-red w-8",
-            on: {
-              click: function($event) {
-                $event.preventDefault()
-                _vm.show = !_vm.show
-              }
+  return _c(
+    "div",
+    {
+      staticClass: "absolute pin-t pin-r pin-b w-1/6 flex sidebar-right",
+      class: { "sidebar-right-open": _vm.show },
+      staticStyle: { "z-index": "1000" }
+    },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "flex flex-col",
+          staticStyle: { "z-index": "900" },
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              _vm.show = !_vm.show
             }
-          },
-          [_vm._v("T")]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "flex-1 flex flex-col",
-            staticStyle: { background: "rgba(0,0,0, 0.75)" }
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "flex-1 pt-2 pl-2 pr-2" },
-              _vm._l(_vm.messages, function(message) {
-                return _c("div", [
-                  _c("span", { staticClass: "text-white" }, [
-                    _c("strong", [_vm._v(_vm._s(message.user) + ": ")]),
-                    _vm._v(_vm._s(message.body) + "\n                    ")
-                  ])
+          }
+        },
+        [
+          _c("img", { attrs: { src: "/storage/images/vert_bar_top.png" } }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "flex-1",
+            staticStyle: {
+              "background-image": "url('/storage/images/vert_bar_body.png')"
+            }
+          }),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/storage/images/vert_bar_bot.png" } })
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "flex-1 flex flex-col -ml-2",
+          staticStyle: { background: "rgba(0,0,0, 0.75)" }
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "flex-1 pt-2 pl-2 pr-2" },
+            _vm._l(_vm.messages, function(message) {
+              return _c("div", [
+                _c("span", { staticClass: "text-white" }, [
+                  _c("strong", [_vm._v(_vm._s(message.user) + ": ")]),
+                  _vm._v(_vm._s(message.body) + "\n                ")
                 ])
-              })
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "h-auto" }, [
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", { staticClass: "pl-2 form-label text-white" }, [
-                  _vm._v("Message")
-                ]),
-                _vm._v(" "),
-                _c("textarea", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.message,
-                      expression: "message"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { placeholder: "Message" },
-                  domProps: { value: _vm.message },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.message = $event.target.value
-                    }
-                  }
-                })
+              ])
+            })
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "h-auto" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { staticClass: "pl-2 form-label text-white" }, [
+                _vm._v("Message")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c(
-                  "button",
+              _c("textarea", {
+                directives: [
                   {
-                    staticClass: "btn btn-blue",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.sendMessage($event)
-                      }
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.message,
+                    expression: "message"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { placeholder: "Message" },
+                domProps: { value: _vm.message },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
                     }
-                  },
-                  [_vm._v("Send")]
-                )
-              ])
+                    _vm.message = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-blue",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.sendMessage($event)
+                    }
+                  }
+                },
+                [_vm._v("Send")]
+              )
             ])
-          ]
-        )
-      ]
-    )
-  ])
+          ])
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -24052,7 +24065,7 @@ exports = module.exports = __webpack_require__(2)(false);
 exports.i(__webpack_require__(55), "");
 
 // module
-exports.push([module.i, "\n.leaflet-container {\n  background-color: white;\n}\n", ""]);
+exports.push([module.i, "\n.leaflet-container {\n  background-image: url('/storage/images/map_bg.png');\n}\n.clip-svg {\n  -webkit-clip-path: url(#myClip);\n          clip-path: url(#myClip);\n}\n", ""]);
 
 // exports
 
@@ -24120,6 +24133,17 @@ module.exports = "/images/vendor/leaflet/dist/marker-icon.png?2273e3d8ad9264b7da
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_leaflet__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue2_leaflet__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38087,14 +38111,41 @@ var render = function() {
         "l-map",
         {
           ref: "map",
-          staticClass: "overflow-hidden",
-          attrs: { minZoom: _vm.minZoom, crs: _vm.crs }
+          staticClass: "overflow-hidden clip-svg",
+          attrs: {
+            minZoom: _vm.minZoom,
+            crs: _vm.crs,
+            options: { zoomControl: false, attributionControl: false }
+          }
         },
         [
           _c("l-image-overlay", { attrs: { url: _vm.url, bounds: _vm.bounds } })
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("svg", { attrs: { viewBox: "0 0 100 100" } }, [
+        _c("defs", [
+          _c(
+            "clipPath",
+            {
+              attrs: {
+                id: "myClip",
+                clipPathUnits: "objectBoundingBox",
+                transform: "scale(0.0016 0.00295)"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d:
+                    "m 537.44081,337.18599 c -4.675,-0.52458 -13.225,-1.81637 -19,-2.87063 -5.775,-1.05427 -13.80098,-2.22228 -17.83552,-2.59557 -4.03453,-0.3733 -9.88453,-1.32409 -13,-2.11287 -7.49352,-1.89723 -48.56523,-3.12431 -49.58067,-1.48129 -2.17546,3.51997 -11.10293,-1.24909 -19.4359,-10.38267 -4.67828,-5.12776 -10.46241,-15.34259 -14.99523,-26.48173 -0.99458,-2.44412 -1.01883,-2.42641 -1.085,0.79216 -0.0924,4.49676 2.63643,17.31972 5.13205,24.11551 1.42522,3.88099 3.57827,7.0445 7.03573,10.33772 2.96434,2.82353 4.76353,5.31486 4.44248,6.15149 -1.21504,3.16635 -37.96423,3.26526 -58.17794,0.15659 -4.95,-0.76126 -15.075,-2.74679 -22.5,-4.4123 -7.425,-1.6655 -18,-3.71387 -23.5,-4.55194 -9.92972,-1.51305 -20.27209,-3.94592 -38.5,-9.05649 -5.225,-1.46493 -17.09204,-3.99124 -26.37121,-5.61402 -9.27917,-1.62278 -17.16121,-3.12974 -17.51566,-3.3488 -1.05471,-0.65185 -15.82177,-2.55804 -27.61313,-3.56442 -6.05,-0.51636 -17.75,-1.60077 -26,-2.40979 -28.30175,-2.77539 -65.33024,1.31671 -109.499995,12.10108 -7.975,1.94716 -16.075,4.19692 -18,4.99947 -3.157783,1.31651 -10.270717,3.63321 -24.443261,7.96122 -2.718794,0.83026 -7.865383,3.27198 -11.436864,5.42605 -6.3247393,3.81462 -13.119875,5.28006 -13.119875,2.82942 0,-0.59788 2.4685381,-7.91038 5.4856402,-16.25 9.8351008,-27.18537 14.4169708,-50.69968 16.4969588,-84.66295 1.376667,-22.47902 1.837545,-50 0.837322,-50 -1.807438,0 -0.661725,-3.3366 1.81456,-5.28444 6.278772,-4.93889 29.365519,-37.41469 29.365519,-41.30806 0,-0.45778 -2.1375,1.2251 -4.75,3.73972 -2.6125,2.51462 -6.775,5.99506 -9.25,7.73432 -2.475,1.73925 -6.254404,4.50242 -8.398675,6.14037 -2.144271,1.63795 -4.974481,2.97809 -6.289355,2.97809 h -2.39068 l 0.550158,-14.75 c 0.302587,-8.1125 0.810382,-17.17417 1.128433,-20.13704 C 28.113663,111.37875 22.521829,61.864911 19.389641,53.626632 18.896694,52.330083 17.612947,47.7318 16.536871,43.408226 15.460795,39.084652 12.968373,31.373194 10.998156,26.271653 7.1337905,16.265538 7.2671055,14.923211 12.222982,13.939087 c 1.494808,-0.296835 5.642833,-1.317906 9.217833,-2.269046 8.884676,-2.3637957 35.001502,-2.4811413 52.5,-0.235888 28.011825,3.594232 46.708705,5.763924 62.999995,7.310876 9.35,0.887837 21.49589,2.102285 26.99087,2.698774 16.00746,1.737638 39.0302,0.480382 74.00913,-4.041585 8.25,-1.066535 20.175,-2.453815 26.5,-3.082845 6.325,-0.62903 15.1,-1.587033 19.5,-2.128895 25.86697,-3.1855316 33.46202,-3.9824168 47,-4.9313226 8.25,-0.5782599 22.2,-1.2936615 31,-1.5897814 8.8,-0.2961199 21.4958,-0.9029608 28.21288,-1.3485354 18.46138,-1.2246265 42.57835,0.7152779 67.28712,5.4123959 19.74107,3.7527615 35.84281,6.6772765 50,9.0813645 16.33308,2.773583 18.80838,2.811034 56.14005,0.849399 7.57752,-0.39817 13.33623,-0.20084 16.5,0.565394 9.24402,2.238811 10.08235,2.248221 14.78958,0.165992 6.12792,-2.710671 11.57037,-3.735495 11.57037,-2.178723 0,0.647907 -1.08317,2.610488 -2.40704,4.361291 -3.45827,4.573519 -4.5337,15.282155 -1.97049,19.621319 2.61609,4.428683 1.08039,6.417397 -5.47463,7.0896 -4.70744,0.482737 -5.70518,1.078465 -11.72379,7 -3.61815,3.559798 -7.49512,8.272359 -8.61548,10.472359 -1.12035,2.2 -3.15099,5.485408 -4.51251,7.300908 l -2.4755,3.300907 3.33972,-1.42859 c 13.86956,-5.932805 20.75345,-9.332997 24.84198,-12.270319 4.8194,-3.462392 11.01582,-4.677357 10.98,-2.152906 -0.01,0.6875 -2.72931,5.018767 -6.04346,9.625038 -8.54563,11.877387 -9.83037,14.859863 -12.04859,27.970238 -2.83936,16.781494 -3.38283,25.932794 -1.90575,32.089964 l 1.25732,5.24108 -3.87089,3.10947 c -2.12899,1.71021 -5.44589,4.85225 -7.37089,6.98232 -1.925,2.13006 -6.00723,6.65363 -9.07163,10.05237 -4.78917,5.31169 -9.92837,12.70142 -9.92837,14.27614 0,1.04841 20.79597,-16.45505 25.38684,-21.36748 4.81304,-5.15017 8.16753,-6.55402 9.20438,-3.85203 0.29064,0.75741 -0.83505,4.91991 -2.50155,9.25 -15.30089,39.75665 -16.31779,68.1022 -5.12555,142.87289 4.55351,30.4201 4.21258,28.94996 6.79934,29.31955 2.64963,0.37857 2.98997,3.01617 0.48654,3.77059 -0.9625,0.29005 -4.56418,1.88577 -8.00373,3.54605 -6.06067,2.92548 -6.77071,3.02985 -23,3.38052 -9.21045,0.19901 -20.57127,-0.0674 -25.24627,-0.59195 z"
+                }
+              })
+            ]
+          )
+        ])
+      ])
     ],
     1
   )
@@ -38131,7 +38182,7 @@ var render = function() {
           })
         : _c(
             "div",
-            { staticClass: "h-100 flex flex-1 relative" },
+            { staticClass: "h-100 flex flex-1" },
             [
               _c("game-map"),
               _vm._v(" "),
@@ -38252,32 +38303,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("nav", { staticClass: "container navbar md:navbar h-12" }, [
-    _c("input", {
-      staticClass: "inputfile hidden",
-      attrs: { type: "file", name: "background-image", id: "file" },
-      on: {
-        change: function($event) {
-          _vm.handleFileChange($event.target.name, $event.target.files)
-        }
-      }
-    }),
-    _vm._v(" "),
-    _vm._m(0)
-  ])
+  return _c(
+    "nav",
+    {
+      staticClass:
+        "container navbar shadow-inner mx-auto bg-green flex -my-2 px-8 pt-2",
+      staticStyle: { "clip-path": "polygon(0% 0%, 1% 100%, 99% 100%, 100% 0%)" }
+    },
+    [
+      _c(
+        "label",
+        { staticClass: "btn btn-red w-auto", attrs: { for: "file" } },
+        [
+          _c("input", {
+            staticClass: "inputfile hidden",
+            attrs: { type: "file", name: "background-image", id: "file" },
+            on: {
+              change: function($event) {
+                _vm.handleFileChange($event.target.name, $event.target.files)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("span", [_vm._v("Choose a file")])
+        ]
+      )
+    ]
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "label",
-      { staticClass: "btn btn-blue w-auto", attrs: { for: "file" } },
-      [_c("span", [_vm._v("Choose a file")])]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

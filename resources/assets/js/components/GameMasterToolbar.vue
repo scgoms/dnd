@@ -1,7 +1,7 @@
 <template>
-    <nav class="container navbar md:navbar h-12">
+    <nav class="container navbar shadow-inner mx-auto bg-green flex -my-2 px-8 pt-2" style="clip-path: polygon(0% 0%, 1% 100%, 99% 100%, 100% 0%);">
+        <label for="file" class="btn btn-red w-auto">
         <input type="file" name="background-image" id="file" class="inputfile hidden" @change="handleFileChange($event.target.name, $event.target.files)"/>
-        <label for="file" class="btn btn-blue w-auto">
             <span>Choose a file</span>
         </label>
     </nav>
