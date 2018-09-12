@@ -851,6 +851,11 @@ body {
   background-image: url("/storage/images/background.PNG");
 }
 
+.sidebar-clipping {
+  -webkit-clip-path: url(#sidebar-clip);
+          clip-path: url(#sidebar-clip);
+}
+
 .list-reset {
   list-style: none;
   padding: 0;

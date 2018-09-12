@@ -13,18 +13,12 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::post('/game', function () {
-    return;
-});
+Route::get('/', 'PagesController@index');
 
 Route::post('/messages', 'MessageController@receiveAndSend');
-
 Route::post('/background', 'BackgroundController@receiveAndSend');
-
 Route::get('/dice/{dice}', 'DiceController@show');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile', 'ProfileController@index')->name('profile');
+Route::get('/profile/lobbies', 'ProfileController@lobbies');
+Route::get('/profile/characters', 'ProfileController@characters');

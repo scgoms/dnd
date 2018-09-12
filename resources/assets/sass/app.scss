@@ -10,4 +10,8 @@ body{
     background-image: url('/storage/images/background.PNG');
 }
 
+
+.sidebar-clipping {
+    clip-path: url(#sidebar-clip);
+}
 @tailwind utilities;
