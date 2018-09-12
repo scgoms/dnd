@@ -11,6 +11,8 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('index');
 });
@@ -23,6 +25,6 @@ Route::post('/messages', 'MessageController@receiveAndSend');
 
 Route::post('/background', 'BackgroundController@receiveAndSend');
 
-Auth::routes();
+Route::get('/dice/{dice}', 'DiceController@show');
 
 Route::get('/home', 'HomeController@index')->name('home');

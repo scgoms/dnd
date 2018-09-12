@@ -23850,7 +23850,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
+        Event.$on('received-roll', function (e) {
+            _this.messages.push({
+                user: e.name,
+                body: 'Rolled a ' + e.roll
+            });
+        });
         Echo.channel('chat').listen('MessageReceived', function (e) {
+            console.dir(e);
             _this.messages.push(e.message);
         });
         Echo.channel('activity').listen('UserJoined', function (e) {
@@ -38228,8 +38235,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['name'],
+    methods: {
+        roll: function roll(dice) {
+            var _this = this;
+
+            axios.get('/dice/' + dice).then(function (response) {
+                Event.$emit('received-roll', {
+                    roll: response.data,
+                    name: _this.name
+                });
+            }).catch(function (error) {
+                alert("It broke");
+            });
+        }
+    }
+});
 
 /***/ }),
 /* 66 */
@@ -38239,44 +38264,108 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "absolute pin-b w-full flex flex-row justify-center" },
+    [
+      _c(
+        "div",
+        {
+          staticStyle: {
+            "clip-path": "polygon(0% 100%, 100% 100%, 98% 0%, 2% 0%)",
+            "background-image": "url('/storage/images/bar_background.png')"
+          }
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-red m-2 ml-8 mr-1 w-auto",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.roll(4)
+                }
+              }
+            },
+            [_vm._v("4")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-red ml-1 mr-1 w-auto",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.roll(6)
+                }
+              }
+            },
+            [_vm._v("6")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-red ml-1 mr-1 w-auto",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.roll(8)
+                }
+              }
+            },
+            [_vm._v("8")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-red ml-1 mr-1 w-auto",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.roll(10)
+                }
+              }
+            },
+            [_vm._v("10")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-red ml-1 mr-1 w-auto",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.roll(12)
+                }
+              }
+            },
+            [_vm._v("12")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-red m-2 mr-8 ml-1 w-auto",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  _vm.roll(20)
+                }
+              }
+            },
+            [_vm._v("20")]
+          )
+        ]
+      )
+    ]
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-red p-4 w-full flex flex-row justify-center" },
-      [
-        _c("button", { staticClass: "btn btn-blue mr-1 w-auto" }, [
-          _vm._v("4")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-blue ml-1 mr-1 w-auto" }, [
-          _vm._v("6")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-blue ml-1 mr-1 w-auto" }, [
-          _vm._v("8")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-blue ml-1 mr-1 w-auto" }, [
-          _vm._v("10")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-blue ml-1 mr-1 w-auto" }, [
-          _vm._v("12")
-        ]),
-        _vm._v(" "),
-        _c("button", { staticClass: "btn btn-blue ml-1 w-auto" }, [
-          _vm._v("20")
-        ])
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -38314,7 +38403,7 @@ var render = function() {
               _vm._v(" "),
               _c("chat", { attrs: { name: _vm.name } }),
               _vm._v(" "),
-              _c("dice-tray")
+              _c("dice-tray", { attrs: { name: _vm.name } })
             ],
             1
           )

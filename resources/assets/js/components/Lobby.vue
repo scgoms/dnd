@@ -4,7 +4,7 @@
         <div v-else class="h-100 flex flex-1 flex-col">
             <game-map></game-map>
             <chat :name="name"></chat>
-            <dice-tray></dice-tray>
+            <dice-tray :name="name"></dice-tray>
         </div>
     </div>
 </template>

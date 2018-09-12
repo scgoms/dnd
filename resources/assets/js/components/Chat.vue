@@ -49,11 +49,18 @@
                     alert("There was an error");
                 })
                 this.message = '';
-            }
+            },
         },
         mounted(){
+            Event.$on('received-roll', (e) => {
+                this.messages.push({
+                    user: e.name,
+                    body: 'Rolled a ' + e.roll
+                });
+            });
             Echo.channel('chat')
                 .listen('MessageReceived', (e) => {
+                    console.dir(e);
                     this.messages.push(e.message);
                 });
             Echo.channel('activity')
