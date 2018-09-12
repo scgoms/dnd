@@ -2,9 +2,9 @@
     <div class="flex flex-1">
         <new-player v-if="!joined" @joined="joinLobby($event)"></new-player>
         <div v-else class="h-100 flex flex-1 flex-col">
-            <game-map></game-map>
-            <chat :name="name"></chat>
-            <dice-tray :name="name"></dice-tray>
+            <game-map :channel="channel"></game-map>
+            <chat :channel="channel" :name="name"></chat>
+            <dice-tray :channel="channel" :name="name"></dice-tray>
         </div>
     </div>
 </template>
@@ -15,7 +15,8 @@
     import DiceTray from './DiceTray';
     export default {
         props: [
-            'user'
+            'user',
+            'channel'
         ],
         components: {
             NewPlayer,

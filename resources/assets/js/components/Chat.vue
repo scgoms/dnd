@@ -29,7 +29,8 @@
 <script>
     export default{
         props: [
-            'name'
+            'name',
+            'channel'
         ],
         data(){
             return {
@@ -40,11 +41,10 @@
         },
         methods:{
             sendMessage(){
-                axios.post('/messages', {
+                axios.post('/game/' + channel + '/messages', {
                     from: this.name,
                     message: this.message
                 }).then(response =>{
-
                 }).catch(error => {
                     alert("There was an error");
                 })
@@ -58,9 +58,8 @@
                     body: 'Rolled a ' + e.roll
                 });
             });
-            Echo.channel('chat')
+            Echo.channel('game. ' + this.channel.id + '.chat')
                 .listen('MessageReceived', (e) => {
-                    console.dir(e);
                     this.messages.push(e.message);
                 });
             Echo.channel('activity')

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Lobby;
 use Illuminate\Http\Request;
 
+use Auth;
+
 class LobbyController extends Controller
 {
     /**
@@ -12,9 +14,9 @@ class LobbyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Lobby $lobby)
     {
-        //
+        return view('profile.lobbies');
     }
 
     /**
@@ -35,7 +37,11 @@ class LobbyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Lobby::create([
+            'name'  =>  $request->name,
+            'description'   =>  $request->description,
+            'creator_id'    =>  Auth::id()
+        ]);
     }
 
     /**
@@ -46,7 +52,7 @@ class LobbyController extends Controller
      */
     public function show(Lobby $lobby)
     {
-        //
+        return view('lobbies.show');
     }
 
     /**

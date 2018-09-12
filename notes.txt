@@ -1,0 +1,10 @@
+Think I have the channels set up properly now.
+
+Now I need to figure out;
+
+    Room creation
+    Joining a room
+        Invitation system?
+    Permanence of data
+        Redis?
+        Or DB?

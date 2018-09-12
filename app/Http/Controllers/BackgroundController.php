@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class BackgroundController extends Controller
 {
-    public function receiveAndSend(Request $request)
+    public function receiveAndSend(Lobby $lobby, Request $request)
     {
         $path = '/storage/' . $request->file('background-image')->store('background-image', 'public');
-        event(new BackgroundImageReceived(new BackgroundImage($path)));
+        event(new BackgroundImageReceived(new BackgroundImage($path), $lobby));
     }
 }

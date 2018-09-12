@@ -14,6 +14,7 @@ use App\BackgroundImage;
 class BackgroundImageReceived implements ShouldBroadcast
 {
     public $image;
+    public $lobby;
 
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -22,9 +23,10 @@ class BackgroundImageReceived implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct(BackgroundImage $image)
+    public function __construct(BackgroundImage $image, Lobby $lobby)
     {
         $this->image = $image;
+        $this->lobby = $lobby;
     }
 
     /**
@@ -34,7 +36,7 @@ class BackgroundImageReceived implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('background-image');
-        // return new PrivateChannel('chat');
+        // return new Channel('background-image');
+        return new PrivateChannel('game.' . $this->lobby->id . '.background-image');
     }
 }

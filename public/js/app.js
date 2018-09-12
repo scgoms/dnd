@@ -23432,7 +23432,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['user'],
+    props: ['user', 'channel'],
     components: {
         NewPlayer: __WEBPACK_IMPORTED_MODULE_0__NewPlayer___default.a,
         Chat: __WEBPACK_IMPORTED_MODULE_1__Chat___default.a,
@@ -23827,7 +23827,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['name'],
+    props: ['name', 'channel'],
     data: function data() {
         return {
             message: '',
@@ -23838,7 +23838,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         sendMessage: function sendMessage() {
-            axios.post('/messages', {
+            axios.post('/game/' + channel + '/messages', {
                 from: this.name,
                 message: this.message
             }).then(function (response) {}).catch(function (error) {
@@ -23856,8 +23856,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 body: 'Rolled a ' + e.roll
             });
         });
-        Echo.channel('chat').listen('MessageReceived', function (e) {
-            console.dir(e);
+        Echo.channel('game. ' + this.channel.id + '.chat').listen('MessageReceived', function (e) {
             _this.messages.push(e.message);
         });
         Echo.channel('activity').listen('UserJoined', function (e) {
@@ -24175,6 +24174,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         LMap: __WEBPACK_IMPORTED_MODULE_0_vue2_leaflet__["LMap"],
         LImageOverlay: __WEBPACK_IMPORTED_MODULE_0_vue2_leaflet__["LImageOverlay"]
     },
+    props: ['channel'],
     data: function data() {
         return {
             url: '',
@@ -24212,7 +24212,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         this.setCenter(500, 500);
-        Echo.channel('background-image').listen('BackgroundImageReceived', function (e) {
+        Echo.channel('game.' + this.channel.id + '.background-image').listen('BackgroundImageReceived', function (e) {
             var img = new Image();
             img.src = e.image.path;
             img.onload = function () {
@@ -38239,7 +38239,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['name'],
+    props: ['name', 'channel'],
     methods: {
         roll: function roll(dice) {
             var _this = this;
@@ -38399,11 +38399,13 @@ var render = function() {
             "div",
             { staticClass: "h-100 flex flex-1 flex-col" },
             [
-              _c("game-map"),
+              _c("game-map", { attrs: { channel: _vm.channel } }),
               _vm._v(" "),
-              _c("chat", { attrs: { name: _vm.name } }),
+              _c("chat", { attrs: { channel: _vm.channel, name: _vm.name } }),
               _vm._v(" "),
-              _c("dice-tray", { attrs: { name: _vm.name } })
+              _c("dice-tray", {
+                attrs: { channel: _vm.channel, name: _vm.name }
+              })
             ],
             1
           )

@@ -2,18 +2,18 @@
 
 namespace App\Events;
 
+use App\Lobby;
+use App\Message;
 use Illuminate\Broadcasting\Channel;
-// use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-
-use App\Message;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class MessageReceived implements ShouldBroadcast
 {
     public $message;
+    public $lobby;
 
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -22,9 +22,10 @@ class MessageReceived implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct(Message $message)
+    public function __construct(Message $message, Lobby $lobby)
     {
         $this->message = $message;
+        $this->lobby = $lobby;
     }
 
     /**
@@ -34,7 +35,7 @@ class MessageReceived implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('chat');
-        // return new PrivateChannel('chat');
+        // return new Channel('chat');
+        return new PrivateChannel('game.' . $lobby->id . '.chat');
     }
 }

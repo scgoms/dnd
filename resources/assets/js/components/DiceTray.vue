@@ -13,7 +13,8 @@
 <script>
     export default {
         props: [
-            'name'
+            'name',
+            'channel'
         ],
         methods:{
             roll(dice){
