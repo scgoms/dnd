@@ -1,5 +1,8 @@
 @extends('layouts.master')
 @section('content')
+@if(Auth::check() && Auth::user()->email === 'scgoms@gmail.com')
+@include('layouts.gamemaster')
+@endif
 @if (session('status'))
 {{ session('status') }}
 @endif
@@ -7,8 +10,8 @@
     <lobby
         @if(Auth::check())
         :user="{{ Auth::user() }}"
-        :channel="{{ $lobby }}"
         @endif
+        :channel="{{ $game }}"
     >
     </lobby>
 </div>

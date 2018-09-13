@@ -14,3 +14,12 @@
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
+
+// Fiddle with this alter on
+Broadcast::channel('game.{id}.chat', function ($user, $id) {
+    return true;
+});
+
+Broadcast::channel('game.{id}.background-image', function ($user, $id) {
+    return true;
+});

@@ -68,7 +68,7 @@ export default {
     },
     mounted() {
         this.setCenter(500, 500);
-        Echo.channel('game.' + this.channel.id + '.background-image')
+        Echo.private('game.' + this.channel.id + '.background-image')
             .listen('BackgroundImageReceived', (e) => {
                 var img = new Image();
                 img.src = e.image.path;

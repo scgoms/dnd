@@ -2,19 +2,19 @@
 
 namespace App\Events;
 
-use Illuminate\Broadcasting\Channel;
-// use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Foundation\Events\Dispatchable;
-use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-
 use App\BackgroundImage;
+use App\Game;
+use Illuminate\Broadcasting\Channel;
+use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class BackgroundImageReceived implements ShouldBroadcast
 {
     public $image;
-    public $lobby;
+    public $game;
 
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -23,10 +23,10 @@ class BackgroundImageReceived implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct(BackgroundImage $image, Lobby $lobby)
+    public function __construct(BackgroundImage $image, Game $game)
     {
         $this->image = $image;
-        $this->lobby = $lobby;
+        $this->game = $game;
     }
 
     /**
@@ -37,6 +37,6 @@ class BackgroundImageReceived implements ShouldBroadcast
     public function broadcastOn()
     {
         // return new Channel('background-image');
-        return new PrivateChannel('game.' . $this->lobby->id . '.background-image');
+        return new PrivateChannel('game.' . $this->game->id . '.background-image');
     }
 }

@@ -2,6 +2,9 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 window.Event = new Vue();
+import VModal from 'vue-js-modal';
+
+Vue.use(VModal);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -11,6 +14,7 @@ window.Event = new Vue();
 
  Vue.component('Lobby', require('./components/Lobby'));
  Vue.component('GameMasterToolbar', require('./components/GameMasterToolbar'));
+ Vue.component('GameCreator', require('./components/GameCreator.vue'));
 
 const app = new Vue({
     el: '#app'

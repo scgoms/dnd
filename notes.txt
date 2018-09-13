@@ -2,9 +2,13 @@ Think I have the channels set up properly now.
 
 Now I need to figure out;
 
-    Room creation
+    Room creation - Done
+        Room management?
     Joining a room
         Invitation system?
+        Middleware on the room
+        Make sure the routes/channels file properly authorizes users
     Permanence of data
         Redis?
         Or DB?
+    Fiddle with routes/channels later

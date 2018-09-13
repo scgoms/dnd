@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Invitation;
 use Auth;
 
 class ProfileController extends Controller
@@ -27,14 +28,17 @@ class ProfileController extends Controller
     }
 
     /**
-     * Show the users lobbies that they've joined.
+     * Show the users game that they've joined.
      *
      * @return \Illuminate\Http\Response
      */
-    public function lobbies()
+    public function games()
     {
-        $lobbies = Auth::user()->allLobbies();
-        return view('profile.lobbies');
+        $user = Auth::user();
+
+        $games = $user->allGames();
+        $invitations = Invitation::where('email', $user->email)->open()->get();
+        return view('profile.games', compact('games', 'invitations'));
     }
 
     /**

@@ -41,7 +41,7 @@
         },
         methods:{
             sendMessage(){
-                axios.post('/game/' + channel + '/messages', {
+                axios.post('/game/' + this.channel.id + '/messages', {
                     from: this.name,
                     message: this.message
                 }).then(response =>{
@@ -58,18 +58,18 @@
                     body: 'Rolled a ' + e.roll
                 });
             });
-            Echo.channel('game. ' + this.channel.id + '.chat')
+            Echo.private('game.' + this.channel.id + '.chat')
                 .listen('MessageReceived', (e) => {
                     this.messages.push(e.message);
                 });
-            Echo.channel('activity')
-                .listen('UserJoined', (e) => {
-                    console.log(e.user.name);
-                });
-            Echo.channel('activity')
-                .listen('UserLeft', (e) => {
-                    console.log(e.user.name);
-                });
+            // Echo.channel('activity')
+            //     .listen('UserJoined', (e) => {
+            //         console.log(e.user.name);
+            //     });
+            // Echo.channel('activity')
+            //     .listen('UserLeft', (e) => {
+            //         console.log(e.user.name);
+            //     });
         }
     }
 </script>

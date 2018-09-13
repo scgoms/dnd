@@ -15,14 +15,21 @@ Auth::routes();
 
 Route::get('/', 'PagesController@index');
 
-Route::post('/game', 'LobbyController@store');
-Route::get('/game/{lobby}', 'LobbyController@index');
+Route::get('/register/{hash}', 'Auth\RegisterController@showGameRegistrationForm');
+Route::post('/register/{hash}', 'Auth\RegisterController@registerToGame');
 
-Route::post('/game/{lobby}/messages', 'MessageController@receiveAndSend');
-Route::post('/game/{lobby}/background', 'BackgroundController@receiveAndSend');
-Route::get('/game/{lobby}/dice/{dice}', 'DiceController@show');
+Route::post('/game', 'GameController@store');
+Route::get('/game/{game}', 'GameController@index');
+Route::post('/game/{game}/invite', 'InvitationController@store');
+
+Route::post('/invitation/{hash}/accept', 'InvitationController@accept');
+Route::post('/invitation/{hash}/decline', 'InvitationController@decline');
+
+Route::post('/game/{game}/messages', 'MessageController@receiveAndSend');
+Route::post('/game/{game}/background', 'BackgroundController@receiveAndSend');
+Route::get('/game/{game}/dice/{dice}', 'DiceController@show');
 
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
-Route::get('/profile/lobbies', 'ProfileController@lobbies');
+Route::get('/profile/games', 'ProfileController@games');
 Route::get('/profile/characters', 'ProfileController@characters');

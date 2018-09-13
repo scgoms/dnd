@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Lobby;
+use App\Game;
 use Illuminate\Http\Request;
 
 use Auth;
 
-class LobbyController extends Controller
+class GameController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Lobby $lobby)
+    public function index(Game $game)
     {
-        return view('profile.lobbies');
+        return view('games.show', compact('game'));
     }
 
     /**
@@ -37,7 +37,7 @@ class LobbyController extends Controller
      */
     public function store(Request $request)
     {
-        Lobby::create([
+        Game::create([
             'name'  =>  $request->name,
             'description'   =>  $request->description,
             'creator_id'    =>  Auth::id()
@@ -47,21 +47,21 @@ class LobbyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Lobby  $lobby
+     * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function show(Lobby $lobby)
+    public function show(Game $game)
     {
-        return view('lobbies.show');
+        return view('game.show');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Lobby  $lobby
+     * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lobby $lobby)
+    public function edit(Game $game)
     {
         //
     }
@@ -70,10 +70,10 @@ class LobbyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Lobby  $lobby
+     * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lobby $lobby)
+    public function update(Request $request, Game $game)
     {
         //
     }
@@ -81,10 +81,10 @@ class LobbyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Lobby  $lobby
+     * @param  \App\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lobby $lobby)
+    public function destroy(Game $game)
     {
         //
     }

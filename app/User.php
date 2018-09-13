@@ -32,18 +32,18 @@ class User extends Authenticatable
         return $this->hasMany(Character::class);
     }
 
-    public function lobbies()
+    public function game()
     {
-        return $this->hasMany(Lobby::class, 'creator_id');
+        return $this->hasMany(Game::class, 'creator_id');
     }
 
-    public function lobbies_played_in()
+    public function game_played_in()
     {
-        return $this->belongsToMany(Lobby::class, 'lobby_user');
+        return $this->belongsToMany(Game::class, 'game_user');
     }
 
-    public function allLobbies()
+    public function allGames()
     {
-        return $this->lobbies->merge($this->lobbies_played_in);
+        return $this->game->merge($this->game_played_in);
     }
 }

@@ -19,6 +19,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\BackgroundImageReceived'=> [
             'App\Listeners\SendBackgroundToAllUsers'
         ],
+        'App\Events\InvitationCreated' => [
+            'App\Listeners\SendInvitationEmail'
+        ]
     ];
 
     /**

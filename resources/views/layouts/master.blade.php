@@ -16,9 +16,6 @@
     <body>
         <div id="app" class="min-h-screen flex flex-col">
             @include('layouts.navbar')
-            @if(Auth::check() && Auth::user()->email === 'scgoms@gmail.com')
-            @include('layouts.gamemaster')
-            @endif
             @yield('content')
         </div>
     </body>
