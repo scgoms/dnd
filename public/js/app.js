@@ -1414,6 +1414,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_js_modal___default.a);
 Vue.component('Lobby', __webpack_require__(40));
 Vue.component('GameMasterToolbar', __webpack_require__(69));
 Vue.component('GameCreator', __webpack_require__(79));
+Vue.component('dnd-modal', __webpack_require__(82));
 
 var app = new Vue({
   el: '#app'
@@ -39535,11 +39536,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['game'],
@@ -39647,74 +39643,63 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c(
-        "modal",
-        {
-          staticStyle: { "z-index": "1100" },
-          attrs: {
-            name: "invitation-form",
-            height: "auto",
-            classes: "bg-white rounded shadow p-4"
-          }
-        },
-        [
-          _c("div", { staticClass: "form-group" }, [
-            _c("div", { staticClass: "form-label" }, [_vm._v("Email")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.invitationForm.email,
-                  expression: "invitationForm.email"
+      _c("dnd-modal", { attrs: { name: "invitation-form" } }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", { staticClass: "form-label" }, [_vm._v("Email")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.invitationForm.email,
+                expression: "invitationForm.email"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text" },
+            domProps: { value: _vm.invitationForm.email },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
                 }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: _vm.invitationForm.email },
+                _vm.$set(_vm.invitationForm, "email", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group flex-row" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-grey-lightest mr-1",
               on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.invitationForm, "email", $event.target.value)
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.hideInvitationForm($event)
                 }
               }
-            })
-          ]),
+            },
+            [_vm._v("Cancel")]
+          ),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group flex-row" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-grey-lightest mr-1",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.hideInvitationForm($event)
-                  }
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-blue ml-1",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.sendInvitation($event)
                 }
-              },
-              [_vm._v("Cancel")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-blue ml-1",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.sendInvitation($event)
-                  }
-                }
-              },
-              [_vm._v("Invite")]
-            )
-          ])
-        ]
-      )
+              }
+            },
+            [_vm._v("Invite")]
+          )
+        ])
+      ])
     ],
     1
   )
@@ -39813,10 +39798,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -39877,98 +39858,88 @@ var render = function() {
         [_vm._v("New Lobby")]
       ),
       _vm._v(" "),
-      _c(
-        "modal",
-        {
-          attrs: {
-            name: "game-creator",
-            classes: "p-4 rounded shadow bg-white",
-            height: "auto"
-          }
-        },
-        [
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { staticClass: "form-label" }, [_vm._v("Name")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.name,
-                  expression: "form.name"
+      _c("dnd-modal", { attrs: { name: "game-creator" } }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { staticClass: "form-label" }, [_vm._v("Name")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.name,
+                expression: "form.name"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text" },
+            domProps: { value: _vm.form.name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
                 }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text" },
-              domProps: { value: _vm.form.name },
+                _vm.$set(_vm.form, "name", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { staticClass: "form-label" }, [_vm._v("Description")]),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.form.description,
+                expression: "form.description"
+              }
+            ],
+            staticClass: "form-control",
+            domProps: { value: _vm.form.description },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.form, "description", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group flex flex-row" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-grey-lightest mr-1",
               on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "name", $event.target.value)
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.hide($event)
                 }
               }
-            })
-          ]),
+            },
+            [_vm._v("Cancel")]
+          ),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { staticClass: "form-label" }, [_vm._v("Description")]),
-            _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.description,
-                  expression: "form.description"
-                }
-              ],
-              staticClass: "form-control",
-              domProps: { value: _vm.form.description },
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-blue ml-1",
               on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "description", $event.target.value)
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.submit($event)
                 }
               }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group flex flex-row" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-grey-lightest mr-1",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.hide($event)
-                  }
-                }
-              },
-              [_vm._v("Cancel")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-blue ml-1",
-                on: {
-                  click: function($event) {
-                    $event.preventDefault()
-                    return _vm.submit($event)
-                  }
-                }
-              },
-              [_vm._v("Create")]
-            )
-          ])
-        ]
-      )
+            },
+            [_vm._v("Create")]
+          )
+        ])
+      ])
     ],
     1
   )
@@ -39982,6 +39953,186 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-f701cd9a", module.exports)
   }
 }
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(84)
+/* template */
+var __vue_template__ = __webpack_require__(83)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\DNDModal.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-30043eaa", Component.options)
+  } else {
+    hotAPI.reload("data-v-30043eaa", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "modal",
+    {
+      staticStyle: { "z-index": "1100" },
+      attrs: { name: _vm.name, height: "auto", classes: "" }
+    },
+    [
+      _c("div", { staticClass: "flex relative" }, [
+        _c(
+          "div",
+          {
+            staticClass: "absolute flex flex-col h-full pin-l",
+            staticStyle: { "z-index": "1100" }
+          },
+          [
+            _c("img", { attrs: { src: "/storage/images/vert_bar_top.png" } }),
+            _vm._v(" "),
+            _c("div", {
+              staticClass: "flex-1",
+              staticStyle: {
+                "background-image": "url('/storage/images/vert_bar_body.png')"
+              }
+            }),
+            _vm._v(" "),
+            _c("img", { attrs: { src: "/storage/images/vert_bar_bot.png" } })
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "flex flex-col w-full pl-8 -mx-4" }, [
+          _c("div", {
+            staticClass: "navbar-border mt-2",
+            staticStyle: { "z-index": "1000" }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "px-4 -my-4 py-4",
+              staticStyle: {
+                "background-image":
+                  "url('/storage/images/modal_background.png')"
+              }
+            },
+            [_vm._t("default")],
+            2
+          ),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "navbar-border mb-2",
+            staticStyle: { "z-index": "1000" }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "absolute flex flex-col h-full pin-r",
+            staticStyle: { "z-index": "1100" }
+          },
+          [
+            _c("img", { attrs: { src: "/storage/images/vert_bar_top.png" } }),
+            _vm._v(" "),
+            _c("div", {
+              staticClass: "flex-1",
+              staticStyle: {
+                "background-image": "url('/storage/images/vert_bar_body.png')"
+              }
+            }),
+            _vm._v(" "),
+            _c("img", { attrs: { src: "/storage/images/vert_bar_bot.png" } })
+          ]
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-30043eaa", module.exports)
+  }
+}
+
+/***/ }),
+/* 84 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['name']
+});
 
 /***/ })
 /******/ ]);

@@ -16,7 +16,14 @@ class CreateCharactersTable extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->unsignedInteger('creator_id');
             $table->timestamps();
+        });
+
+        Schema::create('character_game', function (Blueprint $table) {
+            $table->unsignedInteger('character_id');
+            $table->unsignedInteger('game_id');
+            $table->primary(['character_id', 'game_id']);
         });
     }
 
@@ -28,5 +35,6 @@ class CreateCharactersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('characters');
+        Schema::dropIfExists('character_game');
     }
 }

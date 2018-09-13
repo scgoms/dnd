@@ -1,11 +1,7 @@
 <template>
     <div>
         <button class="btn btn-blue" @click.prevent="show">New Lobby</button>
-        <modal
-            name="game-creator"
-            classes="p-4 rounded shadow bg-white"
-            height="auto"
-        >
+        <dnd-modal name="game-creator">
             <div class="form-group">
                 <label class="form-label">Name</label>
                 <input type="text" class="form-control" v-model="form.name">
@@ -18,7 +14,7 @@
                 <button class="btn btn-grey-lightest mr-1" @click.prevent="hide">Cancel</button>
                 <button class="btn btn-blue ml-1" @click.prevent="submit">Create</button>
             </div>
-        </modal>
+        </dnd-modal>
     </div>
 </template>
 <script>

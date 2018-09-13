@@ -9,9 +9,17 @@ body{
     overflow:hidden;
     background-image: url('/storage/images/background.PNG');
 }
-
-
 .sidebar-clipping {
     clip-path: url(#sidebar-clip);
 }
+
+.active-link{
+    @apply .font-semibold;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bf2626+0,bf2626+81,000000+100&0.33+0,0.33+81,0.16+100 */
+    background: -moz-linear-gradient(left, rgba(191,38,38,0.33) 0%, rgba(191,38,38,0.33) 81%, rgba(0,0,0,0.16) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(191,38,38,0.33) 0%,rgba(191,38,38,0.33) 81%,rgba(0,0,0,0.16) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(191,38,38,0.33) 0%,rgba(191,38,38,0.33) 81%,rgba(0,0,0,0.16) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54bf2626', endColorstr='#29000000',GradientType=1 ); /* IE6-9 */
+}
+
 @tailwind utilities;

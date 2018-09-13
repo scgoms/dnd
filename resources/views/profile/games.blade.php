@@ -7,7 +7,8 @@
     <div class="w-1/4">
         @include('profile.partials.sidebar')
     </div>
-    <div class="flex-1 bg-white shadow-md">
+    @panel
+    <div class="flex-1">
         <div class="p-4">
             <game-creator></game-creator>
         </div>
@@ -41,5 +42,6 @@
         </ul>
         @endif
     </div>
+    @endpanel
 </div>
 @endsection

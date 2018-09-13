@@ -7,8 +7,10 @@
     <div class="w-1/4">
         @include('profile.partials.sidebar')
     </div>
-    <div class="flex-1 bg-green">
-        Content
+    @panel
+    <div class="flex-1">
+        Some kind of profile content
     </div>
+    @endpanel
 </div>
 @endsection

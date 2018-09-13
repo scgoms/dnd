@@ -1,6 +1,8 @@
 @extends('layouts.master')
 @section('content')
-<div class="md:w-1/2 md:mx-auto">
+<div class="w-1/4 mx-auto mt-8">
+@panel
+<div>
     <h1 class="form-header">
     {{ __('Register') }}
     </h1>
@@ -45,5 +47,7 @@
             </div>
         </form>
     </div>
+</div>
+@endpanel
 </div>
 @endsection

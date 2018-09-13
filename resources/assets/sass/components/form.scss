@@ -1,11 +1,11 @@
 .form-header{
-    @apply .text-grey-darkest .text-2xl .text-center
+    @apply .text-grey .text-2xl .text-center
 }
 .form-group{
     @apply .flex .flex-col .pb-2
 }
 .form-label{
-    @apply .uppercase .font-semibold .text-sm .text-grey-darkest .py-1
+    @apply .uppercase .font-semibold .text-sm .text-grey .py-1
 }
 .form-control{
     @apply .p-2 .bg-grey-lighter .rounded

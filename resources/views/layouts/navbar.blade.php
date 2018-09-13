@@ -10,8 +10,10 @@
             <a class="navbar-link" href="{{ route('register') }}">{{ __('Register') }}</a>
         </div>
         @else
-        <div class="navbar-links">
-            {{ Auth::user()->name }}
+        <div class="navbar-links text-grey-light">
+            <a href="/profile" class="text-grey-light no-underline">
+                {{ Auth::user()->name }}
+            </a>
             <a href="{{ route('logout') }}"
                 class="navbar-link"
                 onclick="event.preventDefault();

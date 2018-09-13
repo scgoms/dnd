@@ -7,12 +7,7 @@
             </label>
             <button class="btn btn-red w-auto" @click.prevent="showInvitationForm">Invite</button>
         </nav>
-        <modal
-            name="invitation-form"
-            height="auto"
-            classes="bg-white rounded shadow p-4"
-            style="z-index: 1100"
-        >
+        <dnd-modal name="invitation-form">
             <div class="form-group">
                 <div class="form-label">Email</div>
                 <input type="text" class="form-control" v-model="invitationForm.email">
@@ -21,7 +16,7 @@
                 <button class="btn btn-grey-lightest mr-1" @click.prevent="hideInvitationForm">Cancel</button>
                 <button class="btn btn-blue ml-1" @click.prevent="sendInvitation">Invite</button>
             </div>
-        </modal>
+        </dnd-modal>
     </div>
 </template>
 <script>
