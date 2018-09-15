@@ -48,7 +48,7 @@
                     this.hideInvitationForm();
                 }).catch(error => {
                     alert("Error happened");
-                })
+                });
             },
             handleFileChange(fieldName, fileList){
                 const formData = new FormData();

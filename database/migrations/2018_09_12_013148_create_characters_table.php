@@ -15,7 +15,29 @@ class CreateCharactersTable extends Migration
     {
         Schema::create('characters', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
             $table->string('name');
+            $table->string('class');
+            $table->unsignedInteger('level');
+            $table->string('background');
+            $table->string('race');
+            $table->string('alignment');
+            $table->string('experience_points');
+            $table->boolean('inspiration');
+            $table->integer('proficiency_bonus');
+            $table->integer('armor_class');
+            $table->integer('initiative');
+            $table->integer('speed');
+            $table->integer('max_hit_points');
+            $table->integer('current_hit_points');
+            $table->integer('temporary_hit_points');
+            $table->integer('hit_dice');
+            $table->text('personality_traits');
+            $table->text('ideals');
+            $table->text('bonds');
+            $table->text('flaws');
+            $table->text('proficiencies');
+            $table->text('features_and_traits');
             $table->unsignedInteger('creator_id');
             $table->timestamps();
         });

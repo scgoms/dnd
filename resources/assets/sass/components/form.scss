@@ -40,3 +40,12 @@
 .btn-grey-lightest{
     @apply .bg-grey-lightest .text-grey-darkest
 }
+.stat-box{
+    @apply .w-24 .h-12 .text-center .text-4xl .text-grey .bg-transparent;
+}
+.stat-box:focus{
+    outline: none;
+}
+.character-label{
+    @apply .uppercase .font-semibold .text-xs .text-grey .py-1 .text-center
+}

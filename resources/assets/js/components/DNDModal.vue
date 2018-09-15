@@ -1,9 +1,12 @@
 <template>
     <modal
         :name="name"
-        height="auto"
-        style="z-index: 1100"
+        :height="dndHeight"
+        :pivotY="dndPivotY"
+        :width="dndWidth"
+        style="z-index: 1200"
         classes=""
+        :scrollable="true"
     >
         <div class="flex relative">
             <div class="absolute flex flex-col h-full pin-l" style="z-index:1100">
@@ -30,6 +33,27 @@
     export default{
         props: [
             'name',
-        ]
+            'pivotY',
+            'height',
+            'width'
+        ],
+        data(){
+            return {
+                dndPivotY: 0.5,
+                dndHeight: 'auto',
+                dndWidth: "50%"
+            }
+        },
+        created(){
+            if(this.pivotY !== 'undefined'){
+                this.dndPivotY = this.pivotY;
+            }
+            if(this.width !== 'undefined'){
+                this.dndWidth = this.width;
+            }
+            if(this.height !== 'undefined'){
+                this.dndHeight = this.height;
+            }
+        }
     }
 </script>

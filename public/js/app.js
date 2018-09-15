@@ -1386,7 +1386,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(75);
+module.exports = __webpack_require__(78);
 
 
 /***/ }),
@@ -1413,8 +1413,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_js_modal___default.a);
 
 Vue.component('Lobby', __webpack_require__(40));
 Vue.component('GameMasterToolbar', __webpack_require__(69));
-Vue.component('GameCreator', __webpack_require__(79));
-Vue.component('dnd-modal', __webpack_require__(82));
+Vue.component('GameCreator', __webpack_require__(72));
+Vue.component('CharacterCreator', __webpack_require__(82));
+Vue.component('dnd-modal', __webpack_require__(75));
 
 var app = new Vue({
   el: '#app'
@@ -39715,27 +39716,15 @@ if (false) {
 }
 
 /***/ }),
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(80)
+var __vue_script__ = __webpack_require__(73)
 /* template */
-var __vue_template__ = __webpack_require__(81)
+var __vue_template__ = __webpack_require__(74)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -39774,7 +39763,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 80 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39834,7 +39823,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 81 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -39955,15 +39944,15 @@ if (false) {
 }
 
 /***/ }),
-/* 82 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(84)
+var __vue_script__ = __webpack_require__(76)
 /* template */
-var __vue_template__ = __webpack_require__(83)
+var __vue_template__ = __webpack_require__(77)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -40002,7 +39991,67 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 83 */
+/* 76 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['name', 'pivotY', 'height', 'width'],
+    data: function data() {
+        return {
+            dndPivotY: 0.5,
+            dndHeight: 'auto',
+            dndWidth: "50%"
+        };
+    },
+    created: function created() {
+        if (this.pivotY !== 'undefined') {
+            this.dndPivotY = this.pivotY;
+        }
+        if (this.width !== 'undefined') {
+            this.dndWidth = this.width;
+        }
+        if (this.height !== 'undefined') {
+            this.dndHeight = this.height;
+        }
+    }
+});
+
+/***/ }),
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -40012,8 +40061,15 @@ var render = function() {
   return _c(
     "modal",
     {
-      staticStyle: { "z-index": "1100" },
-      attrs: { name: _vm.name, height: "auto", classes: "" }
+      staticStyle: { "z-index": "1200" },
+      attrs: {
+        name: _vm.name,
+        height: _vm.dndHeight,
+        pivotY: _vm.dndPivotY,
+        width: _vm.dndWidth,
+        classes: "",
+        scrollable: true
+      }
     },
     [
       _c("div", { staticClass: "flex relative" }, [
@@ -40096,7 +40152,1283 @@ if (false) {
 }
 
 /***/ }),
+/* 78 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(83)
+/* template */
+var __vue_template__ = __webpack_require__(84)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\CharacterCreator.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0852eaba", Component.options)
+  } else {
+    hotAPI.reload("data-v-0852eaba", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 83 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__StatBox__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__StatBox___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__StatBox__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        StatBox: __WEBPACK_IMPORTED_MODULE_0__StatBox___default.a
+    },
+    methods: {
+        show: function show() {
+            this.$modal.show('character-creator');
+        }
+    },
+    mounted: function mounted() {
+        this.show();
+    }
+});
+
+/***/ }),
 /* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-blue",
+          on: {
+            click: function($event) {
+              $event.preventDefault()
+              return _vm.show($event)
+            }
+          }
+        },
+        [_vm._v("New")]
+      ),
+      _vm._v(" "),
+      _c(
+        "dnd-modal",
+        {
+          attrs: {
+            name: "character-creator",
+            height: "auto",
+            pivotY: 1,
+            width: "80%"
+          }
+        },
+        [
+          _c("div", { staticClass: "text-grey py-4 px-2 w-full" }, [
+            _c("div", { staticClass: "flex flex-col w-full" }, [
+              _c("div", { staticClass: "flex items-center" }, [
+                _c("div", { staticClass: "form-group pr-4" }, [
+                  _c("label", { staticClass: "form-label" }, [
+                    _vm._v("Character Name")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: { type: "text" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex" }, [
+                  _c("div", { staticClass: "flex flex-col pr-4" }, [
+                    _c("div", { staticClass: "flex" }, [
+                      _c("div", { staticClass: "form-group pr-4" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Class")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Level")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Race")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex flex-col pr-4" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Background")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Alignment")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex flex-col" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Experience Points")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex w-full" }, [
+                _c("div", { staticClass: "flex flex-col bg-red w-1/3" }, [
+                  _c("div", { staticClass: "flex" }, [
+                    _c(
+                      "div",
+                      { staticClass: "flex flex-col bg-blue rounded bg-red" },
+                      [
+                        _c("stat-box", [
+                          _c("label", { staticClass: "character-label" }, [
+                            _vm._v("Strength")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "stat-box",
+                            attrs: { type: "text" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("stat-box", [
+                          _c("label", { staticClass: "character-label" }, [
+                            _vm._v("Dexterity")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "stat-box",
+                            attrs: { type: "text" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("stat-box", [
+                          _c("label", { staticClass: "character-label" }, [
+                            _vm._v("Constitution")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "stat-box",
+                            attrs: { type: "text" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("stat-box", [
+                          _c("label", { staticClass: "character-label" }, [
+                            _vm._v("Intelligence")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "stat-box",
+                            attrs: { type: "text" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("stat-box", [
+                          _c("label", { staticClass: "character-label" }, [
+                            _vm._v("Wisdom")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "stat-box",
+                            attrs: { type: "text" }
+                          })
+                        ]),
+                        _vm._v(" "),
+                        _c("stat-box", [
+                          _c("label", { staticClass: "form-label" }, [
+                            _vm._v("Charisma")
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "stat-box",
+                            attrs: { type: "text" }
+                          })
+                        ])
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flex flex-col" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Inspiration")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Proficiency Bonus")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("h1", { staticClass: "form-header" }, [
+                        _vm._v("Saving Throws")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Strength")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Dexterity")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Constitution")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Intelligence")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Wisdom")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Charisma")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("h1", { staticClass: "form-header" }, [
+                        _vm._v("Skills")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Acrobatics")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Dex)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Animal Handling")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Wis)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Arcana")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Int)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Athletics")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Str)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Deception")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Cha)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("History")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Int)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Insight")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Wis)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Intimidation")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Cha)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Investigation")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Int)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Medicine")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Wis)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Nature")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Int)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Perception")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Wis)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Performance")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Cha)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Persuasion")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Cha)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Religion")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Int)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Sleight of Hand")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Dex)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Stealth")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Dex)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Survival")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-grey-lighter" }, [
+                          _vm._v("(Wis)")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex flex-col" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Passive Wisdom (Perception)")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Other Proficiencies")
+                      ]),
+                      _vm._v(" "),
+                      _c("textarea", { staticClass: "form-control" })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "flex flex-col bg-red-light w-1/3" }, [
+                  _c("div", { staticClass: "flex" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex flex-col" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Maximum Hit Points")
+                      ]),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Current Hit Points")
+                      ]),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { staticClass: "form-label" }, [
+                      _vm._v("Temporary Hit Points")
+                    ]),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Hit Dice")
+                      ]),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "flex flex-col" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Death Saves")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v(
+                            "Successes\n                                      "
+                          ),
+                          _c("input", {
+                            attrs: { type: "radio", name: "success" }
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: { type: "radio", name: "success" }
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: { type: "radio", name: "success" }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v(
+                            "Failures\n                                      "
+                          ),
+                          _c("input", {
+                            attrs: { type: "radio", name: "fail" }
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: { type: "radio", name: "fail" }
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            attrs: { type: "radio", name: "fail" }
+                          })
+                        ])
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Name")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Atk Bonus")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Damage/Type")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      }),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: { type: "text" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "flex" }, [
+                    _c("div", { staticClass: "flex flex-col" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Electrum")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Platinum")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Gold")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Silver")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Bronze")
+                        ]),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { type: "text" }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { staticClass: "form-label" }, [
+                        _vm._v("Equipment")
+                      ]),
+                      _c("textarea", { staticClass: "form-control" })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "flex flex-col bg-red-lighter w-1/3" },
+                  [
+                    _c("div", { staticClass: "flex flex-col" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Personality Traits")
+                        ]),
+                        _c("textarea", { staticClass: "form-control" })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Ideals")
+                        ]),
+                        _c("textarea", { staticClass: "form-control" })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Bonds")
+                        ]),
+                        _c("textarea", { staticClass: "form-control" })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { staticClass: "form-label" }, [
+                          _vm._v("Flaws")
+                        ]),
+                        _c("textarea", { staticClass: "form-control" })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-group",
+                      attrs: { type: "text" }
+                    }),
+                    _c("label", { staticClass: "form-label" }, [
+                      _vm._v("Features and Traits")
+                    ]),
+                    _c("textarea", { staticClass: "form-control" })
+                  ]
+                )
+              ])
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0852eaba", module.exports)
+  }
+}
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(86)
+/* template */
+var __vue_template__ = __webpack_require__(87)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\StatBox.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-53d9f230", Component.options)
+  } else {
+    hotAPI.reload("data-v-53d9f230", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -40122,17 +41454,105 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['name']
-});
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "flex relative w-36" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "flex flex-col w-full pl-8 -mx-4" }, [
+      _c("div", {
+        staticClass: "navbar-border mt-2",
+        staticStyle: { "z-index": "1000" }
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "px-2 -my-4 py-6 text-center",
+          staticStyle: {
+            "background-image": "url('/storage/images/modal_background.png')"
+          }
+        },
+        [_vm._t("default")],
+        2
+      ),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "navbar-border mb-2",
+        staticStyle: { "z-index": "1000" }
+      })
+    ]),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "absolute flex flex-col h-full pin-l",
+        staticStyle: { "z-index": "1100" }
+      },
+      [
+        _c("img", { attrs: { src: "/storage/images/vert_bar_top.png" } }),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "flex-1",
+          staticStyle: {
+            "background-image": "url('/storage/images/vert_bar_body.png')"
+          }
+        }),
+        _vm._v(" "),
+        _c("img", { attrs: { src: "/storage/images/vert_bar_bot.png" } })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "absolute flex flex-col h-full pin-r",
+        staticStyle: { "z-index": "1100" }
+      },
+      [
+        _c("img", { attrs: { src: "/storage/images/vert_bar_top.png" } }),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "flex-1",
+          staticStyle: {
+            "background-image": "url('/storage/images/vert_bar_body.png')"
+          }
+        }),
+        _vm._v(" "),
+        _c("img", { attrs: { src: "/storage/images/vert_bar_bot.png" } })
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-53d9f230", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

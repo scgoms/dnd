@@ -846,6 +846,29 @@ body {
   color: #3d4852;
 }
 
+.stat-box {
+  width: 6rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 2.25rem;
+  color: #b8c2cc;
+  background-color: transparent;
+}
+
+.stat-box:focus {
+  outline: none;
+}
+
+.character-label {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .75rem;
+  color: #b8c2cc;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  text-align: center;
+}
+
 body {
   overflow: hidden;
   background-image: url("/storage/images/background.PNG");
@@ -4991,12 +5014,20 @@ body {
   width: 4rem;
 }
 
+.w-18 {
+  width: 4.5rem;
+}
+
 .w-24 {
   width: 6rem;
 }
 
 .w-32 {
   width: 8rem;
+}
+
+.w-36 {
+  width: 9rem;
 }
 
 .w-48 {
@@ -9215,12 +9246,20 @@ body {
     width: 4rem;
   }
 
+  .sm\:w-18 {
+    width: 4.5rem;
+  }
+
   .sm\:w-24 {
     width: 6rem;
   }
 
   .sm\:w-32 {
     width: 8rem;
+  }
+
+  .sm\:w-36 {
+    width: 9rem;
   }
 
   .sm\:w-48 {
@@ -13440,12 +13479,20 @@ body {
     width: 4rem;
   }
 
+  .md\:w-18 {
+    width: 4.5rem;
+  }
+
   .md\:w-24 {
     width: 6rem;
   }
 
   .md\:w-32 {
     width: 8rem;
+  }
+
+  .md\:w-36 {
+    width: 9rem;
   }
 
   .md\:w-48 {
@@ -17665,12 +17712,20 @@ body {
     width: 4rem;
   }
 
+  .lg\:w-18 {
+    width: 4.5rem;
+  }
+
   .lg\:w-24 {
     width: 6rem;
   }
 
   .lg\:w-32 {
     width: 8rem;
+  }
+
+  .lg\:w-36 {
+    width: 9rem;
   }
 
   .lg\:w-48 {
@@ -21890,12 +21945,20 @@ body {
     width: 4rem;
   }
 
+  .xl\:w-18 {
+    width: 4.5rem;
+  }
+
   .xl\:w-24 {
     width: 6rem;
   }
 
   .xl\:w-32 {
     width: 8rem;
+  }
+
+  .xl\:w-36 {
+    width: 9rem;
   }
 
   .xl\:w-48 {

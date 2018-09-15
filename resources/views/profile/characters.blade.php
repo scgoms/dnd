@@ -7,9 +7,9 @@
     <div class="w-1/4">
         @include('profile.partials.sidebar')
     </div>
-    <div class="flex-1 bg-white shadow-md">
+    @panel
         <div class="p-4">
-            <button class="btn btn-blue">New</button>
+            <character-creator></character-creator>
         </div>
         @if(count($characters))
         <ul class="list-reset">
@@ -18,6 +18,6 @@
             @endforeach
         </ul>
         @endif
-    </div>
+    @endpanel
 </div>
 @endsection
