@@ -7,7 +7,7 @@
     </div>
     <div class="flex flex-col w-full pl-8 -mx-4">
         <div class="navbar-border mt-2" style="z-index:1000"></div>
-        <div class="px-2 -my-4 py-6 text-center" style="background-image: url('/storage/images/modal_background.png')">
+        <div class="px-2 -my-4 py-6 text-center" style="background-image: url('/storage/images/panel_background.png')">
             <slot></slot>
         </div>
         <div class="navbar-border mb-2" style="z-index:1000"></div>

@@ -2,7 +2,7 @@
     @apply .text-grey .text-2xl .text-center
 }
 .form-group{
-    @apply .flex .flex-col .pb-2
+    @apply .flex .flex-col
 }
 .form-label{
     @apply .uppercase .font-semibold .text-sm .text-grey .py-1
@@ -43,9 +43,52 @@
 .stat-box{
     @apply .w-24 .h-12 .text-center .text-4xl .text-grey .bg-transparent;
 }
+.currency-box{
+    @apply .w-18 .h-8 .text-center .text-xl .text-grey .bg-transparent;
+}
 .stat-box:focus{
+    outline: none;
+}
+.currency-box:focus{
     outline: none;
 }
 .character-label{
     @apply .uppercase .font-semibold .text-xs .text-grey .py-1 .text-center
+}
+.stat-sub-label{
+    @apply .text-grey-lighter .font-hairline;
+}
+.small-input{
+    @apply .w-10 .h-4 .text-center;
+}
+.transparent-input{
+    @apply .bg-transparent .rounded-none .text-grey;
+    border-bottom: solid 1px #b8c2cc;
+}
+.transparent-input:focus{
+    outline: none;
+}
+
+$fontSize: 1rem;
+$lineWidth: 0.1rem;
+$lineColor: #CCC;
+$backgroundColor: transparent;
+$xPadding: .5rem;
+.lined{
+    max-width: 100%;
+    font-size: $fontSize;
+    border: none;
+    background-attachment: local;
+    background-image:
+    linear-gradient(to right, $backgroundColor, $backgroundColor $xPadding, transparent $xPadding),
+    linear-gradient(to left, $backgroundColor, $backgroundColor $xPadding, transparent $xPadding),
+    repeating-linear-gradient(
+    $backgroundColor,
+    $backgroundColor $fontSize*2-$lineWidth,
+    $lineColor $fontSize*2-$lineWidth,
+    $lineColor $fontSize*2
+    );
+    line-height: $fontSize*2;
+    padding: $fontSize/3 $xPadding;
+    resize: none;
 }
