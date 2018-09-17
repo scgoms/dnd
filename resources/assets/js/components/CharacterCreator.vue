@@ -684,7 +684,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-red">Submit</button>
+                    <button class="btn btn-red" @click.prevent="submit">Submit</button>
                 </div>
             </div>
         </dnd-modal>
@@ -699,21 +699,23 @@
         data(){
             return {
                 character: {
-                    skills: {
-
-                    },
-                    saving_throws:{
-
-                    },
-                    stats: {
-
-                    }
+                    skills: {},
+                    saving_throws:{},
+                    stats: {}
                 }
             }
         },
         methods:{
             show(){
                 this.$modal.show('character-creator')
+            },
+            submit(){
+                axios.post('/profile/characters', this.character)
+                    .then(response => {
+                        alert('Succesfully stored the character');
+                    }).catch(error => {
+                        alert('Failed');
+                    })
             }
         },
     }

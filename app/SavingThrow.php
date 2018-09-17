@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class SavingThrow extends Model
 {
-    //
+    protected $guarded = [];
 }

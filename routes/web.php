@@ -33,3 +33,4 @@ Route::get('/game/{game}/dice/{dice}', 'DiceController@show');
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::get('/profile/games', 'ProfileController@games');
 Route::get('/profile/characters', 'ProfileController@characters');
+Route::post('/profile/characters', 'CharacterController@store');
