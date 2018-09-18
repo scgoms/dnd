@@ -24,7 +24,6 @@ class CharacterActivated implements ShouldBroadcast
      */
     public function __construct(Character $character, Game $game)
     {
-        //
         $this->character = $character;
         $this->game = $game;
     }

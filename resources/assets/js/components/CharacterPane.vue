@@ -46,6 +46,44 @@
                     </div>
                 </div>
             </div>
+            <div class="flex flex-wrap justify-center">
+                <stat-box>
+                    <div class="flex flex-col">
+                        <span class="text-2xl text-grey-light">{{ character.stats.strength }}</span>
+                        <label class="form-label text-xs">Strength</label>
+                    </div>
+                </stat-box>
+                <stat-box>
+                <div class="flex flex-col">
+                    <span class="text-2xl text-grey-light">{{ character.stats.dexterity }}</span>
+                    <label class="form-label text-xs">Dexterity</label>
+                </div>
+                </stat-box>
+                <stat-box>
+                    <div class="flex flex-col">
+                        <span class="text-2xl text-grey-light">{{ character.stats.constitution }}</span>
+                        <label class="form-label text-xs">Constitution</label>
+                    </div>
+                </stat-box>
+                <stat-box>
+                    <div class="flex flex-col">
+                        <span class="text-2xl text-grey-light">{{ character.stats.intelligence }}</span>
+                        <label class="form-label text-xs">Intelligence</label>
+                    </div>
+                </stat-box>
+                <stat-box>
+                    <div class="flex flex-col">
+                        <span class="text-2xl text-grey-light">{{ character.stats.wisdom }}</span>
+                        <label class="form-label text-xs">Wisdom</label>
+                    </div>
+                </stat-box>
+                <stat-box>
+                    <div class="flex flex-col">
+                        <span class="text-2xl text-grey-light">{{ character.stats.charisma }}</span>
+                        <label class="form-label text-xs">Charisma</label>
+                    </div>
+                </stat-box>
+            </div>
         </div>
         <div class="flex flex-col" @click.prevent="show = !show" style="z-index: 900">
             <img src="/storage/images/vert_bar_top.png">
@@ -67,6 +105,9 @@
         data(){
             return {
                 character: {
+                    stats: {},
+                    skills: {},
+                    saving_throws: {}
                 },
                 show: false
             }

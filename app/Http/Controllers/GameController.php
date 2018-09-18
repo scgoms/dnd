@@ -17,8 +17,8 @@ class GameController extends Controller
     public function index(Game $game)
     {
         $user = Auth::user();
-        $game_characters = $game->characters()->where('user_id', $user->id)->get();
-        $user_characters = $user->characters()->whereDoesntHave('game')->get();
+        $game_characters = $game->characters()->where('user_id', $user->id)->with(['stats', 'skills', 'saving_throws'])->get();
+        $user_characters = $user->characters()->whereDoesntHave('game')->with(['stats', 'skills', 'saving_throws'])->get();
         $characters = $game_characters->merge($user_characters);
         return view('games.show', compact('game', 'user', 'characters'));
     }
@@ -50,6 +50,6 @@ class GameController extends Controller
 
     public function activateCharacter(Game $game, Character $character)
     {
-        $game->activateCharacter($character);
+        $game->activateCharacter($character->load(['stats', 'skills', 'saving_throws']));
     }
 }

@@ -51297,6 +51297,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -51306,7 +51344,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            character: {},
+            character: {
+                stats: {},
+                skills: {},
+                saving_throws: {}
+            },
             show: false
         };
     },
@@ -51440,7 +51482,86 @@ var render = function() {
               _vm._v(" "),
               _vm._m(1)
             ])
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "flex flex-wrap justify-center" },
+            [
+              _c("stat-box", [
+                _c("div", { staticClass: "flex flex-col" }, [
+                  _c("span", { staticClass: "text-2xl text-grey-light" }, [
+                    _vm._v(_vm._s(_vm.character.stats.strength))
+                  ]),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-label text-xs" }, [
+                    _vm._v("Strength")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("stat-box", [
+                _c("div", { staticClass: "flex flex-col" }, [
+                  _c("span", { staticClass: "text-2xl text-grey-light" }, [
+                    _vm._v(_vm._s(_vm.character.stats.dexterity))
+                  ]),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-label text-xs" }, [
+                    _vm._v("Dexterity")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("stat-box", [
+                _c("div", { staticClass: "flex flex-col" }, [
+                  _c("span", { staticClass: "text-2xl text-grey-light" }, [
+                    _vm._v(_vm._s(_vm.character.stats.constitution))
+                  ]),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-label text-xs" }, [
+                    _vm._v("Constitution")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("stat-box", [
+                _c("div", { staticClass: "flex flex-col" }, [
+                  _c("span", { staticClass: "text-2xl text-grey-light" }, [
+                    _vm._v(_vm._s(_vm.character.stats.intelligence))
+                  ]),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-label text-xs" }, [
+                    _vm._v("Intelligence")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("stat-box", [
+                _c("div", { staticClass: "flex flex-col" }, [
+                  _c("span", { staticClass: "text-2xl text-grey-light" }, [
+                    _vm._v(_vm._s(_vm.character.stats.wisdom))
+                  ]),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-label text-xs" }, [
+                    _vm._v("Wisdom")
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("stat-box", [
+                _c("div", { staticClass: "flex flex-col" }, [
+                  _c("span", { staticClass: "text-2xl text-grey-light" }, [
+                    _vm._v(_vm._s(_vm.character.stats.charisma))
+                  ]),
+                  _vm._v(" "),
+                  _c("label", { staticClass: "form-label text-xs" }, [
+                    _vm._v("Charisma")
+                  ])
+                ])
+              ])
+            ],
+            1
+          )
         ]
       ),
       _vm._v(" "),
