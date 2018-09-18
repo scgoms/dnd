@@ -51034,9 +51034,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addToAvailableCharacters: function addToAvailableCharacters(event) {
             this.availableCharacters.push(event);
         },
-        activateCharacter: function activateCharacter(character) {
+        activateCharacter: function activateCharacter(character, key) {
+            var _this = this;
+
             this.activeCharacter = character;
-            axios.post('/game/' + this.channel.id + '/characters/' + character.id).then(function (response) {}).catch(function (error) {});
+            axios.post('/game/' + this.channel.id + '/characters/' + character.id).then(function (response) {
+                _this.availableCharacters.splice(key, 1);
+            }).catch(function (error) {});
             this.$modal.hide('character-selector');
         },
         showCharacterSelection: function showCharacterSelection() {
@@ -51047,11 +51051,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     mounted: function mounted() {
-        var _this = this;
+        var _this2 = this;
 
         this.availableCharacters = this.myCharacters;
         Echo.private('game.' + this.channel.id + '.character-activated').listen('CharacterActivated', function (e) {
-            _this.all_characters.push(e.character);
+            _this2.all_characters.push(e.character);
         });
     }
 });
@@ -51093,7 +51097,7 @@ var render = function() {
             _c(
               "ul",
               { staticClass: "list-reset" },
-              _vm._l(_vm.availableCharacters, function(character) {
+              _vm._l(_vm.availableCharacters, function(character, key) {
                 return _c("li", [
                   _c(
                     "a",
@@ -51103,7 +51107,7 @@ var render = function() {
                       on: {
                         click: function($event) {
                           $event.preventDefault()
-                          _vm.activateCharacter(character)
+                          _vm.activateCharacter(character, key)
                         }
                       }
                     },
@@ -51137,7 +51141,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "ul",
-        { staticClass: "list-reset" },
+        { staticClass: "list-reset flex" },
         _vm._l(_vm.all_characters, function(character) {
           return _c("li", [
             _c(

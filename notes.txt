@@ -1,14 +1,6 @@
-Think I have the channels set up properly now.
-
-Now I need to figure out;
-
-    Room creation - Done
-        Room management?
-    Joining a room
-        Invitation system?
-        Middleware on the room
-        Make sure the routes/channels file properly authorizes users
-    Permanence of data
-        Redis?
-        Or DB?
-    Fiddle with routes/channels later
+Add a remove button next to the character name
+Data Permanence
+    So we need to be able to refresh this shit.
+Profile work
+Reusable components for layout purpose since this shit sucks
+Mobile Layout

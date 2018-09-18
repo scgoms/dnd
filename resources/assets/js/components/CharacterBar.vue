@@ -4,8 +4,8 @@
         <dnd-modal name="character-selector">
             <div class="text-grey-light">
                 <ul class="list-reset">
-                    <li v-for="character in availableCharacters">
-                        <a href="#" class="no-underline text-grey-light" @click.prevent="activateCharacter(character)">
+                    <li v-for="(character, key) in availableCharacters">
+                        <a href="#" class="no-underline text-grey-light" @click.prevent="activateCharacter(character, key)">
                             {{ character.name }} (Level {{ character.level }} {{ character.class }})
                         </a>
                     </li>
@@ -14,7 +14,7 @@
                 <character-creator @characterCreated="addToAvailableCharacters($event)"></character-creator>
             </div>
         </dnd-modal>
-        <ul class="list-reset">
+        <ul class="list-reset flex">
             <li v-for="character in all_characters">
                 <a href="#" class="no-underline text-grey-light" @click.prevent="showCharacterPane(character)">
                     {{ character.name }}
@@ -46,10 +46,11 @@
             addToAvailableCharacters(event){
                 this.availableCharacters.push(event);
             },
-            activateCharacter(character){
+            activateCharacter(character, key){
                 this.activeCharacter = character;
                 axios.post('/game/' + this.channel.id + '/characters/' + character.id)
                     .then(response =>{
+                        this.availableCharacters.splice(key, 1);
                     }).catch(error => {
                     })
                 this.$modal.hide('character-selector');
