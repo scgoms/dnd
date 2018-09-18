@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Character;
 use App\Game;
-use Illuminate\Http\Request;
-
 use Auth;
+use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
@@ -16,19 +16,12 @@ class GameController extends Controller
      */
     public function index(Game $game)
     {
-        return view('games.show', compact('game'));
+        $user = Auth::user();
+        $game_characters = $game->characters()->where('user_id', $user->id)->get();
+        $user_characters = $user->characters()->whereDoesntHave('game')->get();
+        $characters = $game_characters->merge($user_characters);
+        return view('games.show', compact('game', 'user', 'characters'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -55,37 +48,8 @@ class GameController extends Controller
         return view('game.show');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Game  $game
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Game $game)
+    public function activateCharacter(Game $game, Character $character)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Game  $game
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Game $game)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Game  $game
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Game $game)
-    {
-        //
+        $game->activateCharacter($character);
     }
 }

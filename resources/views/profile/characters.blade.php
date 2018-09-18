@@ -11,13 +11,7 @@
         <div class="p-4">
             <character-creator></character-creator>
         </div>
-        @if(count($characters))
-        <ul class="list-reset">
-            @foreach($characters as $character)
-            <li class="border-b border-grey p-2">Content</li>
-            @endforeach
-        </ul>
-        @endif
+        <character-editor :characters="{{ $characters }}"></character-editor>
     @endpanel
 </div>
 @endsection

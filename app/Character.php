@@ -18,6 +18,11 @@ class Character extends Model
         return $this->hasOne(Stat::class);
     }
 
+    public function game()
+    {
+        return $this->belongsToMany(Game::class);
+    }
+
     public function skills()
     {
         return $this->hasOne(Skill::class);

@@ -23,3 +23,6 @@ Broadcast::channel('game.{id}.chat', function ($user, $id) {
 Broadcast::channel('game.{id}.background-image', function ($user, $id) {
     return true;
 });
+Broadcast::channel('game.{id}.character-activated', function ($user, $id) {
+    return true;
+});

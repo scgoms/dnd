@@ -21,7 +21,13 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\InvitationCreated' => [
             'App\Listeners\SendInvitationEmail'
-        ]
+        ],
+        'Illuminate\Auth\Events\Registered' => [
+            'App\Listeners\SendRegistrationEmail'
+        ],
+        'App\Events\CharacterActivated' =>  [
+            'App\Listeners\SendCharacterToAllUsers'
+        ],
     ];
 
     /**

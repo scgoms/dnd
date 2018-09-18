@@ -1,5 +1,5 @@
 <template>
-    <div class="absolute pin-b w-full flex flex-row justify-center">
+    <div class=" w-full flex flex-row justify-center">
         <div style="clip-path: polygon(0% 100%, 100% 100%, 98% 0%, 2% 0%); background-image: url('/storage/images/bar_background.png')">
             <button class="btn btn-red m-2 ml-8 mr-1 w-auto" @click.prevent="roll(4)">4</button>
             <button class="btn btn-red ml-1 mr-1 w-auto" @click.prevent="roll(6)">6</button>

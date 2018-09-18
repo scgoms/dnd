@@ -1,8 +1,14 @@
 <template>
     <div>
-        <button class="btn btn-blue" @click.prevent="show">New</button>
+        <ul class="list-reset">
+            <li v-for="character in characters">
+                <a href="#" class="no-underline text-grey-light" @click.prevent="editCharacter(character)">
+                    {{ character.name }} (Level {{ character.level }} {{ character.class }})
+                </a>
+            </li>
+        </ul>
         <dnd-modal
-            name="character-creator"
+            name="character-editor"
             height="auto"
             :pivotY="1"
             width="60%"
@@ -693,6 +699,9 @@
 <script>
     import StatBox from './StatBox';
     export default {
+        props: [
+            'characters'
+        ],
         components: {
             StatBox
         },
@@ -707,15 +716,14 @@
         },
         methods:{
             show(){
-                this.$modal.show('character-creator')
+                this.$modal.show('character-editor')
+            },
+            editCharacter(character){
+                this.character = character;
+                this.show();
             },
             submit(){
-                axios.post('/profile/characters', this.character)
-                    .then(response => {
-                        this.$emit('characterCreated', response.data);
-                    }).catch(error => {
-                        alert('Failed');
-                    })
+
             }
         },
     }

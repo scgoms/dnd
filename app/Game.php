@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\CharacterActivated;
 use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
@@ -23,8 +24,21 @@ class Game extends Model
         return $this->belongsToMany(User::class, 'game_user');
     }
 
+    public function characters()
+    {
+        return $this->belongsToMany(Character::class);
+    }
+
     public function addPlayer($user)
     {
         $this->players()->attach($user);
+    }
+
+    public function activateCharacter(Character $character)
+    {
+        if (!$this->characters->contains($character)) {
+            $this->characters()->attach($character);
+        }
+        event(new CharacterActivated($character, $this));
     }
 }

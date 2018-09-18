@@ -4,7 +4,11 @@
         <div v-else class="h-100 flex flex-1 flex-col">
             <game-map :channel="channel"></game-map>
             <chat :channel="channel" :name="name"></chat>
-            <dice-tray :channel="channel" :name="name"></dice-tray>
+            <character-pane :user="user"></character-pane>
+            <div class="absolute pin-b w-full">
+                <dice-tray :channel="channel" :name="name"></dice-tray>
+                <character-bar :myCharacters="characters" :channel="channel"></character-bar>
+            </div>
         </div>
     </div>
 </template>
@@ -13,16 +17,21 @@
     import Chat from './Chat';
     import GameMap from './GameMap';
     import DiceTray from './DiceTray';
+    import CharacterBar from './CharacterBar';
+    import CharacterPane from './CharacterPane';
     export default {
         props: [
             'user',
-            'channel'
+            'channel',
+            'characters'
         ],
         components: {
             NewPlayer,
             Chat,
             GameMap,
-            DiceTray
+            DiceTray,
+            CharacterBar,
+            CharacterPane
         },
         data(){
             return {

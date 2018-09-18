@@ -48,7 +48,7 @@ class ProfileController extends Controller
      */
     public function characters()
     {
-        $characters = Auth::user()->characters;
+        $characters = Auth::user()->characters->load(['skills', 'stats', 'saving_throws']);
         return view('profile.characters', compact('characters'));
     }
 }

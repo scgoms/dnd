@@ -1,0 +1,72 @@
+<template>
+    <div class="w-full h-12 flex flex-row items-center" style="background: rgb(0,0,0); background: rgba(0,0,0, 0.75)">
+        <button class="btn w-auto btn-blue h-full mt-2 mx-2 ml-6" @click.prevent="showCharacterSelection">+</button>
+        <dnd-modal name="character-selector">
+            <div class="text-grey-light">
+                <ul class="list-reset">
+                    <li v-for="character in availableCharacters">
+                        <a href="#" class="no-underline text-grey-light" @click.prevent="activateCharacter(character)">
+                            {{ character.name }} (Level {{ character.level }} {{ character.class }})
+                        </a>
+                    </li>
+                </ul>
+                Or
+                <character-creator @characterCreated="addToAvailableCharacters($event)"></character-creator>
+            </div>
+        </dnd-modal>
+        <ul class="list-reset">
+            <li v-for="character in all_characters">
+                <a href="#" class="no-underline text-grey-light" @click.prevent="showCharacterPane(character)">
+                    {{ character.name }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</template>
+<script>
+    import CharacterCreator from './CharacterCreator';
+    import CharacterEditor from './CharacterEditor';
+    export default{
+        components:{
+            CharacterCreator,
+            CharacterEditor
+        },
+        props: [
+            'channel',
+            'myCharacters'
+        ],
+        data(){
+            return{
+                all_characters: [],
+                availableCharacters: [],
+                activeCharacter: {}
+            }
+        },
+        methods:{
+            addToAvailableCharacters(event){
+                this.availableCharacters.push(event);
+            },
+            activateCharacter(character){
+                this.activeCharacter = character;
+                axios.post('/game/' + this.channel.id + '/characters/' + character.id)
+                    .then(response =>{
+                    }).catch(error => {
+                    })
+                this.$modal.hide('character-selector');
+            },
+            showCharacterSelection(){
+                this.$modal.show('character-selector');
+            },
+            showCharacterPane(character){
+                Event.$emit('show-character', character);
+            }
+        },
+        mounted(){
+            this.availableCharacters = this.myCharacters;
+            Echo.private('game.' + this.channel.id + '.character-activated')
+                .listen('CharacterActivated', (e) => {
+                    this.all_characters.push(e.character);
+                });
+        }
+    }
+</script>

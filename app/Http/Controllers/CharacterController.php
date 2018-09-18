@@ -48,6 +48,7 @@ class CharacterController extends Controller
         $character->stats()->create($stats);
         $character->skills()->create($skills);
         $character->saving_throws()->create($saving_throws);
+        return $character;
     }
 
     /**

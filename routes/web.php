@@ -21,6 +21,7 @@ Route::post('/register/{hash}', 'Auth\RegisterController@registerToGame');
 Route::post('/game', 'GameController@store');
 Route::get('/game/{game}', 'GameController@index');
 Route::post('/game/{game}/invite', 'InvitationController@store');
+Route::post('/game/{game}/characters/{character}', 'GameController@activateCharacter');
 
 Route::post('/invitation/{hash}/accept', 'InvitationController@accept');
 Route::post('/invitation/{hash}/decline', 'InvitationController@decline');

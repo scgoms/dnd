@@ -16,6 +16,7 @@ Vue.use(VModal);
  Vue.component('GameMasterToolbar', require('./components/GameMasterToolbar'));
  Vue.component('GameCreator', require('./components/GameCreator'));
  Vue.component('CharacterCreator', require('./components/CharacterCreator'));
+ Vue.component('CharacterEditor', require('./components/CharacterEditor'));
  Vue.component('dnd-modal', require('./components/DNDModal'));
 
 const app = new Vue({
