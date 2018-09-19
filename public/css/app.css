@@ -5088,6 +5088,10 @@ body {
   width: 1.5rem;
 }
 
+.w-7 {
+  width: 1.75rem;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -9334,6 +9338,10 @@ body {
 
   .sm\:w-6 {
     width: 1.5rem;
+  }
+
+  .sm\:w-7 {
+    width: 1.75rem;
   }
 
   .sm\:w-8 {
@@ -13585,6 +13593,10 @@ body {
     width: 1.5rem;
   }
 
+  .md\:w-7 {
+    width: 1.75rem;
+  }
+
   .md\:w-8 {
     width: 2rem;
   }
@@ -17834,6 +17846,10 @@ body {
     width: 1.5rem;
   }
 
+  .lg\:w-7 {
+    width: 1.75rem;
+  }
+
   .lg\:w-8 {
     width: 2rem;
   }
@@ -22081,6 +22097,10 @@ body {
 
   .xl\:w-6 {
     width: 1.5rem;
+  }
+
+  .xl\:w-7 {
+    width: 1.75rem;
   }
 
   .xl\:w-8 {

@@ -15,10 +15,11 @@
             </div>
         </dnd-modal>
         <ul class="list-reset flex">
-            <li v-for="character in all_characters">
+            <li v-for="character in all_characters" class="flex items-center mr-2">
                 <a href="#" class="no-underline text-grey-light" @click.prevent="showCharacterPane(character)">
                     {{ character.name }}
                 </a>
+                <button class="btn btn-red w-auto mt-2 ml-2">x</button>
             </li>
         </ul>
     </div>

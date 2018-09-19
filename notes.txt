@@ -1,4 +1,5 @@
 Add a remove button next to the character name
+    - Tie the action together
 Data Permanence
     So we need to be able to refresh this shit.
 Profile work
