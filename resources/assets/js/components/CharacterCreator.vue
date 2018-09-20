@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="w-auto">
         <button class="btn btn-blue" @click.prevent="show">New</button>
         <dnd-modal
             name="character-creator"

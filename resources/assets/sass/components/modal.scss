@@ -1,0 +1,9 @@
+.modal-border{
+    @apply .w-full;
+    height: 25px;
+    background-image:url('/storage/images/bar_border.png');
+    z-index: 9900;
+}
+.modal-body{
+    @apply .stone;
+}

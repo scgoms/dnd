@@ -1,9 +1,6 @@
 .navbar{
     @apply;
 }
-.wooden{
-    background-image: url('/storage/images/bar_background.png');
-}
 .bar1, .bar2, .bar3 {
     @apply .bg-grey-light;
     width: 35px;
@@ -32,6 +29,7 @@
 .navbar-border{
     height: 25px;
     background-image:url('/storage/images/bar_border.png');
+    z-index: 9900;
 }
 @screen md{
     .navbar{

@@ -5,7 +5,7 @@
             <div class="flex-1" style="background-image: url('/storage/images/vert_bar_body.png');"></div>
             <img src="/storage/images/vert_bar_bot.png">
         </div>
-        <div class="flex flex-col w-full pl-8 -mx-4">
+        <div class="flex flex-col w-full pl-8">
             <div class="navbar-border mt-2" style="z-index:1000"></div>
             <div class="px-4 -my-4 py-6" style="background-image: url('/storage/images/panel_background.png')">
                 <slot></slot>

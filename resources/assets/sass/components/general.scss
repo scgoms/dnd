@@ -9,6 +9,15 @@ body{
     @apply .px-2 .w-full .absolute .h-full .flex .flex-col .py-2;
     z-index:10000;
 }
+.wooden{
+    background-image: url('/storage/images/bar_background.png');
+}
+.leather{
+  background-image: url('/storage/images/modal_background.png');
+}
+.stone{
+  background-image:url('/storage/images/panel_background.png');
+}
 .black-transparent{
     background: rgb(0,0,0);
     background: rgba(0,0,0, 0.75);
