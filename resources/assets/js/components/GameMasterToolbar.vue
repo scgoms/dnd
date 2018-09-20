@@ -1,11 +1,11 @@
 <template>
     <div>
-        <nav class="container navbar flex -my-2 px-8 pt-2 w-full mx-auto" style="clip-path: polygon(0% 0%, 1% 100%, 99% 100%, 100% 0%);">
-            <label for="file" class="btn btn-red w-auto">
+        <nav class="wooden shadow-md -mt-2 flex px-2 md:tapered">
+            <label for="file" class="btn btn-red w-auto ml-1 mr-1">
             <input type="file" name="background-image" id="file" class="inputfile hidden" @change="handleFileChange($event.target.name, $event.target.files)"/>
                 <span>Choose a file</span>
             </label>
-            <button class="btn btn-red w-auto" @click.prevent="showInvitationForm">Invite</button>
+            <button class="btn btn-red w-auto ml-1" @click.prevent="showInvitationForm">Invite</button>
         </nav>
         <dnd-modal name="invitation-form">
             <div class="form-group">

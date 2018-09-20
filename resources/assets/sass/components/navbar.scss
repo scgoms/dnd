@@ -1,6 +1,15 @@
 .navbar{
-    @apply .py-2 .mx-auto .flex .flex-col .items-center;
+    @apply;
+}
+.wooden{
     background-image: url('/storage/images/bar_background.png');
+}
+.bar1, .bar2, .bar3 {
+    @apply .bg-grey-light;
+    width: 35px;
+    height: 5px;
+    margin: 6px 0;
+    transition: 0.4s;
 }
 .navbar-start{
     position: absolute;
@@ -15,13 +24,10 @@
     height: 100px;
 }
 .navbar-brand{
-    @apply .font-medium .text-2xl .no-underline .text-grey-light .uppercase .ml-2
-}
-.navbar-links{
-    @apply .mr-2
+    @apply .font-medium .text-2xl .no-underline .text-grey-light .uppercase;
 }
 .navbar-link{
-    @apply .no-underline .text-grey-light
+    @apply .no-underline .text-grey-light .py-1 .text-lg;
 }
 .navbar-border{
     height: 25px;
@@ -30,5 +36,11 @@
 @screen md{
     .navbar{
         @apply .flex-row .justify-between
+    }
+    .tapered-down{
+        clip-path: polygon(0% 0%, 1% 100%, 99% 100%, 100% 0%);
+    }
+    .tapered-up{
+        clip-path: polygon(0% 100%, 100% 100%, 98% 0%, 2% 0%)
     }
 }

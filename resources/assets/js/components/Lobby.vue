@@ -1,11 +1,11 @@
 <template>
-    <div class="flex flex-1">
+    <div class="absolute flex flex-1 w-full h-full mt-14" style="z-index:9000">
         <new-player v-if="!joined" @joined="joinLobby($event)"></new-player>
-        <div v-else class="h-100 flex flex-1 flex-col">
+        <div v-else class="flex flex-1 flex-col">
             <game-map :channel="channel"></game-map>
             <chat :channel="channel" :name="name"></chat>
-            <character-pane :user="user"></character-pane>
-            <div class="absolute pin-b w-full">
+            <!-- <character-pane :user="user"></character-pane> -->
+            <div class="absolute flex flex-col pin-b w-full pb-14">
                 <dice-tray :channel="channel" :name="name"></dice-tray>
                 <character-bar :myCharacters="characters" :channel="channel"></character-bar>
             </div>

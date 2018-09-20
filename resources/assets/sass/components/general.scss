@@ -2,5 +2,37 @@
     @apply .py-2 .flex .flex-col .mx-auto
 }
 body{
-    @apply .bg-grey-lightest
+    overflow:hidden;
+    background-image: url('/storage/images/background.PNG');
+}
+.sidebar{
+    @apply .px-2 .w-full .absolute .h-full .flex .flex-col .py-2;
+    z-index:10000;
+}
+.black-transparent{
+    background: rgb(0,0,0);
+    background: rgba(0,0,0, 0.75);
+}
+.left-tray-enter-active, .left-tray-leave-active{
+  transition: all .3s;
+}
+.left-tray-enter, .left-tray-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(-100vw);
+}
+.right-tray-enter-active, .right-tray-leave-active{
+  transition: all .3s;
+}
+.right-tray-enter, .right-tray-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(100vw);
+}
+.burger-close .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+.burger-close .bar2 {opacity: 0;}
+.burger-close .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
 }

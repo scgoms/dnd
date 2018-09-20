@@ -1,20 +1,21 @@
 <template>
-    <div class="absolute pin-t pin-r pin-b w-1/6 flex sidebar-right" :class="{'sidebar-right-open':show }" style="z-index:1000;">
-        <div class="flex flex-col" @click.prevent="show = !show" style="z-index: 900">
-            <img src="/storage/images/vert_bar_top.png">
-            <div class="flex-1" style="background-image: url('/storage/images/vert_bar_body.png')">
+    <transition name="right-tray">
+        <div class="absolute flex sidebar black-transparent pb-14" v-if="open">
+            <div class="absolute pin-r pin-t pt-2 pr-2">
+                <button @click.prevent="open = !open" class="burger-close">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </button>
             </div>
-            <img src="/storage/images/vert_bar_bot.png">
-        </div>
-        <div class="flex-1 flex flex-col -ml-2" style="background: rgb(0,0,0); background: rgba(0,0,0, 0.75)">
-            <div class="flex-1 pt-2 pl-2 pr-2">
+            <div class="flex-1">
                 <div v-for="message in messages">
                     <span class="text-white">
                         <strong>{{ message.user }}: </strong>{{ message.body}}
                     </span>
                 </div>
             </div>
-            <div class="h-auto">
+            <div>
                 <div class="form-group">
                     <label class="pl-2 form-label text-white">Message</label>
                     <textarea class="form-control" placeholder="Message" v-model="message"></textarea>
@@ -24,7 +25,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </transition>
 </template>
 <script>
     export default{
@@ -36,7 +37,7 @@
             return {
                 message: '',
                 messages: [],
-                show: false
+                open: false
             }
         },
         methods:{
@@ -50,8 +51,14 @@
                 })
                 this.message = '';
             },
+            setOpen(value){
+                this.open = value;
+            }
         },
         mounted(){
+            Event.$on('show-chat', () => {
+                this.setOpen(true);
+            });
             Event.$on('received-roll', (e) => {
                 this.messages.push({
                     user: e.name,
@@ -73,12 +80,3 @@
         }
     }
 </script>
-<style>
-    .sidebar-right{
-        margin-right: -15.8%;
-        transition:all 700ms;
-    }
-    .sidebar-right-open{
-        margin-right: 0;
-    }
-</style>

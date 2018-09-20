@@ -1,6 +1,8 @@
 <template>
-    <div class="w-full h-12 flex flex-row items-center" style="background: rgb(0,0,0); background: rgba(0,0,0, 0.75)">
-        <button class="btn w-auto btn-blue h-full mt-2 mx-2 ml-6" @click.prevent="showCharacterSelection">+</button>
+    <div class="w-full flex flex-row items-center black-transparent">
+        <button class="btn btn-blue text-4xl p-0 px-2 ml-2 w-auto" @click.prevent="showCharacterSelection">
+            +
+        </button>
         <dnd-modal name="character-selector">
             <div class="text-grey-light">
                 <ul class="list-reset">

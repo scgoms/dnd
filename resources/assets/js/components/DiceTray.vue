@@ -1,12 +1,13 @@
 <template>
-    <div class=" w-full flex flex-row justify-center">
-        <div style="clip-path: polygon(0% 100%, 100% 100%, 98% 0%, 2% 0%); background-image: url('/storage/images/bar_background.png')">
-            <button class="btn btn-red m-2 ml-8 mr-1 w-auto" @click.prevent="roll(4)">4</button>
-            <button class="btn btn-red ml-1 mr-1 w-auto" @click.prevent="roll(6)">6</button>
-            <button class="btn btn-red ml-1 mr-1 w-auto" @click.prevent="roll(8)">8</button>
-            <button class="btn btn-red ml-1 mr-1 w-auto" @click.prevent="roll(10)">10</button>
-            <button class="btn btn-red ml-1 mr-1 w-auto" @click.prevent="roll(12)">12</button>
-            <button class="btn btn-red m-2 mr-8 ml-1 w-auto" @click.prevent="roll(20)">20</button>
+    <div class="flex flex-col">
+        <div class="navbar-border -mb-2" style="z-index:8900"></div>
+        <div class="w-full black-transparent flex flex-row justify-center pt-2">
+            <button class="btn btn-red w-auto ml-2 mr-1" @click.prevent="roll(4)">4</button>
+            <button class="btn btn-red w-auto mx-1" @click.prevent="roll(6)">6</button>
+            <button class="btn btn-red w-auto mx-1" @click.prevent="roll(8)">8</button>
+            <button class="btn btn-red w-auto mx-1" @click.prevent="roll(10)">10</button>
+            <button class="btn btn-red w-auto mx-1" @click.prevent="roll(12)">12</button>
+            <button class="btn btn-red w-auto mx-1 mr-2" @click.prevent="roll(20)">20</button>
         </div>
     </div>
 </template>

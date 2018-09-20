@@ -18,6 +18,7 @@ Vue.use(VModal);
  Vue.component('CharacterCreator', require('./components/CharacterCreator'));
  Vue.component('CharacterEditor', require('./components/CharacterEditor'));
  Vue.component('dnd-modal', require('./components/DNDModal'));
+ Vue.component('navbar', require('./components/Navbar'));
 
 const app = new Vue({
     el: '#app'
