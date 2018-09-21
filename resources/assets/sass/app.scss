@@ -5,11 +5,14 @@
 @import "components/navbar";
 @import "components/form";
 @import "components/modal";
+@import "components/lobby/footer";
 
 .sidebar-clipping {
     clip-path: url(#sidebar-clip);
 }
-
+.game-tray{
+    @apply .absolute .black-transparent .pin-t .pin-l .pin-r .h-full .w-full .p-2 .mr-4 .bg-white;
+}
 .active-link{
     @apply .font-semibold;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#bf2626+0,bf2626+81,000000+100&0.33+0,0.33+81,0.16+100 */
@@ -17,6 +20,22 @@
     background: -webkit-linear-gradient(left, rgba(191,38,38,0.33) 0%,rgba(191,38,38,0.33) 81%,rgba(0,0,0,0.16) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, rgba(191,38,38,0.33) 0%,rgba(191,38,38,0.33) 81%,rgba(0,0,0,0.16) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54bf2626', endColorstr='#29000000',GradientType=1 ); /* IE6-9 */
+}
+i{
+    border: solid;
+    border-color: #dae1e7;
+    border-width: 0 0.43rem 0.43rem 0;
+    display: inline-block;
+    padding: 0.43rem;
+}
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
 }
 
 .stat-round-checkbox {

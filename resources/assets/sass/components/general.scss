@@ -36,6 +36,13 @@ body{
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(100vw);
 }
+.bottom-tray-enter-active, .bottom-tray-leave-active{
+  transition: all .3s;
+}
+.bottom-tray-enter, .bottom-tray-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(100%);
+}
 .burger-close .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
