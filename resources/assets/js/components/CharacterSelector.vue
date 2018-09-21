@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="flex justify-between pr-1">
+        <div class="flex justify-between">
             <h1 class="text-center">Character Selection</h1>
             <button @click.prevent="$emit('tray-closed')" class="burger-close">
                 <div class="bar1"></div>
@@ -8,7 +8,7 @@
                 <div class="bar3"></div>
             </button>
         </div>
-        <div class="text-justify p-2 pl-1">
+        <div class="text-justify">
             <div v-if="hasActiveCharacter">
                 You're currently playing as
                 <h1>{{ activeCharacter.name }}</h1>, the level {{ activeCharacter.level}} {{ activeCharacter.class }}

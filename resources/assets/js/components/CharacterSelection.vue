@@ -1,9 +1,9 @@
 <template>
     <transition name="right-tray">
-        <div v-if="creating" key="create" class="absolute w-full p-2 bg-blue">
-            <character-creator @tray-closed="$emit('tray-closed')"></character-creator>
+        <div v-if="creating" key="create" class="game-tray-container">
+            <character-creator @tray-closed="$emit('tray-closed')" @back="creating = false"></character-creator>
         </div>
-        <div v-else key="select" class="absolute w-full">
+        <div v-else key="select" class="game-tray-container">
             <character-selector @open-character-creator="creating = true" @tray-closed="$emit('tray-closed')"></character-selector>
         </div>
     </transition>
@@ -18,7 +18,7 @@
         },
         data(){
             return{
-                creating: false
+                creating: true
             }
         }
     }

@@ -22,6 +22,9 @@ body{
     background: rgb(0,0,0);
     background: rgba(0,0,0, 0.75);
 }
+.tray-container{
+    @apply .absolute .pin-t .pin-r .pin-l;
+}
 .left-tray-enter-active, .left-tray-leave-active{
   transition: all .3s;
 }

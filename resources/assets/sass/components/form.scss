@@ -2,7 +2,7 @@
     @apply .text-grey .text-2xl .text-center
 }
 .form-group{
-    @apply .flex .flex-col
+    @apply .flex .flex-col .w-full
 }
 .form-label{
     @apply .uppercase .font-semibold .text-sm .text-grey .py-1
@@ -41,7 +41,7 @@
     @apply .bg-grey-lightest .text-grey-darkest
 }
 .stat-box{
-    @apply .w-24 .h-12 .text-center .text-4xl .text-grey .bg-transparent;
+    @apply .text-center .text-3xl .text-grey .bg-transparent;
 }
 .currency-box{
     @apply .w-18 .h-8 .text-center .text-xl .text-grey .bg-transparent;

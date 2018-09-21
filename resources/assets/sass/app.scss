@@ -11,7 +11,10 @@
     clip-path: url(#sidebar-clip);
 }
 .game-tray{
-    @apply .absolute .black-transparent .pin-t .pin-l .pin-r .h-full .w-full .p-2 .mr-4 .bg-white;
+    @apply .absolute .black-transparent .pin-t .pin-l .pin-r .h-full;
+}
+.game-tray-container{
+    @apply .absolute .pin-l .pin-t .pin-r .p-4;
 }
 .active-link{
     @apply .font-semibold;

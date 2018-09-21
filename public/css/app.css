@@ -716,6 +716,13 @@ body {
   background: rgba(0, 0, 0, .75);
 }
 
+.tray-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
 .left-tray-enter-active,
 .left-tray-leave-active {
   -webkit-transition: all .3s;
@@ -852,6 +859,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
 .form-label {
@@ -937,10 +945,8 @@ body {
 }
 
 .stat-box {
-  width: 6rem;
-  height: 3rem;
   text-align: center;
-  font-size: 2.25rem;
+  font-size: 1.875rem;
   color: #b8c2cc;
   background-color: transparent;
 }
@@ -1043,10 +1049,14 @@ body {
   left: 0;
   right: 0;
   height: 100%;
-  width: 100%;
-  padding: .5rem;
-  margin-right: 1rem;
-  background-color: #fff;
+}
+
+.game-tray-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 1rem;
 }
 
 .active-link {

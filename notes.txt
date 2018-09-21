@@ -1,3 +1,4 @@
+Character creation tool next/prev is not working
 Add a remove button next to the character name
     - Tie the action together
 Data Permanence
