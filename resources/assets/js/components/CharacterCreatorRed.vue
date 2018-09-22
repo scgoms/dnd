@@ -63,7 +63,7 @@
                 <character-traits
                     v-if="step === 8"
                     :character="character"
-                    @next="step++"
+                    @next="submit"
                     @back="step--"
                     @update="update($event)"
                 ></character-traits>
@@ -72,14 +72,14 @@
     </div>
 </template>
 <script>
-    import CharacterDetails from './CharacterDetails';
-    import CharacterStats from './CharacterStats';
-    import CharacterSkills from './CharacterSkills';
-    import CharacterProficiencies from './CharacterProficiencies';
-    import CharacterEquipment from './CharacterEquipment';
-    import CharacterInventory from './CharacterInventory';
-    import CharacterIdeals from './CharacterIdeals';
-    import CharacterTraits from './CharacterTraits';
+    import CharacterDetails from './CharacterCreator/CharacterDetails';
+    import CharacterStats from './CharacterCreator/CharacterStats';
+    import CharacterSkills from './CharacterCreator/CharacterSkills';
+    import CharacterProficiencies from './CharacterCreator/CharacterProficiencies';
+    import CharacterEquipment from './CharacterCreator/CharacterEquipment';
+    import CharacterInventory from './CharacterCreator/CharacterInventory';
+    import CharacterIdeals from './CharacterCreator/CharacterIdeals';
+    import CharacterTraits from './CharacterCreator/CharacterTraits';
 
     export default {
         components: {
@@ -94,7 +94,7 @@
         },
         data(){
             return {
-                step: 6,
+                step: 1,
                 character: {
                     stats:{},
                     saving_throws: {},
@@ -105,6 +105,9 @@
         methods:{
             update(event){
                 this.character = event;
+            },
+            submit(){
+
             }
         }
     }

@@ -1,0 +1,39 @@
+.icon{
+    @apply .w-16 .h-16 .rounded .flex .flex-col .items-center .justify-center .mx-1;
+}
+.barbarian-icon{
+    @apply .bg-blue;
+}
+.bard-icon{
+    @apply .bg-red;
+}
+.cleric-icon{
+    @apply .bg-green;
+}
+.druid-icon{
+    @apply .bg-yellow;
+}
+.fighter-icon{
+    @apply .bg-orange;
+}
+.monk-icon{
+    @apply .bg-teal;
+}
+.paladin-icon{
+    @apply .bg-indigo;
+}
+.ranger-icon{
+    @apply .bg-purple;
+}
+.rogue-icon{
+    @apply .bg-green-light;
+}
+.sorcerer-icon{
+    @apply .bg-pink;
+}
+.warlock-icon{
+    @apply .bg-blue-dark;
+}
+.wizard-icon{
+    @apply .bg-red-dark;
+}

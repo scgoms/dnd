@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="game-tray-container">
         <div class="flex justify-between">
             <h1 class="text-center text-3xl">Character Selection</h1>
             <button @click.prevent="$emit('tray-closed')" class="burger-close">

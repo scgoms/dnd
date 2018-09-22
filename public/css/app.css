@@ -1023,6 +1023,75 @@ body {
   background-image: url("/storage/images/panel_background.png");
 }
 
+.icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: .25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: .25rem;
+  margin-right: .25rem;
+}
+
+.barbarian-icon {
+  background-color: #3490dc;
+}
+
+.bard-icon {
+  background-color: #e3342f;
+}
+
+.cleric-icon {
+  background-color: #38c172;
+}
+
+.druid-icon {
+  background-color: #ffed4a;
+}
+
+.fighter-icon {
+  background-color: #f6993f;
+}
+
+.monk-icon {
+  background-color: #4dc0b5;
+}
+
+.paladin-icon {
+  background-color: #6574cd;
+}
+
+.ranger-icon {
+  background-color: #9561e2;
+}
+
+.rogue-icon {
+  background-color: #51d88a;
+}
+
+.sorcerer-icon {
+  background-color: #f66d9b;
+}
+
+.warlock-icon {
+  background-color: #2779bd;
+}
+
+.wizard-icon {
+  background-color: #cc1f1a;
+}
+
 .footer-body {
   background: black;
   background: rgba(0, 0, 0, .75);
@@ -1060,6 +1129,12 @@ body {
   padding-right: 1rem;
   padding-top: .5rem;
   padding-bottom: .5rem;
+}
+
+.collapsible {
+  -webkit-transition: height .3s ease-out;
+  transition: height .3s ease-out;
+  height: auto;
 }
 
 .active-link {

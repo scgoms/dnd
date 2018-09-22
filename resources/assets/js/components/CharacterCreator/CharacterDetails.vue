@@ -4,6 +4,9 @@
             <input type="text" class="transparent-input" v-model="character.name">
             <label class="form-label">Character Name</label>
         </div>
+        <div class="w-full">
+            <class-carousel></class-carousel>
+        </div>
         <div class="flex">
             <div class="flex flex-col w-1/3 pr-1">
                 <div class="form-group">

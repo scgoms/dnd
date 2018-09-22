@@ -1,12 +1,18 @@
 <template>
-    <transition name="right-tray">
-        <div v-if="creating" key="create" class="game-tray-container">
-            <character-creator @tray-closed="$emit('tray-closed')" @back="creating = false"></character-creator>
-        </div>
-        <div v-else key="select" class="game-tray-container">
-            <character-selector @open-character-creator="creating = true" @tray-closed="$emit('tray-closed')"></character-selector>
-        </div>
-    </transition>
+    <div class="game-tray-container">
+        <transition name="left-tray">
+            <character-creator
+                @tray-closed="$emit('tray-closed')"
+                @back="creating = false"
+                v-if="creating"
+            ></character-creator>
+            <character-selector
+                @open-character-creator="creating = true"
+                @tray-closed="$emit('tray-closed')"
+                v-else
+            ></character-selector>
+        </transition>
+    </div>
 </template>
 <script>
     import CharacterCreator from './CharacterCreatorRed';

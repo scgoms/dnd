@@ -27,7 +27,7 @@
         data(){
             return {
                 tray: {
-                    show: true
+                    show: false
                 }
             }
         }
