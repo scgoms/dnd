@@ -38,7 +38,7 @@
         </div>
         <div class="flex">
             <button class="btn btn-grey-lightest mr-1" @click.prevent="$emit('back')">Back</button>
-            <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Next</button>
+            <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Stats</button>
         </div>
     </div>
 </template>

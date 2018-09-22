@@ -1,7 +1,7 @@
 <template>
     <div>
         <game-tray :open="tray.show" @tray-closed="tray.show = false">
-            <character-selection @tray-closed="tray.show = false"></character-selection>
+            <character-selection @tray-closed="tray.show = false" :characters="characters"></character-selection>
         </game-tray>
         <div class="absolute flex flex-col pin-b w-full pb-14">
             <div class="flex flex-col">
@@ -21,6 +21,9 @@
             GameTray,
             CharacterSelection
         },
+        props:[
+            'characters'
+        ],
         data(){
             return {
                 tray: {

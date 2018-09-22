@@ -14,7 +14,7 @@
     @apply .absolute .black-transparent .pin-t .pin-l .pin-r .h-full;
 }
 .game-tray-container{
-    @apply .absolute .pin-l .pin-t .pin-r .p-4;
+    @apply .absolute .pin-l .pin-t .pin-r px-4 py-2;
 }
 .active-link{
     @apply .font-semibold;

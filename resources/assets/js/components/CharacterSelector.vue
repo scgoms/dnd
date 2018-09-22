@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="flex justify-between">
-            <h1 class="text-center">Character Selection</h1>
+            <h1 class="text-center text-3xl">Character Selection</h1>
             <button @click.prevent="$emit('tray-closed')" class="burger-close">
                 <div class="bar1"></div>
                 <div class="bar2"></div>

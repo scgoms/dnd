@@ -4,7 +4,9 @@
             <game-map :channel="channel"></game-map>
             <chat :channel="channel" :name="name"></chat>
             <!-- <character-pane :user="user"></character-pane> -->
-            <lobby-footer>
+            <lobby-footer
+                :characters="characters"
+            >
             </lobby-footer>
         </div>
     </div>
