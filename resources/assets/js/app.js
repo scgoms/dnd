@@ -17,8 +17,7 @@ Vue.component('GameMasterToolbar', require('./components/GameMasterToolbar'));
 Vue.component('GameCreator', require('./components/GameCreator'));
 Vue.component('dnd-modal', require('./components/DNDModal'));
 Vue.component('navbar', require('./components/Navbar'));
-Vue.component('carousel', require('./components/Carousel'));
-Vue.component('class-carousel', require('./components/ClassCarousel'));
+Vue.component('carousel', require('./components/Carousels/Carousel'));
 Vue.component('transition-expand', require('./components/Collapsible'));
 
 const app = new Vue({

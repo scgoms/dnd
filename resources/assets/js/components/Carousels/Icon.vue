@@ -1,10 +1,10 @@
 <template>
     <div
         class="icon"
-        :class="item.name.toLowerCase() + '-icon'"
-        @click.prevent="$emit('class-clicked', item)"
+        :class="item.title.toLowerCase() + '-icon'"
+        @click.prevent="$emit('clicked', item)"
     >
-        {{ item.name }}
+        {{ item.title }}
     </div>
 </template>
 <script>

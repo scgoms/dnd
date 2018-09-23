@@ -1092,6 +1092,26 @@ body {
   background-color: #cc1f1a;
 }
 
+.human-icon {
+  background-color: #e3342f;
+}
+
+.elf-icon {
+  background-color: #3490dc;
+}
+
+.dwarf-icon {
+  background-color: #f6993f;
+}
+
+.tiefling-icon {
+  background-color: #4dc0b5;
+}
+
+.dragonborn-icon {
+  background-color: #ffed4a;
+}
+
 .footer-body {
   background: black;
   background: rgba(0, 0, 0, .75);
