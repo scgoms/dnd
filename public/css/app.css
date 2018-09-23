@@ -1092,24 +1092,128 @@ body {
   background-color: #cc1f1a;
 }
 
-.human-icon {
+.dwarf-icon {
   background-color: #e3342f;
 }
 
 .elf-icon {
-  background-color: #3490dc;
-}
-
-.dwarf-icon {
   background-color: #f6993f;
 }
 
-.tiefling-icon {
-  background-color: #4dc0b5;
+.halfling-icon {
+  background-color: #ffed4a;
+}
+
+.human-icon {
+  background-color: #38c172;
 }
 
 .dragonborn-icon {
+  background-color: #4dc0b5;
+}
+
+.gnome-icon {
+  background-color: #3490dc;
+}
+
+.halfelf-icon {
+  background-color: #6574cd;
+}
+
+.half-orc {
+  background-color: #9561e2;
+}
+
+.tiefling-icon {
+  background-color: #f66d9b;
+}
+
+.acolyte-icon {
+  background-color: #e3342f;
+}
+
+.charlatan-icon {
+  background-color: #f6993f;
+}
+
+.criminal-icon {
   background-color: #ffed4a;
+}
+
+.entertainer-icon {
+  background-color: #38c172;
+}
+
+.folk-hero-icon {
+  background-color: #4dc0b5;
+}
+
+.guild-artisan-icon {
+  background-color: #3490dc;
+}
+
+.hermit-icon {
+  background-color: #6574cd;
+}
+
+.noble-icon {
+  background-color: #9561e2;
+}
+
+.outlander-icon {
+  background-color: #f66d9b;
+}
+
+.sage-icon {
+  background-color: #cc1f1a;
+}
+
+.sailor-icon {
+  background-color: #de751f;
+}
+
+.soldier-icon {
+  background-color: #f2d024;
+}
+
+.urchin-icon {
+  background-color: #1f9d55;
+}
+
+.lawful-good-icon {
+  background-color: #fff;
+}
+
+.neutral-good-icon {
+  background-color: #f8fafc;
+}
+
+.chaotic-good-icon {
+  background-color: #f1f5f8;
+}
+
+.lawful-neutral-icon {
+  background-color: #dae1e7;
+}
+
+.true-neutral-icon {
+  background-color: #b8c2cc;
+}
+
+.chaotic-neutral-icon {
+  background-color: #8795a1;
+}
+
+.lawful-evil-icon {
+  background-color: #606f7b;
+}
+
+.neutral-evil-icon {
+  background-color: #3d4852;
+}
+
+.chaotic-evil-icon {
+  background-color: #22292f;
 }
 
 .footer-body {

@@ -37,18 +37,96 @@
 .wizard-icon{
     @apply .bg-red-dark;
 }
-.human-icon{
+.dwarf-icon{
     @apply .bg-red;
 }
 .elf-icon{
-    @apply .bg-blue;
-}
-.dwarf-icon{
     @apply .bg-orange;
 }
-.tiefling-icon{
-    @apply .bg-teal;
+.halfling-icon{
+    @apply .bg-yellow;
+}
+.human-icon{
+    @apply .bg-green;
 }
 .dragonborn-icon{
+    @apply .bg-teal;
+}
+.gnome-icon{
+    @apply .bg-blue;
+}
+.halfelf-icon{
+    @apply .bg-indigo;
+}
+.half-orc{
+    @apply .bg-purple;
+}
+.tiefling-icon{
+    @apply .bg-pink;
+}
+.acolyte-icon{
+    @apply .bg-red;
+}
+.charlatan-icon{
+    @apply .bg-orange;
+}
+.criminal-icon{
     @apply .bg-yellow;
+}
+.entertainer-icon{
+    @apply .bg-green;
+}
+.folk-hero-icon{
+    @apply .bg-teal;
+}
+.guild-artisan-icon{
+    @apply .bg-blue;
+}
+.hermit-icon{
+    @apply .bg-indigo;
+}
+.noble-icon{
+    @apply .bg-purple;
+}
+.outlander-icon{
+    @apply .bg-pink;
+}
+.sage-icon{
+    @apply .bg-red-dark;
+}
+.sailor-icon{
+    @apply .bg-orange-dark;
+}
+.soldier-icon{
+    @apply .bg-yellow-dark;
+}
+.urchin-icon{
+    @apply .bg-green-dark;
+}
+.lawful-good-icon{
+    @apply .bg-white;
+}
+.neutral-good-icon{
+    @apply .bg-grey-lightest;
+}
+.chaotic-good-icon{
+    @apply .bg-grey-lighter;
+}
+.lawful-neutral-icon{
+    @apply .bg-grey-light;
+}
+.true-neutral-icon{
+    @apply .bg-grey;
+}
+.chaotic-neutral-icon{
+    @apply .bg-grey-dark;
+}
+.lawful-evil-icon{
+    @apply .bg-grey-darker;
+}
+.neutral-evil-icon{
+    @apply .bg-grey-darkest;
+}
+.chaotic-evil-icon{
+    @apply .bg-black;
 }

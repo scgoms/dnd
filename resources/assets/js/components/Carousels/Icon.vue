@@ -1,7 +1,7 @@
 <template>
     <div
         class="icon"
-        :class="item.title.toLowerCase() + '-icon'"
+        :class="item.title.toLowerCase().replace(' ', '-') + '-icon'"
         @click.prevent="$emit('clicked', item)"
     >
         {{ item.title }}
