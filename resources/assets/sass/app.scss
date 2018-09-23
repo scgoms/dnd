@@ -17,6 +17,15 @@
 .game-tray-container{
     @apply .absolute .pin-l .pin-t .pin-r px-4 py-2;
 }
+.expand-enter-active,
+.expand-leave-active {
+    transition: height 1s ease-in-out;
+    overflow: hidden;
+}
+.expand-enter,
+.expand-leave-to {
+    height: 0;
+}
 .collapsible{
   transition: height 0.3s ease-out;
   height:auto;

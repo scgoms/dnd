@@ -1131,6 +1131,18 @@ body {
   padding-bottom: .5rem;
 }
 
+.expand-enter-active,
+.expand-leave-active {
+  -webkit-transition: height 1s ease-in-out;
+  transition: height 1s ease-in-out;
+  overflow: hidden;
+}
+
+.expand-enter,
+.expand-leave-to {
+  height: 0;
+}
+
 .collapsible {
   -webkit-transition: height .3s ease-out;
   transition: height .3s ease-out;

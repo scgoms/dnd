@@ -9,20 +9,30 @@
                 v-for="(value, key) in classes"
                 :item="value"
                 :key="key"
-                @class-clicked="activeClass = value"
+                @class-clicked="setClass(value)"
             ></class-icon>
         </carousel>
-        <div v-if="hasActiveClass" class="w-full text-center collapsible">
-            <h1 class="text-2xl">{{ activeClass.name }}</h1>
-            <p>{{ activeClass.description }}</p>
-        </div>
+        <transition-expand>
+            <div v-if="detailed" class="w-full text-center collapsible">
+                <transition name="fade" mode="out-in">
+                    <div :key="activeClass.name">
+                        <h1 class="text-2xl">{{ activeClass.name }}</h1>
+                        <p>{{ activeClass.description }}</p>
+                    </div>
+                </transition>
+            </div>
+        </transition-expand>
     </div>
 </template>
 <script>
     import ClassIcon from './ClassIcon';
+    import Carousel from './Carousel';
     export default{
         components: {
             ClassIcon
+        },
+        props:{
+            detailed:{default:false},
         },
         data(){
             return {
@@ -79,10 +89,23 @@
                 }
             }
         },
-        computed:{
-            hasActiveClass(){
-                return Object.keys(this.activeClass).length && this.activeClass.constructor === Object;
+        methods:{
+            setClass(activeClass){
+                this.activeClass = activeClass;
+                this.$emit('input', activeClass.name);
             }
-        }
+        },
     }
 </script>
+<style>
+
+.fade-enter-active {
+  transition: opacity .5s;
+}
+.fade-leave-active {
+    transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to{
+    opacity: 0;
+}
+</style>

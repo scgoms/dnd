@@ -4,8 +4,11 @@
             <input type="text" class="transparent-input" v-model="character.name">
             <label class="form-label">Character Name</label>
         </div>
-        <div class="w-full">
-            <class-carousel></class-carousel>
+        <div class="w-full relative">
+            <class-carousel
+                v-model="character.class"
+                :detailed="detailed==='class'"
+            ></class-carousel>
         </div>
         <div class="flex">
             <div class="flex flex-col w-1/3 pr-1">
@@ -50,12 +53,27 @@
         props: [
             'character'
         ],
+        data(){
+            return {
+                detailed: ''
+            }
+        },
+        computed:{
+            character_class(){
+                return this.character.class;
+            }
+        },
         watch:{
             character:{
                 handler: function(oldVal, newVal){
                     this.$emit('update', newVal);
                 },
                 deep: true
+            },
+            character_class:{
+                handler:function(oldVal, newVal){
+                    this.detailed = 'class';
+                }
             }
         },
     }
