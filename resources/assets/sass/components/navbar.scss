@@ -1,3 +1,6 @@
+.navbar-container{
+    z-index: 9500;
+}
 .navbar-body{
     @apply .flex .h-12 .wooden .items-center .justify-between .px-2;
     z-index:1000;

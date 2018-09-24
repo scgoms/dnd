@@ -45,7 +45,7 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        return view('game.show');
+        return view('game.show', compact('game'));
     }
 
     public function activateCharacter(Game $game, Character $character)

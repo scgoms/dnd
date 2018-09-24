@@ -1,4 +1,21 @@
 <template>
+    <div>
+        <tray
+            name="game"
+            :open="tray.open"
+            enter-from="bottom"
+            @closed="tray.open = false"
+        >
+            Chat
+        </tray>
+        <portal to="footer-items">
+            <button @click.prevent="tray.open = !tray.open" :class="{'burger-close' : tray.open}">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </button>
+        </portal>
+    </div>
     <transition name="right-tray">
         <div class="absolute flex sidebar black-transparent pb-14" v-if="open">
             <div class="absolute pin-r pin-t pt-2 pr-2">

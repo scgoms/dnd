@@ -1,14 +1,18 @@
 <template>
     <div class="flex-1 flex">
         <game-map :channel="channel"/>
-        <chat :channel="channel"></chat>
+        <options></options>
+        <chat></chat>
     </div>
 </template>
 <script>
     import GameMap from './Game/Map';
+    import Options from './Game/Options';
+
     export default {
         components:{
-            GameMap
+            GameMap,
+            Options
         },
         props:{
             channel: {required:true}

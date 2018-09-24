@@ -1,5 +1,5 @@
 <template>
-<nav class="flex flex-col">
+<nav class="navbar-container">
     <div class="navbar-body">
         <img src="/storage/images/topleft_bookend.png" class="hidden navbar-start" style="z-index:10000">
         <slot name="brand"></slot>

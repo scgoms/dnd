@@ -1,1 +1,4 @@
-<game-footer></game-footer>
+<game-footer
+    :channel="{{ $game }}"
+>
+</game-footer>
