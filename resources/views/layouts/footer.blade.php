@@ -1,0 +1,1 @@
+<game-footer></game-footer>

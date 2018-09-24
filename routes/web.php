@@ -14,6 +14,9 @@
 Auth::routes();
 
 Route::get('/', 'PagesController@index');
+Route::get('/test', function () {
+    return view('test');
+});
 
 Route::get('/register/{hash}', 'Auth\RegisterController@showGameRegistrationForm');
 Route::post('/register/{hash}', 'Auth\RegisterController@registerToGame');

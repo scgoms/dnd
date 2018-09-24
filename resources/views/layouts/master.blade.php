@@ -16,7 +16,11 @@
     <body>
         <div id="app" class="min-h-screen flex flex-col">
             @include('layouts.navbar')
-            @yield('content')
+            <div class="container">
+                <portal-target name="tray" multiple></portal-target>
+                @yield('content')
+            </div>
+            @include('layouts.footer')
         </div>
     </body>
 </html>

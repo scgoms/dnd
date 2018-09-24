@@ -1,5 +1,6 @@
-.navbar{
-    @apply;
+.navbar-body{
+    @apply .flex .h-12 .wooden .items-center .justify-between .px-2;
+    z-index:1000;
 }
 .bar1, .bar2, .bar3 {
     @apply .bg-grey-light;

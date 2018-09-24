@@ -12,12 +12,5 @@
 </a>
 <hr class="h-px bg-grey w-full">
 @endpush
-<lobby
-    @if(Auth::check())
-    :user="{{ $user }}"
-    @endif
-    :channel="{{ $game }}"
-    :characters="{{ $characters }}"
->
-</lobby>
+<game :channel="{{ $game }}"/>
 @endsection
