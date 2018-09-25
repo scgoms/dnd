@@ -20,6 +20,7 @@
                 <portal-target name="tray" multiple></portal-target>
                 @yield('content')
             </div>
+            @include('layouts.footer')
         </div>
     </body>
 </html>

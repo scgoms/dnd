@@ -6,8 +6,11 @@
             :leave-to-class="leaveTo + '-tray-leave-to'"
             :leave-active-class="leaveTo + '-tray-leave-active'"
         >
-            <div class="tray" v-if="open">
-                <slot/>
+            <div class="tray flex flex-col" v-if="open">
+                <portal-target name="tray-controls"></portal-target>
+                <div class="tray-content">
+                    <slot/>
+                </div>
             </div>
         </transition>
     </portal>
@@ -21,7 +24,7 @@
         },
         data(){
             return {
-                leaveTo: this.enterFrom
+                leaveTo: this.enterFrom,
             }
         },
         computed:{
@@ -44,7 +47,7 @@
                     Event.$emit('tray-opened',{
                         name: this.name,
                         leaveTo: this.opposite
-                    })
+                    });
                 }
             }
         },

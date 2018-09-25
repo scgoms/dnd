@@ -80,7 +80,6 @@
     import CharacterInventory from './CharacterCreator/CharacterInventory';
     import CharacterIdeals from './CharacterCreator/CharacterIdeals';
     import CharacterTraits from './CharacterCreator/CharacterTraits';
-
     export default {
         components: {
             CharacterDetails,
@@ -107,7 +106,6 @@
                 this.character = event;
             },
             submit(){
-
             }
         }
     }

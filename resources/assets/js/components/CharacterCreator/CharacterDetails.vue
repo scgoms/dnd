@@ -1,5 +1,10 @@
 <template>
-    <div class="tray-container">
+    <tray
+        name="character-details"
+        :open="open"
+        @open="open = true"
+        @closed="open = false"
+    >
         <div class="form-group">
             <input type="text" class="transparent-input" v-model="character.name">
             <label class="form-label">Character Name</label>
@@ -72,14 +77,15 @@
             <button class="btn btn-grey-lightest mr-1" @click.prevent="$emit('back')">Back</button>
             <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Stats</button>
         </div>
-    </div>
+    </tray>
 </template>
 <script>
     import ExtendedCarousel from '../Carousels/ExtendedCarousel';
     export default {
-        props: [
-            'character'
-        ],
+        props: {
+            open: {default:false},
+            character:{required:true}
+        },
         components:{
             ExtendedCarousel
         },

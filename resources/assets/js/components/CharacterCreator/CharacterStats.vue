@@ -1,5 +1,10 @@
 <template>
-    <div class="tray-container">
+    <tray
+        name="character-stats"
+        :open="open"
+        @open="open = true"
+        @closed="open = false"
+    >
         <div class="flex flex-col">
             <div class="flex">
                 <div class="w-1/4">
@@ -106,13 +111,14 @@
                 <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Skills</button>
             </div>
         </div>
-    </div>
+    </tray>
 </template>
 <script>
     export default {
-        props: [
-            'character'
-        ],
+        props: {
+            open: {default:false},
+            character:{required:true}
+        },
         watch:{
             character:{
                 handler: function(oldVal, newVal){

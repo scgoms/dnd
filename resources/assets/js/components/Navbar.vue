@@ -14,6 +14,7 @@
     <tray
         name="nav"
         :open="tray.open"
+        @open="tray.open = true"
         @closed="tray.open = false"
     >
         <slot/>

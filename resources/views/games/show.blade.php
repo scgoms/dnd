@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('games.layouts.master')
 @section('content')
 @if(Auth::check() && Auth::id() === $game->creator_id)
 @include('layouts.gamemaster')

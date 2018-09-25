@@ -18,9 +18,10 @@
 </template>
 <script>
     export default {
-        props: [
-            'character'
-        ],
+        props: {
+            open: {default:false},
+            character:{required:true}
+        },
         watch:{
             character:{
                 handler: function(oldVal, newVal){

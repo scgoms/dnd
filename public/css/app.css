@@ -691,6 +691,20 @@ body {
   z-index: 9000;
 }
 
+.tray-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #dae1e7;
+}
+
 .black-transparent {
   background: black;
   background: rgba(0, 0, 0, .75);
