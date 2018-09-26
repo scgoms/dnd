@@ -116,12 +116,24 @@
 <script>
     export default {
         props: {
-            open: {default:false},
+            active: {default:false},
             character:{required:true}
         },
+        data(){
+            return {
+                open: this.active
+            }
+        },
         watch:{
+            active:{
+                handler: function(newVal, oldVal){
+                    if(newVal){
+                        this.open = true;
+                    }
+                }
+            },
             character:{
-                handler: function(oldVal, newVal){
+                handler: function(newVal, oldVal){
                     this.$emit('update', newVal);
                 },
                 deep: true

@@ -1,5 +1,10 @@
 <template>
-    <div class="tray-container">
+    <tray
+        name="character-ideals"
+        :open="open"
+        @open="open = true"
+        @closed="open = false"
+    >
         <div class="flex flex-col">
             <textarea class="transparent-input lined h-24" v-model="character.personality_traits"></textarea>
             <label class="form-label text-center">Personality Traits</label>
@@ -14,17 +19,29 @@
                 <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Features</button>
             </div>
         </div>
-    </div>
+    </tray>
 </template>
 <script>
     export default {
         props: {
-            open: {default:false},
+            active: {default:false},
             character:{required:true}
         },
+        data(){
+            return{
+                open: this.active
+            }
+        },
         watch:{
+            active:{
+                handler: function(newVal, oldVal){
+                    if(newVal){
+                        this.open = true;
+                    }
+                }
+            },
             character:{
-                handler: function(oldVal, newVal){
+                handler: function(newVal, oldVal){
                     this.$emit('update', newVal);
                 },
                 deep: true

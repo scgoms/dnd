@@ -1,6 +1,11 @@
 <template>
-    <div class="tray-container h-screen overflow-y-scroll">
-        <div class="flex flex-col mb-43">
+    <tray
+        name="character-skills"
+        :open="open"
+        @open="open = true"
+        @closed="open = false"
+    >
+        <div class="flex flex-col overflow-scroll-y">
             <div class="form-group flex-col">
                 <div class="flex">
                     <div class="stat-round-checkbox pr-3">
@@ -186,15 +191,27 @@
                 <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Proficiencies</button>
             </div>
         </div>
-    </div>
+    </tray>
 </template>
 <script>
     export default {
         props: {
-            open: {default:false},
+            active: {default:false},
             character:{required:true}
         },
+        data(){
+            return {
+                open: this.active
+            }
+        },
         watch:{
+            active:{
+                handler: function(newVal, oldVal){
+                    if(newVal){
+                        this.open = true;
+                    }
+                }
+            },
             character:{
                 handler: function(oldVal, newVal){
                     this.$emit('update', newVal);

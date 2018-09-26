@@ -1,5 +1,10 @@
 <template>
-    <div class="tray-container">
+    <tray
+        name="character-inventory"
+        :open="open"
+        @open="open = true"
+        @closed="open = false"
+    >
         <div class="flex">
             <div class="flex flex-col w-1/4 pr-1">
                 <div class="flex flex-col text-center">
@@ -31,17 +36,29 @@
             <button class="btn btn-grey-lightest mr-1" @click.prevent="$emit('back')">Equipment</button>
             <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Ideals</button>
         </div>
-    </div>
+    </tray>
 </template>
 <script>
     export default {
         props: {
-            open: {default:false},
+            active: {default:false},
             character:{required:true}
         },
+        data(){
+            return{
+                open: this.active
+            }
+        },
         watch:{
+            active:{
+                handler: function(newVal, oldVal){
+                    if(newVal){
+                        this.open = true;
+                    }
+                }
+            },
             character:{
-                handler: function(oldVal, newVal){
+                handler: function(newVal, oldVal){
                     this.$emit('update', newVal);
                 },
                 deep: true

@@ -1,59 +1,54 @@
 <template>
     <div>
         <character-details
-            :open="step === 1"
+            :active="step === 1"
             :character="character"
             @next="step++"
             @update="update($event)"
         ></character-details>
         <character-stats
-            :open="step === 2"
+            :active="step === 2"
             :character="character"
             @next="step++"
             @back="step--"
             @update="update($event)"
         ></character-stats>
-        <!-- <character-skills
-            :open="step === 31"
+        <character-skills
+            :active="step === 3"
             :character="character"
             @next="step++"
             @back="step--"
             @update="update($event)"
         ></character-skills>
         <character-proficiencies
-            :open="step === 41"
+            :active="step === 4"
             :character="character"
             @next="step++"
             @back="step--"
             @update="update($event)"
         ></character-proficiencies>
         <character-equipment
-            :open="step === 51"
+            :active="step === 5"
             :character="character"
             @next="step++"
             @back="step--"
             @update="update($event)"
         ></character-equipment>
         <character-inventory
-            :open="step === 61"
+            :active="step === 6"
             :character="character"
             @next="step++"
             @back="step--"
             @update="update($event)"
         ></character-inventory>
         <character-ideals
-            :open="step === 71"
+            :active="step === 7"
             :character="character"
             @next="step++"
             @back="step--"
             @update="update($event)"
         ></character-ideals>
-        <character-traits
-            :open="step === 81"
-            :character="character"
-            @back="step--"
-            @update="update($event)"
-        ></character-traits> -->
+
     </div>
 </template>
 <script>

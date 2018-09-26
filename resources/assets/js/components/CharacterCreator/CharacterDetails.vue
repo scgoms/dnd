@@ -82,17 +82,49 @@
 <script>
     import ExtendedCarousel from '../Carousels/ExtendedCarousel';
     export default {
-        props: {
-            open: {default:false},
-            character:{required:true}
-        },
         components:{
             ExtendedCarousel
         },
-        methods:{
+        props: {
+            active: {default:false},
+            character:{required:true}
+        },
+        computed:{
+            character_class(){
+                return this.character.class;
+            },
+            character_race(){
+                return this.character.race;
+            }
+        },
+        watch:{
+            active:{
+                handler: function(newVal, oldVal){
+                    if(newVal){
+                        this.open = true;
+                    }
+                }
+            },
+            character:{
+                handler: function(newVal, oldVal){
+                    this.$emit('update', newVal);
+                },
+                deep: true
+            },
+            character_class:{
+                handler:function(newVal, oldVal){
+                    this.detailed = 'class';
+                }
+            },
+            character_race:{
+                handler:function(newVal, oldVal){
+                    this.detailed = 'race';
+                }
+            }
         },
         data(){
             return {
+                open: this.active,
                 detailed: '',
                 classes: {
                     barbarian:{
@@ -273,32 +305,6 @@
                         title: 'Chaotic Evil',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                }
-            }
-        },
-        computed:{
-            character_class(){
-                return this.character.class;
-            },
-            character_race(){
-                return this.character.race;
-            }
-        },
-        watch:{
-            character:{
-                handler: function(oldVal, newVal){
-                    this.$emit('update', newVal);
-                },
-                deep: true
-            },
-            character_class:{
-                handler:function(oldVal, newVal){
-                    this.detailed = 'class';
-                }
-            },
-            character_race:{
-                handler:function(oldVal, newVal){
-                    this.detailed = 'race';
                 }
             }
         },
