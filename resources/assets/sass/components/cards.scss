@@ -1,132 +1,132 @@
-.icon{
+.card{
     @apply .w-16 .h-16 .rounded .flex .flex-col .items-center .justify-center .mx-1;
 }
-.barbarian{
+.barbarian-card{
     @apply .bg-blue;
 }
-.bard{
+.bard-card{
     @apply .bg-red;
 }
-.cleric{
+.cleric-card{
     @apply .bg-green;
 }
-.druid{
+.druid-card{
     @apply .bg-yellow;
 }
-.fighter{
+.fighter-card{
     @apply .bg-orange;
 }
-.monk{
+.monk-card{
     @apply .bg-teal;
 }
-.paladin{
+.paladin-card{
     @apply .bg-indigo;
 }
-.ranger{
+.ranger-card{
     @apply .bg-purple;
 }
-.rogue{
+.rogue-card{
     @apply .bg-green-light;
 }
-.sorcerer{
+.sorcerer-card{
     @apply .bg-pink;
 }
-.warlock{
+.warlock-card{
     @apply .bg-blue-dark;
 }
-.wizard{
+.wizard-card{
     @apply .bg-red-dark;
 }
-.dwarf{
+.dwarf-card{
     @apply .bg-red;
 }
-.elf{
+.elf-card{
     @apply .bg-orange;
 }
-.halfling{
+.halfling-card{
     @apply .bg-yellow;
 }
-.human{
+.human-card{
     @apply .bg-green;
 }
-.dragonborn{
+.dragonborn-card{
     @apply .bg-teal;
 }
-.gnome{
+.gnome-card{
     @apply .bg-blue;
 }
-.halfelf{
+.halfelf-card{
     @apply .bg-indigo;
 }
 .half-orc{
     @apply .bg-purple;
 }
-.tiefling{
+.tiefling-card{
     @apply .bg-pink;
 }
-.acolyte{
+.acolyte-card{
     @apply .bg-red;
 }
-.charlatan{
+.charlatan-card{
     @apply .bg-orange;
 }
-.criminal{
+.criminal-card{
     @apply .bg-yellow;
 }
-.entertainer{
+.entertainer-card{
     @apply .bg-green;
 }
-.folk-hero{
+.folk-hero-card{
     @apply .bg-teal;
 }
-.guild-artisan{
+.guild-artisan-card{
     @apply .bg-blue;
 }
-.hermit{
+.hermit-card{
     @apply .bg-indigo;
 }
-.noble{
+.noble-card{
     @apply .bg-purple;
 }
-.outlander{
+.outlander-card{
     @apply .bg-pink;
 }
-.sage{
+.sage-card{
     @apply .bg-red-dark;
 }
-.sailor{
+.sailor-card{
     @apply .bg-orange-dark;
 }
-.soldier{
+.soldier-card{
     @apply .bg-yellow-dark;
 }
-.urchin{
+.urchin-card{
     @apply .bg-green-dark;
 }
-.lawful-good{
+.lawful-good-card{
     @apply .bg-white;
 }
-.neutral-good{
+.neutral-good-card{
     @apply .bg-grey-lightest;
 }
-.chaotic-good{
+.chaotic-good-card{
     @apply .bg-grey-lighter;
 }
-.lawful-neutral{
+.lawful-neutral-card{
     @apply .bg-grey-light;
 }
-.true-neutral{
+.true-neutral-card{
     @apply .bg-grey;
 }
-.chaotic-neutral{
+.chaotic-neutral-card{
     @apply .bg-grey-dark;
 }
-.lawful-evil{
+.lawful-evil-card{
     @apply .bg-grey-darker;
 }
-.neutral-evil{
+.neutral-evil-card{
     @apply .bg-grey-darkest;
 }
-.chaotic-evil{
+.chaotic-evil-card{
     @apply .bg-black;
 }

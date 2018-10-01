@@ -38,6 +38,10 @@
     background: linear-gradient(to right, rgba(191,38,38,0.33) 0%,rgba(191,38,38,0.33) 81%,rgba(0,0,0,0.16) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54bf2626', endColorstr='#29000000',GradientType=1 ); /* IE6-9 */
 }
+.scaled-down{
+  transform:scale(0.8);
+  transition: all 0.3s;
+}
 i{
     border: solid;
     border-color: #dae1e7;

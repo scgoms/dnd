@@ -1,12 +1,11 @@
 <template>
-    <div>
+    <div :class="classes">
         <slot></slot>
     </div>
 </template>
 <script>
     import Flickity from 'flickity';
     import 'flickity/dist/flickity.min.css';
-
     export default{
         props: {
             wrapAround: {default: true},
@@ -14,9 +13,10 @@
             cellAlign: {default: 'left'},
             contain: {default: 'true'},
             freeScroll: {default: false},
-            initialIndex: {default: 1},
+            initialIndex: {default: 0},
             prevNext: {default: true},
-            pageDots: {default: false}
+            pageDots: {default: false},
+            classes: {default:''}
         },
         data(){
             return{
@@ -37,3 +37,9 @@
         }
     }
 </script>
+<style>
+    .is-selected{
+        z-index: 9900;
+        transform: scale(1);
+    }
+</style>

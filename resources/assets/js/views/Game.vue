@@ -7,10 +7,10 @@
     </div>
 </template>
 <script>
-    import GameMap from './Game/Map';
-    import Options from './Game/Options';
-    import CharacterCreator from './Game/Options/CharacterCreator';
-    import Chat from './Game/Chat';
+    import GameMap from '../components/Game/Map';
+    import Options from '../components/Game/Options';
+    import CharacterCreator from '../components/Game/Options/CharacterCreator';
+    import Chat from '../components/Game/Chat';
     export default {
         components:{
             GameMap,

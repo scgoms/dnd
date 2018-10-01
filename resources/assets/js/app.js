@@ -15,15 +15,16 @@ Vue.use(PortalVue)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('Game', require('./components/Game'));
-Vue.component('GameMasterToolbar', require('./components/GameMasterToolbar'));
-Vue.component('GameCreator', require('./components/GameCreator'));
-Vue.component('dnd-modal', require('./components/DNDModal'));
-Vue.component('navbar', require('./components/Navbar'));
-Vue.component('carousel', require('./components/Carousels/Carousel'));
-Vue.component('transition-expand', require('./components/Collapsible'));
-Vue.component('game-footer', require('./components/FooterRed'));
-Vue.component('tray', require('./components/Tray'));
+Vue.component('Game', require('./views/Game'));
+Vue.component('GameMasterToolbar', require('./views/GameMasterToolbar'));
+Vue.component('GameCreator', require('./views/GameCreator'));
+Vue.component('navbar', require('./views/Navbar'));
+Vue.component('game-footer', require('./views/Footer'));
+Vue.component('dnd-modal', require('./layout/DNDModal'));
+Vue.component('collapsible', require('./layout/Collapsible'));
+Vue.component('tray', require('./layout/Tray'));
+Vue.component('flickity', require('./layout/Flickity'));
+Vue.component('glide', require('./layout/Glide'));
 
 const app = new Vue({
     el: '#app'
