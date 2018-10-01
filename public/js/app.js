@@ -41241,6 +41241,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 open: false
             }
         };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        Event.$on('open-options', function () {
+            _this.tray.open = true;
+        });
     }
 });
 
@@ -41526,6 +41533,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -41546,6 +41554,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         update: function update(event) {
             this.character = event;
+        },
+        openOptions: function openOptions() {
+            this.step = 0;
+            Event.$emit('open-options');
         }
     },
     mounted: function mounted() {
@@ -41574,6 +41586,7 @@ var render = function() {
           next: function($event) {
             _vm.step++
           },
+          back: _vm.openOptions,
           update: function($event) {
             _vm.update($event)
           }
@@ -46072,7 +46085,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         Event.$on('tray-opened', function (payload) {
             if (payload.name != _this.name) {
                 if (_this.open) {
-                    console.log(_this.name + ' is open and has been told to close by ' + payload.name);
                     _this.leaveTo = payload.leaveTo;
                     Vue.nextTick(function () {
                         _this.$emit('closed');

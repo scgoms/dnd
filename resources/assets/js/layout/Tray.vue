@@ -55,7 +55,6 @@
             Event.$on('tray-opened', (payload) => {
                 if(payload.name != this.name){
                     if(this.open){
-                        console.log(this.name + ' is open and has been told to close by ' + payload.name);
                         this.leaveTo = payload.leaveTo;
                         Vue.nextTick(() => {
                             this.$emit('closed');

@@ -30,6 +30,11 @@
                     open: false
                 }
             }
+        },
+        mounted(){
+            Event.$on('open-options', () => {
+                this.tray.open = true;
+            });
         }
     }
 </script>

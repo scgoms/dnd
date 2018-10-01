@@ -4,6 +4,7 @@
             :active="step === 1"
             :character="character"
             @next="step++"
+            @back="openOptions"
             @update="update($event)"
         ></class-selector>
     </div>
@@ -28,6 +29,10 @@
             update(event){
                 this.character = event;
             },
+            openOptions(){
+                this.step = 0;
+                Event.$emit('open-options');
+            }
         },
         mounted(){
             Event.$on('open-character-creator', () => {
