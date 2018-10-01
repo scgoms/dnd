@@ -44,6 +44,7 @@
         watch:{
             open:function(newVal, oldVal){
                 if(newVal){
+                    console.log(this.name + " has been opened");
                     Event.$emit('tray-opened',{
                         name: this.name,
                         leaveTo: this.opposite
@@ -55,6 +56,7 @@
             Event.$on('tray-opened', (payload) => {
                 if(payload.name != this.name){
                     if(this.open){
+                        console.log(this.name + ' is open and has been told to close by ' + payload.name);
                         this.leaveTo = payload.leaveTo;
                         Vue.nextTick(() => {
                             this.$emit('closed');

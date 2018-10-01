@@ -1,20 +1,20 @@
 <template>
     <tray
-        name="character-class-selector"
+        name="character-alignment-selector"
         :open="open"
         @open="open = true"
         @closed="open = false"
     >
         <div class="flex-1 flex flex-col -mx-2 pb-2">
             <flickity cell-align="center" classes="flex-1" :wrap-around="false">
-                <div class="w-full h-full px-8 -mx-16 scaled-down" v-for="playable_class in classes">
-                    <div class="w-full h-full rounded" :class="playable_class.title.toLowerCase().replace(' ', '-')">{{ playable_class.title }}</div>
+                <div class="w-full h-full px-8 -mx-16 scaled-down" v-for="alignment in alignments">
+                    <div class="w-full h-full rounded" :class="alignment.title.toLowerCase().replace(' ', '-')">{{ alignment.title }}</div>
                 </div>
             </flickity>
         </div>
         <div class="flex">
-            <button class="btn btn-grey-lightest mr-1" @click.prevent="$emit('back')">Race</button>
-            <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Background</button>
+            <button class="btn btn-grey-lightest mr-1" @click.prevent="$emit('back')">Background</button>
+            <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Stats</button>
         </div>
     </tray>
 </template>
@@ -61,55 +61,43 @@
             return {
                 open: this.active,
                 detailed: '',
-                classes: {
-                    barbarian:{
-                        title: 'Barbarian',
+                alignments: {
+                    lawfulGood:{
+                        title: 'Lawful Good',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    bard:{
-                        title: 'Bard',
+                    neutralGood:{
+                        title: 'Neutral Good',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    cleric:{
-                        title: 'Cleric',
+                    chaoticGood:{
+                        title: 'Chaotic Good',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    druid:{
-                        title: 'Druid',
+                    lawfulNeutral:{
+                        title: 'Lawful Neutral',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    fighter:{
-                        title: 'Fighter',
+                    trueNeutral:{
+                        title: 'True Neutral',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    monk:{
-                        title: 'Monk',
+                    chaoticNeutral:{
+                        title: 'Chaotic Neutral',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    paladin:{
-                        title: 'Paladin',
+                    lawfulEvil:{
+                        title: 'Lawful Evil',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    ranger:{
-                        title: 'Ranger',
+                    neutralEveil:{
+                        title: 'Neutral Evil',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    rogue:{
-                        title: 'Rogue',
+                    chaoticEvil:{
+                        title: 'Chaotic Evil',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    sorcerer:{
-                        title: 'Sorcerer',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
-                    },
-                    warlock:{
-                        title: 'Warlock',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
-                    },
-                    wizard: {
-                        title: 'Wizard',
-                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
-                    }
                 },
             }
         },

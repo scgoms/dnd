@@ -1,20 +1,20 @@
 <template>
     <tray
-        name="character-class-selector"
+        name="character-background-selector"
         :open="open"
         @open="open = true"
         @closed="open = false"
     >
         <div class="flex-1 flex flex-col -mx-2 pb-2">
             <flickity cell-align="center" classes="flex-1" :wrap-around="false">
-                <div class="w-full h-full px-8 -mx-16 scaled-down" v-for="playable_class in classes">
-                    <div class="w-full h-full rounded" :class="playable_class.title.toLowerCase().replace(' ', '-')">{{ playable_class.title }}</div>
+                <div class="w-full h-full px-8 -mx-16 scaled-down" v-for="background in backgrounds">
+                    <div class="w-full h-full rounded" :class="background.title.toLowerCase().replace(' ', '-')">{{ background.title }}</div>
                 </div>
             </flickity>
         </div>
         <div class="flex">
             <button class="btn btn-grey-lightest mr-1" @click.prevent="$emit('back')">Race</button>
-            <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Background</button>
+            <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Alignment</button>
         </div>
     </tray>
 </template>
@@ -46,70 +46,64 @@
                 },
                 deep: true
             },
-            character_class:{
-                handler:function(newVal, oldVal){
-                    this.detailed = 'class';
-                }
-            },
-            character_race:{
-                handler:function(newVal, oldVal){
-                    this.detailed = 'race';
-                }
-            }
         },
         data(){
             return {
                 open: this.active,
                 detailed: '',
-                classes: {
-                    barbarian:{
-                        title: 'Barbarian',
+                backgrounds: {
+                    acolyte:{
+                        title: 'Acolyte',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    bard:{
-                        title: 'Bard',
+                    charlatan:{
+                        title: 'Charlatan',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    cleric:{
-                        title: 'Cleric',
+                    criminal:{
+                        title: 'Criminal',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    druid:{
-                        title: 'Druid',
+                    entertainer:{
+                        title: 'Entertainer',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    fighter:{
-                        title: 'Fighter',
+                    folkhero:{
+                        title: 'Folk Hero',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    monk:{
-                        title: 'Monk',
+                    guildartisan:{
+                        title: 'Guild Artisan',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    paladin:{
-                        title: 'Paladin',
+                    hermit:{
+                        title: 'Hermit',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    ranger:{
-                        title: 'Ranger',
+                    noble:{
+                        title: 'Noble',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    rogue:{
-                        title: 'Rogue',
+                    outlander:{
+                        title: 'Outlander',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    sorcerer:{
-                        title: 'Sorcerer',
+                    sage:{
+                        title: 'Sage',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    warlock:{
-                        title: 'Warlock',
+                    sailor:{
+                        title: 'Sailor',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    wizard: {
-                        title: 'Wizard',
+                    soldier:{
+                        title: 'Soldier',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
-                    }
+                    },
+                    urchin:{
+                        title: 'Urchin',
+                        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
+                    },
                 },
             }
         },
