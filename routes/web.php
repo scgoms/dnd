@@ -14,9 +14,6 @@
 Auth::routes();
 
 Route::get('/', 'PagesController@index');
-Route::get('/test', function () {
-    return view('test');
-});
 
 Route::get('/register/{hash}', 'Auth\RegisterController@showGameRegistrationForm');
 Route::post('/register/{hash}', 'Auth\RegisterController@registerToGame');
@@ -31,8 +28,10 @@ Route::post('/invitation/{hash}/decline', 'InvitationController@decline');
 
 Route::post('/game/{game}/messages', 'MessageController@receiveAndSend');
 Route::post('/game/{game}/background', 'BackgroundController@receiveAndSend');
-Route::get('/game/{game}/dice/{dice}', 'DiceController@show');
 
+Route::get('/dice/{dice}', 'DiceController@show');
+
+Route::get('/stats/create', 'StatsController@create');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::get('/profile/games', 'ProfileController@games');

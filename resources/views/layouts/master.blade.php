@@ -18,7 +18,9 @@
             @include('layouts.navbar')
             <div class="container">
                 <portal-target name="tray" multiple></portal-target>
-                @yield('content')
+                <div class="w-full">
+                    @yield('content')
+                </div>
             </div>
         </div>
     </body>

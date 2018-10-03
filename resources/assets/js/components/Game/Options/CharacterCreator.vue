@@ -2,32 +2,34 @@
     <div>
         <race-selector
             :active="step === 1"
-            :character="character"
+            v-model="character.race"
             @next="step++"
             @back="step--"
-            @update="update($event)"
         ></race-selector>
         <class-selector
             :active="step === 2"
-            :character="character"
+            v-model="character.class"
             @next="step++"
             @back="step--"
-            @update="update($event)"
         ></class-selector>
         <background-selector
             :active="step === 3"
-            :character="character"
+            v-model="character.background"
             @next="step++"
             @back="step--"
-            @update="update($event)"
         ></background-selector>
         <alignment-selector
             :active="step === 4"
-            :character="character"
+            v-model="character.alignment"
             @next="step++"
             @back="step--"
-            @update="update($event)"
         ></alignment-selector>
+        <stat-generator
+            :active="step === 4"
+            v-model="character.stats"
+            @next="step++"
+            @back="step--"
+        ></stat-generator>
     </div>
 </template>
 <script>
@@ -35,12 +37,14 @@
     import ClassSelector from './CharacterCreator/ClassSelector';
     import BackgroundSelector from './CharacterCreator/BackgroundSelector';
     import AlignmentSelector from './CharacterCreator/AlignmentSelector';
+    import StatGenerator from './CharacterCreator/Stats';
     export default {
         components: {
             RaceSelector,
             ClassSelector,
             BackgroundSelector,
-            AlignmentSelector
+            AlignmentSelector,
+            StatGenerator
         },
         data(){
             return {
@@ -53,9 +57,6 @@
             }
         },
         methods:{
-            update(event){
-                this.character = event;
-            },
             openOptions(){
                 this.step = 0;
                 Event.$emit('open-options');

@@ -1,5 +1,5 @@
-.icon{
-    @apply .w-16 .h-16 .rounded .flex .flex-col .items-center .justify-center .mx-1;
+.card{
+    @apply .w-full .h-full .rounded .flex .flex-col .items-center .justify-center .text-3xl;
 }
 .barbarian{
     @apply .bg-blue;
@@ -55,7 +55,7 @@
 .gnome{
     @apply .bg-blue;
 }
-.halfelf{
+.half-elf{
     @apply .bg-indigo;
 }
 .half-orc{

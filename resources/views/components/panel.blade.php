@@ -1,4 +1,4 @@
-<div class="flex relative w-full">
+<div class="flex relative w-full text-grey-light">
     <div class="absolute flex flex-col h-full pin-l" style="z-index:1100">
         <img src="/storage/images/vert_bar_top.png">
         <div class="flex-1" style="background-image: url('/storage/images/vert_bar_body.png');"></div>

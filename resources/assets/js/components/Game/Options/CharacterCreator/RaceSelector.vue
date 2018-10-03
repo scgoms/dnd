@@ -6,9 +6,9 @@
         @closed="open = false"
     >
         <div class="flex-1 flex flex-col -mx-2 pb-2">
-            <flickity cell-align="center" classes="flex-1" :wrap-around="false">
+            <flickity cell-align="center" classes="flex-1" :wrap-around="false" @change="update($event)">
                 <div class="w-full h-full px-8 -mx-16 scaled-down" v-for="race in races">
-                    <div class="w-full h-full rounded" :class="race.title.toLowerCase().replace(' ', '-')">{{ race.title }}</div>
+                    <div class="card" :class="race.title.toLowerCase().replace(' ', '-')">{{ race.title }}</div>
                 </div>
             </flickity>
         </div>
@@ -22,15 +22,7 @@
     export default {
         props: {
             active: {default:false},
-            character:{required:true}
-        },
-        computed:{
-            character_class(){
-                return this.character.class;
-            },
-            character_race(){
-                return this.character.race;
-            }
+            value: {default: ''},
         },
         watch:{
             active:{
@@ -40,55 +32,54 @@
                     }
                 }
             },
-            character:{
-                handler: function(newVal, oldVal){
-                    this.$emit('update', newVal);
-                },
-                deep: true
-            },
+        },
+        methods:{
+            update(payload){
+                this.$emit('input', this.races[payload].title);
+            }
         },
         data(){
             return {
                 open: this.active,
                 detailed: '',
-                races: {
-                    dwarf:{
+                races: [
+                    {
                         title: 'Dwarf',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    elf:{
+                    {
                         title: 'Elf',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    halfling:{
+                    {
                         title: 'Halfling',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    human:{
+                    {
                         title: 'Human',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    dragonborn:{
+                    {
                         title: 'Dragonborn',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    gnome:{
+                    {
                         title: 'Gnome',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    halfelf:{
+                    {
                         title: 'Half-Elf',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    halforc:{
+                    {
                         title: 'Half-Orc',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                    tiefling:{
+                    {
                         title: 'Tiefling',
                         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati beatae cum tempora quae, repudiandae facere nesciunt animi ratione eaque commodi, mollitia fugiat libero amet autem assumenda! Numquam quisquam animi natus.'
                     },
-                },
+                ],
             }
         },
     }

@@ -23,6 +23,18 @@
                 flickity: {}
             }
         },
+        watch:{
+            selectedIndex:{
+                handler: function(newVal, oldVal){
+                    this.$emit('change', this.selectedIndex);
+                }
+            }
+        },
+        computed:{
+            selectedIndex(){
+                return this.flickity.selectedIndex;
+            }
+        },
         mounted(){
             this.flickity = new Flickity(this.$el, {
                 wrapAround: this.wrapAround,

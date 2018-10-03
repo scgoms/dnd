@@ -1,8 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<div class="w-1/4 mx-auto mt-8">
     @panel
-    <div>
         <h1 class="form-header">
         {{ __('Login') }}
         </h1>
@@ -40,7 +38,5 @@
                 </a>
             </div>
         </form>
-    </div>
     @endpanel
-</div>
 @endsection
