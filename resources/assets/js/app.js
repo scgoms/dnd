@@ -6,8 +6,11 @@ window.Event = new Vue();
 import VModal from 'vue-js-modal';
 Vue.use(VModal);
 
-import PortalVue from 'portal-vue'
-Vue.use(PortalVue)
+import PortalVue from 'portal-vue';
+Vue.use(PortalVue);
+
+import VueDragDrop from 'vue-drag-drop';
+Vue.use(VueDragDrop);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

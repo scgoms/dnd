@@ -14,14 +14,7 @@
                 You've been assigned some stats, you can re-arrange the numbers now as you please. Just drag and drop.
             </div>
         </transition>
-        <draggable :list="stats">
-            <div class="stat-box">{{ stats[0] }}</div>
-            <div class="stat-box">{{ stats[1] }}</div>
-            <div class="stat-box">{{ stats[2] }}</div>
-            <div class="stat-box">{{ stats[3] }}</div>
-            <div class="stat-box">{{ stats[4] }}</div>
-            <div class="stat-box">{{ stats[5] }}</div>
-        </draggable>
+        <stats-container></stats-container>
         <div class="flex">
             <button class="btn btn-grey-lightest mr-1" @click.prevent="$emit('back')">Race</button>
             <button class="btn btn-blue ml-1" @click.prevent="$emit('next')">Background</button>
@@ -29,10 +22,10 @@
     </tray>
 </template>
 <script>
-    import Draggable from 'vuedraggable'
+    import StatsContainer from './StatsContainer';
     export default {
         components:{
-            Draggable
+            StatsContainer
         },
         props: {
             active: {default:false},
@@ -63,6 +56,9 @@
                     }).catch(error => {
 
                     });
+            },
+            handleDrop(data, event){
+                alert("Doing a thing");
             }
         },
         mounted(){

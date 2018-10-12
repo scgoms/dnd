@@ -500,7 +500,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
   if ( true ) {
     // AMD
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-      __webpack_require__(119)
+      __webpack_require__(124)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( matchesSelector ) {
       return factory( window, matchesSelector );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -826,9 +826,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Flickity main
       __webpack_require__(8),
       __webpack_require__(17),
       __webpack_require__(2),
-      __webpack_require__(120),
-      __webpack_require__(121),
-      __webpack_require__(122)
+      __webpack_require__(125),
+      __webpack_require__(126),
+      __webpack_require__(127)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( EvEmitter, getSize, utils, Cell, Slide, animatePrototype ) {
       return factory( window, EvEmitter, getSize, utils, Cell, Slide, animatePrototype );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -1725,6 +1725,33 @@ return Flickity;
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1828,33 +1855,6 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1874,7 +1874,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(58)
+var listToStyles = __webpack_require__(59)
 
 /*
 type StyleObject = {
@@ -2251,7 +2251,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(132);
+var	fixUrls = __webpack_require__(137);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -13985,7 +13985,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(44).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(44).setImmediate))
 
 /***/ }),
 /* 17 */
@@ -14637,7 +14637,7 @@ return TapListener;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(21);
-module.exports = __webpack_require__(141);
+module.exports = __webpack_require__(146);
 
 
 /***/ }),
@@ -14650,6 +14650,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_js_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_js_modal__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_portal_vue__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_portal_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_portal_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_drag_drop__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_drag_drop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_drag_drop__);
 __webpack_require__(22);
 
 window.Vue = __webpack_require__(16);
@@ -14661,22 +14663,25 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_js_modal___default.a);
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_1_portal_vue___default.a);
 
+
+Vue.use(__WEBPACK_IMPORTED_MODULE_2_vue_drag_drop___default.a);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('Game', __webpack_require__(48));
-Vue.component('GameMasterToolbar', __webpack_require__(91));
-Vue.component('GameCreator', __webpack_require__(94));
-Vue.component('navbar', __webpack_require__(97));
-Vue.component('game-footer', __webpack_require__(100));
-Vue.component('dnd-modal', __webpack_require__(103));
-Vue.component('collapsible', __webpack_require__(106));
-Vue.component('tray', __webpack_require__(111));
-Vue.component('flickity', __webpack_require__(114));
-Vue.component('glide', __webpack_require__(134));
+Vue.component('Game', __webpack_require__(49));
+Vue.component('GameMasterToolbar', __webpack_require__(96));
+Vue.component('GameCreator', __webpack_require__(99));
+Vue.component('navbar', __webpack_require__(102));
+Vue.component('game-footer', __webpack_require__(105));
+Vue.component('dnd-modal', __webpack_require__(108));
+Vue.component('collapsible', __webpack_require__(111));
+Vue.component('tray', __webpack_require__(116));
+Vue.component('flickity', __webpack_require__(119));
+Vue.component('glide', __webpack_require__(139));
 
 var app = new Vue({
   el: '#app'
@@ -14741,7 +14746,7 @@ module.exports = __webpack_require__(24);
 var utils = __webpack_require__(1);
 var bind = __webpack_require__(10);
 var Axios = __webpack_require__(26);
-var defaults = __webpack_require__(5);
+var defaults = __webpack_require__(6);
 
 /**
  * Create an instance of Axios
@@ -14824,7 +14829,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(5);
+var defaults = __webpack_require__(6);
 var utils = __webpack_require__(1);
 var InterceptorManager = __webpack_require__(35);
 var dispatchRequest = __webpack_require__(36);
@@ -15363,7 +15368,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(1);
 var transformData = __webpack_require__(37);
 var isCancel = __webpack_require__(14);
-var defaults = __webpack_require__(5);
+var defaults = __webpack_require__(6);
 var isAbsoluteURL = __webpack_require__(38);
 var combineURLs = __webpack_require__(39);
 
@@ -25465,7 +25470,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 45 */
@@ -25658,7 +25663,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(11)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(11)))
 
 /***/ }),
 /* 46 */
@@ -27302,12 +27307,19 @@ return index;
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(global) {module.exports=function(modules){function __webpack_require__(moduleId){if(installedModules[moduleId])return installedModules[moduleId].exports;var module=installedModules[moduleId]={i:moduleId,l:!1,exports:{}};return modules[moduleId].call(module.exports,module,module.exports,__webpack_require__),module.l=!0,module.exports}var installedModules={};return __webpack_require__.m=modules,__webpack_require__.c=installedModules,__webpack_require__.d=function(exports,name,getter){__webpack_require__.o(exports,name)||Object.defineProperty(exports,name,{configurable:!1,enumerable:!0,get:getter})},__webpack_require__.n=function(module){var getter=module&&module.__esModule?function(){return module.default}:function(){return module};return __webpack_require__.d(getter,"a",getter),getter},__webpack_require__.o=function(object,property){return Object.prototype.hasOwnProperty.call(object,property)},__webpack_require__.p="",__webpack_require__(__webpack_require__.s=19)}([function(module,exports){var global=module.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=global)},function(module,exports){var core=module.exports={version:"2.5.3"};"number"==typeof __e&&(__e=core)},function(module,exports){module.exports=function(it){return"object"==typeof it?null!==it:"function"==typeof it}},function(module,exports,__webpack_require__){var dP=__webpack_require__(23),createDesc=__webpack_require__(28);module.exports=__webpack_require__(4)?function(object,key,value){return dP.f(object,key,createDesc(1,value))}:function(object,key,value){return object[key]=value,object}},function(module,exports,__webpack_require__){module.exports=!__webpack_require__(6)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(module,exports,__webpack_require__){var global=__webpack_require__(0),core=__webpack_require__(1),hide=__webpack_require__(3),redefine=__webpack_require__(29),ctx=__webpack_require__(8),$export=function(type,name,source){var key,own,out,exp,IS_FORCED=type&$export.F,IS_GLOBAL=type&$export.G,IS_STATIC=type&$export.S,IS_PROTO=type&$export.P,IS_BIND=type&$export.B,target=IS_GLOBAL?global:IS_STATIC?global[name]||(global[name]={}):(global[name]||{}).prototype,exports=IS_GLOBAL?core:core[name]||(core[name]={}),expProto=exports.prototype||(exports.prototype={});IS_GLOBAL&&(source=name);for(key in source)own=!IS_FORCED&&target&&void 0!==target[key],out=(own?target:source)[key],exp=IS_BIND&&own?ctx(out,global):IS_PROTO&&"function"==typeof out?ctx(Function.call,out):out,target&&redefine(target,key,out,type&$export.U),exports[key]!=out&&hide(exports,key,exp),IS_PROTO&&expProto[key]!=out&&(expProto[key]=out)};global.core=core,$export.F=1,$export.G=2,$export.S=4,$export.P=8,$export.B=16,$export.W=32,$export.U=64,$export.R=128,module.exports=$export},function(module,exports){module.exports=function(exec){try{return!!exec()}catch(e){return!0}}},function(module,exports){var id=0,px=Math.random();module.exports=function(key){return"Symbol(".concat(void 0===key?"":key,")_",(++id+px).toString(36))}},function(module,exports,__webpack_require__){var aFunction=__webpack_require__(31);module.exports=function(fn,that,length){if(aFunction(fn),void 0===that)return fn;switch(length){case 1:return function(a){return fn.call(that,a)};case 2:return function(a,b){return fn.call(that,a,b)};case 3:return function(a,b,c){return fn.call(that,a,b,c)}}return function(){return fn.apply(that,arguments)}}},function(module,exports,__webpack_require__){var cof=__webpack_require__(10);module.exports=Object("z").propertyIsEnumerable(0)?Object:function(it){return"String"==cof(it)?it.split(""):Object(it)}},function(module,exports){var toString={}.toString;module.exports=function(it){return toString.call(it).slice(8,-1)}},function(module,exports){module.exports=function(it){if(void 0==it)throw TypeError("Can't call method on  "+it);return it}},function(module,exports,__webpack_require__){var toInteger=__webpack_require__(13),min=Math.min;module.exports=function(it){return it>0?min(toInteger(it),9007199254740991):0}},function(module,exports){var ceil=Math.ceil,floor=Math.floor;module.exports=function(it){return isNaN(it=+it)?0:(it>0?floor:ceil)(it)}},function(module,exports,__webpack_require__){var UNSCOPABLES=__webpack_require__(15)("unscopables"),ArrayProto=Array.prototype;void 0==ArrayProto[UNSCOPABLES]&&__webpack_require__(3)(ArrayProto,UNSCOPABLES,{}),module.exports=function(key){ArrayProto[UNSCOPABLES][key]=!0}},function(module,exports,__webpack_require__){var store=__webpack_require__(35)("wks"),uid=__webpack_require__(7),Symbol=__webpack_require__(0).Symbol,USE_SYMBOL="function"==typeof Symbol;(module.exports=function(name){return store[name]||(store[name]=USE_SYMBOL&&Symbol[name]||(USE_SYMBOL?Symbol:uid)("Symbol."+name))}).store=store},function(module,exports){module.exports=function(rawScriptExports,compiledTemplate,injectStyles,scopeId,moduleIdentifier){var esModule,scriptExports=rawScriptExports=rawScriptExports||{},type=typeof rawScriptExports.default;"object"!==type&&"function"!==type||(esModule=rawScriptExports,scriptExports=rawScriptExports.default);var options="function"==typeof scriptExports?scriptExports.options:scriptExports;compiledTemplate&&(options.render=compiledTemplate.render,options.staticRenderFns=compiledTemplate.staticRenderFns),scopeId&&(options._scopeId=scopeId);var hook;if(moduleIdentifier?(hook=function(context){context=context||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext,context||"undefined"==typeof __VUE_SSR_CONTEXT__||(context=__VUE_SSR_CONTEXT__),injectStyles&&injectStyles.call(this,context),context&&context._registeredComponents&&context._registeredComponents.add(moduleIdentifier)},options._ssrRegister=hook):injectStyles&&(hook=injectStyles),hook){var functional=options.functional,existing=functional?options.render:options.beforeCreate;functional?options.render=function(h,context){return hook.call(context),existing(h,context)}:options.beforeCreate=existing?[].concat(existing,hook):[hook]}return{esModule:esModule,exports:scriptExports,options:options}}},function(module,exports,__webpack_require__){"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default={data:void 0}},function(module,exports,__webpack_require__){"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var keyMirror=function(keys){return keys.reduce(function(acc,k){return(acc[k]=k)&&acc},{})};exports.events=keyMirror(["drag","dragend","dragenter","dragleave","dragstart","dragover","drop"]),exports.dropEffects=keyMirror(["copy","move","link","none"]),exports.effectsAllowed=keyMirror(["none","copy","copyLink","copyMove","link","linkMove","move","all","uninitialized"])},function(module,exports,__webpack_require__){__webpack_require__(20),module.exports=__webpack_require__(43)},function(module,exports,__webpack_require__){"use strict";__webpack_require__(21),__webpack_require__(36)},function(module,exports,__webpack_require__){__webpack_require__(22),module.exports=__webpack_require__(1).Array.includes},function(module,exports,__webpack_require__){"use strict";var $export=__webpack_require__(5),$includes=__webpack_require__(32)(!0);$export($export.P,"Array",{includes:function(el){return $includes(this,el,arguments.length>1?arguments[1]:void 0)}}),__webpack_require__(14)("includes")},function(module,exports,__webpack_require__){var anObject=__webpack_require__(24),IE8_DOM_DEFINE=__webpack_require__(25),toPrimitive=__webpack_require__(27),dP=Object.defineProperty;exports.f=__webpack_require__(4)?Object.defineProperty:function(O,P,Attributes){if(anObject(O),P=toPrimitive(P,!0),anObject(Attributes),IE8_DOM_DEFINE)try{return dP(O,P,Attributes)}catch(e){}if("get"in Attributes||"set"in Attributes)throw TypeError("Accessors not supported!");return"value"in Attributes&&(O[P]=Attributes.value),O}},function(module,exports,__webpack_require__){var isObject=__webpack_require__(2);module.exports=function(it){if(!isObject(it))throw TypeError(it+" is not an object!");return it}},function(module,exports,__webpack_require__){module.exports=!__webpack_require__(4)&&!__webpack_require__(6)(function(){return 7!=Object.defineProperty(__webpack_require__(26)("div"),"a",{get:function(){return 7}}).a})},function(module,exports,__webpack_require__){var isObject=__webpack_require__(2),document=__webpack_require__(0).document,is=isObject(document)&&isObject(document.createElement);module.exports=function(it){return is?document.createElement(it):{}}},function(module,exports,__webpack_require__){var isObject=__webpack_require__(2);module.exports=function(it,S){if(!isObject(it))return it;var fn,val;if(S&&"function"==typeof(fn=it.toString)&&!isObject(val=fn.call(it)))return val;if("function"==typeof(fn=it.valueOf)&&!isObject(val=fn.call(it)))return val;if(!S&&"function"==typeof(fn=it.toString)&&!isObject(val=fn.call(it)))return val;throw TypeError("Can't convert object to primitive value")}},function(module,exports){module.exports=function(bitmap,value){return{enumerable:!(1&bitmap),configurable:!(2&bitmap),writable:!(4&bitmap),value:value}}},function(module,exports,__webpack_require__){var global=__webpack_require__(0),hide=__webpack_require__(3),has=__webpack_require__(30),SRC=__webpack_require__(7)("src"),$toString=Function.toString,TPL=(""+$toString).split("toString");__webpack_require__(1).inspectSource=function(it){return $toString.call(it)},(module.exports=function(O,key,val,safe){var isFunction="function"==typeof val;isFunction&&(has(val,"name")||hide(val,"name",key)),O[key]!==val&&(isFunction&&(has(val,SRC)||hide(val,SRC,O[key]?""+O[key]:TPL.join(String(key)))),O===global?O[key]=val:safe?O[key]?O[key]=val:hide(O,key,val):(delete O[key],hide(O,key,val)))})(Function.prototype,"toString",function(){return"function"==typeof this&&this[SRC]||$toString.call(this)})},function(module,exports){var hasOwnProperty={}.hasOwnProperty;module.exports=function(it,key){return hasOwnProperty.call(it,key)}},function(module,exports){module.exports=function(it){if("function"!=typeof it)throw TypeError(it+" is not a function!");return it}},function(module,exports,__webpack_require__){var toIObject=__webpack_require__(33),toLength=__webpack_require__(12),toAbsoluteIndex=__webpack_require__(34);module.exports=function(IS_INCLUDES){return function($this,el,fromIndex){var value,O=toIObject($this),length=toLength(O.length),index=toAbsoluteIndex(fromIndex,length);if(IS_INCLUDES&&el!=el){for(;length>index;)if((value=O[index++])!=value)return!0}else for(;length>index;index++)if((IS_INCLUDES||index in O)&&O[index]===el)return IS_INCLUDES||index||0;return!IS_INCLUDES&&-1}}},function(module,exports,__webpack_require__){var IObject=__webpack_require__(9),defined=__webpack_require__(11);module.exports=function(it){return IObject(defined(it))}},function(module,exports,__webpack_require__){var toInteger=__webpack_require__(13),max=Math.max,min=Math.min;module.exports=function(index,length){return index=toInteger(index),index<0?max(index+length,0):min(index,length)}},function(module,exports,__webpack_require__){var global=__webpack_require__(0),store=global["__core-js_shared__"]||(global["__core-js_shared__"]={});module.exports=function(key){return store[key]||(store[key]={})}},function(module,exports,__webpack_require__){__webpack_require__(37),module.exports=__webpack_require__(1).Array.find},function(module,exports,__webpack_require__){"use strict";var $export=__webpack_require__(5),$find=__webpack_require__(38)(5),forced=!0;"find"in[]&&Array(1).find(function(){forced=!1}),$export($export.P+$export.F*forced,"Array",{find:function(callbackfn){return $find(this,callbackfn,arguments.length>1?arguments[1]:void 0)}}),__webpack_require__(14)("find")},function(module,exports,__webpack_require__){var ctx=__webpack_require__(8),IObject=__webpack_require__(9),toObject=__webpack_require__(39),toLength=__webpack_require__(12),asc=__webpack_require__(40);module.exports=function(TYPE,$create){var IS_MAP=1==TYPE,IS_FILTER=2==TYPE,IS_SOME=3==TYPE,IS_EVERY=4==TYPE,IS_FIND_INDEX=6==TYPE,NO_HOLES=5==TYPE||IS_FIND_INDEX,create=$create||asc;return function($this,callbackfn,that){for(var val,res,O=toObject($this),self=IObject(O),f=ctx(callbackfn,that,3),length=toLength(self.length),index=0,result=IS_MAP?create($this,length):IS_FILTER?create($this,0):void 0;length>index;index++)if((NO_HOLES||index in self)&&(val=self[index],res=f(val,index,O),TYPE))if(IS_MAP)result[index]=res;else if(res)switch(TYPE){case 3:return!0;case 5:return val;case 6:return index;case 2:result.push(val)}else if(IS_EVERY)return!1;return IS_FIND_INDEX?-1:IS_SOME||IS_EVERY?IS_EVERY:result}}},function(module,exports,__webpack_require__){var defined=__webpack_require__(11);module.exports=function(it){return Object(defined(it))}},function(module,exports,__webpack_require__){var speciesConstructor=__webpack_require__(41);module.exports=function(original,length){return new(speciesConstructor(original))(length)}},function(module,exports,__webpack_require__){var isObject=__webpack_require__(2),isArray=__webpack_require__(42),SPECIES=__webpack_require__(15)("species");module.exports=function(original){var C;return isArray(original)&&(C=original.constructor,"function"!=typeof C||C!==Array&&!isArray(C.prototype)||(C=void 0),isObject(C)&&null===(C=C[SPECIES])&&(C=void 0)),void 0===C?Array:C}},function(module,exports,__webpack_require__){var cof=__webpack_require__(10);module.exports=Array.isArray||function(arg){return"Array"==cof(arg)}},function(module,exports,__webpack_require__){"use strict";function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj}}function install(Vue){Vue.component("drag",_Drag2.default),Vue.component("drop",_Drop2.default)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.Drop=exports.Drag=void 0,exports.install=install;var _Drag=__webpack_require__(44),_Drag2=_interopRequireDefault(_Drag),_Drop=__webpack_require__(47),_Drop2=_interopRequireDefault(_Drop);exports.Drag=_Drag2.default,exports.Drop=_Drop2.default;var plugin={version:"1.1.4",install:install};exports.default=plugin;var GlobalVue=null;"undefined"!=typeof window?GlobalVue=window.Vue:"undefined"!=typeof global&&(GlobalVue=global.Vue),GlobalVue&&GlobalVue.use(plugin)},function(module,__webpack_exports__,__webpack_require__){"use strict";Object.defineProperty(__webpack_exports__,"__esModule",{value:!0});var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Drag_vue__=__webpack_require__(45),__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Drag_vue___default=__webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Drag_vue__),__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_9d486dca_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Drag_vue__=__webpack_require__(46),normalizeComponent=__webpack_require__(16),Component=normalizeComponent(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Drag_vue___default.a,__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_9d486dca_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Drag_vue__.a,null,null,"319bdce9");__webpack_exports__.default=Component.exports},function(module,exports,__webpack_require__){"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var _transferDataStore=__webpack_require__(17),_transferDataStore2=function(obj){return obj&&obj.__esModule?obj:{default:obj}}(_transferDataStore),_constants=__webpack_require__(18);exports.default={props:{draggable:{type:Boolean,default:!0},transferData:{},dropEffect:{validator:function(value){return value in _constants.dropEffects}},effectAllowed:{validator:function(value){return value in _constants.effectsAllowed}},image:String,imageXOffset:{type:Number,default:0},imageYOffset:{type:Number,default:0},hideImageHtml:{type:Boolean,default:!0},tag:{type:String,default:"div"}},data:function(){return{dragging:!1}},computed:{events:function(){return _constants.events},scopedData:function(){return this.dragging&&this.transferData},hideImageStyle:function(){return{position:"fixed",top:"-1000px"}}},methods:{emitEvent:function(name,nativeEvent){var transfer=nativeEvent.dataTransfer;if([_constants.events.dragenter,_constants.events.dragover].includes(name)&&this.dropEffect&&(transfer.dropEffect=this.dropEffect),name===_constants.events.dragstart){if(this.effectAllowed&&(transfer.effectAllowed=this.effectAllowed),this.image||this.$slots.image){var image=void 0;this.image?(image=new Image,image.src=this.image):this.$slots.image&&(image=this.$slots.image[0].elm),transfer.setDragImage&&transfer.setDragImage(image,this.imageXOffset,this.imageYOffset)}void 0!==this.transferData&&(_transferDataStore2.default.data=this.transferData,nativeEvent.dataTransfer.setData("text","")),this.dragging=!0}this.$emit(name,this.transferData,nativeEvent),name===_constants.events.dragend&&(_transferDataStore2.default.data=void 0,this.dragging=!1)}}}},function(module,__webpack_exports__,__webpack_require__){"use strict";var render=function(){var _vm=this,_h=_vm.$createElement,_c=_vm._self._c||_h;return _c(_vm.tag,{tag:"component",attrs:{draggable:_vm.draggable},on:{drag:function($event){_vm.emitEvent(_vm.events.drag,$event)},dragstart:function($event){_vm.emitEvent(_vm.events.dragstart,$event)},dragenter:function($event){_vm.emitEvent(_vm.events.dragenter,$event)},dragleave:function($event){_vm.emitEvent(_vm.events.dragleave,$event)},dragend:function($event){_vm.emitEvent(_vm.events.dragend,$event)}}},[_vm._t("default",null,{transferData:_vm.scopedData}),_vm._v(" "),_vm.hideImageHtml?_c("div",{style:_vm.hideImageStyle},[_vm._t("image",null,{transferData:_vm.scopedData})],2):_vm._t("image",null,{transferData:_vm.scopedData})],2)},staticRenderFns=[],esExports={render:render,staticRenderFns:staticRenderFns};__webpack_exports__.a=esExports},function(module,__webpack_exports__,__webpack_require__){"use strict";Object.defineProperty(__webpack_exports__,"__esModule",{value:!0});var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Drop_vue__=__webpack_require__(48),__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Drop_vue___default=__webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Drop_vue__),__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6c831554_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Drop_vue__=__webpack_require__(49),normalizeComponent=__webpack_require__(16),Component=normalizeComponent(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Drop_vue___default.a,__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6c831554_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Drop_vue__.a,null,null,"49fe8924");__webpack_exports__.default=Component.exports},function(module,exports,__webpack_require__){"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var _transferDataStore=__webpack_require__(17),_transferDataStore2=function(obj){return obj&&obj.__esModule?obj:{default:obj}}(_transferDataStore),_constants=__webpack_require__(18),insideElements=new Set;exports.default={data:function(){return{transferData:void 0,isDraggingOver:!1}},props:{tag:{type:String,default:"div"}},computed:{events:function(){return _constants.events},scopedData:function(){return this.isDraggingOver&&this.transferData}},methods:{emitEvent:function(name,nativeEvent){this.transferData=_transferDataStore2.default.data,this.$emit(name,this.transferData,nativeEvent),name===_constants.events.dragenter&&(insideElements.size||nativeEvent.target===this.$el)&&insideElements.add(nativeEvent.target),name===_constants.events.dragleave&&insideElements.delete(nativeEvent.target),name===_constants.events.drop&&insideElements.clear(),this.isDraggingOver=Boolean(insideElements.size)}}}},function(module,__webpack_exports__,__webpack_require__){"use strict";var render=function(){var _vm=this,_h=_vm.$createElement;return(_vm._self._c||_h)(_vm.tag,{tag:"component",on:{dragenter:function($event){_vm.emitEvent(_vm.events.dragenter,$event)},dragleave:function($event){_vm.emitEvent(_vm.events.dragleave,$event)},dragover:function($event){$event.preventDefault(),_vm.emitEvent(_vm.events.dragover,$event)},drop:function($event){$event.preventDefault(),_vm.emitEvent(_vm.events.drop,$event)}}},[_vm._t("default",null,{transferData:_vm.scopedData})],2)},staticRenderFns=[],esExports={render:render,staticRenderFns:staticRenderFns};__webpack_exports__.a=esExports}]);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(49)
+var __vue_script__ = __webpack_require__(50)
 /* template */
-var __vue_template__ = __webpack_require__(90)
+var __vue_template__ = __webpack_require__(95)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -27346,18 +27358,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Game_Map__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Game_Map__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Game_Map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_Game_Map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Game_Options__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Game_Options__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Game_Options___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Game_Options__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Game_Options_CharacterCreator__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Game_Options_CharacterCreator__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Game_Options_CharacterCreator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Game_Options_CharacterCreator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Game_Chat__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Game_Chat__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Game_Chat___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_Game_Chat__);
 //
 //
@@ -27385,19 +27397,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(51)
+  __webpack_require__(52)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(59)
+var __vue_script__ = __webpack_require__(60)
 /* template */
-var __vue_template__ = __webpack_require__(62)
+var __vue_template__ = __webpack_require__(63)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -27436,13 +27448,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(52);
+var content = __webpack_require__(53);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27462,12 +27474,12 @@ if(false) {
 }
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
 // imports
-exports.i(__webpack_require__(53), "");
+exports.i(__webpack_require__(54), "");
 
 // module
 exports.push([module.i, "\n.leaflet-container {\n  background-image: url('/storage/images/map_bg.png');\n}\n.clip-svg {\n  -webkit-clip-path: url(#myClip);\n          clip-path: url(#myClip);\n}\n", ""]);
@@ -27476,22 +27488,22 @@ exports.push([module.i, "\n.leaflet-container {\n  background-image: url('/stora
 
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__(54);
+var escape = __webpack_require__(55);
 exports = module.exports = __webpack_require__(3)(false);
 // imports
 
 
 // module
-exports.push([module.i, "/* required styles */\r\n\r\n.leaflet-pane,\r\n.leaflet-tile,\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow,\r\n.leaflet-tile-container,\r\n.leaflet-pane > svg,\r\n.leaflet-pane > canvas,\r\n.leaflet-zoom-box,\r\n.leaflet-image-layer,\r\n.leaflet-layer {\r\n\tposition: absolute;\r\n\tleft: 0;\r\n\ttop: 0;\r\n\t}\r\n.leaflet-container {\r\n\toverflow: hidden;\r\n\t}\r\n.leaflet-tile,\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow {\r\n\t-webkit-user-select: none;\r\n\t   -moz-user-select: none;\r\n\t        user-select: none;\r\n\t  -webkit-user-drag: none;\r\n\t}\r\n/* Safari renders non-retina tile on retina better with this, but Chrome is worse */\r\n.leaflet-safari .leaflet-tile {\r\n\timage-rendering: -webkit-optimize-contrast;\r\n\t}\r\n/* hack that prevents hw layers \"stretching\" when loading new tiles */\r\n.leaflet-safari .leaflet-tile-container {\r\n\twidth: 1600px;\r\n\theight: 1600px;\r\n\t-webkit-transform-origin: 0 0;\r\n\t}\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow {\r\n\tdisplay: block;\r\n\t}\r\n/* .leaflet-container svg: reset svg max-width decleration shipped in Joomla! (joomla.org) 3.x */\r\n/* .leaflet-container img: map is broken in FF if you have max-width: 100% on tiles */\r\n.leaflet-container .leaflet-overlay-pane svg,\r\n.leaflet-container .leaflet-marker-pane img,\r\n.leaflet-container .leaflet-shadow-pane img,\r\n.leaflet-container .leaflet-tile-pane img,\r\n.leaflet-container img.leaflet-image-layer,\r\n.leaflet-container .leaflet-tile {\r\n\tmax-width: none !important;\r\n\tmax-height: none !important;\r\n\t}\r\n\r\n.leaflet-container.leaflet-touch-zoom {\r\n\t-ms-touch-action: pan-x pan-y;\r\n\ttouch-action: pan-x pan-y;\r\n\t}\r\n.leaflet-container.leaflet-touch-drag {\r\n\t-ms-touch-action: pinch-zoom;\r\n\t/* Fallback for FF which doesn't support pinch-zoom */\r\n\ttouch-action: none;\r\n\ttouch-action: pinch-zoom;\r\n}\r\n.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {\r\n\t-ms-touch-action: none;\r\n\ttouch-action: none;\r\n}\r\n.leaflet-container {\r\n\t-webkit-tap-highlight-color: transparent;\r\n}\r\n.leaflet-container a {\r\n\t-webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);\r\n}\r\n.leaflet-tile {\r\n\tfilter: inherit;\r\n\tvisibility: hidden;\r\n\t}\r\n.leaflet-tile-loaded {\r\n\tvisibility: inherit;\r\n\t}\r\n.leaflet-zoom-box {\r\n\twidth: 0;\r\n\theight: 0;\r\n\t-moz-box-sizing: border-box;\r\n\t     box-sizing: border-box;\r\n\tz-index: 800;\r\n\t}\r\n/* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */\r\n.leaflet-overlay-pane svg {\r\n\t-moz-user-select: none;\r\n\t}\r\n\r\n.leaflet-pane         { z-index: 400; }\r\n\r\n.leaflet-tile-pane    { z-index: 200; }\r\n.leaflet-overlay-pane { z-index: 400; }\r\n.leaflet-shadow-pane  { z-index: 500; }\r\n.leaflet-marker-pane  { z-index: 600; }\r\n.leaflet-tooltip-pane   { z-index: 650; }\r\n.leaflet-popup-pane   { z-index: 700; }\r\n\r\n.leaflet-map-pane canvas { z-index: 100; }\r\n.leaflet-map-pane svg    { z-index: 200; }\r\n\r\n.leaflet-vml-shape {\r\n\twidth: 1px;\r\n\theight: 1px;\r\n\t}\r\n.lvml {\r\n\tbehavior: url(#default#VML);\r\n\tdisplay: inline-block;\r\n\tposition: absolute;\r\n\t}\r\n\r\n\r\n/* control positioning */\r\n\r\n.leaflet-control {\r\n\tposition: relative;\r\n\tz-index: 800;\r\n\tpointer-events: visiblePainted; /* IE 9-10 doesn't have auto */\r\n\tpointer-events: auto;\r\n\t}\r\n.leaflet-top,\r\n.leaflet-bottom {\r\n\tposition: absolute;\r\n\tz-index: 1000;\r\n\tpointer-events: none;\r\n\t}\r\n.leaflet-top {\r\n\ttop: 0;\r\n\t}\r\n.leaflet-right {\r\n\tright: 0;\r\n\t}\r\n.leaflet-bottom {\r\n\tbottom: 0;\r\n\t}\r\n.leaflet-left {\r\n\tleft: 0;\r\n\t}\r\n.leaflet-control {\r\n\tfloat: left;\r\n\tclear: both;\r\n\t}\r\n.leaflet-right .leaflet-control {\r\n\tfloat: right;\r\n\t}\r\n.leaflet-top .leaflet-control {\r\n\tmargin-top: 10px;\r\n\t}\r\n.leaflet-bottom .leaflet-control {\r\n\tmargin-bottom: 10px;\r\n\t}\r\n.leaflet-left .leaflet-control {\r\n\tmargin-left: 10px;\r\n\t}\r\n.leaflet-right .leaflet-control {\r\n\tmargin-right: 10px;\r\n\t}\r\n\r\n\r\n/* zoom and fade animations */\r\n\r\n.leaflet-fade-anim .leaflet-tile {\r\n\twill-change: opacity;\r\n\t}\r\n.leaflet-fade-anim .leaflet-popup {\r\n\topacity: 0;\r\n\t-webkit-transition: opacity 0.2s linear;\r\n\t   -moz-transition: opacity 0.2s linear;\r\n\t        transition: opacity 0.2s linear;\r\n\t}\r\n.leaflet-fade-anim .leaflet-map-pane .leaflet-popup {\r\n\topacity: 1;\r\n\t}\r\n.leaflet-zoom-animated {\r\n\t-webkit-transform-origin: 0 0;\r\n\t    -ms-transform-origin: 0 0;\r\n\t        transform-origin: 0 0;\r\n\t}\r\n.leaflet-zoom-anim .leaflet-zoom-animated {\r\n\twill-change: transform;\r\n\t}\r\n.leaflet-zoom-anim .leaflet-zoom-animated {\r\n\t-webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1);\r\n\t   -moz-transition:    -moz-transform 0.25s cubic-bezier(0,0,0.25,1);\r\n\t        transition:         transform 0.25s cubic-bezier(0,0,0.25,1);\r\n\t}\r\n.leaflet-zoom-anim .leaflet-tile,\r\n.leaflet-pan-anim .leaflet-tile {\r\n\t-webkit-transition: none;\r\n\t   -moz-transition: none;\r\n\t        transition: none;\r\n\t}\r\n\r\n.leaflet-zoom-anim .leaflet-zoom-hide {\r\n\tvisibility: hidden;\r\n\t}\r\n\r\n\r\n/* cursors */\r\n\r\n.leaflet-interactive {\r\n\tcursor: pointer;\r\n\t}\r\n.leaflet-grab {\r\n\tcursor: -webkit-grab;\r\n\tcursor:    -moz-grab;\r\n\tcursor:         grab;\r\n\t}\r\n.leaflet-crosshair,\r\n.leaflet-crosshair .leaflet-interactive {\r\n\tcursor: crosshair;\r\n\t}\r\n.leaflet-popup-pane,\r\n.leaflet-control {\r\n\tcursor: auto;\r\n\t}\r\n.leaflet-dragging .leaflet-grab,\r\n.leaflet-dragging .leaflet-grab .leaflet-interactive,\r\n.leaflet-dragging .leaflet-marker-draggable {\r\n\tcursor: move;\r\n\tcursor: -webkit-grabbing;\r\n\tcursor:    -moz-grabbing;\r\n\tcursor:         grabbing;\r\n\t}\r\n\r\n/* marker & overlays interactivity */\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow,\r\n.leaflet-image-layer,\r\n.leaflet-pane > svg path,\r\n.leaflet-tile-container {\r\n\tpointer-events: none;\r\n\t}\r\n\r\n.leaflet-marker-icon.leaflet-interactive,\r\n.leaflet-image-layer.leaflet-interactive,\r\n.leaflet-pane > svg path.leaflet-interactive {\r\n\tpointer-events: visiblePainted; /* IE 9-10 doesn't have auto */\r\n\tpointer-events: auto;\r\n\t}\r\n\r\n/* visual tweaks */\r\n\r\n.leaflet-container {\r\n\tbackground: #ddd;\r\n\toutline: 0;\r\n\t}\r\n.leaflet-container a {\r\n\tcolor: #0078A8;\r\n\t}\r\n.leaflet-container a.leaflet-active {\r\n\toutline: 2px solid orange;\r\n\t}\r\n.leaflet-zoom-box {\r\n\tborder: 2px dotted #38f;\r\n\tbackground: rgba(255,255,255,0.5);\r\n\t}\r\n\r\n\r\n/* general typography */\r\n.leaflet-container {\r\n\tfont: 12px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif;\r\n\t}\r\n\r\n\r\n/* general toolbar styles */\r\n\r\n.leaflet-bar {\r\n\tbox-shadow: 0 1px 5px rgba(0,0,0,0.65);\r\n\tborder-radius: 4px;\r\n\t}\r\n.leaflet-bar a,\r\n.leaflet-bar a:hover {\r\n\tbackground-color: #fff;\r\n\tborder-bottom: 1px solid #ccc;\r\n\twidth: 26px;\r\n\theight: 26px;\r\n\tline-height: 26px;\r\n\tdisplay: block;\r\n\ttext-align: center;\r\n\ttext-decoration: none;\r\n\tcolor: black;\r\n\t}\r\n.leaflet-bar a,\r\n.leaflet-control-layers-toggle {\r\n\tbackground-position: 50% 50%;\r\n\tbackground-repeat: no-repeat;\r\n\tdisplay: block;\r\n\t}\r\n.leaflet-bar a:hover {\r\n\tbackground-color: #f4f4f4;\r\n\t}\r\n.leaflet-bar a:first-child {\r\n\tborder-top-left-radius: 4px;\r\n\tborder-top-right-radius: 4px;\r\n\t}\r\n.leaflet-bar a:last-child {\r\n\tborder-bottom-left-radius: 4px;\r\n\tborder-bottom-right-radius: 4px;\r\n\tborder-bottom: none;\r\n\t}\r\n.leaflet-bar a.leaflet-disabled {\r\n\tcursor: default;\r\n\tbackground-color: #f4f4f4;\r\n\tcolor: #bbb;\r\n\t}\r\n\r\n.leaflet-touch .leaflet-bar a {\r\n\twidth: 30px;\r\n\theight: 30px;\r\n\tline-height: 30px;\r\n\t}\r\n.leaflet-touch .leaflet-bar a:first-child {\r\n\tborder-top-left-radius: 2px;\r\n\tborder-top-right-radius: 2px;\r\n\t}\r\n.leaflet-touch .leaflet-bar a:last-child {\r\n\tborder-bottom-left-radius: 2px;\r\n\tborder-bottom-right-radius: 2px;\r\n\t}\r\n\r\n/* zoom control */\r\n\r\n.leaflet-control-zoom-in,\r\n.leaflet-control-zoom-out {\r\n\tfont: bold 18px 'Lucida Console', Monaco, monospace;\r\n\ttext-indent: 1px;\r\n\t}\r\n\r\n.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out  {\r\n\tfont-size: 22px;\r\n\t}\r\n\r\n\r\n/* layers control */\r\n\r\n.leaflet-control-layers {\r\n\tbox-shadow: 0 1px 5px rgba(0,0,0,0.4);\r\n\tbackground: #fff;\r\n\tborder-radius: 5px;\r\n\t}\r\n.leaflet-control-layers-toggle {\r\n\tbackground-image: url(" + escape(__webpack_require__(55)) + ");\r\n\twidth: 36px;\r\n\theight: 36px;\r\n\t}\r\n.leaflet-retina .leaflet-control-layers-toggle {\r\n\tbackground-image: url(" + escape(__webpack_require__(56)) + ");\r\n\tbackground-size: 26px 26px;\r\n\t}\r\n.leaflet-touch .leaflet-control-layers-toggle {\r\n\twidth: 44px;\r\n\theight: 44px;\r\n\t}\r\n.leaflet-control-layers .leaflet-control-layers-list,\r\n.leaflet-control-layers-expanded .leaflet-control-layers-toggle {\r\n\tdisplay: none;\r\n\t}\r\n.leaflet-control-layers-expanded .leaflet-control-layers-list {\r\n\tdisplay: block;\r\n\tposition: relative;\r\n\t}\r\n.leaflet-control-layers-expanded {\r\n\tpadding: 6px 10px 6px 6px;\r\n\tcolor: #333;\r\n\tbackground: #fff;\r\n\t}\r\n.leaflet-control-layers-scrollbar {\r\n\toverflow-y: scroll;\r\n\toverflow-x: hidden;\r\n\tpadding-right: 5px;\r\n\t}\r\n.leaflet-control-layers-selector {\r\n\tmargin-top: 2px;\r\n\tposition: relative;\r\n\ttop: 1px;\r\n\t}\r\n.leaflet-control-layers label {\r\n\tdisplay: block;\r\n\t}\r\n.leaflet-control-layers-separator {\r\n\theight: 0;\r\n\tborder-top: 1px solid #ddd;\r\n\tmargin: 5px -10px 5px -6px;\r\n\t}\r\n\r\n/* Default icon URLs */\r\n.leaflet-default-icon-path {\r\n\tbackground-image: url(" + escape(__webpack_require__(57)) + ");\r\n\t}\r\n\r\n\r\n/* attribution and scale controls */\r\n\r\n.leaflet-container .leaflet-control-attribution {\r\n\tbackground: #fff;\r\n\tbackground: rgba(255, 255, 255, 0.7);\r\n\tmargin: 0;\r\n\t}\r\n.leaflet-control-attribution,\r\n.leaflet-control-scale-line {\r\n\tpadding: 0 5px;\r\n\tcolor: #333;\r\n\t}\r\n.leaflet-control-attribution a {\r\n\ttext-decoration: none;\r\n\t}\r\n.leaflet-control-attribution a:hover {\r\n\ttext-decoration: underline;\r\n\t}\r\n.leaflet-container .leaflet-control-attribution,\r\n.leaflet-container .leaflet-control-scale {\r\n\tfont-size: 11px;\r\n\t}\r\n.leaflet-left .leaflet-control-scale {\r\n\tmargin-left: 5px;\r\n\t}\r\n.leaflet-bottom .leaflet-control-scale {\r\n\tmargin-bottom: 5px;\r\n\t}\r\n.leaflet-control-scale-line {\r\n\tborder: 2px solid #777;\r\n\tborder-top: none;\r\n\tline-height: 1.1;\r\n\tpadding: 2px 5px 1px;\r\n\tfont-size: 11px;\r\n\twhite-space: nowrap;\r\n\toverflow: hidden;\r\n\t-moz-box-sizing: border-box;\r\n\t     box-sizing: border-box;\r\n\r\n\tbackground: #fff;\r\n\tbackground: rgba(255, 255, 255, 0.5);\r\n\t}\r\n.leaflet-control-scale-line:not(:first-child) {\r\n\tborder-top: 2px solid #777;\r\n\tborder-bottom: none;\r\n\tmargin-top: -2px;\r\n\t}\r\n.leaflet-control-scale-line:not(:first-child):not(:last-child) {\r\n\tborder-bottom: 2px solid #777;\r\n\t}\r\n\r\n.leaflet-touch .leaflet-control-attribution,\r\n.leaflet-touch .leaflet-control-layers,\r\n.leaflet-touch .leaflet-bar {\r\n\tbox-shadow: none;\r\n\t}\r\n.leaflet-touch .leaflet-control-layers,\r\n.leaflet-touch .leaflet-bar {\r\n\tborder: 2px solid rgba(0,0,0,0.2);\r\n\tbackground-clip: padding-box;\r\n\t}\r\n\r\n\r\n/* popup */\r\n\r\n.leaflet-popup {\r\n\tposition: absolute;\r\n\ttext-align: center;\r\n\tmargin-bottom: 20px;\r\n\t}\r\n.leaflet-popup-content-wrapper {\r\n\tpadding: 1px;\r\n\ttext-align: left;\r\n\tborder-radius: 12px;\r\n\t}\r\n.leaflet-popup-content {\r\n\tmargin: 13px 19px;\r\n\tline-height: 1.4;\r\n\t}\r\n.leaflet-popup-content p {\r\n\tmargin: 18px 0;\r\n\t}\r\n.leaflet-popup-tip-container {\r\n\twidth: 40px;\r\n\theight: 20px;\r\n\tposition: absolute;\r\n\tleft: 50%;\r\n\tmargin-left: -20px;\r\n\toverflow: hidden;\r\n\tpointer-events: none;\r\n\t}\r\n.leaflet-popup-tip {\r\n\twidth: 17px;\r\n\theight: 17px;\r\n\tpadding: 1px;\r\n\r\n\tmargin: -10px auto 0;\r\n\r\n\t-webkit-transform: rotate(45deg);\r\n\t   -moz-transform: rotate(45deg);\r\n\t    -ms-transform: rotate(45deg);\r\n\t        transform: rotate(45deg);\r\n\t}\r\n.leaflet-popup-content-wrapper,\r\n.leaflet-popup-tip {\r\n\tbackground: white;\r\n\tcolor: #333;\r\n\tbox-shadow: 0 3px 14px rgba(0,0,0,0.4);\r\n\t}\r\n.leaflet-container a.leaflet-popup-close-button {\r\n\tposition: absolute;\r\n\ttop: 0;\r\n\tright: 0;\r\n\tpadding: 4px 4px 0 0;\r\n\tborder: none;\r\n\ttext-align: center;\r\n\twidth: 18px;\r\n\theight: 14px;\r\n\tfont: 16px/14px Tahoma, Verdana, sans-serif;\r\n\tcolor: #c3c3c3;\r\n\ttext-decoration: none;\r\n\tfont-weight: bold;\r\n\tbackground: transparent;\r\n\t}\r\n.leaflet-container a.leaflet-popup-close-button:hover {\r\n\tcolor: #999;\r\n\t}\r\n.leaflet-popup-scrolled {\r\n\toverflow: auto;\r\n\tborder-bottom: 1px solid #ddd;\r\n\tborder-top: 1px solid #ddd;\r\n\t}\r\n\r\n.leaflet-oldie .leaflet-popup-content-wrapper {\r\n\tzoom: 1;\r\n\t}\r\n.leaflet-oldie .leaflet-popup-tip {\r\n\twidth: 24px;\r\n\tmargin: 0 auto;\r\n\r\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)\";\r\n\tfilter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);\r\n\t}\r\n.leaflet-oldie .leaflet-popup-tip-container {\r\n\tmargin-top: -1px;\r\n\t}\r\n\r\n.leaflet-oldie .leaflet-control-zoom,\r\n.leaflet-oldie .leaflet-control-layers,\r\n.leaflet-oldie .leaflet-popup-content-wrapper,\r\n.leaflet-oldie .leaflet-popup-tip {\r\n\tborder: 1px solid #999;\r\n\t}\r\n\r\n\r\n/* div icon */\r\n\r\n.leaflet-div-icon {\r\n\tbackground: #fff;\r\n\tborder: 1px solid #666;\r\n\t}\r\n\r\n\r\n/* Tooltip */\r\n/* Base styles for the element that has a tooltip */\r\n.leaflet-tooltip {\r\n\tposition: absolute;\r\n\tpadding: 6px;\r\n\tbackground-color: #fff;\r\n\tborder: 1px solid #fff;\r\n\tborder-radius: 3px;\r\n\tcolor: #222;\r\n\twhite-space: nowrap;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n\tuser-select: none;\r\n\tpointer-events: none;\r\n\tbox-shadow: 0 1px 3px rgba(0,0,0,0.4);\r\n\t}\r\n.leaflet-tooltip.leaflet-clickable {\r\n\tcursor: pointer;\r\n\tpointer-events: auto;\r\n\t}\r\n.leaflet-tooltip-top:before,\r\n.leaflet-tooltip-bottom:before,\r\n.leaflet-tooltip-left:before,\r\n.leaflet-tooltip-right:before {\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\tborder: 6px solid transparent;\r\n\tbackground: transparent;\r\n\tcontent: \"\";\r\n\t}\r\n\r\n/* Directions */\r\n\r\n.leaflet-tooltip-bottom {\r\n\tmargin-top: 6px;\r\n}\r\n.leaflet-tooltip-top {\r\n\tmargin-top: -6px;\r\n}\r\n.leaflet-tooltip-bottom:before,\r\n.leaflet-tooltip-top:before {\r\n\tleft: 50%;\r\n\tmargin-left: -6px;\r\n\t}\r\n.leaflet-tooltip-top:before {\r\n\tbottom: 0;\r\n\tmargin-bottom: -12px;\r\n\tborder-top-color: #fff;\r\n\t}\r\n.leaflet-tooltip-bottom:before {\r\n\ttop: 0;\r\n\tmargin-top: -12px;\r\n\tmargin-left: -6px;\r\n\tborder-bottom-color: #fff;\r\n\t}\r\n.leaflet-tooltip-left {\r\n\tmargin-left: -6px;\r\n}\r\n.leaflet-tooltip-right {\r\n\tmargin-left: 6px;\r\n}\r\n.leaflet-tooltip-left:before,\r\n.leaflet-tooltip-right:before {\r\n\ttop: 50%;\r\n\tmargin-top: -6px;\r\n\t}\r\n.leaflet-tooltip-left:before {\r\n\tright: 0;\r\n\tmargin-right: -12px;\r\n\tborder-left-color: #fff;\r\n\t}\r\n.leaflet-tooltip-right:before {\r\n\tleft: 0;\r\n\tmargin-left: -12px;\r\n\tborder-right-color: #fff;\r\n\t}\r\n", ""]);
+exports.push([module.i, "/* required styles */\r\n\r\n.leaflet-pane,\r\n.leaflet-tile,\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow,\r\n.leaflet-tile-container,\r\n.leaflet-pane > svg,\r\n.leaflet-pane > canvas,\r\n.leaflet-zoom-box,\r\n.leaflet-image-layer,\r\n.leaflet-layer {\r\n\tposition: absolute;\r\n\tleft: 0;\r\n\ttop: 0;\r\n\t}\r\n.leaflet-container {\r\n\toverflow: hidden;\r\n\t}\r\n.leaflet-tile,\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow {\r\n\t-webkit-user-select: none;\r\n\t   -moz-user-select: none;\r\n\t        user-select: none;\r\n\t  -webkit-user-drag: none;\r\n\t}\r\n/* Safari renders non-retina tile on retina better with this, but Chrome is worse */\r\n.leaflet-safari .leaflet-tile {\r\n\timage-rendering: -webkit-optimize-contrast;\r\n\t}\r\n/* hack that prevents hw layers \"stretching\" when loading new tiles */\r\n.leaflet-safari .leaflet-tile-container {\r\n\twidth: 1600px;\r\n\theight: 1600px;\r\n\t-webkit-transform-origin: 0 0;\r\n\t}\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow {\r\n\tdisplay: block;\r\n\t}\r\n/* .leaflet-container svg: reset svg max-width decleration shipped in Joomla! (joomla.org) 3.x */\r\n/* .leaflet-container img: map is broken in FF if you have max-width: 100% on tiles */\r\n.leaflet-container .leaflet-overlay-pane svg,\r\n.leaflet-container .leaflet-marker-pane img,\r\n.leaflet-container .leaflet-shadow-pane img,\r\n.leaflet-container .leaflet-tile-pane img,\r\n.leaflet-container img.leaflet-image-layer,\r\n.leaflet-container .leaflet-tile {\r\n\tmax-width: none !important;\r\n\tmax-height: none !important;\r\n\t}\r\n\r\n.leaflet-container.leaflet-touch-zoom {\r\n\t-ms-touch-action: pan-x pan-y;\r\n\ttouch-action: pan-x pan-y;\r\n\t}\r\n.leaflet-container.leaflet-touch-drag {\r\n\t-ms-touch-action: pinch-zoom;\r\n\t/* Fallback for FF which doesn't support pinch-zoom */\r\n\ttouch-action: none;\r\n\ttouch-action: pinch-zoom;\r\n}\r\n.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {\r\n\t-ms-touch-action: none;\r\n\ttouch-action: none;\r\n}\r\n.leaflet-container {\r\n\t-webkit-tap-highlight-color: transparent;\r\n}\r\n.leaflet-container a {\r\n\t-webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);\r\n}\r\n.leaflet-tile {\r\n\tfilter: inherit;\r\n\tvisibility: hidden;\r\n\t}\r\n.leaflet-tile-loaded {\r\n\tvisibility: inherit;\r\n\t}\r\n.leaflet-zoom-box {\r\n\twidth: 0;\r\n\theight: 0;\r\n\t-moz-box-sizing: border-box;\r\n\t     box-sizing: border-box;\r\n\tz-index: 800;\r\n\t}\r\n/* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */\r\n.leaflet-overlay-pane svg {\r\n\t-moz-user-select: none;\r\n\t}\r\n\r\n.leaflet-pane         { z-index: 400; }\r\n\r\n.leaflet-tile-pane    { z-index: 200; }\r\n.leaflet-overlay-pane { z-index: 400; }\r\n.leaflet-shadow-pane  { z-index: 500; }\r\n.leaflet-marker-pane  { z-index: 600; }\r\n.leaflet-tooltip-pane   { z-index: 650; }\r\n.leaflet-popup-pane   { z-index: 700; }\r\n\r\n.leaflet-map-pane canvas { z-index: 100; }\r\n.leaflet-map-pane svg    { z-index: 200; }\r\n\r\n.leaflet-vml-shape {\r\n\twidth: 1px;\r\n\theight: 1px;\r\n\t}\r\n.lvml {\r\n\tbehavior: url(#default#VML);\r\n\tdisplay: inline-block;\r\n\tposition: absolute;\r\n\t}\r\n\r\n\r\n/* control positioning */\r\n\r\n.leaflet-control {\r\n\tposition: relative;\r\n\tz-index: 800;\r\n\tpointer-events: visiblePainted; /* IE 9-10 doesn't have auto */\r\n\tpointer-events: auto;\r\n\t}\r\n.leaflet-top,\r\n.leaflet-bottom {\r\n\tposition: absolute;\r\n\tz-index: 1000;\r\n\tpointer-events: none;\r\n\t}\r\n.leaflet-top {\r\n\ttop: 0;\r\n\t}\r\n.leaflet-right {\r\n\tright: 0;\r\n\t}\r\n.leaflet-bottom {\r\n\tbottom: 0;\r\n\t}\r\n.leaflet-left {\r\n\tleft: 0;\r\n\t}\r\n.leaflet-control {\r\n\tfloat: left;\r\n\tclear: both;\r\n\t}\r\n.leaflet-right .leaflet-control {\r\n\tfloat: right;\r\n\t}\r\n.leaflet-top .leaflet-control {\r\n\tmargin-top: 10px;\r\n\t}\r\n.leaflet-bottom .leaflet-control {\r\n\tmargin-bottom: 10px;\r\n\t}\r\n.leaflet-left .leaflet-control {\r\n\tmargin-left: 10px;\r\n\t}\r\n.leaflet-right .leaflet-control {\r\n\tmargin-right: 10px;\r\n\t}\r\n\r\n\r\n/* zoom and fade animations */\r\n\r\n.leaflet-fade-anim .leaflet-tile {\r\n\twill-change: opacity;\r\n\t}\r\n.leaflet-fade-anim .leaflet-popup {\r\n\topacity: 0;\r\n\t-webkit-transition: opacity 0.2s linear;\r\n\t   -moz-transition: opacity 0.2s linear;\r\n\t        transition: opacity 0.2s linear;\r\n\t}\r\n.leaflet-fade-anim .leaflet-map-pane .leaflet-popup {\r\n\topacity: 1;\r\n\t}\r\n.leaflet-zoom-animated {\r\n\t-webkit-transform-origin: 0 0;\r\n\t    -ms-transform-origin: 0 0;\r\n\t        transform-origin: 0 0;\r\n\t}\r\n.leaflet-zoom-anim .leaflet-zoom-animated {\r\n\twill-change: transform;\r\n\t}\r\n.leaflet-zoom-anim .leaflet-zoom-animated {\r\n\t-webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1);\r\n\t   -moz-transition:    -moz-transform 0.25s cubic-bezier(0,0,0.25,1);\r\n\t        transition:         transform 0.25s cubic-bezier(0,0,0.25,1);\r\n\t}\r\n.leaflet-zoom-anim .leaflet-tile,\r\n.leaflet-pan-anim .leaflet-tile {\r\n\t-webkit-transition: none;\r\n\t   -moz-transition: none;\r\n\t        transition: none;\r\n\t}\r\n\r\n.leaflet-zoom-anim .leaflet-zoom-hide {\r\n\tvisibility: hidden;\r\n\t}\r\n\r\n\r\n/* cursors */\r\n\r\n.leaflet-interactive {\r\n\tcursor: pointer;\r\n\t}\r\n.leaflet-grab {\r\n\tcursor: -webkit-grab;\r\n\tcursor:    -moz-grab;\r\n\tcursor:         grab;\r\n\t}\r\n.leaflet-crosshair,\r\n.leaflet-crosshair .leaflet-interactive {\r\n\tcursor: crosshair;\r\n\t}\r\n.leaflet-popup-pane,\r\n.leaflet-control {\r\n\tcursor: auto;\r\n\t}\r\n.leaflet-dragging .leaflet-grab,\r\n.leaflet-dragging .leaflet-grab .leaflet-interactive,\r\n.leaflet-dragging .leaflet-marker-draggable {\r\n\tcursor: move;\r\n\tcursor: -webkit-grabbing;\r\n\tcursor:    -moz-grabbing;\r\n\tcursor:         grabbing;\r\n\t}\r\n\r\n/* marker & overlays interactivity */\r\n.leaflet-marker-icon,\r\n.leaflet-marker-shadow,\r\n.leaflet-image-layer,\r\n.leaflet-pane > svg path,\r\n.leaflet-tile-container {\r\n\tpointer-events: none;\r\n\t}\r\n\r\n.leaflet-marker-icon.leaflet-interactive,\r\n.leaflet-image-layer.leaflet-interactive,\r\n.leaflet-pane > svg path.leaflet-interactive {\r\n\tpointer-events: visiblePainted; /* IE 9-10 doesn't have auto */\r\n\tpointer-events: auto;\r\n\t}\r\n\r\n/* visual tweaks */\r\n\r\n.leaflet-container {\r\n\tbackground: #ddd;\r\n\toutline: 0;\r\n\t}\r\n.leaflet-container a {\r\n\tcolor: #0078A8;\r\n\t}\r\n.leaflet-container a.leaflet-active {\r\n\toutline: 2px solid orange;\r\n\t}\r\n.leaflet-zoom-box {\r\n\tborder: 2px dotted #38f;\r\n\tbackground: rgba(255,255,255,0.5);\r\n\t}\r\n\r\n\r\n/* general typography */\r\n.leaflet-container {\r\n\tfont: 12px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif;\r\n\t}\r\n\r\n\r\n/* general toolbar styles */\r\n\r\n.leaflet-bar {\r\n\tbox-shadow: 0 1px 5px rgba(0,0,0,0.65);\r\n\tborder-radius: 4px;\r\n\t}\r\n.leaflet-bar a,\r\n.leaflet-bar a:hover {\r\n\tbackground-color: #fff;\r\n\tborder-bottom: 1px solid #ccc;\r\n\twidth: 26px;\r\n\theight: 26px;\r\n\tline-height: 26px;\r\n\tdisplay: block;\r\n\ttext-align: center;\r\n\ttext-decoration: none;\r\n\tcolor: black;\r\n\t}\r\n.leaflet-bar a,\r\n.leaflet-control-layers-toggle {\r\n\tbackground-position: 50% 50%;\r\n\tbackground-repeat: no-repeat;\r\n\tdisplay: block;\r\n\t}\r\n.leaflet-bar a:hover {\r\n\tbackground-color: #f4f4f4;\r\n\t}\r\n.leaflet-bar a:first-child {\r\n\tborder-top-left-radius: 4px;\r\n\tborder-top-right-radius: 4px;\r\n\t}\r\n.leaflet-bar a:last-child {\r\n\tborder-bottom-left-radius: 4px;\r\n\tborder-bottom-right-radius: 4px;\r\n\tborder-bottom: none;\r\n\t}\r\n.leaflet-bar a.leaflet-disabled {\r\n\tcursor: default;\r\n\tbackground-color: #f4f4f4;\r\n\tcolor: #bbb;\r\n\t}\r\n\r\n.leaflet-touch .leaflet-bar a {\r\n\twidth: 30px;\r\n\theight: 30px;\r\n\tline-height: 30px;\r\n\t}\r\n.leaflet-touch .leaflet-bar a:first-child {\r\n\tborder-top-left-radius: 2px;\r\n\tborder-top-right-radius: 2px;\r\n\t}\r\n.leaflet-touch .leaflet-bar a:last-child {\r\n\tborder-bottom-left-radius: 2px;\r\n\tborder-bottom-right-radius: 2px;\r\n\t}\r\n\r\n/* zoom control */\r\n\r\n.leaflet-control-zoom-in,\r\n.leaflet-control-zoom-out {\r\n\tfont: bold 18px 'Lucida Console', Monaco, monospace;\r\n\ttext-indent: 1px;\r\n\t}\r\n\r\n.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out  {\r\n\tfont-size: 22px;\r\n\t}\r\n\r\n\r\n/* layers control */\r\n\r\n.leaflet-control-layers {\r\n\tbox-shadow: 0 1px 5px rgba(0,0,0,0.4);\r\n\tbackground: #fff;\r\n\tborder-radius: 5px;\r\n\t}\r\n.leaflet-control-layers-toggle {\r\n\tbackground-image: url(" + escape(__webpack_require__(56)) + ");\r\n\twidth: 36px;\r\n\theight: 36px;\r\n\t}\r\n.leaflet-retina .leaflet-control-layers-toggle {\r\n\tbackground-image: url(" + escape(__webpack_require__(57)) + ");\r\n\tbackground-size: 26px 26px;\r\n\t}\r\n.leaflet-touch .leaflet-control-layers-toggle {\r\n\twidth: 44px;\r\n\theight: 44px;\r\n\t}\r\n.leaflet-control-layers .leaflet-control-layers-list,\r\n.leaflet-control-layers-expanded .leaflet-control-layers-toggle {\r\n\tdisplay: none;\r\n\t}\r\n.leaflet-control-layers-expanded .leaflet-control-layers-list {\r\n\tdisplay: block;\r\n\tposition: relative;\r\n\t}\r\n.leaflet-control-layers-expanded {\r\n\tpadding: 6px 10px 6px 6px;\r\n\tcolor: #333;\r\n\tbackground: #fff;\r\n\t}\r\n.leaflet-control-layers-scrollbar {\r\n\toverflow-y: scroll;\r\n\toverflow-x: hidden;\r\n\tpadding-right: 5px;\r\n\t}\r\n.leaflet-control-layers-selector {\r\n\tmargin-top: 2px;\r\n\tposition: relative;\r\n\ttop: 1px;\r\n\t}\r\n.leaflet-control-layers label {\r\n\tdisplay: block;\r\n\t}\r\n.leaflet-control-layers-separator {\r\n\theight: 0;\r\n\tborder-top: 1px solid #ddd;\r\n\tmargin: 5px -10px 5px -6px;\r\n\t}\r\n\r\n/* Default icon URLs */\r\n.leaflet-default-icon-path {\r\n\tbackground-image: url(" + escape(__webpack_require__(58)) + ");\r\n\t}\r\n\r\n\r\n/* attribution and scale controls */\r\n\r\n.leaflet-container .leaflet-control-attribution {\r\n\tbackground: #fff;\r\n\tbackground: rgba(255, 255, 255, 0.7);\r\n\tmargin: 0;\r\n\t}\r\n.leaflet-control-attribution,\r\n.leaflet-control-scale-line {\r\n\tpadding: 0 5px;\r\n\tcolor: #333;\r\n\t}\r\n.leaflet-control-attribution a {\r\n\ttext-decoration: none;\r\n\t}\r\n.leaflet-control-attribution a:hover {\r\n\ttext-decoration: underline;\r\n\t}\r\n.leaflet-container .leaflet-control-attribution,\r\n.leaflet-container .leaflet-control-scale {\r\n\tfont-size: 11px;\r\n\t}\r\n.leaflet-left .leaflet-control-scale {\r\n\tmargin-left: 5px;\r\n\t}\r\n.leaflet-bottom .leaflet-control-scale {\r\n\tmargin-bottom: 5px;\r\n\t}\r\n.leaflet-control-scale-line {\r\n\tborder: 2px solid #777;\r\n\tborder-top: none;\r\n\tline-height: 1.1;\r\n\tpadding: 2px 5px 1px;\r\n\tfont-size: 11px;\r\n\twhite-space: nowrap;\r\n\toverflow: hidden;\r\n\t-moz-box-sizing: border-box;\r\n\t     box-sizing: border-box;\r\n\r\n\tbackground: #fff;\r\n\tbackground: rgba(255, 255, 255, 0.5);\r\n\t}\r\n.leaflet-control-scale-line:not(:first-child) {\r\n\tborder-top: 2px solid #777;\r\n\tborder-bottom: none;\r\n\tmargin-top: -2px;\r\n\t}\r\n.leaflet-control-scale-line:not(:first-child):not(:last-child) {\r\n\tborder-bottom: 2px solid #777;\r\n\t}\r\n\r\n.leaflet-touch .leaflet-control-attribution,\r\n.leaflet-touch .leaflet-control-layers,\r\n.leaflet-touch .leaflet-bar {\r\n\tbox-shadow: none;\r\n\t}\r\n.leaflet-touch .leaflet-control-layers,\r\n.leaflet-touch .leaflet-bar {\r\n\tborder: 2px solid rgba(0,0,0,0.2);\r\n\tbackground-clip: padding-box;\r\n\t}\r\n\r\n\r\n/* popup */\r\n\r\n.leaflet-popup {\r\n\tposition: absolute;\r\n\ttext-align: center;\r\n\tmargin-bottom: 20px;\r\n\t}\r\n.leaflet-popup-content-wrapper {\r\n\tpadding: 1px;\r\n\ttext-align: left;\r\n\tborder-radius: 12px;\r\n\t}\r\n.leaflet-popup-content {\r\n\tmargin: 13px 19px;\r\n\tline-height: 1.4;\r\n\t}\r\n.leaflet-popup-content p {\r\n\tmargin: 18px 0;\r\n\t}\r\n.leaflet-popup-tip-container {\r\n\twidth: 40px;\r\n\theight: 20px;\r\n\tposition: absolute;\r\n\tleft: 50%;\r\n\tmargin-left: -20px;\r\n\toverflow: hidden;\r\n\tpointer-events: none;\r\n\t}\r\n.leaflet-popup-tip {\r\n\twidth: 17px;\r\n\theight: 17px;\r\n\tpadding: 1px;\r\n\r\n\tmargin: -10px auto 0;\r\n\r\n\t-webkit-transform: rotate(45deg);\r\n\t   -moz-transform: rotate(45deg);\r\n\t    -ms-transform: rotate(45deg);\r\n\t        transform: rotate(45deg);\r\n\t}\r\n.leaflet-popup-content-wrapper,\r\n.leaflet-popup-tip {\r\n\tbackground: white;\r\n\tcolor: #333;\r\n\tbox-shadow: 0 3px 14px rgba(0,0,0,0.4);\r\n\t}\r\n.leaflet-container a.leaflet-popup-close-button {\r\n\tposition: absolute;\r\n\ttop: 0;\r\n\tright: 0;\r\n\tpadding: 4px 4px 0 0;\r\n\tborder: none;\r\n\ttext-align: center;\r\n\twidth: 18px;\r\n\theight: 14px;\r\n\tfont: 16px/14px Tahoma, Verdana, sans-serif;\r\n\tcolor: #c3c3c3;\r\n\ttext-decoration: none;\r\n\tfont-weight: bold;\r\n\tbackground: transparent;\r\n\t}\r\n.leaflet-container a.leaflet-popup-close-button:hover {\r\n\tcolor: #999;\r\n\t}\r\n.leaflet-popup-scrolled {\r\n\toverflow: auto;\r\n\tborder-bottom: 1px solid #ddd;\r\n\tborder-top: 1px solid #ddd;\r\n\t}\r\n\r\n.leaflet-oldie .leaflet-popup-content-wrapper {\r\n\tzoom: 1;\r\n\t}\r\n.leaflet-oldie .leaflet-popup-tip {\r\n\twidth: 24px;\r\n\tmargin: 0 auto;\r\n\r\n\t-ms-filter: \"progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)\";\r\n\tfilter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);\r\n\t}\r\n.leaflet-oldie .leaflet-popup-tip-container {\r\n\tmargin-top: -1px;\r\n\t}\r\n\r\n.leaflet-oldie .leaflet-control-zoom,\r\n.leaflet-oldie .leaflet-control-layers,\r\n.leaflet-oldie .leaflet-popup-content-wrapper,\r\n.leaflet-oldie .leaflet-popup-tip {\r\n\tborder: 1px solid #999;\r\n\t}\r\n\r\n\r\n/* div icon */\r\n\r\n.leaflet-div-icon {\r\n\tbackground: #fff;\r\n\tborder: 1px solid #666;\r\n\t}\r\n\r\n\r\n/* Tooltip */\r\n/* Base styles for the element that has a tooltip */\r\n.leaflet-tooltip {\r\n\tposition: absolute;\r\n\tpadding: 6px;\r\n\tbackground-color: #fff;\r\n\tborder: 1px solid #fff;\r\n\tborder-radius: 3px;\r\n\tcolor: #222;\r\n\twhite-space: nowrap;\r\n\t-webkit-user-select: none;\r\n\t-moz-user-select: none;\r\n\t-ms-user-select: none;\r\n\tuser-select: none;\r\n\tpointer-events: none;\r\n\tbox-shadow: 0 1px 3px rgba(0,0,0,0.4);\r\n\t}\r\n.leaflet-tooltip.leaflet-clickable {\r\n\tcursor: pointer;\r\n\tpointer-events: auto;\r\n\t}\r\n.leaflet-tooltip-top:before,\r\n.leaflet-tooltip-bottom:before,\r\n.leaflet-tooltip-left:before,\r\n.leaflet-tooltip-right:before {\r\n\tposition: absolute;\r\n\tpointer-events: none;\r\n\tborder: 6px solid transparent;\r\n\tbackground: transparent;\r\n\tcontent: \"\";\r\n\t}\r\n\r\n/* Directions */\r\n\r\n.leaflet-tooltip-bottom {\r\n\tmargin-top: 6px;\r\n}\r\n.leaflet-tooltip-top {\r\n\tmargin-top: -6px;\r\n}\r\n.leaflet-tooltip-bottom:before,\r\n.leaflet-tooltip-top:before {\r\n\tleft: 50%;\r\n\tmargin-left: -6px;\r\n\t}\r\n.leaflet-tooltip-top:before {\r\n\tbottom: 0;\r\n\tmargin-bottom: -12px;\r\n\tborder-top-color: #fff;\r\n\t}\r\n.leaflet-tooltip-bottom:before {\r\n\ttop: 0;\r\n\tmargin-top: -12px;\r\n\tmargin-left: -6px;\r\n\tborder-bottom-color: #fff;\r\n\t}\r\n.leaflet-tooltip-left {\r\n\tmargin-left: -6px;\r\n}\r\n.leaflet-tooltip-right {\r\n\tmargin-left: 6px;\r\n}\r\n.leaflet-tooltip-left:before,\r\n.leaflet-tooltip-right:before {\r\n\ttop: 50%;\r\n\tmargin-top: -6px;\r\n\t}\r\n.leaflet-tooltip-left:before {\r\n\tright: 0;\r\n\tmargin-right: -12px;\r\n\tborder-left-color: #fff;\r\n\t}\r\n.leaflet-tooltip-right:before {\r\n\tleft: 0;\r\n\tmargin-left: -12px;\r\n\tborder-right-color: #fff;\r\n\t}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports) {
 
 module.exports = function escape(url) {
@@ -27513,25 +27525,25 @@ module.exports = function escape(url) {
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports) {
 
 module.exports = "/images/vendor/leaflet/dist/layers.png?a6137456ed160d7606981aa57c559898";
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = "/images/vendor/leaflet/dist/layers-2x.png?4f0283c6ce28e888000e978e537a6a56";
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports) {
 
 module.exports = "/images/vendor/leaflet/dist/marker-icon.png?2273e3d8ad9264b7daa5bdbf8e6b47f8";
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports) {
 
 /**
@@ -27564,12 +27576,12 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_leaflet__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_leaflet__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue2_leaflet__);
 //
 //
@@ -27650,14 +27662,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
-!function(t,e){ true?module.exports=e(__webpack_require__(61)):"function"==typeof define&&define.amd?define(["leaflet"],e):"object"==typeof exports?exports.Vue2Leaflet=e(require("leaflet")):t.Vue2Leaflet=e(t.L)}(window,function(t){return function(t){var e={};function n(i){if(e[i])return e[i].exports;var o=e[i]={i:i,l:!1,exports:{}};return t[i].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:i})},n.r=function(t){Object.defineProperty(t,"__esModule",{value:!0})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=73)}([function(t,e,n){"use strict";n.r(e);var i=n(19),o=n.n(i);e.default=function(t,e,n,i){for(var a=o()(n),r=function(){var i,o=a[s],r="set"+((i=o).charAt(0).toUpperCase()+i.slice(1)),l=n[o].type===Object||n[o].type===Array||Array.isArray(n[o].type);n[o].custom?t.$watch(o,function(e,n){t[r](e,n)},{deep:l}):"setOptions"==r?t.$watch(o,function(t,n){L.setOptions(e,t)},{deep:l}):t.$watch(o,function(t,n){e[r](t)},{deep:l})},s=0;s<a.length;s++)r()}},function(t,e,n){"use strict";function i(t,e,n,i,o,a,r,s){var l=typeof(t=t||{}).default;"object"!==l&&"function"!==l||(t=t.default);var u,c="function"==typeof t?t.options:t;if(e&&(c.render=e,c.staticRenderFns=n,c._compiled=!0),i&&(c.functional=!0),a&&(c._scopeId=a),r?(u=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),o&&o.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(r)},c._ssrRegister=u):o&&(u=s?function(){o.call(this,this.$root.$options.shadowRoot)}:o),u)if(c.functional){c._injectStyles=u;var f=c.render;c.render=function(t,e){return u.call(e),f(t,e)}}else{var p=c.beforeCreate;c.beforeCreate=p?[].concat(p,u):[u]}return{exports:t,options:c}}n.d(e,"a",function(){return i})},function(t,e,n){"use strict";n.r(e),e.default=function(t){for(var e=!1;!e;)void 0==t.mapObject?t=t.$parent:e=!0;return t}},function(t,e,n){"use strict";e.__esModule=!0;var i,o=n(51),a=(i=o)&&i.__esModule?i:{default:i};e.default=function(t,e,n){return e in t?(0,a.default)(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}},function(e,n){e.exports=t},function(t,e){var n=t.exports={version:"2.5.3"};"number"==typeof __e&&(__e=n)},function(t,e){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,e,n){t.exports=!n(6)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,e){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,e,n){var i=n(10),o=n(5),a=n(59),r=n(57),s=function(t,e,n){var l,u,c,f=t&s.F,p=t&s.G,d=t&s.S,h=t&s.P,y=t&s.B,m=t&s.W,b=p?o:o[e]||(o[e]={}),O=b.prototype,v=p?i:d?i[e]:(i[e]||{}).prototype;for(l in p&&(n=e),n)(u=!f&&v&&void 0!==v[l])&&l in b||(c=u?v[l]:n[l],b[l]=p&&"function"!=typeof v[l]?n[l]:y&&u?a(c,i):m&&v[l]==c?function(t){var e=function(e,n,i){if(this instanceof t){switch(arguments.length){case 0:return new t;case 1:return new t(e);case 2:return new t(e,n)}return new t(e,n,i)}return t.apply(this,arguments)};return e.prototype=t.prototype,e}(c):h&&"function"==typeof c?a(Function.call,c):c,h&&((b.virtual||(b.virtual={}))[l]=c,t&s.R&&O&&!O[l]&&r(O,l,c)))};s.F=1,s.G=2,s.S=4,s.P=8,s.B=16,s.W=32,s.U=64,s.R=128,t.exports=s},function(t,e){var n=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=n)},function(t,e,n){var i=n(56),o=n(55),a=n(53),r=Object.defineProperty;e.f=n(7)?Object.defineProperty:function(t,e,n){if(i(t),e=a(e,!0),i(n),o)try{return r(t,e,n)}catch(t){}if("get"in n||"set"in n)throw TypeError("Accessors not supported!");return"value"in n&&(t[e]=n.value),t}},function(t,e){var n=Math.ceil,i=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?i:n)(t)}},function(t,e,n){var i=n(68);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==i(t)?t.split(""):Object(t)}},function(t,e,n){var i=n(13),o=n(16);t.exports=function(t){return i(o(t))}},function(t,e,n){var i=n(70),o=n(61);t.exports=Object.keys||function(t){return i(t,o)}},function(t,e){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,e,n){var i=n(16);t.exports=function(t){return Object(i(t))}},function(t,e,n){t.exports={default:n(45),__esModule:!0}},function(t,e,n){t.exports={default:n(72),__esModule:!0}},function(t,e,n){"use strict";function i(t,e){for(var n=[],i={},o=0;o<e.length;o++){var a=e[o],r=a[0],s={id:t+":"+o,css:a[1],media:a[2],sourceMap:a[3]};i[r]?i[r].parts.push(s):n.push(i[r]={id:r,parts:[s]})}return n}n.r(e),n.d(e,"default",function(){return h});var o="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!o)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var a={},r=o&&(document.head||document.getElementsByTagName("head")[0]),s=null,l=0,u=!1,c=function(){},f=null,p="data-vue-ssr-id",d="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());function h(t,e,n,o){u=n,f=o||{};var r=i(t,e);return y(r),function(e){for(var n=[],o=0;o<r.length;o++){var s=r[o];(l=a[s.id]).refs--,n.push(l)}e?y(r=i(t,e)):r=[];for(o=0;o<n.length;o++){var l;if(0===(l=n[o]).refs){for(var u=0;u<l.parts.length;u++)l.parts[u]();delete a[l.id]}}}}function y(t){for(var e=0;e<t.length;e++){var n=t[e],i=a[n.id];if(i){i.refs++;for(var o=0;o<i.parts.length;o++)i.parts[o](n.parts[o]);for(;o<n.parts.length;o++)i.parts.push(b(n.parts[o]));i.parts.length>n.parts.length&&(i.parts.length=n.parts.length)}else{var r=[];for(o=0;o<n.parts.length;o++)r.push(b(n.parts[o]));a[n.id]={id:n.id,refs:1,parts:r}}}}function m(){var t=document.createElement("style");return t.type="text/css",r.appendChild(t),t}function b(t){var e,n,i=document.querySelector("style["+p+'~="'+t.id+'"]');if(i){if(u)return c;i.parentNode.removeChild(i)}if(d){var o=l++;i=s||(s=m()),e=j.bind(null,i,o,!1),n=j.bind(null,i,o,!0)}else i=m(),e=function(t,e){var n=e.css,i=e.media,o=e.sourceMap;i&&t.setAttribute("media",i);f.ssrId&&t.setAttribute(p,e.id);o&&(n+="\n/*# sourceURL="+o.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");if(t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}.bind(null,i),n=function(){i.parentNode.removeChild(i)};return e(t),function(i){if(i){if(i.css===t.css&&i.media===t.media&&i.sourceMap===t.sourceMap)return;e(t=i)}else n()}}var O,v=(O=[],function(t,e){return O[t]=e,O.filter(Boolean).join("\n")});function j(t,e,n,i){var o=n?"":i.css;if(t.styleSheet)t.styleSheet.cssText=v(e,o);else{var a=document.createTextNode(o),r=t.childNodes;r[e]&&t.removeChild(r[e]),r.length?t.insertBefore(a,r[e]):t.appendChild(a)}}},function(t,e,n){"use strict";n.r(e);var i=n(0),o={prefix:{type:String,default:"Leaflet"},position:{type:String,default:"topright"},options:{type:Object,default:function(){return{}}}},a={name:"LControlAttribution",props:o,mounted:function(){for(var t=this.options,e=["prefix","position"],n=0;n<e.length;n++){var a=e[n];void 0!==this[a]&&(t[a]=this[a])}this.mapObject=L.control.attribution(t),Object(i.default)(this,this.mapObject,o),this.mapObject.addTo(this.$parent.mapObject)},beforeDestroy:function(){this.mapObject.remove()},render:function(){return null}},r=n(1),s=Object(r.a)(a,void 0,void 0,!1,null,null,null);e.default=s.exports},function(t,e,n){"use strict";n.r(e);var i,o=n(3),a=n.n(o),r=n(0),s=n(2),l={url:String,attribution:{type:String,custom:!0},detectRetina:{type:Boolean,custom:!1,default:!1},token:{type:String,custom:!0},opacity:{type:Number,custom:!1,default:1},zIndex:{type:Number,default:1},options:{type:Object,default:function(){return{}}},tileLayerClass:{type:Function,default:L.tileLayer},layerType:{type:String,default:void 0},name:{type:String,default:void 0},visible:{type:Boolean,custom:!0,default:!0}},u=(i={name:"LTileLayer",props:l,mounted:function(){for(var t=this.options,e=["attribution","token","detectRetina","opacity","zIndex"],n=0;n<e.length;n++){var i=e[n];void 0!==this[i]&&(t[i]=this[i])}this.mapObject=this.tileLayerClass(this.url,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(r.default)(this,this.mapObject,l),this.parentContainer=Object(s.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},methods:{setAttribution:function(t,e){this.$parent.mapObject.attributionControl.removeAttribution(e).addAttribution(t)},setToken:function(t){this.options.token=t}}},a()(i,"methods",{setVisible:function(t,e){t!=e&&this.mapObject&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))}}),a()(i,"beforeDestroy",function(){this.parentContainer.removeLayer(this)}),a()(i,"render",function(){return null}),i),c=n(1),f=Object(c.a)(u,void 0,void 0,!1,null,null,null);e.default=f.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o={collapsed:{type:Boolean,default:!0},autoZIndex:{type:Boolean,default:!0},hideSingleBase:{type:Boolean,default:!1},sortLayers:{type:Boolean,default:!1},sortFunction:{type:Function,default:void 0},position:{type:String,default:"topright"},options:{type:Object,default:function(){return{}}}},a={name:"LControlLayers",props:o,mounted:function(){for(var t=this.options,e=["collapsed","autoZIndex","hideSingleBase","sortLayers","sortFunction"],n=0;n<e.length;n++){var a=e[n];void 0!==this[a]&&(t[a]=this[a])}this.mapObject=L.control.layers(null,null,t),Object(i.default)(this,this.mapObject,o),this.$parent.registerLayerControl(this)},methods:{addLayer:function(t){"base"==t.layerType?this.mapObject.addBaseLayer(t.mapObject,t.name):"overlay"==t.layerType&&this.mapObject.addOverlay(t.mapObject,t.name)},removeLayer:function(t){this.mapObject.removeLayer(t.mapObject)}},beforeDestroy:function(){this.mapObject.remove()},render:function(){return null}},r=n(1),s=Object(r.a)(a,void 0,void 0,!1,null,null,null);e.default=s.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o={maxWidth:{type:Number,default:100},metric:{type:Boolean,default:!0},imperial:{type:Boolean,default:!0},updateWhenIdle:{type:Boolean,default:!1},position:{type:String,default:"topright"},options:{type:Object,default:function(){return{}}}},a={name:"LControlScale",props:o,mounted:function(){for(var t=this.options,e=["maxWidth","metric","imperial","updateWhenIdle","position"],n=0;n<e.length;n++){var a=e[n];void 0!==this[a]&&(t[a]=this[a])}this.mapObject=L.control.scale(t),Object(i.default)(this,this.mapObject,o),this.mapObject.addTo(this.$parent.mapObject)},beforeDestroy:function(){this.mapObject.remove()},render:function(){return null}},r=n(1),s=Object(r.a)(a,void 0,void 0,!1,null,null,null);e.default=s.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o={zoomInText:{type:String,default:"+"},zoomInTitle:{type:String,default:"Zoom in"},zoomOutText:{type:String,default:"-"},zoomOutTitle:{type:String,default:"Zoom out"},position:{type:String,default:"topright"},options:{type:Object,default:function(){return{}}}},a={name:"LControlZoom",props:o,mounted:function(){for(var t=this.options,e=["zoomInText","zoomInTitle","zoomOutText","zoomOutTitle","position"],n=0;n<e.length;n++){var a=e[n];void 0!==this[a]&&(t[a]=this[a])}this.mapObject=L.control.zoom(t),Object(i.default)(this,this.mapObject,o),this.mapObject.addTo(this.$parent.mapObject)},beforeDestroy:function(){this.mapObject.remove()},render:function(){return null}},r=n(1),s=Object(r.a)(a,void 0,void 0,!1,null,null,null);e.default=s.exports},function(t,e,n){"use strict";n.r(e);var i=n(3),o=n.n(i),a=n(0),r=n(2),s={geojson:{type:[Object,Array],custom:!0,default:function(){return{}}},options:{type:Object,default:function(){return{}}},visible:{type:Boolean,custom:!0,default:!0}},l={name:"LGeoJson",props:s,mounted:function(){this.mapObject=L.geoJSON(this.geojson,this.options),L.DomEvent.on(this.mapObject,this.$listeners),Object(a.default)(this,this.mapObject,s),this.parentContainer=Object(r.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},methods:o()({setVisible:function(t,e){t!=e&&this.mapObject&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setGeojson:function(t){this.mapObject.clearLayers(),this.mapObject.addData(t)},getGeoJSONData:function(){return this.mapObject.toGeoJSON()},getBounds:function(){return this.mapObject.getBounds()}},"setVisible",function(t,e){t!==e&&(t?this.mapObject.addTo(this.$parent.mapObject):this.$parent.mapObject.removeLayer(this.mapObject))}),beforeDestroy:function(){this.$parent.mapObject.removeLayer(this.mapObject)},render:function(){return null}},u=n(1),c=Object(u.a)(l,void 0,void 0,!1,null,null,null);e.default=c.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o={imagePath:{type:String,custom:!0,default:""}},a={name:"LIconDefault",props:o,mounted:function(){L.Icon.Default.imagePath=this.imagePath,Object(i.default)(this,this.mapObject,o)},methods:{setImagePath:function(t,e){L.Icon.Default.imagePath=t}},render:function(){return null}},r=n(1),s=Object(r.a)(a,void 0,void 0,!1,null,null,null);e.default=s.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={baseUrl:String,layers:{type:String,default:""},styles:{type:String,default:""},format:{type:String,default:"image/jpeg"},options:{type:Object,default:function(){return{}}},transparent:{type:Boolean,custom:!1},version:{type:String,default:"1.1.1"},crs:{default:null},upperCase:{type:Boolean,default:!1},opacity:{type:Number,custom:!1,default:1},zIndex:{type:Number,default:1},layerType:{type:String,default:void 0},name:{type:String,default:void 0},visible:{type:Boolean,custom:!0,default:!0}},r={name:"LWMSTileLayer",props:a,mounted:function(){for(var t=this.options,e=["layers","styles","format","transparent","version","crs","upperCase","zIndex","opacity"],n=0;n<e.length;n++){var r=e[n];void 0!==this[r]&&(t[r]=this[r])}this.mapObject=L.tileLayer.wms(this.baseUrl,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},methods:{setVisible:function(t,e){t!=e&&this.mapObject&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))}},beforeDestroy:function(){this.parentContainer.removeLayer(this)},render:function(){return null}},s=n(1),l=Object(s.a)(r,void 0,void 0,!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={url:{type:String},bounds:{},opacity:{type:Number,default:1},alt:{type:String,default:""},interactive:{type:Boolean,default:!1},crossOrigin:{type:Boolean,default:!1},visible:{type:Boolean,custom:!0,default:!0}},r={name:"LImageOverlay",props:a,mounted:function(){var t={opacity:this.opacity,alt:this.alt,interactive:this.interactive,crossOrigin:this.crossOrigin};this.mapObject=L.imageOverlay(this.url,this.bounds,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},methods:{setVisible:function(t,e){t!=e&&this.mapObject&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},getBounds:function(){return this.mapObject.getBounds()}},beforeDestroy:function(){this.parentContainer.removeLayer(this)},render:function(){return null}},s=n(1),l=Object(s.a)(r,void 0,void 0,!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={latLng:{type:[Object,Array]},radius:{type:Number,default:10},lStyle:{type:Object,custom:!0},visible:{type:Boolean,custom:!0,default:!0},stroke:{type:Boolean,custom:!0,default:!0},color:{type:String,custom:!0,default:"#3388ff"},weight:{type:Number,custom:!0,default:3},opacity:{type:Number,custom:!0,default:1},lineCap:{type:String,custom:!0,default:"round"},lineJoin:{type:String,custom:!0,default:"round"},dashArray:{type:String,custom:!0,default:null},dashOffset:{type:String,custom:!0,default:null},fill:{type:Boolean,custom:!0,default:!0},fillColor:{type:String,custom:!0,default:"#3388ff"},fillOpacity:{type:Number,custom:!0,default:.2},fillRule:{type:String,custom:!0,default:"evenodd"},className:{type:String,custom:!0,default:null}},r={name:"LCircleMarker",props:a,data:function(){return{ready:!1}},mounted:function(){var t={};if(this.color&&(t.color=this.color),this.radius&&(t.radius=this.radius),this.lStyle)for(var e in this.lStyle)t[e]=this.lStyle[e];for(var n=["smoothFactor","noClip","stroke","color","weight","opacity","lineCap","lineJoin","dashArray","dashOffset","fill","fillColor","fillOpacity","fillRule","className"],r=0;r<n.length;r++){var s=n[r];void 0!==this[s]&&(t[s]=this[s])}this.mapObject=L.circleMarker(this.latLng,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLStyle:function(t,e){t!=e&&this.mapObject.setStyle(t)},setStroke:function(t,e){t!=e&&this.mapObject.setStyle({stroke:t})},setColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({color:t})},setWeight:function(t,e){t!=e&&t&&this.mapObject.setStyle({weight:t})},setOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({opacity:t})},setLineCap:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineCap:t})},setLineJoin:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineJoin:t})},setDashArray:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashArray:t})},setDashOffset:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashOffset:t})},setFill:function(t,e){t!=e&&this.mapObject.setStyle({fill:t})},setFillColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillColor:t})},setFillOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillOpacity:t})},setFillRule:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillRule:t})},setClassName:function(t,e){t!=e&&t&&this.mapObject.setStyle({className:t})}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(18),o=n.n(i),a=n(4),r=n.n(a),s=n(0),l={center:{type:[Object,Array],custom:!0,default:function(){return[0,0]}},bounds:{custom:!0,default:void 0},maxBounds:{default:void 0},zoom:{type:Number,custom:!0,default:0},minZoom:{type:Number,default:void 0},maxZoom:{type:Number,default:void 0},paddingBottomRight:{custom:!0,default:null},paddingTopLeft:{custom:!0,default:null},padding:{custom:!0,default:null},worldCopyJump:{type:Boolean,default:!1},crs:{custom:!0,default:function(){return r.a.CRS.EPSG3857}},maxBoundsViscosity:{type:Number,default:0},options:{type:Object,default:function(){return{}}}},u={name:"LMap",props:l,data:function(){return{ready:!1,movingRequest:0,lastSetCenter:void 0,lastSetBounds:void 0,layerControl:void 0,layersToAdd:[]}},mounted:function(){var t=this,e=this.options;o()(e,{minZoom:this.minZoom,maxZoom:this.maxZoom,maxBounds:this.maxBounds,maxBoundsViscosity:this.maxBoundsViscosity,worldCopyJump:this.worldCopyJump,crs:this.crs}),null!=this.center&&(e.center=this.center),null!=this.zoom&&(e.zoom=this.zoom),this.mapObject=r.a.map(this.$el,e),this.setBounds(this.bounds),this.mapObject.on("moveend",function(){if(0==t.movingRequest){t.mapObject.getZoom()!=t.zoom&&t.$emit("update:zoom",t.mapObject.getZoom());var e=t.mapObject.getCenter();null!=t.center?Array.isArray(t.center)?(t.center[0]=e.lat,t.center[1]=e.lng):(t.center.lat=e.lat,t.center.lng=e.lng):t.$emit("update:center",e);var n=t.mapObject.getBounds();null!=t.bounds?Array.isArray(t.bounds)?Array.isArray(t.bounds[0])?(t.bounds[0][0]=n._southWest.lat,t.bounds[0][1]=n._southWest.lng,t.bounds[1][0]=n._northEast.lat,t.bounds[1][1]=n._northEast.lng):(t.bounds[0].lat=n._southWest.lat,t.bounds[0].lng=n._southWest.lng,t.bounds[1].lat=n._northEast.lat,t.bounds[1].lng=n._northEast.lng):(t.bounds._southWest.lat=n._southWest.lat,t.bounds._southWest.lng=n._southWest.lng,t.bounds._northEast.lat=n._northEast.lat,t.bounds._northEast.lng=n._northEast.lng):t.$emit("update:bounds",n)}else t.movingRequest-=1}),r.a.DomEvent.on(this.mapObject,this.$listeners),Object(s.default)(this,this.mapObject,l),this.ready=!0},methods:{registerLayerControl:function(t){for(var e in this.layerControl=t,this.mapObject.addControl(t.mapObject),this.layersToAdd)this.layerControl.addLayer(e);this.layerToAdd=null},addLayer:function(t,e){void 0!==t.layerType&&(void 0==this.layerControl?this.layersToAdd.push(t):this.layerControl.addLayer(t)),e||this.mapObject.addLayer(t.mapObject)},removeLayer:function(t,e){void 0!==t.layerType&&(void 0==this.layerControl?this.layersToAdd=this.layerToAdd.filter(function(e){return e.name!==t.name}):this.layerControl.removeLayer(t)),e||this.mapObject.removeLayer(t.mapObject)},setZoom:function(t,e){this.movingRequest+=1,this.mapObject.setZoom(t)},setCenter:function(t,e){if(null!=t){var n=0,i=0;Array.isArray(t)?(n=t[0],i=t[1]):(n=t.lat,i=t.lng);var o=null==this.lastSetCenter?this.mapObject.getCenter():this.lastSetCenter;o.lat==n&&o.lng==i||(o.lat=t.lat,o.lng=t.lng,this.lastSetCenter=o,this.movingRequest+=1,this.mapObject.panTo(t))}},setBounds:function(t,e){if(t){if(t instanceof r.a.LatLngBounds){if(!t.isValid())return}else if(!Array.isArray(t))return;var n=null==this.lastSetBounds?this.mapObject.getBounds():this.lastSetBounds,i=0,o=0,a=0,s=0;Array.isArray(n)?(Array.isArray(n[0])?(i=n[0][0],o=n[0][1]):(i=n[0].lat,o=n[0].lng),Array.isArray(n[1])?(a=n[1][0],s=n[1][1]):(a=n[1].lat,s=n[1].lng)):(i=n._southWest.lat,o=n._southWest.lng,a=n._northEast.lat,s=n._northEast.lng);var l,u,c,f;if(Array.isArray(t)&&(t=r.a.latLngBounds(t)),l=t._southWest.lat,u=t._southWest.lng,c=t._northEast.lat,f=t._northEast.lng,l!=i||u!=o||c!=a||f!=s){var p={};this.padding?p.padding=this.padding:(this.paddingBottomRight&&(p.paddingBottomRight=this.paddingBottomRight),this.paddingTopLeft&&(p.paddingTopLeft=this.paddingTopLeft)),this.lastSetBounds=n,Array.isArray(n)?(Array.isArray(n[0])?(n[0][0]=i,n[0][1]=o):(n[0].lat=i,n[0].lng=o),Array.isArray(n[1])?(n[1][0]=a,n[1][1]=s):(n[1].lat=a,n[1].lng=s)):(n._southWest.lat=i,n._southWest.lng=o,n._northEast.lat=a,n._northEast.lng=s),this.movingRequest+=1,this.mapObject.fitBounds(t,p)}}},setPaddingBottomRight:function(t,e){this.paddingBottomRight=t},setPaddingTopLeft:function(t,e){this.paddingTopLeft=t},setPadding:function(t,e){this.padding=t},setCrs:function(t,e){console.log("Changing CRS is not yet supported by Leaflet")},fitBounds:function(t){this.mapObject.fitBounds(t)}}},c=n(1);var f=function(t){n(48)},p=Object(c.a)(u,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticClass:"vue2leaflet-map"},[this.ready?this._t("default"):this._e()],2)},[],!1,f,null,null);e.default=p.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={draggable:{type:Boolean,custom:!0,default:!1},visible:{type:Boolean,custom:!0,default:!0},latLng:{type:[Object,Array],custom:!0},icon:{custom:!1,default:function(){return new L.Icon.Default}},zIndexOffset:{type:Number,custom:!1},options:{type:Object,default:function(){return{}}}},r={name:"LMarker",props:a,data:function(){return{ready:!1}},mounted:function(){var t=this,e=this.options;this.icon&&(e.icon=this.icon),e.draggable=this.draggable,this.mapObject=L.marker(this.latLng,e),this.mapObject.on("move",function(e){Array.isArray(t.latLng)?(t.latLng[0]=e.latlng.lat,t.latLng[1]=e.latlng.lng):(t.latLng.lat=e.latlng.lat,t.latLng.lng=e.latlng.lng)}),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setDraggable:function(t,e){this.mapObject.dragging&&(t?this.mapObject.dragging.enable():this.mapObject.dragging.disable())},setVisible:function(t,e){t!=e&&this.mapObject&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLatLng:function(t){if(null!=t&&this.mapObject){var e=this.mapObject.getLatLng(),n={lat:t[0]||t.lat,lng:t[1]||t.lng};n.lat==e.lat&&n.lng==e.lng||this.mapObject.setLatLng(n)}}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={latLngs:{type:Array,default:function(){return[]}},lStyle:{type:Object,custom:!0},visible:{type:Boolean,custom:!0,default:!0},smoothFactor:{type:Number,custom:!0,default:1},noClip:{type:Boolean,custom:!0,default:!1},stroke:{type:Boolean,custom:!0,default:!0},color:{type:String,custom:!0,default:"#3388ff"},weight:{type:Number,custom:!0,default:3},opacity:{type:Number,custom:!0,default:1},lineCap:{type:String,custom:!0,default:"round"},lineJoin:{type:String,custom:!0,default:"round"},dashArray:{type:String,custom:!0,default:null},dashOffset:{type:String,custom:!0,default:null},fill:{type:Boolean,custom:!0,default:!0},fillColor:{type:String,custom:!0,default:"#3388ff"},fillOpacity:{type:Number,custom:!0,default:.2},fillRule:{type:String,custom:!0,default:"evenodd"},className:{type:String,custom:!0,default:null}},r={name:"LPolygon",props:a,data:function(){return{ready:!1}},mounted:function(){var t={};if(this.color&&(t.color=this.color),this.lStyle)for(var e in this.lStyle)t[e]=this.lStyle[e];for(var n=["smoothFactor","noClip","stroke","color","weight","opacity","lineCap","lineJoin","dashArray","dashOffset","fill","fillColor","fillOpacity","fillRule","className"],r=0;r<n.length;r++){var s=n[r];void 0!==this[s]&&(t[s]=this[s])}this.mapObject=L.polygon(this.latLngs,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLStyle:function(t,e){t!=e&&this.mapObject.setStyle(t)},setSmoothFactor:function(t,e){t!=e&&t&&this.mapObject.setStyle({smoothFactor:t})},setNoClip:function(t,e){t!=e&&t&&this.mapObject.setStyle({noClip:t})},setStroke:function(t,e){t!=e&&this.mapObject.setStyle({stroke:t})},setColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({color:t})},setWeight:function(t,e){t!=e&&t&&this.mapObject.setStyle({weight:t})},setOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({opacity:t})},setLineCap:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineCap:t})},setLineJoin:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineJoin:t})},setDashArray:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashArray:t})},setDashOffset:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashOffset:t})},setFill:function(t,e){t!=e&&this.mapObject.setStyle({fill:t})},setFillColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillColor:t})},setFillOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillOpacity:t})},setFillRule:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillRule:t})},setClassName:function(t,e){t!=e&&t&&this.mapObject.setStyle({className:t})},addLatLng:function(t){this.mapObject.addLatLng(t)},getGeoJSONData:function(){return this.mapObject.toGeoJSON()}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={visible:{type:Boolean,custom:!0,default:!0}},r={name:"LFeatureGroup",props:a,data:function(){return{ready:!1}},mounted:function(){this.mapObject=L.featureGroup(),Object(i.default)(this,this.mapObject,a),L.DomEvent.on(this.mapObject,this.$listeners),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.visible&&this.parentContainer.addLayer(this)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{addLayer:function(t,e){e||this.mapObject.addLayer(t.mapObject),this.parentContainer.addLayer(t,!0)},removeLayer:function(t,e){e||this.mapObject.removeLayer(t.mapObject),this.parentContainer.removeLayer(t,!0)},setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={latLngs:{type:Array,default:function(){return[]}},lStyle:{type:Object,custom:!0},visible:{type:Boolean,custom:!0,default:!0},smoothFactor:{type:Number,custom:!0,default:1},noClip:{type:Boolean,custom:!0,default:!1},stroke:{type:Boolean,custom:!0,default:!0},color:{type:String,custom:!0,default:"#3388ff"},weight:{type:Number,custom:!0,default:3},opacity:{type:Number,custom:!0,default:1},lineCap:{type:String,custom:!0,default:"round"},lineJoin:{type:String,custom:!0,default:"round"},dashArray:{type:String,custom:!0,default:null},dashOffset:{type:String,custom:!0,default:null},fill:{type:Boolean,custom:!0,default:!1},fillColor:{type:String,custom:!0,default:"#3388ff"},fillOpacity:{type:Number,custom:!0,default:.2},fillRule:{type:String,custom:!0,default:"evenodd"},className:{type:String,custom:!0,default:null}},r={name:"LPolyline",props:a,data:function(){return{ready:!1}},mounted:function(){var t={};if(this.color&&(t.color=this.color),this.lStyle)for(var e in this.lStyle)t[e]=this.lStyle[e];for(var n=["smoothFactor","noClip","stroke","color","weight","opacity","lineCap","lineJoin","dashArray","dashOffset","fill","fillColor","fillOpacity","fillRule","className"],r=0;r<n.length;r++){var s=n[r];void 0!==this[s]&&(t[s]=this[s])}this.mapObject=L.polyline(this.latLngs,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLStyle:function(t,e){t!=e&&this.mapObject.setStyle(t)},setSmoothFactor:function(t,e){t!=e&&t&&this.mapObject.setStyle({smoothFactor:t})},setNoClip:function(t,e){t!=e&&t&&this.mapObject.setStyle({noClip:t})},setStroke:function(t,e){t!=e&&this.mapObject.setStyle({stroke:t})},setColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({color:t})},setWeight:function(t,e){t!=e&&t&&this.mapObject.setStyle({weight:t})},setOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({opacity:t})},setLineCap:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineCap:t})},setLineJoin:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineJoin:t})},setDashArray:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashArray:t})},setDashOffset:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashOffset:t})},setFill:function(t,e){t!=e&&this.mapObject.setStyle({fill:t})},setFillColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillColor:t})},setFillOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillOpacity:t})},setFillRule:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillRule:t})},setClassName:function(t,e){t!=e&&t&&this.mapObject.setStyle({className:t})},addLatLng:function(t){this.mapObject.addLatLng(t)}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={content:{default:""},latLng:{type:[Object,Array]},options:{type:Object,default:function(){return{}}}},r={name:"LPopup",props:a,data:function(){return{ready:!1}},mounted:function(){this.mapObject=L.popup(this.options),void 0!==this.latLng&&this.mapObject.setLatLng(this.latLng),this.mapObject.setContent(this.content||this.$el),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.mapObject.bindPopup(this.mapObject)},beforeDestroy:function(){this.parentContainer.mapObject&&this.parentContainer.mapObject.getPopup()&&this.parentContainer.mapObject.unbindPopup()}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={bounds:{type:Array,default:function(){return[]}},lStyle:{type:Object,custom:!0},visible:{type:Boolean,custom:!0,default:!0},stroke:{type:Boolean,custom:!0,default:!0},color:{type:String,custom:!0,default:"#3388ff"},weight:{type:Number,custom:!0,default:3},opacity:{type:Number,custom:!0,default:1},lineCap:{type:String,custom:!0,default:"round"},lineJoin:{type:String,custom:!0,default:"round"},dashArray:{type:String,custom:!0,default:null},dashOffset:{type:String,custom:!0,default:null},fill:{type:Boolean,custom:!0,default:!0},fillColor:{type:String,custom:!0,default:"#3388ff"},fillOpacity:{type:Number,custom:!0,default:.2},fillRule:{type:String,custom:!0,default:"evenodd"},className:{type:String,custom:!0,default:null}},r={name:"LRectangle",props:a,data:function(){return{ready:!1}},mounted:function(){var t={};if(this.color&&(t.color=this.color),this.lStyle)for(var e in this.lStyle)t[e]=this.lStyle[e];for(var n=["smoothFactor","noClip","stroke","color","weight","opacity","lineCap","lineJoin","dashArray","dashOffset","fill","fillColor","fillOpacity","fillRule","className"],r=0;r<n.length;r++){var s=n[r];void 0!==this[s]&&(t[s]=this[s])}this.mapObject=L.rectangle(this.bounds,t),this.ready=!0,L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLStyle:function(t,e){t!=e&&this.mapObject.setStyle(t)},setStroke:function(t,e){t!=e&&this.mapObject.setStyle({stroke:t})},setColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({color:t})},setWeight:function(t,e){t!=e&&t&&this.mapObject.setStyle({weight:t})},setOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({opacity:t})},setLineCap:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineCap:t})},setLineJoin:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineJoin:t})},setDashArray:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashArray:t})},setDashOffset:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashOffset:t})},setFill:function(t,e){t!=e&&this.mapObject.setStyle({fill:t})},setFillColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillColor:t})},setFillOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillOpacity:t})},setFillRule:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillRule:t})},setClassName:function(t,e){t!=e&&t&&this.mapObject.setStyle({className:t})}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={content:{default:""},options:{type:Object,default:function(){return{}}}},r={name:"LTooltip",props:a,data:function(){return{}},mounted:function(){this.mapObject=L.tooltip(this.options),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.mapObject.setContent(this.content||this.$el),this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.mapObject.bindTooltip(this.mapObject)},beforeDestroy:function(){this.parentContainer.mapObject.getTooltip()&&this.parentContainer.mapObject.unbindTooltip()}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",[this._t("default")],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={visible:{type:Boolean,custom:!0,default:!0}},r={name:"LLayerGroup",props:a,data:function(){return{ready:!1}},mounted:function(){this.mapObject=L.layerGroup(),Object(i.default)(this,this.mapObject,a),L.DomEvent.on(this.mapObject,this.$listeners),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.visible&&this.parentContainer.addLayer(this)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{addLayer:function(t,e){e||this.mapObject.addLayer(t.mapObject),this.parentContainer.addLayer(t,!0)},removeLayer:function(t,e){e||this.mapObject.removeLayer(t.mapObject),this.parentContainer.removeLayer(t,!0)},setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={latLng:{type:[Object,Array]},radius:{type:Number},lStyle:{type:Object,custom:!0},visible:{type:Boolean,custom:!0,default:!0},stroke:{type:Boolean,custom:!0,default:!0},color:{type:String,custom:!0,default:"#3388ff"},weight:{type:Number,custom:!0,default:3},opacity:{type:Number,custom:!0,default:1},lineCap:{type:String,custom:!0,default:"round"},lineJoin:{type:String,custom:!0,default:"round"},dashArray:{type:String,custom:!0,default:null},dashOffset:{type:String,custom:!0,default:null},fill:{type:Boolean,custom:!0,default:!0},fillColor:{type:String,custom:!0,default:"#3388ff"},fillOpacity:{type:Number,custom:!0,default:.2},fillRule:{type:String,custom:!0,default:"evenodd"},className:{type:String,custom:!0,default:null}},r={name:"LCircle",props:a,data:function(){return{ready:!1}},mounted:function(){var t={};if(this.color&&(t.color=this.color),this.radius&&(t.radius=this.radius),this.lStyle)for(var e in this.lStyle)t[e]=this.lStyle[e];for(var n=["smoothFactor","noClip","stroke","color","weight","opacity","lineCap","lineJoin","dashArray","dashOffset","fill","fillColor","fillOpacity","fillRule","className"],r=0;r<n.length;r++){var s=n[r];void 0!==this[s]&&(t[s]=this[s])}this.mapObject=L.circle(this.latLng,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLStyle:function(t,e){t!=e&&this.mapObject.setStyle(t)},setStroke:function(t,e){t!=e&&this.mapObject.setStyle({stroke:t})},setColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({color:t})},setWeight:function(t,e){t!=e&&t&&this.mapObject.setStyle({weight:t})},setOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({opacity:t})},setLineCap:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineCap:t})},setLineJoin:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineJoin:t})},setDashArray:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashArray:t})},setDashOffset:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashOffset:t})},setFill:function(t,e){t!=e&&this.mapObject.setStyle({fill:t})},setFillColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillColor:t})},setFillOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillOpacity:t})},setFillRule:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillRule:t})},setClassName:function(t,e){t!=e&&t&&this.mapObject.setStyle({className:t})}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e){e.f={}.propertyIsEnumerable},function(t,e){e.f=Object.getOwnPropertySymbols},function(t,e,n){"use strict";var i=n(15),o=n(42),a=n(41),r=n(17),s=n(13),l=Object.assign;t.exports=!l||n(6)(function(){var t={},e={},n=Symbol(),i="abcdefghijklmnopqrst";return t[n]=7,i.split("").forEach(function(t){e[t]=t}),7!=l({},t)[n]||Object.keys(l({},e)).join("")!=i})?function(t,e){for(var n=r(t),l=arguments.length,u=1,c=o.f,f=a.f;l>u;)for(var p,d=s(arguments[u++]),h=c?i(d).concat(c(d)):i(d),y=h.length,m=0;y>m;)f.call(d,p=h[m++])&&(n[p]=d[p]);return n}:l},function(t,e,n){var i=n(9);i(i.S+i.F,"Object",{assign:n(43)})},function(t,e,n){n(44),t.exports=n(5).Object.assign},function(t,e){t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var n=function(t,e){var n=t[1]||"",i=t[3];if(!i)return n;if(e&&"function"==typeof btoa){var o=(r=i,"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(r))))+" */"),a=i.sources.map(function(t){return"/*# sourceURL="+i.sourceRoot+t+" */"});return[n].concat(a).concat([o]).join("\n")}var r;return[n].join("\n")}(e,t);return e[2]?"@media "+e[2]+"{"+n+"}":n}).join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var i={},o=0;o<this.length;o++){var a=this[o][0];"number"==typeof a&&(i[a]=!0)}for(o=0;o<t.length;o++){var r=t[o];"number"==typeof r[0]&&i[r[0]]||(n&&!r[2]?r[2]=n:n&&(r[2]="("+r[2]+") and ("+n+")"),e.push(r))}},e}},function(t,e,n){(t.exports=n(46)(!1)).push([t.i,".vue2leaflet-map{height:100%;width:100%}",""])},function(t,e,n){var i=n(47);"string"==typeof i&&(i=[[t.i,i,""]]),i.locals&&(t.exports=i.locals);(0,n(20).default)("516f1ef6",i,!0,{})},function(t,e,n){var i=n(9);i(i.S+i.F*!n(7),"Object",{defineProperty:n(11).f})},function(t,e,n){n(49);var i=n(5).Object;t.exports=function(t,e,n){return i.defineProperty(t,e,n)}},function(t,e,n){t.exports={default:n(50),__esModule:!0}},function(t,e){t.exports=function(t,e){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:e}}},function(t,e,n){var i=n(8);t.exports=function(t,e){if(!i(t))return t;var n,o;if(e&&"function"==typeof(n=t.toString)&&!i(o=n.call(t)))return o;if("function"==typeof(n=t.valueOf)&&!i(o=n.call(t)))return o;if(!e&&"function"==typeof(n=t.toString)&&!i(o=n.call(t)))return o;throw TypeError("Can't convert object to primitive value")}},function(t,e,n){var i=n(8),o=n(10).document,a=i(o)&&i(o.createElement);t.exports=function(t){return a?o.createElement(t):{}}},function(t,e,n){t.exports=!n(7)&&!n(6)(function(){return 7!=Object.defineProperty(n(54)("div"),"a",{get:function(){return 7}}).a})},function(t,e,n){var i=n(8);t.exports=function(t){if(!i(t))throw TypeError(t+" is not an object!");return t}},function(t,e,n){var i=n(11),o=n(52);t.exports=n(7)?function(t,e,n){return i.f(t,e,o(1,n))}:function(t,e,n){return t[e]=n,t}},function(t,e){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,e,n){var i=n(58);t.exports=function(t,e,n){if(i(t),void 0===e)return t;switch(n){case 1:return function(n){return t.call(e,n)};case 2:return function(n,i){return t.call(e,n,i)};case 3:return function(n,i,o){return t.call(e,n,i,o)}}return function(){return t.apply(e,arguments)}}},function(t,e,n){var i=n(9),o=n(5),a=n(6);t.exports=function(t,e){var n=(o.Object||{})[t]||Object[t],r={};r[t]=e(n),i(i.S+i.F*a(function(){n(1)}),"Object",r)}},function(t,e){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,e){var n=0,i=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++n+i).toString(36))}},function(t,e,n){var i=n(10),o=i["__core-js_shared__"]||(i["__core-js_shared__"]={});t.exports=function(t){return o[t]||(o[t]={})}},function(t,e,n){var i=n(63)("keys"),o=n(62);t.exports=function(t){return i[t]||(i[t]=o(t))}},function(t,e,n){var i=n(12),o=Math.max,a=Math.min;t.exports=function(t,e){return(t=i(t))<0?o(t+e,0):a(t,e)}},function(t,e,n){var i=n(12),o=Math.min;t.exports=function(t){return t>0?o(i(t),9007199254740991):0}},function(t,e,n){var i=n(14),o=n(66),a=n(65);t.exports=function(t){return function(e,n,r){var s,l=i(e),u=o(l.length),c=a(r,u);if(t&&n!=n){for(;u>c;)if((s=l[c++])!=s)return!0}else for(;u>c;c++)if((t||c in l)&&l[c]===n)return t||c||0;return!t&&-1}}},function(t,e){var n={}.toString;t.exports=function(t){return n.call(t).slice(8,-1)}},function(t,e){var n={}.hasOwnProperty;t.exports=function(t,e){return n.call(t,e)}},function(t,e,n){var i=n(69),o=n(14),a=n(67)(!1),r=n(64)("IE_PROTO");t.exports=function(t,e){var n,s=o(t),l=0,u=[];for(n in s)n!=r&&i(s,n)&&u.push(n);for(;e.length>l;)i(s,n=e[l++])&&(~a(u,n)||u.push(n));return u}},function(t,e,n){var i=n(17),o=n(15);n(60)("keys",function(){return function(t){return o(i(t))}})},function(t,e,n){n(71),t.exports=n(5).Object.keys},function(t,e,n){e.findRealParent=n(2).default,e.propsBinder=n(0).default,e.LCircle=n(40).default,e.LCircleMarker=n(30).default,e.LControlAttribution=n(21).default,e.LControlLayers=n(23).default,e.LControlScale=n(24).default,e.LControlZoom=n(25).default,e.LFeatureGroup=n(34).default,e.LGeoJson=n(26).default,e.LIconDefault=n(27).default,e.LImageOverlay=n(29).default,e.LLayerGroup=n(39).default,e.LMap=n(31).default,e.LMarker=n(32).default,e.LPolygon=n(33).default,e.LPolyline=n(35).default,e.LPopup=n(36).default,e.LRectangle=n(37).default,e.LTileLayer=n(22).default,e.LTooltip=n(38).default,e.LWMSTileLayer=n(28).default}])});
+!function(t,e){ true?module.exports=e(__webpack_require__(62)):"function"==typeof define&&define.amd?define(["leaflet"],e):"object"==typeof exports?exports.Vue2Leaflet=e(require("leaflet")):t.Vue2Leaflet=e(t.L)}(window,function(t){return function(t){var e={};function n(i){if(e[i])return e[i].exports;var o=e[i]={i:i,l:!1,exports:{}};return t[i].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,i){n.o(t,e)||Object.defineProperty(t,e,{configurable:!1,enumerable:!0,get:i})},n.r=function(t){Object.defineProperty(t,"__esModule",{value:!0})},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=73)}([function(t,e,n){"use strict";n.r(e);var i=n(19),o=n.n(i);e.default=function(t,e,n,i){for(var a=o()(n),r=function(){var i,o=a[s],r="set"+((i=o).charAt(0).toUpperCase()+i.slice(1)),l=n[o].type===Object||n[o].type===Array||Array.isArray(n[o].type);n[o].custom?t.$watch(o,function(e,n){t[r](e,n)},{deep:l}):"setOptions"==r?t.$watch(o,function(t,n){L.setOptions(e,t)},{deep:l}):t.$watch(o,function(t,n){e[r](t)},{deep:l})},s=0;s<a.length;s++)r()}},function(t,e,n){"use strict";function i(t,e,n,i,o,a,r,s){var l=typeof(t=t||{}).default;"object"!==l&&"function"!==l||(t=t.default);var u,c="function"==typeof t?t.options:t;if(e&&(c.render=e,c.staticRenderFns=n,c._compiled=!0),i&&(c.functional=!0),a&&(c._scopeId=a),r?(u=function(t){(t=t||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext)||"undefined"==typeof __VUE_SSR_CONTEXT__||(t=__VUE_SSR_CONTEXT__),o&&o.call(this,t),t&&t._registeredComponents&&t._registeredComponents.add(r)},c._ssrRegister=u):o&&(u=s?function(){o.call(this,this.$root.$options.shadowRoot)}:o),u)if(c.functional){c._injectStyles=u;var f=c.render;c.render=function(t,e){return u.call(e),f(t,e)}}else{var p=c.beforeCreate;c.beforeCreate=p?[].concat(p,u):[u]}return{exports:t,options:c}}n.d(e,"a",function(){return i})},function(t,e,n){"use strict";n.r(e),e.default=function(t){for(var e=!1;!e;)void 0==t.mapObject?t=t.$parent:e=!0;return t}},function(t,e,n){"use strict";e.__esModule=!0;var i,o=n(51),a=(i=o)&&i.__esModule?i:{default:i};e.default=function(t,e,n){return e in t?(0,a.default)(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}},function(e,n){e.exports=t},function(t,e){var n=t.exports={version:"2.5.3"};"number"==typeof __e&&(__e=n)},function(t,e){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,e,n){t.exports=!n(6)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,e){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,e,n){var i=n(10),o=n(5),a=n(59),r=n(57),s=function(t,e,n){var l,u,c,f=t&s.F,p=t&s.G,d=t&s.S,h=t&s.P,y=t&s.B,m=t&s.W,b=p?o:o[e]||(o[e]={}),O=b.prototype,v=p?i:d?i[e]:(i[e]||{}).prototype;for(l in p&&(n=e),n)(u=!f&&v&&void 0!==v[l])&&l in b||(c=u?v[l]:n[l],b[l]=p&&"function"!=typeof v[l]?n[l]:y&&u?a(c,i):m&&v[l]==c?function(t){var e=function(e,n,i){if(this instanceof t){switch(arguments.length){case 0:return new t;case 1:return new t(e);case 2:return new t(e,n)}return new t(e,n,i)}return t.apply(this,arguments)};return e.prototype=t.prototype,e}(c):h&&"function"==typeof c?a(Function.call,c):c,h&&((b.virtual||(b.virtual={}))[l]=c,t&s.R&&O&&!O[l]&&r(O,l,c)))};s.F=1,s.G=2,s.S=4,s.P=8,s.B=16,s.W=32,s.U=64,s.R=128,t.exports=s},function(t,e){var n=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=n)},function(t,e,n){var i=n(56),o=n(55),a=n(53),r=Object.defineProperty;e.f=n(7)?Object.defineProperty:function(t,e,n){if(i(t),e=a(e,!0),i(n),o)try{return r(t,e,n)}catch(t){}if("get"in n||"set"in n)throw TypeError("Accessors not supported!");return"value"in n&&(t[e]=n.value),t}},function(t,e){var n=Math.ceil,i=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?i:n)(t)}},function(t,e,n){var i=n(68);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==i(t)?t.split(""):Object(t)}},function(t,e,n){var i=n(13),o=n(16);t.exports=function(t){return i(o(t))}},function(t,e,n){var i=n(70),o=n(61);t.exports=Object.keys||function(t){return i(t,o)}},function(t,e){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,e,n){var i=n(16);t.exports=function(t){return Object(i(t))}},function(t,e,n){t.exports={default:n(45),__esModule:!0}},function(t,e,n){t.exports={default:n(72),__esModule:!0}},function(t,e,n){"use strict";function i(t,e){for(var n=[],i={},o=0;o<e.length;o++){var a=e[o],r=a[0],s={id:t+":"+o,css:a[1],media:a[2],sourceMap:a[3]};i[r]?i[r].parts.push(s):n.push(i[r]={id:r,parts:[s]})}return n}n.r(e),n.d(e,"default",function(){return h});var o="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!o)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var a={},r=o&&(document.head||document.getElementsByTagName("head")[0]),s=null,l=0,u=!1,c=function(){},f=null,p="data-vue-ssr-id",d="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());function h(t,e,n,o){u=n,f=o||{};var r=i(t,e);return y(r),function(e){for(var n=[],o=0;o<r.length;o++){var s=r[o];(l=a[s.id]).refs--,n.push(l)}e?y(r=i(t,e)):r=[];for(o=0;o<n.length;o++){var l;if(0===(l=n[o]).refs){for(var u=0;u<l.parts.length;u++)l.parts[u]();delete a[l.id]}}}}function y(t){for(var e=0;e<t.length;e++){var n=t[e],i=a[n.id];if(i){i.refs++;for(var o=0;o<i.parts.length;o++)i.parts[o](n.parts[o]);for(;o<n.parts.length;o++)i.parts.push(b(n.parts[o]));i.parts.length>n.parts.length&&(i.parts.length=n.parts.length)}else{var r=[];for(o=0;o<n.parts.length;o++)r.push(b(n.parts[o]));a[n.id]={id:n.id,refs:1,parts:r}}}}function m(){var t=document.createElement("style");return t.type="text/css",r.appendChild(t),t}function b(t){var e,n,i=document.querySelector("style["+p+'~="'+t.id+'"]');if(i){if(u)return c;i.parentNode.removeChild(i)}if(d){var o=l++;i=s||(s=m()),e=j.bind(null,i,o,!1),n=j.bind(null,i,o,!0)}else i=m(),e=function(t,e){var n=e.css,i=e.media,o=e.sourceMap;i&&t.setAttribute("media",i);f.ssrId&&t.setAttribute(p,e.id);o&&(n+="\n/*# sourceURL="+o.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");if(t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}.bind(null,i),n=function(){i.parentNode.removeChild(i)};return e(t),function(i){if(i){if(i.css===t.css&&i.media===t.media&&i.sourceMap===t.sourceMap)return;e(t=i)}else n()}}var O,v=(O=[],function(t,e){return O[t]=e,O.filter(Boolean).join("\n")});function j(t,e,n,i){var o=n?"":i.css;if(t.styleSheet)t.styleSheet.cssText=v(e,o);else{var a=document.createTextNode(o),r=t.childNodes;r[e]&&t.removeChild(r[e]),r.length?t.insertBefore(a,r[e]):t.appendChild(a)}}},function(t,e,n){"use strict";n.r(e);var i=n(0),o={prefix:{type:String,default:"Leaflet"},position:{type:String,default:"topright"},options:{type:Object,default:function(){return{}}}},a={name:"LControlAttribution",props:o,mounted:function(){for(var t=this.options,e=["prefix","position"],n=0;n<e.length;n++){var a=e[n];void 0!==this[a]&&(t[a]=this[a])}this.mapObject=L.control.attribution(t),Object(i.default)(this,this.mapObject,o),this.mapObject.addTo(this.$parent.mapObject)},beforeDestroy:function(){this.mapObject.remove()},render:function(){return null}},r=n(1),s=Object(r.a)(a,void 0,void 0,!1,null,null,null);e.default=s.exports},function(t,e,n){"use strict";n.r(e);var i,o=n(3),a=n.n(o),r=n(0),s=n(2),l={url:String,attribution:{type:String,custom:!0},detectRetina:{type:Boolean,custom:!1,default:!1},token:{type:String,custom:!0},opacity:{type:Number,custom:!1,default:1},zIndex:{type:Number,default:1},options:{type:Object,default:function(){return{}}},tileLayerClass:{type:Function,default:L.tileLayer},layerType:{type:String,default:void 0},name:{type:String,default:void 0},visible:{type:Boolean,custom:!0,default:!0}},u=(i={name:"LTileLayer",props:l,mounted:function(){for(var t=this.options,e=["attribution","token","detectRetina","opacity","zIndex"],n=0;n<e.length;n++){var i=e[n];void 0!==this[i]&&(t[i]=this[i])}this.mapObject=this.tileLayerClass(this.url,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(r.default)(this,this.mapObject,l),this.parentContainer=Object(s.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},methods:{setAttribution:function(t,e){this.$parent.mapObject.attributionControl.removeAttribution(e).addAttribution(t)},setToken:function(t){this.options.token=t}}},a()(i,"methods",{setVisible:function(t,e){t!=e&&this.mapObject&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))}}),a()(i,"beforeDestroy",function(){this.parentContainer.removeLayer(this)}),a()(i,"render",function(){return null}),i),c=n(1),f=Object(c.a)(u,void 0,void 0,!1,null,null,null);e.default=f.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o={collapsed:{type:Boolean,default:!0},autoZIndex:{type:Boolean,default:!0},hideSingleBase:{type:Boolean,default:!1},sortLayers:{type:Boolean,default:!1},sortFunction:{type:Function,default:void 0},position:{type:String,default:"topright"},options:{type:Object,default:function(){return{}}}},a={name:"LControlLayers",props:o,mounted:function(){for(var t=this.options,e=["collapsed","autoZIndex","hideSingleBase","sortLayers","sortFunction"],n=0;n<e.length;n++){var a=e[n];void 0!==this[a]&&(t[a]=this[a])}this.mapObject=L.control.layers(null,null,t),Object(i.default)(this,this.mapObject,o),this.$parent.registerLayerControl(this)},methods:{addLayer:function(t){"base"==t.layerType?this.mapObject.addBaseLayer(t.mapObject,t.name):"overlay"==t.layerType&&this.mapObject.addOverlay(t.mapObject,t.name)},removeLayer:function(t){this.mapObject.removeLayer(t.mapObject)}},beforeDestroy:function(){this.mapObject.remove()},render:function(){return null}},r=n(1),s=Object(r.a)(a,void 0,void 0,!1,null,null,null);e.default=s.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o={maxWidth:{type:Number,default:100},metric:{type:Boolean,default:!0},imperial:{type:Boolean,default:!0},updateWhenIdle:{type:Boolean,default:!1},position:{type:String,default:"topright"},options:{type:Object,default:function(){return{}}}},a={name:"LControlScale",props:o,mounted:function(){for(var t=this.options,e=["maxWidth","metric","imperial","updateWhenIdle","position"],n=0;n<e.length;n++){var a=e[n];void 0!==this[a]&&(t[a]=this[a])}this.mapObject=L.control.scale(t),Object(i.default)(this,this.mapObject,o),this.mapObject.addTo(this.$parent.mapObject)},beforeDestroy:function(){this.mapObject.remove()},render:function(){return null}},r=n(1),s=Object(r.a)(a,void 0,void 0,!1,null,null,null);e.default=s.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o={zoomInText:{type:String,default:"+"},zoomInTitle:{type:String,default:"Zoom in"},zoomOutText:{type:String,default:"-"},zoomOutTitle:{type:String,default:"Zoom out"},position:{type:String,default:"topright"},options:{type:Object,default:function(){return{}}}},a={name:"LControlZoom",props:o,mounted:function(){for(var t=this.options,e=["zoomInText","zoomInTitle","zoomOutText","zoomOutTitle","position"],n=0;n<e.length;n++){var a=e[n];void 0!==this[a]&&(t[a]=this[a])}this.mapObject=L.control.zoom(t),Object(i.default)(this,this.mapObject,o),this.mapObject.addTo(this.$parent.mapObject)},beforeDestroy:function(){this.mapObject.remove()},render:function(){return null}},r=n(1),s=Object(r.a)(a,void 0,void 0,!1,null,null,null);e.default=s.exports},function(t,e,n){"use strict";n.r(e);var i=n(3),o=n.n(i),a=n(0),r=n(2),s={geojson:{type:[Object,Array],custom:!0,default:function(){return{}}},options:{type:Object,default:function(){return{}}},visible:{type:Boolean,custom:!0,default:!0}},l={name:"LGeoJson",props:s,mounted:function(){this.mapObject=L.geoJSON(this.geojson,this.options),L.DomEvent.on(this.mapObject,this.$listeners),Object(a.default)(this,this.mapObject,s),this.parentContainer=Object(r.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},methods:o()({setVisible:function(t,e){t!=e&&this.mapObject&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setGeojson:function(t){this.mapObject.clearLayers(),this.mapObject.addData(t)},getGeoJSONData:function(){return this.mapObject.toGeoJSON()},getBounds:function(){return this.mapObject.getBounds()}},"setVisible",function(t,e){t!==e&&(t?this.mapObject.addTo(this.$parent.mapObject):this.$parent.mapObject.removeLayer(this.mapObject))}),beforeDestroy:function(){this.$parent.mapObject.removeLayer(this.mapObject)},render:function(){return null}},u=n(1),c=Object(u.a)(l,void 0,void 0,!1,null,null,null);e.default=c.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o={imagePath:{type:String,custom:!0,default:""}},a={name:"LIconDefault",props:o,mounted:function(){L.Icon.Default.imagePath=this.imagePath,Object(i.default)(this,this.mapObject,o)},methods:{setImagePath:function(t,e){L.Icon.Default.imagePath=t}},render:function(){return null}},r=n(1),s=Object(r.a)(a,void 0,void 0,!1,null,null,null);e.default=s.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={baseUrl:String,layers:{type:String,default:""},styles:{type:String,default:""},format:{type:String,default:"image/jpeg"},options:{type:Object,default:function(){return{}}},transparent:{type:Boolean,custom:!1},version:{type:String,default:"1.1.1"},crs:{default:null},upperCase:{type:Boolean,default:!1},opacity:{type:Number,custom:!1,default:1},zIndex:{type:Number,default:1},layerType:{type:String,default:void 0},name:{type:String,default:void 0},visible:{type:Boolean,custom:!0,default:!0}},r={name:"LWMSTileLayer",props:a,mounted:function(){for(var t=this.options,e=["layers","styles","format","transparent","version","crs","upperCase","zIndex","opacity"],n=0;n<e.length;n++){var r=e[n];void 0!==this[r]&&(t[r]=this[r])}this.mapObject=L.tileLayer.wms(this.baseUrl,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},methods:{setVisible:function(t,e){t!=e&&this.mapObject&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))}},beforeDestroy:function(){this.parentContainer.removeLayer(this)},render:function(){return null}},s=n(1),l=Object(s.a)(r,void 0,void 0,!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={url:{type:String},bounds:{},opacity:{type:Number,default:1},alt:{type:String,default:""},interactive:{type:Boolean,default:!1},crossOrigin:{type:Boolean,default:!1},visible:{type:Boolean,custom:!0,default:!0}},r={name:"LImageOverlay",props:a,mounted:function(){var t={opacity:this.opacity,alt:this.alt,interactive:this.interactive,crossOrigin:this.crossOrigin};this.mapObject=L.imageOverlay(this.url,this.bounds,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},methods:{setVisible:function(t,e){t!=e&&this.mapObject&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},getBounds:function(){return this.mapObject.getBounds()}},beforeDestroy:function(){this.parentContainer.removeLayer(this)},render:function(){return null}},s=n(1),l=Object(s.a)(r,void 0,void 0,!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={latLng:{type:[Object,Array]},radius:{type:Number,default:10},lStyle:{type:Object,custom:!0},visible:{type:Boolean,custom:!0,default:!0},stroke:{type:Boolean,custom:!0,default:!0},color:{type:String,custom:!0,default:"#3388ff"},weight:{type:Number,custom:!0,default:3},opacity:{type:Number,custom:!0,default:1},lineCap:{type:String,custom:!0,default:"round"},lineJoin:{type:String,custom:!0,default:"round"},dashArray:{type:String,custom:!0,default:null},dashOffset:{type:String,custom:!0,default:null},fill:{type:Boolean,custom:!0,default:!0},fillColor:{type:String,custom:!0,default:"#3388ff"},fillOpacity:{type:Number,custom:!0,default:.2},fillRule:{type:String,custom:!0,default:"evenodd"},className:{type:String,custom:!0,default:null}},r={name:"LCircleMarker",props:a,data:function(){return{ready:!1}},mounted:function(){var t={};if(this.color&&(t.color=this.color),this.radius&&(t.radius=this.radius),this.lStyle)for(var e in this.lStyle)t[e]=this.lStyle[e];for(var n=["smoothFactor","noClip","stroke","color","weight","opacity","lineCap","lineJoin","dashArray","dashOffset","fill","fillColor","fillOpacity","fillRule","className"],r=0;r<n.length;r++){var s=n[r];void 0!==this[s]&&(t[s]=this[s])}this.mapObject=L.circleMarker(this.latLng,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLStyle:function(t,e){t!=e&&this.mapObject.setStyle(t)},setStroke:function(t,e){t!=e&&this.mapObject.setStyle({stroke:t})},setColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({color:t})},setWeight:function(t,e){t!=e&&t&&this.mapObject.setStyle({weight:t})},setOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({opacity:t})},setLineCap:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineCap:t})},setLineJoin:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineJoin:t})},setDashArray:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashArray:t})},setDashOffset:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashOffset:t})},setFill:function(t,e){t!=e&&this.mapObject.setStyle({fill:t})},setFillColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillColor:t})},setFillOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillOpacity:t})},setFillRule:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillRule:t})},setClassName:function(t,e){t!=e&&t&&this.mapObject.setStyle({className:t})}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(18),o=n.n(i),a=n(4),r=n.n(a),s=n(0),l={center:{type:[Object,Array],custom:!0,default:function(){return[0,0]}},bounds:{custom:!0,default:void 0},maxBounds:{default:void 0},zoom:{type:Number,custom:!0,default:0},minZoom:{type:Number,default:void 0},maxZoom:{type:Number,default:void 0},paddingBottomRight:{custom:!0,default:null},paddingTopLeft:{custom:!0,default:null},padding:{custom:!0,default:null},worldCopyJump:{type:Boolean,default:!1},crs:{custom:!0,default:function(){return r.a.CRS.EPSG3857}},maxBoundsViscosity:{type:Number,default:0},options:{type:Object,default:function(){return{}}}},u={name:"LMap",props:l,data:function(){return{ready:!1,movingRequest:0,lastSetCenter:void 0,lastSetBounds:void 0,layerControl:void 0,layersToAdd:[]}},mounted:function(){var t=this,e=this.options;o()(e,{minZoom:this.minZoom,maxZoom:this.maxZoom,maxBounds:this.maxBounds,maxBoundsViscosity:this.maxBoundsViscosity,worldCopyJump:this.worldCopyJump,crs:this.crs}),null!=this.center&&(e.center=this.center),null!=this.zoom&&(e.zoom=this.zoom),this.mapObject=r.a.map(this.$el,e),this.setBounds(this.bounds),this.mapObject.on("moveend",function(){if(0==t.movingRequest){t.mapObject.getZoom()!=t.zoom&&t.$emit("update:zoom",t.mapObject.getZoom());var e=t.mapObject.getCenter();null!=t.center?Array.isArray(t.center)?(t.center[0]=e.lat,t.center[1]=e.lng):(t.center.lat=e.lat,t.center.lng=e.lng):t.$emit("update:center",e);var n=t.mapObject.getBounds();null!=t.bounds?Array.isArray(t.bounds)?Array.isArray(t.bounds[0])?(t.bounds[0][0]=n._southWest.lat,t.bounds[0][1]=n._southWest.lng,t.bounds[1][0]=n._northEast.lat,t.bounds[1][1]=n._northEast.lng):(t.bounds[0].lat=n._southWest.lat,t.bounds[0].lng=n._southWest.lng,t.bounds[1].lat=n._northEast.lat,t.bounds[1].lng=n._northEast.lng):(t.bounds._southWest.lat=n._southWest.lat,t.bounds._southWest.lng=n._southWest.lng,t.bounds._northEast.lat=n._northEast.lat,t.bounds._northEast.lng=n._northEast.lng):t.$emit("update:bounds",n)}else t.movingRequest-=1}),r.a.DomEvent.on(this.mapObject,this.$listeners),Object(s.default)(this,this.mapObject,l),this.ready=!0},methods:{registerLayerControl:function(t){for(var e in this.layerControl=t,this.mapObject.addControl(t.mapObject),this.layersToAdd)this.layerControl.addLayer(e);this.layerToAdd=null},addLayer:function(t,e){void 0!==t.layerType&&(void 0==this.layerControl?this.layersToAdd.push(t):this.layerControl.addLayer(t)),e||this.mapObject.addLayer(t.mapObject)},removeLayer:function(t,e){void 0!==t.layerType&&(void 0==this.layerControl?this.layersToAdd=this.layerToAdd.filter(function(e){return e.name!==t.name}):this.layerControl.removeLayer(t)),e||this.mapObject.removeLayer(t.mapObject)},setZoom:function(t,e){this.movingRequest+=1,this.mapObject.setZoom(t)},setCenter:function(t,e){if(null!=t){var n=0,i=0;Array.isArray(t)?(n=t[0],i=t[1]):(n=t.lat,i=t.lng);var o=null==this.lastSetCenter?this.mapObject.getCenter():this.lastSetCenter;o.lat==n&&o.lng==i||(o.lat=t.lat,o.lng=t.lng,this.lastSetCenter=o,this.movingRequest+=1,this.mapObject.panTo(t))}},setBounds:function(t,e){if(t){if(t instanceof r.a.LatLngBounds){if(!t.isValid())return}else if(!Array.isArray(t))return;var n=null==this.lastSetBounds?this.mapObject.getBounds():this.lastSetBounds,i=0,o=0,a=0,s=0;Array.isArray(n)?(Array.isArray(n[0])?(i=n[0][0],o=n[0][1]):(i=n[0].lat,o=n[0].lng),Array.isArray(n[1])?(a=n[1][0],s=n[1][1]):(a=n[1].lat,s=n[1].lng)):(i=n._southWest.lat,o=n._southWest.lng,a=n._northEast.lat,s=n._northEast.lng);var l,u,c,f;if(Array.isArray(t)&&(t=r.a.latLngBounds(t)),l=t._southWest.lat,u=t._southWest.lng,c=t._northEast.lat,f=t._northEast.lng,l!=i||u!=o||c!=a||f!=s){var p={};this.padding?p.padding=this.padding:(this.paddingBottomRight&&(p.paddingBottomRight=this.paddingBottomRight),this.paddingTopLeft&&(p.paddingTopLeft=this.paddingTopLeft)),this.lastSetBounds=n,Array.isArray(n)?(Array.isArray(n[0])?(n[0][0]=i,n[0][1]=o):(n[0].lat=i,n[0].lng=o),Array.isArray(n[1])?(n[1][0]=a,n[1][1]=s):(n[1].lat=a,n[1].lng=s)):(n._southWest.lat=i,n._southWest.lng=o,n._northEast.lat=a,n._northEast.lng=s),this.movingRequest+=1,this.mapObject.fitBounds(t,p)}}},setPaddingBottomRight:function(t,e){this.paddingBottomRight=t},setPaddingTopLeft:function(t,e){this.paddingTopLeft=t},setPadding:function(t,e){this.padding=t},setCrs:function(t,e){console.log("Changing CRS is not yet supported by Leaflet")},fitBounds:function(t){this.mapObject.fitBounds(t)}}},c=n(1);var f=function(t){n(48)},p=Object(c.a)(u,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticClass:"vue2leaflet-map"},[this.ready?this._t("default"):this._e()],2)},[],!1,f,null,null);e.default=p.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={draggable:{type:Boolean,custom:!0,default:!1},visible:{type:Boolean,custom:!0,default:!0},latLng:{type:[Object,Array],custom:!0},icon:{custom:!1,default:function(){return new L.Icon.Default}},zIndexOffset:{type:Number,custom:!1},options:{type:Object,default:function(){return{}}}},r={name:"LMarker",props:a,data:function(){return{ready:!1}},mounted:function(){var t=this,e=this.options;this.icon&&(e.icon=this.icon),e.draggable=this.draggable,this.mapObject=L.marker(this.latLng,e),this.mapObject.on("move",function(e){Array.isArray(t.latLng)?(t.latLng[0]=e.latlng.lat,t.latLng[1]=e.latlng.lng):(t.latLng.lat=e.latlng.lat,t.latLng.lng=e.latlng.lng)}),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setDraggable:function(t,e){this.mapObject.dragging&&(t?this.mapObject.dragging.enable():this.mapObject.dragging.disable())},setVisible:function(t,e){t!=e&&this.mapObject&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLatLng:function(t){if(null!=t&&this.mapObject){var e=this.mapObject.getLatLng(),n={lat:t[0]||t.lat,lng:t[1]||t.lng};n.lat==e.lat&&n.lng==e.lng||this.mapObject.setLatLng(n)}}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={latLngs:{type:Array,default:function(){return[]}},lStyle:{type:Object,custom:!0},visible:{type:Boolean,custom:!0,default:!0},smoothFactor:{type:Number,custom:!0,default:1},noClip:{type:Boolean,custom:!0,default:!1},stroke:{type:Boolean,custom:!0,default:!0},color:{type:String,custom:!0,default:"#3388ff"},weight:{type:Number,custom:!0,default:3},opacity:{type:Number,custom:!0,default:1},lineCap:{type:String,custom:!0,default:"round"},lineJoin:{type:String,custom:!0,default:"round"},dashArray:{type:String,custom:!0,default:null},dashOffset:{type:String,custom:!0,default:null},fill:{type:Boolean,custom:!0,default:!0},fillColor:{type:String,custom:!0,default:"#3388ff"},fillOpacity:{type:Number,custom:!0,default:.2},fillRule:{type:String,custom:!0,default:"evenodd"},className:{type:String,custom:!0,default:null}},r={name:"LPolygon",props:a,data:function(){return{ready:!1}},mounted:function(){var t={};if(this.color&&(t.color=this.color),this.lStyle)for(var e in this.lStyle)t[e]=this.lStyle[e];for(var n=["smoothFactor","noClip","stroke","color","weight","opacity","lineCap","lineJoin","dashArray","dashOffset","fill","fillColor","fillOpacity","fillRule","className"],r=0;r<n.length;r++){var s=n[r];void 0!==this[s]&&(t[s]=this[s])}this.mapObject=L.polygon(this.latLngs,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLStyle:function(t,e){t!=e&&this.mapObject.setStyle(t)},setSmoothFactor:function(t,e){t!=e&&t&&this.mapObject.setStyle({smoothFactor:t})},setNoClip:function(t,e){t!=e&&t&&this.mapObject.setStyle({noClip:t})},setStroke:function(t,e){t!=e&&this.mapObject.setStyle({stroke:t})},setColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({color:t})},setWeight:function(t,e){t!=e&&t&&this.mapObject.setStyle({weight:t})},setOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({opacity:t})},setLineCap:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineCap:t})},setLineJoin:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineJoin:t})},setDashArray:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashArray:t})},setDashOffset:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashOffset:t})},setFill:function(t,e){t!=e&&this.mapObject.setStyle({fill:t})},setFillColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillColor:t})},setFillOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillOpacity:t})},setFillRule:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillRule:t})},setClassName:function(t,e){t!=e&&t&&this.mapObject.setStyle({className:t})},addLatLng:function(t){this.mapObject.addLatLng(t)},getGeoJSONData:function(){return this.mapObject.toGeoJSON()}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={visible:{type:Boolean,custom:!0,default:!0}},r={name:"LFeatureGroup",props:a,data:function(){return{ready:!1}},mounted:function(){this.mapObject=L.featureGroup(),Object(i.default)(this,this.mapObject,a),L.DomEvent.on(this.mapObject,this.$listeners),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.visible&&this.parentContainer.addLayer(this)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{addLayer:function(t,e){e||this.mapObject.addLayer(t.mapObject),this.parentContainer.addLayer(t,!0)},removeLayer:function(t,e){e||this.mapObject.removeLayer(t.mapObject),this.parentContainer.removeLayer(t,!0)},setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={latLngs:{type:Array,default:function(){return[]}},lStyle:{type:Object,custom:!0},visible:{type:Boolean,custom:!0,default:!0},smoothFactor:{type:Number,custom:!0,default:1},noClip:{type:Boolean,custom:!0,default:!1},stroke:{type:Boolean,custom:!0,default:!0},color:{type:String,custom:!0,default:"#3388ff"},weight:{type:Number,custom:!0,default:3},opacity:{type:Number,custom:!0,default:1},lineCap:{type:String,custom:!0,default:"round"},lineJoin:{type:String,custom:!0,default:"round"},dashArray:{type:String,custom:!0,default:null},dashOffset:{type:String,custom:!0,default:null},fill:{type:Boolean,custom:!0,default:!1},fillColor:{type:String,custom:!0,default:"#3388ff"},fillOpacity:{type:Number,custom:!0,default:.2},fillRule:{type:String,custom:!0,default:"evenodd"},className:{type:String,custom:!0,default:null}},r={name:"LPolyline",props:a,data:function(){return{ready:!1}},mounted:function(){var t={};if(this.color&&(t.color=this.color),this.lStyle)for(var e in this.lStyle)t[e]=this.lStyle[e];for(var n=["smoothFactor","noClip","stroke","color","weight","opacity","lineCap","lineJoin","dashArray","dashOffset","fill","fillColor","fillOpacity","fillRule","className"],r=0;r<n.length;r++){var s=n[r];void 0!==this[s]&&(t[s]=this[s])}this.mapObject=L.polyline(this.latLngs,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLStyle:function(t,e){t!=e&&this.mapObject.setStyle(t)},setSmoothFactor:function(t,e){t!=e&&t&&this.mapObject.setStyle({smoothFactor:t})},setNoClip:function(t,e){t!=e&&t&&this.mapObject.setStyle({noClip:t})},setStroke:function(t,e){t!=e&&this.mapObject.setStyle({stroke:t})},setColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({color:t})},setWeight:function(t,e){t!=e&&t&&this.mapObject.setStyle({weight:t})},setOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({opacity:t})},setLineCap:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineCap:t})},setLineJoin:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineJoin:t})},setDashArray:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashArray:t})},setDashOffset:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashOffset:t})},setFill:function(t,e){t!=e&&this.mapObject.setStyle({fill:t})},setFillColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillColor:t})},setFillOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillOpacity:t})},setFillRule:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillRule:t})},setClassName:function(t,e){t!=e&&t&&this.mapObject.setStyle({className:t})},addLatLng:function(t){this.mapObject.addLatLng(t)}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={content:{default:""},latLng:{type:[Object,Array]},options:{type:Object,default:function(){return{}}}},r={name:"LPopup",props:a,data:function(){return{ready:!1}},mounted:function(){this.mapObject=L.popup(this.options),void 0!==this.latLng&&this.mapObject.setLatLng(this.latLng),this.mapObject.setContent(this.content||this.$el),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.mapObject.bindPopup(this.mapObject)},beforeDestroy:function(){this.parentContainer.mapObject&&this.parentContainer.mapObject.getPopup()&&this.parentContainer.mapObject.unbindPopup()}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={bounds:{type:Array,default:function(){return[]}},lStyle:{type:Object,custom:!0},visible:{type:Boolean,custom:!0,default:!0},stroke:{type:Boolean,custom:!0,default:!0},color:{type:String,custom:!0,default:"#3388ff"},weight:{type:Number,custom:!0,default:3},opacity:{type:Number,custom:!0,default:1},lineCap:{type:String,custom:!0,default:"round"},lineJoin:{type:String,custom:!0,default:"round"},dashArray:{type:String,custom:!0,default:null},dashOffset:{type:String,custom:!0,default:null},fill:{type:Boolean,custom:!0,default:!0},fillColor:{type:String,custom:!0,default:"#3388ff"},fillOpacity:{type:Number,custom:!0,default:.2},fillRule:{type:String,custom:!0,default:"evenodd"},className:{type:String,custom:!0,default:null}},r={name:"LRectangle",props:a,data:function(){return{ready:!1}},mounted:function(){var t={};if(this.color&&(t.color=this.color),this.lStyle)for(var e in this.lStyle)t[e]=this.lStyle[e];for(var n=["smoothFactor","noClip","stroke","color","weight","opacity","lineCap","lineJoin","dashArray","dashOffset","fill","fillColor","fillOpacity","fillRule","className"],r=0;r<n.length;r++){var s=n[r];void 0!==this[s]&&(t[s]=this[s])}this.mapObject=L.rectangle(this.bounds,t),this.ready=!0,L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLStyle:function(t,e){t!=e&&this.mapObject.setStyle(t)},setStroke:function(t,e){t!=e&&this.mapObject.setStyle({stroke:t})},setColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({color:t})},setWeight:function(t,e){t!=e&&t&&this.mapObject.setStyle({weight:t})},setOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({opacity:t})},setLineCap:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineCap:t})},setLineJoin:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineJoin:t})},setDashArray:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashArray:t})},setDashOffset:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashOffset:t})},setFill:function(t,e){t!=e&&this.mapObject.setStyle({fill:t})},setFillColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillColor:t})},setFillOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillOpacity:t})},setFillRule:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillRule:t})},setClassName:function(t,e){t!=e&&t&&this.mapObject.setStyle({className:t})}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={content:{default:""},options:{type:Object,default:function(){return{}}}},r={name:"LTooltip",props:a,data:function(){return{}},mounted:function(){this.mapObject=L.tooltip(this.options),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.mapObject.setContent(this.content||this.$el),this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.mapObject.bindTooltip(this.mapObject)},beforeDestroy:function(){this.parentContainer.mapObject.getTooltip()&&this.parentContainer.mapObject.unbindTooltip()}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",[this._t("default")],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={visible:{type:Boolean,custom:!0,default:!0}},r={name:"LLayerGroup",props:a,data:function(){return{ready:!1}},mounted:function(){this.mapObject=L.layerGroup(),Object(i.default)(this,this.mapObject,a),L.DomEvent.on(this.mapObject,this.$listeners),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.visible&&this.parentContainer.addLayer(this)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{addLayer:function(t,e){e||this.mapObject.addLayer(t.mapObject),this.parentContainer.addLayer(t,!0)},removeLayer:function(t,e){e||this.mapObject.removeLayer(t.mapObject),this.parentContainer.removeLayer(t,!0)},setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e,n){"use strict";n.r(e);var i=n(0),o=n(2),a={latLng:{type:[Object,Array]},radius:{type:Number},lStyle:{type:Object,custom:!0},visible:{type:Boolean,custom:!0,default:!0},stroke:{type:Boolean,custom:!0,default:!0},color:{type:String,custom:!0,default:"#3388ff"},weight:{type:Number,custom:!0,default:3},opacity:{type:Number,custom:!0,default:1},lineCap:{type:String,custom:!0,default:"round"},lineJoin:{type:String,custom:!0,default:"round"},dashArray:{type:String,custom:!0,default:null},dashOffset:{type:String,custom:!0,default:null},fill:{type:Boolean,custom:!0,default:!0},fillColor:{type:String,custom:!0,default:"#3388ff"},fillOpacity:{type:Number,custom:!0,default:.2},fillRule:{type:String,custom:!0,default:"evenodd"},className:{type:String,custom:!0,default:null}},r={name:"LCircle",props:a,data:function(){return{ready:!1}},mounted:function(){var t={};if(this.color&&(t.color=this.color),this.radius&&(t.radius=this.radius),this.lStyle)for(var e in this.lStyle)t[e]=this.lStyle[e];for(var n=["smoothFactor","noClip","stroke","color","weight","opacity","lineCap","lineJoin","dashArray","dashOffset","fill","fillColor","fillOpacity","fillRule","className"],r=0;r<n.length;r++){var s=n[r];void 0!==this[s]&&(t[s]=this[s])}this.mapObject=L.circle(this.latLng,t),L.DomEvent.on(this.mapObject,this.$listeners),Object(i.default)(this,this.mapObject,a),this.ready=!0,this.parentContainer=Object(o.default)(this.$parent),this.parentContainer.addLayer(this,!this.visible)},beforeDestroy:function(){this.parentContainer.removeLayer(this)},methods:{setVisible:function(t,e){t!=e&&(t?this.parentContainer.addLayer(this):this.parentContainer.removeLayer(this))},setLStyle:function(t,e){t!=e&&this.mapObject.setStyle(t)},setStroke:function(t,e){t!=e&&this.mapObject.setStyle({stroke:t})},setColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({color:t})},setWeight:function(t,e){t!=e&&t&&this.mapObject.setStyle({weight:t})},setOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({opacity:t})},setLineCap:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineCap:t})},setLineJoin:function(t,e){t!=e&&t&&this.mapObject.setStyle({lineJoin:t})},setDashArray:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashArray:t})},setDashOffset:function(t,e){t!=e&&t&&this.mapObject.setStyle({dashOffset:t})},setFill:function(t,e){t!=e&&this.mapObject.setStyle({fill:t})},setFillColor:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillColor:t})},setFillOpacity:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillOpacity:t})},setFillRule:function(t,e){t!=e&&t&&this.mapObject.setStyle({fillRule:t})},setClassName:function(t,e){t!=e&&t&&this.mapObject.setStyle({className:t})}}},s=n(1),l=Object(s.a)(r,function(){var t=this.$createElement;return(this._self._c||t)("div",{staticStyle:{display:"none"}},[this.ready?this._t("default"):this._e()],2)},[],!1,null,null,null);e.default=l.exports},function(t,e){e.f={}.propertyIsEnumerable},function(t,e){e.f=Object.getOwnPropertySymbols},function(t,e,n){"use strict";var i=n(15),o=n(42),a=n(41),r=n(17),s=n(13),l=Object.assign;t.exports=!l||n(6)(function(){var t={},e={},n=Symbol(),i="abcdefghijklmnopqrst";return t[n]=7,i.split("").forEach(function(t){e[t]=t}),7!=l({},t)[n]||Object.keys(l({},e)).join("")!=i})?function(t,e){for(var n=r(t),l=arguments.length,u=1,c=o.f,f=a.f;l>u;)for(var p,d=s(arguments[u++]),h=c?i(d).concat(c(d)):i(d),y=h.length,m=0;y>m;)f.call(d,p=h[m++])&&(n[p]=d[p]);return n}:l},function(t,e,n){var i=n(9);i(i.S+i.F,"Object",{assign:n(43)})},function(t,e,n){n(44),t.exports=n(5).Object.assign},function(t,e){t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var n=function(t,e){var n=t[1]||"",i=t[3];if(!i)return n;if(e&&"function"==typeof btoa){var o=(r=i,"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(r))))+" */"),a=i.sources.map(function(t){return"/*# sourceURL="+i.sourceRoot+t+" */"});return[n].concat(a).concat([o]).join("\n")}var r;return[n].join("\n")}(e,t);return e[2]?"@media "+e[2]+"{"+n+"}":n}).join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var i={},o=0;o<this.length;o++){var a=this[o][0];"number"==typeof a&&(i[a]=!0)}for(o=0;o<t.length;o++){var r=t[o];"number"==typeof r[0]&&i[r[0]]||(n&&!r[2]?r[2]=n:n&&(r[2]="("+r[2]+") and ("+n+")"),e.push(r))}},e}},function(t,e,n){(t.exports=n(46)(!1)).push([t.i,".vue2leaflet-map{height:100%;width:100%}",""])},function(t,e,n){var i=n(47);"string"==typeof i&&(i=[[t.i,i,""]]),i.locals&&(t.exports=i.locals);(0,n(20).default)("516f1ef6",i,!0,{})},function(t,e,n){var i=n(9);i(i.S+i.F*!n(7),"Object",{defineProperty:n(11).f})},function(t,e,n){n(49);var i=n(5).Object;t.exports=function(t,e,n){return i.defineProperty(t,e,n)}},function(t,e,n){t.exports={default:n(50),__esModule:!0}},function(t,e){t.exports=function(t,e){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:e}}},function(t,e,n){var i=n(8);t.exports=function(t,e){if(!i(t))return t;var n,o;if(e&&"function"==typeof(n=t.toString)&&!i(o=n.call(t)))return o;if("function"==typeof(n=t.valueOf)&&!i(o=n.call(t)))return o;if(!e&&"function"==typeof(n=t.toString)&&!i(o=n.call(t)))return o;throw TypeError("Can't convert object to primitive value")}},function(t,e,n){var i=n(8),o=n(10).document,a=i(o)&&i(o.createElement);t.exports=function(t){return a?o.createElement(t):{}}},function(t,e,n){t.exports=!n(7)&&!n(6)(function(){return 7!=Object.defineProperty(n(54)("div"),"a",{get:function(){return 7}}).a})},function(t,e,n){var i=n(8);t.exports=function(t){if(!i(t))throw TypeError(t+" is not an object!");return t}},function(t,e,n){var i=n(11),o=n(52);t.exports=n(7)?function(t,e,n){return i.f(t,e,o(1,n))}:function(t,e,n){return t[e]=n,t}},function(t,e){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,e,n){var i=n(58);t.exports=function(t,e,n){if(i(t),void 0===e)return t;switch(n){case 1:return function(n){return t.call(e,n)};case 2:return function(n,i){return t.call(e,n,i)};case 3:return function(n,i,o){return t.call(e,n,i,o)}}return function(){return t.apply(e,arguments)}}},function(t,e,n){var i=n(9),o=n(5),a=n(6);t.exports=function(t,e){var n=(o.Object||{})[t]||Object[t],r={};r[t]=e(n),i(i.S+i.F*a(function(){n(1)}),"Object",r)}},function(t,e){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,e){var n=0,i=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++n+i).toString(36))}},function(t,e,n){var i=n(10),o=i["__core-js_shared__"]||(i["__core-js_shared__"]={});t.exports=function(t){return o[t]||(o[t]={})}},function(t,e,n){var i=n(63)("keys"),o=n(62);t.exports=function(t){return i[t]||(i[t]=o(t))}},function(t,e,n){var i=n(12),o=Math.max,a=Math.min;t.exports=function(t,e){return(t=i(t))<0?o(t+e,0):a(t,e)}},function(t,e,n){var i=n(12),o=Math.min;t.exports=function(t){return t>0?o(i(t),9007199254740991):0}},function(t,e,n){var i=n(14),o=n(66),a=n(65);t.exports=function(t){return function(e,n,r){var s,l=i(e),u=o(l.length),c=a(r,u);if(t&&n!=n){for(;u>c;)if((s=l[c++])!=s)return!0}else for(;u>c;c++)if((t||c in l)&&l[c]===n)return t||c||0;return!t&&-1}}},function(t,e){var n={}.toString;t.exports=function(t){return n.call(t).slice(8,-1)}},function(t,e){var n={}.hasOwnProperty;t.exports=function(t,e){return n.call(t,e)}},function(t,e,n){var i=n(69),o=n(14),a=n(67)(!1),r=n(64)("IE_PROTO");t.exports=function(t,e){var n,s=o(t),l=0,u=[];for(n in s)n!=r&&i(s,n)&&u.push(n);for(;e.length>l;)i(s,n=e[l++])&&(~a(u,n)||u.push(n));return u}},function(t,e,n){var i=n(17),o=n(15);n(60)("keys",function(){return function(t){return o(i(t))}})},function(t,e,n){n(71),t.exports=n(5).Object.keys},function(t,e,n){e.findRealParent=n(2).default,e.propsBinder=n(0).default,e.LCircle=n(40).default,e.LCircleMarker=n(30).default,e.LControlAttribution=n(21).default,e.LControlLayers=n(23).default,e.LControlScale=n(24).default,e.LControlZoom=n(25).default,e.LFeatureGroup=n(34).default,e.LGeoJson=n(26).default,e.LIconDefault=n(27).default,e.LImageOverlay=n(29).default,e.LLayerGroup=n(39).default,e.LMap=n(31).default,e.LMarker=n(32).default,e.LPolygon=n(33).default,e.LPolyline=n(35).default,e.LPopup=n(36).default,e.LRectangle=n(37).default,e.LTileLayer=n(22).default,e.LTooltip=n(38).default,e.LWMSTileLayer=n(28).default}])});
 //# sourceMappingURL=vue2-leaflet.min.js.map
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* @preserve
@@ -41533,7 +41545,7 @@ window.L = exports;
 
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -41598,15 +41610,15 @@ if (false) {
 }
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(64)
+var __vue_script__ = __webpack_require__(65)
 /* template */
-var __vue_template__ = __webpack_require__(68)
+var __vue_template__ = __webpack_require__(69)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -41645,12 +41657,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Options_CharacterOptions__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Options_CharacterOptions__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Options_CharacterOptions___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Options_CharacterOptions__);
 //
 //
@@ -41695,15 +41707,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(66)
+var __vue_script__ = __webpack_require__(67)
 /* template */
-var __vue_template__ = __webpack_require__(67)
+var __vue_template__ = __webpack_require__(68)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -41742,7 +41754,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41797,7 +41809,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -41849,7 +41861,7 @@ if (false) {
 }
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -41912,15 +41924,15 @@ if (false) {
 }
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(70)
+var __vue_script__ = __webpack_require__(71)
 /* template */
-var __vue_template__ = __webpack_require__(86)
+var __vue_template__ = __webpack_require__(91)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -41959,20 +41971,20 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CharacterCreator_RaceSelector__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CharacterCreator_RaceSelector__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CharacterCreator_RaceSelector___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__CharacterCreator_RaceSelector__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CharacterCreator_ClassSelector__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CharacterCreator_ClassSelector__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__CharacterCreator_ClassSelector___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__CharacterCreator_ClassSelector__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CharacterCreator_BackgroundSelector__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CharacterCreator_BackgroundSelector__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CharacterCreator_BackgroundSelector___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__CharacterCreator_BackgroundSelector__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CharacterCreator_AlignmentSelector__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CharacterCreator_AlignmentSelector__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CharacterCreator_AlignmentSelector___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__CharacterCreator_AlignmentSelector__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CharacterCreator_Stats__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CharacterCreator_Stats__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CharacterCreator_Stats___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__CharacterCreator_Stats__);
 //
 //
@@ -42049,15 +42061,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(72)
+var __vue_script__ = __webpack_require__(73)
 /* template */
-var __vue_template__ = __webpack_require__(73)
+var __vue_template__ = __webpack_require__(74)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -42096,7 +42108,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42178,7 +42190,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -42281,15 +42293,15 @@ if (false) {
 }
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(75)
+var __vue_script__ = __webpack_require__(76)
 /* template */
-var __vue_template__ = __webpack_require__(76)
+var __vue_template__ = __webpack_require__(77)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -42328,7 +42340,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42419,7 +42431,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -42524,15 +42536,15 @@ if (false) {
 }
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(78)
+var __vue_script__ = __webpack_require__(79)
 /* template */
-var __vue_template__ = __webpack_require__(79)
+var __vue_template__ = __webpack_require__(80)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -42571,7 +42583,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42665,7 +42677,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -42768,15 +42780,15 @@ if (false) {
 }
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(81)
+var __vue_script__ = __webpack_require__(82)
 /* template */
-var __vue_template__ = __webpack_require__(82)
+var __vue_template__ = __webpack_require__(83)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -42815,7 +42827,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42897,7 +42909,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43000,15 +43012,15 @@ if (false) {
 }
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(84)
+var __vue_script__ = __webpack_require__(85)
 /* template */
-var __vue_template__ = __webpack_require__(85)
+var __vue_template__ = __webpack_require__(90)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43047,15 +43059,137 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuedraggable__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuedraggable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuedraggable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__StatsContainer__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__StatsContainer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__StatsContainer__);
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    components: {
+        StatsContainer: __WEBPACK_IMPORTED_MODULE_0__StatsContainer___default.a
+    },
+    props: {
+        active: { default: false },
+        value: { default: [] }
+    },
+    data: function data() {
+        return {
+            open: this.active,
+            stats: [],
+            step: 0
+        };
+    },
+
+    watch: {
+        active: {
+            handler: function handler(newVal, oldVal) {
+                if (newVal) {
+                    this.open = true;
+                }
+            }
+        }
+    },
+    methods: {
+        roll: function roll() {
+            var _this = this;
+
+            axios.get('/stats/create').then(function (response) {
+                _this.stats = response.data;
+                _this.step = 1;
+            }).catch(function (error) {});
+        },
+        handleDrop: function handleDrop(data, event) {
+            alert("Doing a thing");
+        }
+    },
+    mounted: function mounted() {
+        this.stats = this.value;
+        // When this opens, we should check the server to try and find out the characters preferred stats.
+    }
+});
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(87)
+/* template */
+var __vue_template__ = __webpack_require__(89)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Game\\Options\\CharacterCreator\\StatsContainer.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-de3a9dec", Component.options)
+  } else {
+    hotAPI.reload("data-v-de3a9dec", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 87 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shopify_draggable__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shopify_draggable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__shopify_draggable__);
 //
 //
 //
@@ -43087,48 +43221,7131 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: {
-        Draggable: __WEBPACK_IMPORTED_MODULE_0_vuedraggable___default.a
-    },
-    props: {
-        active: { default: false },
-        value: { default: [] }
-    },
     data: function data() {
         return {
-            open: this.active,
-            stats: [],
-            step: 0
+            swappable: {}
         };
     },
-
-    watch: {
-        active: {
-            handler: function handler(newVal, oldVal) {
-                if (newVal) {
-                    this.open = true;
-                }
-            }
-        }
-    },
-    methods: {
-        roll: function roll() {
-            var _this = this;
-
-            axios.get('/stats/create').then(function (response) {
-                _this.stats = response.data;
-                _this.step = 1;
-            }).catch(function (error) {});
-        }
-    },
     mounted: function mounted() {
-        this.stats = this.value;
-        // When this opens, we should check the server to try and find out the characters preferred stats.
+        this.swappable = new __WEBPACK_IMPORTED_MODULE_0__shopify_draggable__["Swappable"](this.$el, {
+            draggable: '.swappable'
+        });
     }
 });
 
 /***/ }),
-/* 85 */
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define("Draggable", [], factory);
+	else if(typeof exports === 'object')
+		exports["Draggable"] = factory();
+	else
+		root["Draggable"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 66);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _AbstractEvent = __webpack_require__(64);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _AbstractEvent2.default;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _AbstractPlugin = __webpack_require__(60);
+
+var _AbstractPlugin2 = _interopRequireDefault(_AbstractPlugin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _AbstractPlugin2.default;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _closest = __webpack_require__(51);
+
+Object.defineProperty(exports, 'closest', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_closest).default;
+  }
+});
+
+var _requestNextAnimationFrame = __webpack_require__(49);
+
+Object.defineProperty(exports, 'requestNextAnimationFrame', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_requestNextAnimationFrame).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _SensorEvent = __webpack_require__(44);
+
+Object.keys(_SensorEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _SensorEvent[key];
+    }
+  });
+});
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Sensor = __webpack_require__(47);
+
+var _Sensor2 = _interopRequireDefault(_Sensor);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Sensor2.default;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _DragEvent = __webpack_require__(14);
+
+Object.keys(_DragEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _DragEvent[key];
+    }
+  });
+});
+
+var _DraggableEvent = __webpack_require__(13);
+
+Object.keys(_DraggableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _DraggableEvent[key];
+    }
+  });
+});
+
+var _Plugins = __webpack_require__(12);
+
+Object.keys(_Plugins).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _Plugins[key];
+    }
+  });
+});
+
+var _Sensors = __webpack_require__(6);
+
+Object.keys(_Sensors).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _Sensors[key];
+    }
+  });
+});
+
+var _Draggable = __webpack_require__(37);
+
+var _Draggable2 = _interopRequireDefault(_Draggable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Draggable2.default;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Sensor = __webpack_require__(4);
+
+Object.defineProperty(exports, 'Sensor', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Sensor).default;
+  }
+});
+
+var _MouseSensor = __webpack_require__(46);
+
+Object.defineProperty(exports, 'MouseSensor', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_MouseSensor).default;
+  }
+});
+
+var _TouchSensor = __webpack_require__(43);
+
+Object.defineProperty(exports, 'TouchSensor', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_TouchSensor).default;
+  }
+});
+
+var _DragSensor = __webpack_require__(41);
+
+Object.defineProperty(exports, 'DragSensor', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_DragSensor).default;
+  }
+});
+
+var _ForceTouchSensor = __webpack_require__(39);
+
+Object.defineProperty(exports, 'ForceTouchSensor', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_ForceTouchSensor).default;
+  }
+});
+
+var _SensorEvent = __webpack_require__(3);
+
+Object.keys(_SensorEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _SensorEvent[key];
+    }
+  });
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _SnappableEvent = __webpack_require__(18);
+
+Object.keys(_SnappableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _SnappableEvent[key];
+    }
+  });
+});
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _CollidableEvent = __webpack_require__(23);
+
+Object.keys(_CollidableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _CollidableEvent[key];
+    }
+  });
+});
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _SortableEvent = __webpack_require__(27);
+
+Object.keys(_SortableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _SortableEvent[key];
+    }
+  });
+});
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _SwappableEvent = __webpack_require__(30);
+
+Object.keys(_SwappableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _SwappableEvent[key];
+    }
+  });
+});
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _DroppableEvent = __webpack_require__(33);
+
+Object.keys(_DroppableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _DroppableEvent[key];
+    }
+  });
+});
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Announcement = __webpack_require__(62);
+
+Object.defineProperty(exports, 'Announcement', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Announcement).default;
+  }
+});
+Object.defineProperty(exports, 'defaultAnnouncementOptions', {
+  enumerable: true,
+  get: function () {
+    return _Announcement.defaultOptions;
+  }
+});
+
+var _Focusable = __webpack_require__(59);
+
+Object.defineProperty(exports, 'Focusable', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Focusable).default;
+  }
+});
+
+var _Mirror = __webpack_require__(57);
+
+Object.defineProperty(exports, 'Mirror', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Mirror).default;
+  }
+});
+Object.defineProperty(exports, 'defaultMirrorOptions', {
+  enumerable: true,
+  get: function () {
+    return _Mirror.defaultOptions;
+  }
+});
+
+var _Scrollable = __webpack_require__(53);
+
+Object.defineProperty(exports, 'Scrollable', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Scrollable).default;
+  }
+});
+Object.defineProperty(exports, 'defaultScrollableOptions', {
+  enumerable: true,
+  get: function () {
+    return _Scrollable.defaultOptions;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _DraggableEvent = __webpack_require__(63);
+
+Object.keys(_DraggableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _DraggableEvent[key];
+    }
+  });
+});
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _DragEvent = __webpack_require__(65);
+
+Object.keys(_DragEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _DragEvent[key];
+    }
+  });
+});
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _AbstractPlugin = __webpack_require__(1);
+
+var _AbstractPlugin2 = _interopRequireDefault(_AbstractPlugin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onSortableSorted = Symbol('onSortableSorted');
+
+/**
+ * SwapAnimation default options
+ * @property {Object} defaultOptions
+ * @property {Number} defaultOptions.duration
+ * @property {String} defaultOptions.easingFunction
+ * @property {Boolean} defaultOptions.horizontal
+ * @type {Object}
+ */
+const defaultOptions = exports.defaultOptions = {
+  duration: 150,
+  easingFunction: 'ease-in-out',
+  horizontal: false
+};
+
+/**
+ * SwapAnimation plugin adds swap animations for sortable
+ * @class SwapAnimation
+ * @module SwapAnimation
+ * @extends AbstractPlugin
+ */
+class SwapAnimation extends _AbstractPlugin2.default {
+  /**
+   * SwapAnimation constructor.
+   * @constructs SwapAnimation
+   * @param {Draggable} draggable - Draggable instance
+   */
+  constructor(draggable) {
+    super(draggable);
+
+    /**
+     * SwapAnimation options
+     * @property {Object} options
+     * @property {Number} defaultOptions.duration
+     * @property {String} defaultOptions.easingFunction
+     * @type {Object}
+     */
+    this.options = _extends({}, defaultOptions, this.getOptions());
+
+    /**
+     * Last animation frame
+     * @property {Number} lastAnimationFrame
+     * @type {Number}
+     */
+    this.lastAnimationFrame = null;
+
+    this[onSortableSorted] = this[onSortableSorted].bind(this);
+  }
+
+  /**
+   * Attaches plugins event listeners
+   */
+  attach() {
+    this.draggable.on('sortable:sorted', this[onSortableSorted]);
+  }
+
+  /**
+   * Detaches plugins event listeners
+   */
+  detach() {
+    this.draggable.off('sortable:sorted', this[onSortableSorted]);
+  }
+
+  /**
+   * Returns options passed through draggable
+   * @return {Object}
+   */
+  getOptions() {
+    return this.draggable.options.swapAnimation || {};
+  }
+
+  /**
+   * Sortable sorted handler
+   * @param {SortableSortedEvent} sortableEvent
+   * @private
+   */
+  [onSortableSorted]({ oldIndex, newIndex, dragEvent }) {
+    const { source, over } = dragEvent;
+
+    cancelAnimationFrame(this.lastAnimationFrame);
+
+    // Can be done in a separate frame
+    this.lastAnimationFrame = requestAnimationFrame(() => {
+      if (oldIndex >= newIndex) {
+        animate(source, over, this.options);
+      } else {
+        animate(over, source, this.options);
+      }
+    });
+  }
+}
+
+exports.default = SwapAnimation; /**
+                                  * Animates two elements
+                                  * @param {HTMLElement} from
+                                  * @param {HTMLElement} to
+                                  * @param {Object} options
+                                  * @param {Number} options.duration
+                                  * @param {String} options.easingFunction
+                                  * @param {String} options.horizontal
+                                  * @private
+                                  */
+
+function animate(from, to, { duration, easingFunction, horizontal }) {
+  for (const element of [from, to]) {
+    element.style.pointerEvents = 'none';
+  }
+
+  if (horizontal) {
+    const width = from.offsetWidth;
+    from.style.transform = `translate3d(${width}px, 0, 0)`;
+    to.style.transform = `translate3d(-${width}px, 0, 0)`;
+  } else {
+    const height = from.offsetHeight;
+    from.style.transform = `translate3d(0, ${height}px, 0)`;
+    to.style.transform = `translate3d(0, -${height}px, 0)`;
+  }
+
+  requestAnimationFrame(() => {
+    for (const element of [from, to]) {
+      element.addEventListener('transitionend', resetElementOnTransitionEnd);
+      element.style.transition = `transform ${duration}ms ${easingFunction}`;
+      element.style.transform = '';
+    }
+  });
+}
+
+/**
+ * Resets animation style properties after animation has completed
+ * @param {Event} event
+ * @private
+ */
+function resetElementOnTransitionEnd(event) {
+  event.target.style.transition = '';
+  event.target.style.pointerEvents = '';
+  event.target.removeEventListener('transitionend', resetElementOnTransitionEnd);
+}
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = undefined;
+
+var _SwapAnimation = __webpack_require__(15);
+
+var _SwapAnimation2 = _interopRequireDefault(_SwapAnimation);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _SwapAnimation2.default;
+exports.defaultOptions = _SwapAnimation.defaultOptions;
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _AbstractPlugin = __webpack_require__(1);
+
+var _AbstractPlugin2 = _interopRequireDefault(_AbstractPlugin);
+
+var _SnappableEvent = __webpack_require__(7);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onDragStart = Symbol('onDragStart');
+const onDragStop = Symbol('onDragStop');
+const onDragOver = Symbol('onDragOver');
+const onDragOut = Symbol('onDragOut');
+const onMirrorCreated = Symbol('onMirrorCreated');
+const onMirrorDestroy = Symbol('onMirrorDestroy');
+
+/**
+ * Snappable plugin which snaps draggable elements into place
+ * @class Snappable
+ * @module Snappable
+ * @extends AbstractPlugin
+ */
+class Snappable extends _AbstractPlugin2.default {
+  /**
+   * Snappable constructor.
+   * @constructs Snappable
+   * @param {Draggable} draggable - Draggable instance
+   */
+  constructor(draggable) {
+    super(draggable);
+
+    /**
+     * Keeps track of the first source element
+     * @property {HTMLElement|null} firstSource
+     */
+    this.firstSource = null;
+
+    /**
+     * Keeps track of the mirror element
+     * @property {HTMLElement} mirror
+     */
+    this.mirror = null;
+
+    this[onDragStart] = this[onDragStart].bind(this);
+    this[onDragStop] = this[onDragStop].bind(this);
+    this[onDragOver] = this[onDragOver].bind(this);
+    this[onDragOut] = this[onDragOut].bind(this);
+    this[onMirrorCreated] = this[onMirrorCreated].bind(this);
+    this[onMirrorDestroy] = this[onMirrorDestroy].bind(this);
+  }
+
+  /**
+   * Attaches plugins event listeners
+   */
+  attach() {
+    this.draggable.on('drag:start', this[onDragStart]).on('drag:stop', this[onDragStop]).on('drag:over', this[onDragOver]).on('drag:out', this[onDragOut]).on('droppable:over', this[onDragOver]).on('droppable:out', this[onDragOut]).on('mirror:created', this[onMirrorCreated]).on('mirror:destroy', this[onMirrorDestroy]);
+  }
+
+  /**
+   * Detaches plugins event listeners
+   */
+  detach() {
+    this.draggable.off('drag:start', this[onDragStart]).off('drag:stop', this[onDragStop]).off('drag:over', this[onDragOver]).off('drag:out', this[onDragOut]).off('droppable:over', this[onDragOver]).off('droppable:out', this[onDragOut]).off('mirror:created', this[onMirrorCreated]).off('mirror:destroy', this[onMirrorDestroy]);
+  }
+
+  /**
+   * Drag start handler
+   * @private
+   * @param {DragStartEvent} event - Drag start event
+   */
+  [onDragStart](event) {
+    if (event.canceled()) {
+      return;
+    }
+
+    this.firstSource = event.source;
+  }
+
+  /**
+   * Drag stop handler
+   * @private
+   * @param {DragStopEvent} event - Drag stop event
+   */
+  [onDragStop]() {
+    this.firstSource = null;
+  }
+
+  /**
+   * Drag over handler
+   * @private
+   * @param {DragOverEvent|DroppableOverEvent} event - Drag over event
+   */
+  [onDragOver](event) {
+    if (event.canceled()) {
+      return;
+    }
+
+    const source = event.source || event.dragEvent.source;
+
+    if (source === this.firstSource) {
+      this.firstSource = null;
+      return;
+    }
+
+    const snapInEvent = new _SnappableEvent.SnapInEvent({
+      dragEvent: event,
+      snappable: event.over || event.droppable
+    });
+
+    this.draggable.trigger(snapInEvent);
+
+    if (snapInEvent.canceled()) {
+      return;
+    }
+
+    if (this.mirror) {
+      this.mirror.style.display = 'none';
+    }
+
+    source.classList.remove(this.draggable.getClassNameFor('source:dragging'));
+    source.classList.add(this.draggable.getClassNameFor('source:placed'));
+
+    // Need to cancel this in drag out
+    setTimeout(() => {
+      source.classList.remove(this.draggable.getClassNameFor('source:placed'));
+    }, this.draggable.options.placedTimeout);
+  }
+
+  /**
+   * Drag out handler
+   * @private
+   * @param {DragOutEvent|DroppableOutEvent} event - Drag out event
+   */
+  [onDragOut](event) {
+    if (event.canceled()) {
+      return;
+    }
+
+    const source = event.source || event.dragEvent.source;
+
+    const snapOutEvent = new _SnappableEvent.SnapOutEvent({
+      dragEvent: event,
+      snappable: event.over || event.droppable
+    });
+
+    this.draggable.trigger(snapOutEvent);
+
+    if (snapOutEvent.canceled()) {
+      return;
+    }
+
+    if (this.mirror) {
+      this.mirror.style.display = '';
+    }
+
+    source.classList.add(this.draggable.getClassNameFor('source:dragging'));
+  }
+
+  /**
+   * Mirror created handler
+   * @param {MirrorCreatedEvent} mirrorEvent
+   * @private
+   */
+  [onMirrorCreated]({ mirror }) {
+    this.mirror = mirror;
+  }
+
+  /**
+   * Mirror destroy handler
+   * @param {MirrorDestroyEvent} mirrorEvent
+   * @private
+   */
+  [onMirrorDestroy]() {
+    this.mirror = null;
+  }
+}
+exports.default = Snappable;
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SnapOutEvent = exports.SnapInEvent = exports.SnapEvent = undefined;
+
+var _AbstractEvent = __webpack_require__(0);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Base snap event
+ * @class SnapEvent
+ * @module SnapEvent
+ * @extends AbstractEvent
+ */
+class SnapEvent extends _AbstractEvent2.default {
+
+  /**
+   * Drag event that triggered this snap event
+   * @property dragEvent
+   * @type {DragEvent}
+   * @readonly
+   */
+  get dragEvent() {
+    return this.data.dragEvent;
+  }
+
+  /**
+   * Snappable element
+   * @property snappable
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get snappable() {
+    return this.data.snappable;
+  }
+}
+
+exports.SnapEvent = SnapEvent; /**
+                                * Snap in event
+                                * @class SnapInEvent
+                                * @module SnapInEvent
+                                * @extends SnapEvent
+                                */
+
+SnapEvent.type = 'snap';
+class SnapInEvent extends SnapEvent {}
+
+exports.SnapInEvent = SnapInEvent; /**
+                                    * Snap out event
+                                    * @class SnapOutEvent
+                                    * @module SnapOutEvent
+                                    * @extends SnapEvent
+                                    */
+
+SnapInEvent.type = 'snap:in';
+SnapInEvent.cancelable = true;
+class SnapOutEvent extends SnapEvent {}
+exports.SnapOutEvent = SnapOutEvent;
+SnapOutEvent.type = 'snap:out';
+SnapOutEvent.cancelable = true;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _SnappableEvent = __webpack_require__(7);
+
+Object.keys(_SnappableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _SnappableEvent[key];
+    }
+  });
+});
+
+var _Snappable = __webpack_require__(17);
+
+var _Snappable2 = _interopRequireDefault(_Snappable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Snappable2.default;
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _AbstractPlugin = __webpack_require__(1);
+
+var _AbstractPlugin2 = _interopRequireDefault(_AbstractPlugin);
+
+var _utils = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onMirrorCreated = Symbol('onMirrorCreated');
+const onMirrorDestroy = Symbol('onMirrorDestroy');
+const onDragOver = Symbol('onDragOver');
+const resize = Symbol('resize');
+
+/**
+ * ResizeMirror default options
+ * @property {Object} defaultOptions
+ * @type {Object}
+ */
+const defaultOptions = exports.defaultOptions = {};
+
+/**
+ * The ResizeMirror plugin resizes the mirror element to the dimensions of the draggable element that the mirror is hovering over
+ * @class ResizeMirror
+ * @module ResizeMirror
+ * @extends AbstractPlugin
+ */
+class ResizeMirror extends _AbstractPlugin2.default {
+  /**
+   * ResizeMirror constructor.
+   * @constructs ResizeMirror
+   * @param {Draggable} draggable - Draggable instance
+   */
+  constructor(draggable) {
+    super(draggable);
+
+    /**
+     * ResizeMirror options
+     * @property {Object} options
+     * @type {Object}
+     */
+    this.options = _extends({}, defaultOptions, this.getOptions());
+
+    /**
+     * ResizeMirror remembers the last width when resizing the mirror
+     * to avoid additional writes to the DOM
+     * @property {number} lastWidth
+     */
+    this.lastWidth = 0;
+
+    /**
+     * ResizeMirror remembers the last height when resizing the mirror
+     * to avoid additional writes to the DOM
+     * @property {number} lastHeight
+     */
+    this.lastHeight = 0;
+
+    /**
+     * Keeps track of the mirror element
+     * @property {HTMLElement} mirror
+     */
+    this.mirror = null;
+
+    this[onMirrorCreated] = this[onMirrorCreated].bind(this);
+    this[onMirrorDestroy] = this[onMirrorDestroy].bind(this);
+    this[onDragOver] = this[onDragOver].bind(this);
+  }
+
+  /**
+   * Attaches plugins event listeners
+   */
+  attach() {
+    this.draggable.on('mirror:created', this[onMirrorCreated]).on('drag:over', this[onDragOver]).on('drag:over:container', this[onDragOver]);
+  }
+
+  /**
+   * Detaches plugins event listeners
+   */
+  detach() {
+    this.draggable.off('mirror:created', this[onMirrorCreated]).off('mirror:destroy', this[onMirrorDestroy]).off('drag:over', this[onDragOver]).off('drag:over:container', this[onDragOver]);
+  }
+
+  /**
+   * Returns options passed through draggable
+   * @return {Object}
+   */
+  getOptions() {
+    return this.draggable.options.resizeMirror || {};
+  }
+
+  /**
+   * Mirror created handler
+   * @param {MirrorCreatedEvent} mirrorEvent
+   * @private
+   */
+  [onMirrorCreated]({ mirror }) {
+    this.mirror = mirror;
+  }
+
+  /**
+   * Mirror destroy handler
+   * @param {MirrorDestroyEvent} mirrorEvent
+   * @private
+   */
+  [onMirrorDestroy]() {
+    this.mirror = null;
+  }
+
+  /**
+   * Drag over handler
+   * @param {DragOverEvent | DragOverContainer} dragEvent
+   * @private
+   */
+  [onDragOver](dragEvent) {
+    this[resize](dragEvent);
+  }
+
+  /**
+   * Resize function for
+   * @param {DragOverEvent | DragOverContainer} dragEvent
+   * @private
+   */
+  [resize]({ overContainer, over }) {
+    requestAnimationFrame(() => {
+      if (this.mirror.parentNode !== overContainer) {
+        overContainer.appendChild(this.mirror);
+      }
+
+      const overElement = over || this.draggable.getDraggableElementsForContainer(overContainer)[0];
+
+      if (!overElement) {
+        return;
+      }
+
+      (0, _utils.requestNextAnimationFrame)(() => {
+        const overRect = overElement.getBoundingClientRect();
+
+        if (this.lastHeight === overRect.height && this.lastWidth === overRect.width) {
+          return;
+        }
+
+        this.mirror.style.width = `${overRect.width}px`;
+        this.mirror.style.height = `${overRect.height}px`;
+
+        this.lastWidth = overRect.width;
+        this.lastHeight = overRect.height;
+      });
+    });
+  }
+}
+exports.default = ResizeMirror;
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = undefined;
+
+var _ResizeMirror = __webpack_require__(20);
+
+var _ResizeMirror2 = _interopRequireDefault(_ResizeMirror);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _ResizeMirror2.default;
+exports.defaultOptions = _ResizeMirror.defaultOptions;
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _AbstractPlugin = __webpack_require__(1);
+
+var _AbstractPlugin2 = _interopRequireDefault(_AbstractPlugin);
+
+var _utils = __webpack_require__(2);
+
+var _CollidableEvent = __webpack_require__(8);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onDragMove = Symbol('onDragMove');
+const onDragStop = Symbol('onDragStop');
+const onRequestAnimationFrame = Symbol('onRequestAnimationFrame');
+
+/**
+ * Collidable plugin which detects colliding elements while dragging
+ * @class Collidable
+ * @module Collidable
+ * @extends AbstractPlugin
+ */
+class Collidable extends _AbstractPlugin2.default {
+  /**
+   * Collidable constructor.
+   * @constructs Collidable
+   * @param {Draggable} draggable - Draggable instance
+   */
+  constructor(draggable) {
+    super(draggable);
+
+    /**
+     * Keeps track of currently colliding elements
+     * @property {HTMLElement|null} currentlyCollidingElement
+     * @type {HTMLElement|null}
+     */
+    this.currentlyCollidingElement = null;
+
+    /**
+     * Keeps track of currently colliding elements
+     * @property {HTMLElement|null} lastCollidingElement
+     * @type {HTMLElement|null}
+     */
+    this.lastCollidingElement = null;
+
+    /**
+     * Animation frame for finding colliding elements
+     * @property {Number|null} currentAnimationFrame
+     * @type {Number|null}
+     */
+    this.currentAnimationFrame = null;
+
+    this[onDragMove] = this[onDragMove].bind(this);
+    this[onDragStop] = this[onDragStop].bind(this);
+    this[onRequestAnimationFrame] = this[onRequestAnimationFrame].bind(this);
+  }
+
+  /**
+   * Attaches plugins event listeners
+   */
+  attach() {
+    this.draggable.on('drag:move', this[onDragMove]).on('drag:stop', this[onDragStop]);
+  }
+
+  /**
+   * Detaches plugins event listeners
+   */
+  detach() {
+    this.draggable.off('drag:move', this[onDragMove]).off('drag:stop', this[onDragStop]);
+  }
+
+  /**
+   * Returns current collidables based on `collidables` option
+   * @return {HTMLElement[]}
+   */
+  getCollidables() {
+    const collidables = this.draggable.options.collidables;
+
+    if (typeof collidables === 'string') {
+      return Array.prototype.slice.call(document.querySelectorAll(collidables));
+    } else if (collidables instanceof NodeList || collidables instanceof Array) {
+      return Array.prototype.slice.call(collidables);
+    } else if (collidables instanceof HTMLElement) {
+      return [collidables];
+    } else if (typeof collidables === 'function') {
+      return collidables();
+    } else {
+      return [];
+    }
+  }
+
+  /**
+   * Drag move handler
+   * @private
+   * @param {DragMoveEvent} event - Drag move event
+   */
+  [onDragMove](event) {
+    const target = event.sensorEvent.target;
+
+    this.currentAnimationFrame = requestAnimationFrame(this[onRequestAnimationFrame](target));
+
+    if (this.currentlyCollidingElement) {
+      event.cancel();
+    }
+
+    const collidableInEvent = new _CollidableEvent.CollidableInEvent({
+      dragEvent: event,
+      collidingElement: this.currentlyCollidingElement
+    });
+
+    const collidableOutEvent = new _CollidableEvent.CollidableOutEvent({
+      dragEvent: event,
+      collidingElement: this.lastCollidingElement
+    });
+
+    const enteringCollidable = Boolean(this.currentlyCollidingElement && this.lastCollidingElement !== this.currentlyCollidingElement);
+    const leavingCollidable = Boolean(!this.currentlyCollidingElement && this.lastCollidingElement);
+
+    if (enteringCollidable) {
+      if (this.lastCollidingElement) {
+        this.draggable.trigger(collidableOutEvent);
+      }
+
+      this.draggable.trigger(collidableInEvent);
+    } else if (leavingCollidable) {
+      this.draggable.trigger(collidableOutEvent);
+    }
+
+    this.lastCollidingElement = this.currentlyCollidingElement;
+  }
+
+  /**
+   * Drag stop handler
+   * @private
+   * @param {DragStopEvent} event - Drag stop event
+   */
+  [onDragStop](event) {
+    const lastCollidingElement = this.currentlyCollidingElement || this.lastCollidingElement;
+    const collidableOutEvent = new _CollidableEvent.CollidableOutEvent({
+      dragEvent: event,
+      collidingElement: lastCollidingElement
+    });
+
+    if (lastCollidingElement) {
+      this.draggable.trigger(collidableOutEvent);
+    }
+
+    this.lastCollidingElement = null;
+    this.currentlyCollidingElement = null;
+  }
+
+  /**
+   * Animation frame function
+   * @private
+   * @param {HTMLElement} target - Current move target
+   * @return {Function}
+   */
+  [onRequestAnimationFrame](target) {
+    return () => {
+      const collidables = this.getCollidables();
+      this.currentlyCollidingElement = (0, _utils.closest)(target, element => collidables.includes(element));
+    };
+  }
+}
+exports.default = Collidable;
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.CollidableOutEvent = exports.CollidableInEvent = exports.CollidableEvent = undefined;
+
+var _AbstractEvent = __webpack_require__(0);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Base collidable event
+ * @class CollidableEvent
+ * @module CollidableEvent
+ * @extends AbstractEvent
+ */
+class CollidableEvent extends _AbstractEvent2.default {
+
+  /**
+   * Drag event that triggered this colliable event
+   * @property dragEvent
+   * @type {DragEvent}
+   * @readonly
+   */
+  get dragEvent() {
+    return this.data.dragEvent;
+  }
+}
+
+exports.CollidableEvent = CollidableEvent; /**
+                                            * Collidable in event
+                                            * @class CollidableInEvent
+                                            * @module CollidableInEvent
+                                            * @extends CollidableEvent
+                                            */
+
+CollidableEvent.type = 'collidable';
+class CollidableInEvent extends CollidableEvent {
+
+  /**
+   * Element you are currently colliding with
+   * @property collidingElement
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get collidingElement() {
+    return this.data.collidingElement;
+  }
+}
+
+exports.CollidableInEvent = CollidableInEvent; /**
+                                                * Collidable out event
+                                                * @class CollidableOutEvent
+                                                * @module CollidableOutEvent
+                                                * @extends CollidableEvent
+                                                */
+
+CollidableInEvent.type = 'collidable:in';
+class CollidableOutEvent extends CollidableEvent {
+
+  /**
+   * Element you were previously colliding with
+   * @property collidingElement
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get collidingElement() {
+    return this.data.collidingElement;
+  }
+}
+exports.CollidableOutEvent = CollidableOutEvent;
+CollidableOutEvent.type = 'collidable:out';
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _CollidableEvent = __webpack_require__(8);
+
+Object.keys(_CollidableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _CollidableEvent[key];
+    }
+  });
+});
+
+var _Collidable = __webpack_require__(22);
+
+var _Collidable2 = _interopRequireDefault(_Collidable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Collidable2.default;
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Collidable = __webpack_require__(24);
+
+Object.defineProperty(exports, 'Collidable', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Collidable).default;
+  }
+});
+
+var _ResizeMirror = __webpack_require__(21);
+
+Object.defineProperty(exports, 'ResizeMirror', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_ResizeMirror).default;
+  }
+});
+Object.defineProperty(exports, 'defaultResizeMirrorOptions', {
+  enumerable: true,
+  get: function () {
+    return _ResizeMirror.defaultOptions;
+  }
+});
+
+var _Snappable = __webpack_require__(19);
+
+Object.defineProperty(exports, 'Snappable', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Snappable).default;
+  }
+});
+
+var _SwapAnimation = __webpack_require__(16);
+
+Object.defineProperty(exports, 'SwapAnimation', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_SwapAnimation).default;
+  }
+});
+Object.defineProperty(exports, 'defaultSwapAnimationOptions', {
+  enumerable: true,
+  get: function () {
+    return _SwapAnimation.defaultOptions;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _Draggable = __webpack_require__(5);
+
+var _Draggable2 = _interopRequireDefault(_Draggable);
+
+var _SortableEvent = __webpack_require__(9);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onDragStart = Symbol('onDragStart');
+const onDragOverContainer = Symbol('onDragOverContainer');
+const onDragOver = Symbol('onDragOver');
+const onDragStop = Symbol('onDragStop');
+
+/**
+ * Returns announcement message when a Draggable element has been sorted with another Draggable element
+ * or moved into a new container
+ * @param {SortableSortedEvent} sortableEvent
+ * @return {String}
+ */
+function onSortableSortedDefaultAnnouncement({ dragEvent }) {
+  const sourceText = dragEvent.source.textContent.trim() || dragEvent.source.id || 'sortable element';
+
+  if (dragEvent.over) {
+    const overText = dragEvent.over.textContent.trim() || dragEvent.over.id || 'sortable element';
+    const isFollowing = dragEvent.source.compareDocumentPosition(dragEvent.over) & Node.DOCUMENT_POSITION_FOLLOWING;
+
+    if (isFollowing) {
+      return `Placed ${sourceText} after ${overText}`;
+    } else {
+      return `Placed ${sourceText} before ${overText}`;
+    }
+  } else {
+    // need to figure out how to compute container name
+    return `Placed ${sourceText} into a different container`;
+  }
+}
+
+/**
+ * @const {Object} defaultAnnouncements
+ * @const {Function} defaultAnnouncements['sortable:sorted']
+ */
+const defaultAnnouncements = {
+  'sortable:sorted': onSortableSortedDefaultAnnouncement
+};
+
+/**
+ * Sortable is built on top of Draggable and allows sorting of draggable elements. Sortable will keep
+ * track of the original index and emits the new index as you drag over draggable elements.
+ * @class Sortable
+ * @module Sortable
+ * @extends Draggable
+ */
+class Sortable extends _Draggable2.default {
+  /**
+   * Sortable constructor.
+   * @constructs Sortable
+   * @param {HTMLElement[]|NodeList|HTMLElement} containers - Sortable containers
+   * @param {Object} options - Options for Sortable
+   */
+  constructor(containers = [], options = {}) {
+    super(containers, _extends({}, options, {
+      announcements: _extends({}, defaultAnnouncements, options.announcements || {})
+    }));
+
+    /**
+     * start index of source on drag start
+     * @property startIndex
+     * @type {Number}
+     */
+    this.startIndex = null;
+
+    /**
+     * start container on drag start
+     * @property startContainer
+     * @type {HTMLElement}
+     * @default null
+     */
+    this.startContainer = null;
+
+    this[onDragStart] = this[onDragStart].bind(this);
+    this[onDragOverContainer] = this[onDragOverContainer].bind(this);
+    this[onDragOver] = this[onDragOver].bind(this);
+    this[onDragStop] = this[onDragStop].bind(this);
+
+    this.on('drag:start', this[onDragStart]).on('drag:over:container', this[onDragOverContainer]).on('drag:over', this[onDragOver]).on('drag:stop', this[onDragStop]);
+  }
+
+  /**
+   * Destroys Sortable instance.
+   */
+  destroy() {
+    super.destroy();
+
+    this.off('drag:start', this[onDragStart]).off('drag:over:container', this[onDragOverContainer]).off('drag:over', this[onDragOver]).off('drag:stop', this[onDragStop]);
+  }
+
+  /**
+   * Returns true index of element within its container during drag operation, i.e. excluding mirror and original source
+   * @param {HTMLElement} element - An element
+   * @return {Number}
+   */
+  index(element) {
+    return this.getDraggableElementsForContainer(element.parentNode).indexOf(element);
+  }
+
+  /**
+   * Drag start handler
+   * @private
+   * @param {DragStartEvent} event - Drag start event
+   */
+  [onDragStart](event) {
+    this.startContainer = event.source.parentNode;
+    this.startIndex = this.index(event.source);
+
+    const sortableStartEvent = new _SortableEvent.SortableStartEvent({
+      dragEvent: event,
+      startIndex: this.startIndex,
+      startContainer: this.startContainer
+    });
+
+    this.trigger(sortableStartEvent);
+
+    if (sortableStartEvent.canceled()) {
+      event.cancel();
+    }
+  }
+
+  /**
+   * Drag over container handler
+   * @private
+   * @param {DragOverContainerEvent} event - Drag over container event
+   */
+  [onDragOverContainer](event) {
+    if (event.canceled()) {
+      return;
+    }
+
+    const { source, over, overContainer } = event;
+    const oldIndex = this.index(source);
+
+    const sortableSortEvent = new _SortableEvent.SortableSortEvent({
+      dragEvent: event,
+      currentIndex: oldIndex,
+      source,
+      over
+    });
+
+    this.trigger(sortableSortEvent);
+
+    if (sortableSortEvent.canceled()) {
+      return;
+    }
+
+    const children = this.getDraggableElementsForContainer(overContainer);
+    const moves = move({ source, over, overContainer, children });
+
+    if (!moves) {
+      return;
+    }
+
+    const { oldContainer, newContainer } = moves;
+    const newIndex = this.index(event.source);
+
+    const sortableSortedEvent = new _SortableEvent.SortableSortedEvent({
+      dragEvent: event,
+      oldIndex,
+      newIndex,
+      oldContainer,
+      newContainer
+    });
+
+    this.trigger(sortableSortedEvent);
+  }
+
+  /**
+   * Drag over handler
+   * @private
+   * @param {DragOverEvent} event - Drag over event
+   */
+  [onDragOver](event) {
+    if (event.over === event.originalSource || event.over === event.source) {
+      return;
+    }
+
+    const { source, over, overContainer } = event;
+    const oldIndex = this.index(source);
+
+    const sortableSortEvent = new _SortableEvent.SortableSortEvent({
+      dragEvent: event,
+      currentIndex: oldIndex,
+      source,
+      over
+    });
+
+    this.trigger(sortableSortEvent);
+
+    if (sortableSortEvent.canceled()) {
+      return;
+    }
+
+    const children = this.getDraggableElementsForContainer(overContainer);
+    const moves = move({ source, over, overContainer, children });
+
+    if (!moves) {
+      return;
+    }
+
+    const { oldContainer, newContainer } = moves;
+    const newIndex = this.index(source);
+
+    const sortableSortedEvent = new _SortableEvent.SortableSortedEvent({
+      dragEvent: event,
+      oldIndex,
+      newIndex,
+      oldContainer,
+      newContainer
+    });
+
+    this.trigger(sortableSortedEvent);
+  }
+
+  /**
+   * Drag stop handler
+   * @private
+   * @param {DragStopEvent} event - Drag stop event
+   */
+  [onDragStop](event) {
+    const sortableStopEvent = new _SortableEvent.SortableStopEvent({
+      dragEvent: event,
+      oldIndex: this.startIndex,
+      newIndex: this.index(event.source),
+      oldContainer: this.startContainer,
+      newContainer: event.source.parentNode
+    });
+
+    this.trigger(sortableStopEvent);
+
+    this.startIndex = null;
+    this.startContainer = null;
+  }
+}
+
+exports.default = Sortable;
+function index(element) {
+  return Array.prototype.indexOf.call(element.parentNode.children, element);
+}
+
+function move({ source, over, overContainer, children }) {
+  const emptyOverContainer = !children.length;
+  const differentContainer = source.parentNode !== overContainer;
+  const sameContainer = over && !differentContainer;
+
+  if (emptyOverContainer) {
+    return moveInsideEmptyContainer(source, overContainer);
+  } else if (sameContainer) {
+    return moveWithinContainer(source, over);
+  } else if (differentContainer) {
+    return moveOutsideContainer(source, over, overContainer);
+  } else {
+    return null;
+  }
+}
+
+function moveInsideEmptyContainer(source, overContainer) {
+  const oldContainer = source.parentNode;
+
+  overContainer.appendChild(source);
+
+  return { oldContainer, newContainer: overContainer };
+}
+
+function moveWithinContainer(source, over) {
+  const oldIndex = index(source);
+  const newIndex = index(over);
+
+  if (oldIndex < newIndex) {
+    source.parentNode.insertBefore(source, over.nextElementSibling);
+  } else {
+    source.parentNode.insertBefore(source, over);
+  }
+
+  return { oldContainer: source.parentNode, newContainer: source.parentNode };
+}
+
+function moveOutsideContainer(source, over, overContainer) {
+  const oldContainer = source.parentNode;
+
+  if (over) {
+    over.parentNode.insertBefore(source, over);
+  } else {
+    // need to figure out proper position
+    overContainer.appendChild(source);
+  }
+
+  return { oldContainer, newContainer: source.parentNode };
+}
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SortableStopEvent = exports.SortableSortedEvent = exports.SortableSortEvent = exports.SortableStartEvent = exports.SortableEvent = undefined;
+
+var _AbstractEvent = __webpack_require__(0);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Base sortable event
+ * @class SortableEvent
+ * @module SortableEvent
+ * @extends AbstractEvent
+ */
+class SortableEvent extends _AbstractEvent2.default {
+
+  /**
+   * Original drag event that triggered this sortable event
+   * @property dragEvent
+   * @type {DragEvent}
+   * @readonly
+   */
+  get dragEvent() {
+    return this.data.dragEvent;
+  }
+}
+
+exports.SortableEvent = SortableEvent; /**
+                                        * Sortable start event
+                                        * @class SortableStartEvent
+                                        * @module SortableStartEvent
+                                        * @extends SortableEvent
+                                        */
+
+SortableEvent.type = 'sortable';
+class SortableStartEvent extends SortableEvent {
+
+  /**
+   * Start index of source on sortable start
+   * @property startIndex
+   * @type {Number}
+   * @readonly
+   */
+  get startIndex() {
+    return this.data.startIndex;
+  }
+
+  /**
+   * Start container on sortable start
+   * @property startContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get startContainer() {
+    return this.data.startContainer;
+  }
+}
+
+exports.SortableStartEvent = SortableStartEvent; /**
+                                                  * Sortable sort event
+                                                  * @class SortableSortEvent
+                                                  * @module SortableSortEvent
+                                                  * @extends SortableEvent
+                                                  */
+
+SortableStartEvent.type = 'sortable:start';
+SortableStartEvent.cancelable = true;
+class SortableSortEvent extends SortableEvent {
+
+  /**
+   * Index of current draggable element
+   * @property currentIndex
+   * @type {Number}
+   * @readonly
+   */
+  get currentIndex() {
+    return this.data.currentIndex;
+  }
+
+  /**
+   * Draggable element you are hovering over
+   * @property over
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get over() {
+    return this.data.oldIndex;
+  }
+
+  /**
+   * Draggable container element you are hovering over
+   * @property overContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get overContainer() {
+    return this.data.newIndex;
+  }
+}
+
+exports.SortableSortEvent = SortableSortEvent; /**
+                                                * Sortable sorted event
+                                                * @class SortableSortedEvent
+                                                * @module SortableSortedEvent
+                                                * @extends SortableEvent
+                                                */
+
+SortableSortEvent.type = 'sortable:sort';
+SortableSortEvent.cancelable = true;
+class SortableSortedEvent extends SortableEvent {
+
+  /**
+   * Index of last sorted event
+   * @property oldIndex
+   * @type {Number}
+   * @readonly
+   */
+  get oldIndex() {
+    return this.data.oldIndex;
+  }
+
+  /**
+   * New index of this sorted event
+   * @property newIndex
+   * @type {Number}
+   * @readonly
+   */
+  get newIndex() {
+    return this.data.newIndex;
+  }
+
+  /**
+   * Old container of draggable element
+   * @property oldContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get oldContainer() {
+    return this.data.oldContainer;
+  }
+
+  /**
+   * New container of draggable element
+   * @property newContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get newContainer() {
+    return this.data.newContainer;
+  }
+}
+
+exports.SortableSortedEvent = SortableSortedEvent; /**
+                                                    * Sortable stop event
+                                                    * @class SortableStopEvent
+                                                    * @module SortableStopEvent
+                                                    * @extends SortableEvent
+                                                    */
+
+SortableSortedEvent.type = 'sortable:sorted';
+class SortableStopEvent extends SortableEvent {
+
+  /**
+   * Original index on sortable start
+   * @property oldIndex
+   * @type {Number}
+   * @readonly
+   */
+  get oldIndex() {
+    return this.data.oldIndex;
+  }
+
+  /**
+   * New index of draggable element
+   * @property newIndex
+   * @type {Number}
+   * @readonly
+   */
+  get newIndex() {
+    return this.data.newIndex;
+  }
+
+  /**
+   * Original container of draggable element
+   * @property oldContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get oldContainer() {
+    return this.data.oldContainer;
+  }
+
+  /**
+   * New container of draggable element
+   * @property newContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get newContainer() {
+    return this.data.newContainer;
+  }
+}
+exports.SortableStopEvent = SortableStopEvent;
+SortableStopEvent.type = 'sortable:stop';
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _SortableEvent = __webpack_require__(9);
+
+Object.keys(_SortableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _SortableEvent[key];
+    }
+  });
+});
+
+var _Sortable = __webpack_require__(26);
+
+var _Sortable2 = _interopRequireDefault(_Sortable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Sortable2.default;
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _Draggable = __webpack_require__(5);
+
+var _Draggable2 = _interopRequireDefault(_Draggable);
+
+var _SwappableEvent = __webpack_require__(10);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onDragStart = Symbol('onDragStart');
+const onDragOver = Symbol('onDragOver');
+const onDragStop = Symbol('onDragStop');
+
+/**
+ * Returns an announcement message when the Draggable element is swapped with another draggable element
+ * @param {SwappableSwappedEvent} swappableEvent
+ * @return {String}
+ */
+function onSwappableSwappedDefaultAnnouncement({ dragEvent, swappedElement }) {
+  const sourceText = dragEvent.source.textContent.trim() || dragEvent.source.id || 'swappable element';
+  const overText = swappedElement.textContent.trim() || swappedElement.id || 'swappable element';
+
+  return `Swapped ${sourceText} with ${overText}`;
+}
+
+/**
+ * @const {Object} defaultAnnouncements
+ * @const {Function} defaultAnnouncements['swappabled:swapped']
+ */
+const defaultAnnouncements = {
+  'swappabled:swapped': onSwappableSwappedDefaultAnnouncement
+};
+
+/**
+ * Swappable is built on top of Draggable and allows swapping of draggable elements.
+ * Order is irrelevant to Swappable.
+ * @class Swappable
+ * @module Swappable
+ * @extends Draggable
+ */
+class Swappable extends _Draggable2.default {
+  /**
+   * Swappable constructor.
+   * @constructs Swappable
+   * @param {HTMLElement[]|NodeList|HTMLElement} containers - Swappable containers
+   * @param {Object} options - Options for Swappable
+   */
+  constructor(containers = [], options = {}) {
+    super(containers, _extends({}, options, {
+      announcements: _extends({}, defaultAnnouncements, options.announcements || {})
+    }));
+
+    /**
+     * Last draggable element that was dragged over
+     * @property lastOver
+     * @type {HTMLElement}
+     */
+    this.lastOver = null;
+
+    this[onDragStart] = this[onDragStart].bind(this);
+    this[onDragOver] = this[onDragOver].bind(this);
+    this[onDragStop] = this[onDragStop].bind(this);
+
+    this.on('drag:start', this[onDragStart]).on('drag:over', this[onDragOver]).on('drag:stop', this[onDragStop]);
+  }
+
+  /**
+   * Destroys Swappable instance.
+   */
+  destroy() {
+    super.destroy();
+
+    this.off('drag:start', this._onDragStart).off('drag:over', this._onDragOver).off('drag:stop', this._onDragStop);
+  }
+
+  /**
+   * Drag start handler
+   * @private
+   * @param {DragStartEvent} event - Drag start event
+   */
+  [onDragStart](event) {
+    const swappableStartEvent = new _SwappableEvent.SwappableStartEvent({
+      dragEvent: event
+    });
+
+    this.trigger(swappableStartEvent);
+
+    if (swappableStartEvent.canceled()) {
+      event.cancel();
+    }
+  }
+
+  /**
+   * Drag over handler
+   * @private
+   * @param {DragOverEvent} event - Drag over event
+   */
+  [onDragOver](event) {
+    if (event.over === event.originalSource || event.over === event.source || event.canceled()) {
+      return;
+    }
+
+    const swappableSwapEvent = new _SwappableEvent.SwappableSwapEvent({
+      dragEvent: event,
+      over: event.over,
+      overContainer: event.overContainer
+    });
+
+    this.trigger(swappableSwapEvent);
+
+    if (swappableSwapEvent.canceled()) {
+      return;
+    }
+
+    // swap originally swapped element back
+    if (this.lastOver && this.lastOver !== event.over) {
+      swap(this.lastOver, event.source);
+    }
+
+    if (this.lastOver === event.over) {
+      this.lastOver = null;
+    } else {
+      this.lastOver = event.over;
+    }
+
+    swap(event.source, event.over);
+
+    const swappableSwappedEvent = new _SwappableEvent.SwappableSwappedEvent({
+      dragEvent: event,
+      swappedElement: event.over
+    });
+
+    this.trigger(swappableSwappedEvent);
+  }
+
+  /**
+   * Drag stop handler
+   * @private
+   * @param {DragStopEvent} event - Drag stop event
+   */
+  [onDragStop](event) {
+    const swappableStopEvent = new _SwappableEvent.SwappableStopEvent({
+      dragEvent: event
+    });
+
+    this.trigger(swappableStopEvent);
+    this.lastOver = null;
+  }
+}
+
+exports.default = Swappable;
+function withTempElement(callback) {
+  const tmpElement = document.createElement('div');
+  callback(tmpElement);
+  tmpElement.parentNode.removeChild(tmpElement);
+}
+
+function swap(source, over) {
+  const overParent = over.parentNode;
+  const sourceParent = source.parentNode;
+
+  withTempElement(tmpElement => {
+    sourceParent.insertBefore(tmpElement, source);
+    overParent.insertBefore(source, over);
+    sourceParent.insertBefore(over, tmpElement);
+  });
+}
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SwappableStopEvent = exports.SwappableSwappedEvent = exports.SwappableSwapEvent = exports.SwappableStartEvent = exports.SwappableEvent = undefined;
+
+var _AbstractEvent = __webpack_require__(0);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Base swappable event
+ * @class SwappableEvent
+ * @module SwappableEvent
+ * @extends AbstractEvent
+ */
+class SwappableEvent extends _AbstractEvent2.default {
+
+  /**
+   * Original drag event that triggered this swappable event
+   * @property dragEvent
+   * @type {DragEvent}
+   * @readonly
+   */
+  get dragEvent() {
+    return this.data.dragEvent;
+  }
+}
+
+exports.SwappableEvent = SwappableEvent; /**
+                                          * Swappable start event
+                                          * @class SwappableStartEvent
+                                          * @module SwappableStartEvent
+                                          * @extends SwappableEvent
+                                          */
+
+SwappableEvent.type = 'swappable';
+class SwappableStartEvent extends SwappableEvent {}
+
+exports.SwappableStartEvent = SwappableStartEvent; /**
+                                                    * Swappable swap event
+                                                    * @class SwappableSwapEvent
+                                                    * @module SwappableSwapEvent
+                                                    * @extends SwappableEvent
+                                                    */
+
+SwappableStartEvent.type = 'swappable:start';
+SwappableStartEvent.cancelable = true;
+class SwappableSwapEvent extends SwappableEvent {
+
+  /**
+   * Draggable element you are over
+   * @property over
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get over() {
+    return this.data.over;
+  }
+
+  /**
+   * Draggable container you are over
+   * @property overContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get overContainer() {
+    return this.data.overContainer;
+  }
+}
+
+exports.SwappableSwapEvent = SwappableSwapEvent; /**
+                                                  * Swappable swapped event
+                                                  * @class SwappableSwappedEvent
+                                                  * @module SwappableSwappedEvent
+                                                  * @extends SwappableEvent
+                                                  */
+
+SwappableSwapEvent.type = 'swappable:swap';
+SwappableSwapEvent.cancelable = true;
+class SwappableSwappedEvent extends SwappableEvent {
+
+  /**
+   * The draggable element that you swapped with
+   * @property swappedElement
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get swappedElement() {
+    return this.data.swappedElement;
+  }
+}
+
+exports.SwappableSwappedEvent = SwappableSwappedEvent; /**
+                                                        * Swappable stop event
+                                                        * @class SwappableStopEvent
+                                                        * @module SwappableStopEvent
+                                                        * @extends SwappableEvent
+                                                        */
+
+SwappableSwappedEvent.type = 'swappable:swapped';
+class SwappableStopEvent extends SwappableEvent {}
+exports.SwappableStopEvent = SwappableStopEvent;
+SwappableStopEvent.type = 'swappable:stop';
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _SwappableEvent = __webpack_require__(10);
+
+Object.keys(_SwappableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _SwappableEvent[key];
+    }
+  });
+});
+
+var _Swappable = __webpack_require__(29);
+
+var _Swappable2 = _interopRequireDefault(_Swappable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Swappable2.default;
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _utils = __webpack_require__(2);
+
+var _Draggable = __webpack_require__(5);
+
+var _Draggable2 = _interopRequireDefault(_Draggable);
+
+var _DroppableEvent = __webpack_require__(11);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onDragStart = Symbol('onDragStart');
+const onDragMove = Symbol('onDragMove');
+const onDragStop = Symbol('onDragStop');
+const dropInDropzone = Symbol('dropInDropZone');
+const returnToOriginalDropzone = Symbol('returnToOriginalDropzone');
+const closestDropzone = Symbol('closestDropzone');
+const getDropzones = Symbol('getDropzones');
+
+/**
+ * Returns an announcement message when the Draggable element is dropped into a dropzone element
+ * @param {DroppableDroppedEvent} droppableEvent
+ * @return {String}
+ */
+function onDroppableDroppedDefaultAnnouncement({ dragEvent, dropzone }) {
+  const sourceText = dragEvent.source.textContent.trim() || dragEvent.source.id || 'draggable element';
+  const dropzoneText = dropzone.textContent.trim() || dropzone.id || 'droppable element';
+
+  return `Dropped ${sourceText} into ${dropzoneText}`;
+}
+
+/**
+ * Returns an announcement message when the Draggable element has returned to its original dropzone element
+ * @param {DroppableReturnedEvent} droppableEvent
+ * @return {String}
+ */
+function onDroppableReturnedDefaultAnnouncement({ dragEvent, dropzone }) {
+  const sourceText = dragEvent.source.textContent.trim() || dragEvent.source.id || 'draggable element';
+  const dropzoneText = dropzone.textContent.trim() || dropzone.id || 'droppable element';
+
+  return `Returned ${sourceText} from ${dropzoneText}`;
+}
+
+/**
+ * @const {Object} defaultAnnouncements
+ * @const {Function} defaultAnnouncements['droppable:dropped']
+ * @const {Function} defaultAnnouncements['droppable:returned']
+ */
+const defaultAnnouncements = {
+  'droppable:dropped': onDroppableDroppedDefaultAnnouncement,
+  'droppable:returned': onDroppableReturnedDefaultAnnouncement
+};
+
+const defaultClasses = {
+  'droppable:active': 'draggable-dropzone--active',
+  'droppable:occupied': 'draggable-dropzone--occupied'
+};
+
+const defaultOptions = {
+  dropzone: '.draggable-droppable'
+};
+
+/**
+ * Droppable is built on top of Draggable and allows dropping draggable elements
+ * into dropzone element
+ * @class Droppable
+ * @module Droppable
+ * @extends Draggable
+ */
+class Droppable extends _Draggable2.default {
+  /**
+   * Droppable constructor.
+   * @constructs Droppable
+   * @param {HTMLElement[]|NodeList|HTMLElement} containers - Droppable containers
+   * @param {Object} options - Options for Droppable
+   */
+  constructor(containers = [], options = {}) {
+    super(containers, _extends({}, defaultOptions, options, {
+      classes: _extends({}, defaultClasses, options.classes || {}),
+      announcements: _extends({}, defaultAnnouncements, options.announcements || {})
+    }));
+
+    /**
+     * All dropzone elements on drag start
+     * @property dropzones
+     * @type {HTMLElement[]}
+     */
+    this.dropzones = null;
+
+    /**
+     * Last dropzone element that the source was dropped into
+     * @property lastDropzone
+     * @type {HTMLElement}
+     */
+    this.lastDropzone = null;
+
+    /**
+     * Initial dropzone element that the source was drag from
+     * @property initialDropzone
+     * @type {HTMLElement}
+     */
+    this.initialDropzone = null;
+
+    this[onDragStart] = this[onDragStart].bind(this);
+    this[onDragMove] = this[onDragMove].bind(this);
+    this[onDragStop] = this[onDragStop].bind(this);
+
+    this.on('drag:start', this[onDragStart]).on('drag:move', this[onDragMove]).on('drag:stop', this[onDragStop]);
+  }
+
+  /**
+   * Destroys Droppable instance.
+   */
+  destroy() {
+    super.destroy();
+
+    this.off('drag:start', this[onDragStart]).off('drag:move', this[onDragMove]).off('drag:stop', this[onDragStop]);
+  }
+
+  /**
+   * Drag start handler
+   * @private
+   * @param {DragStartEvent} event - Drag start event
+   */
+  [onDragStart](event) {
+    if (event.canceled()) {
+      return;
+    }
+
+    this.dropzones = [...this[getDropzones]()];
+    const dropzone = (0, _utils.closest)(event.sensorEvent.target, this.options.dropzone);
+
+    if (!dropzone) {
+      event.cancel();
+      return;
+    }
+
+    const droppableStartEvent = new _DroppableEvent.DroppableStartEvent({
+      dragEvent: event,
+      dropzone
+    });
+
+    this.trigger(droppableStartEvent);
+
+    if (droppableStartEvent.canceled()) {
+      event.cancel();
+      return;
+    }
+
+    this.initialDropzone = dropzone;
+
+    for (const dropzoneElement of this.dropzones) {
+      if (dropzoneElement.classList.contains(this.getClassNameFor('droppable:occupied'))) {
+        continue;
+      }
+
+      dropzoneElement.classList.add(this.getClassNameFor('droppable:active'));
+    }
+  }
+
+  /**
+   * Drag move handler
+   * @private
+   * @param {DragMoveEvent} event - Drag move event
+   */
+  [onDragMove](event) {
+    if (event.canceled()) {
+      return;
+    }
+
+    const dropzone = this[closestDropzone](event.sensorEvent.target);
+    const overEmptyDropzone = dropzone && !dropzone.classList.contains(this.getClassNameFor('droppable:occupied'));
+
+    if (overEmptyDropzone && this[dropInDropzone](event, dropzone)) {
+      this.lastDropzone = dropzone;
+    } else if ((!dropzone || dropzone === this.initialDropzone) && this.lastDropzone) {
+      this[returnToOriginalDropzone](event);
+      this.lastDropzone = null;
+    }
+  }
+
+  /**
+   * Drag stop handler
+   * @private
+   * @param {DragStopEvent} event - Drag stop event
+   */
+  [onDragStop](event) {
+    const droppableStopEvent = new _DroppableEvent.DroppableStopEvent({
+      dragEvent: event,
+      dropzone: this.lastDropzone || this.initialDropzone
+    });
+
+    this.trigger(droppableStopEvent);
+
+    const occupiedClass = this.getClassNameFor('droppable:occupied');
+
+    for (const dropzone of this.dropzones) {
+      dropzone.classList.remove(this.getClassNameFor('droppable:active'));
+    }
+
+    if (this.lastDropzone && this.lastDropzone !== this.initialDropzone) {
+      this.initialDropzone.classList.remove(occupiedClass);
+    }
+
+    this.dropzones = null;
+    this.lastDropzone = null;
+    this.initialDropzone = null;
+  }
+
+  /**
+   * Drops a draggable element into a dropzone element
+   * @private
+   * @param {DragMoveEvent} event - Drag move event
+   * @param {HTMLElement} dropzone - Dropzone element to drop draggable into
+   */
+  [dropInDropzone](event, dropzone) {
+    const droppableDroppedEvent = new _DroppableEvent.DroppableDroppedEvent({
+      dragEvent: event,
+      dropzone
+    });
+
+    this.trigger(droppableDroppedEvent);
+
+    if (droppableDroppedEvent.canceled()) {
+      return false;
+    }
+
+    const occupiedClass = this.getClassNameFor('droppable:occupied');
+
+    if (this.lastDropzone) {
+      this.lastDropzone.classList.remove(occupiedClass);
+    }
+
+    dropzone.appendChild(event.source);
+    dropzone.classList.add(occupiedClass);
+
+    return true;
+  }
+
+  /**
+   * Moves the previously dropped element back into its original dropzone
+   * @private
+   * @param {DragMoveEvent} event - Drag move event
+   */
+  [returnToOriginalDropzone](event) {
+    const droppableReturnedEvent = new _DroppableEvent.DroppableReturnedEvent({
+      dragEvent: event,
+      dropzone: this.lastDropzone
+    });
+
+    this.trigger(droppableReturnedEvent);
+
+    if (droppableReturnedEvent.canceled()) {
+      return;
+    }
+
+    this.initialDropzone.appendChild(event.source);
+    this.lastDropzone.classList.remove(this.getClassNameFor('droppable:occupied'));
+  }
+
+  /**
+   * Returns closest dropzone element for even target
+   * @private
+   * @param {HTMLElement} target - Event target
+   * @return {HTMLElement|null}
+   */
+  [closestDropzone](target) {
+    if (!this.dropzones) {
+      return null;
+    }
+
+    return (0, _utils.closest)(target, this.dropzones);
+  }
+
+  /**
+   * Returns all current dropzone elements for this draggable instance
+   * @private
+   * @return {NodeList|HTMLElement[]|Array}
+   */
+  [getDropzones]() {
+    const dropzone = this.options.dropzone;
+
+    if (typeof dropzone === 'string') {
+      return document.querySelectorAll(dropzone);
+    } else if (dropzone instanceof NodeList || dropzone instanceof Array) {
+      return dropzone;
+    } else if (typeof dropzone === 'function') {
+      return dropzone();
+    } else {
+      return [];
+    }
+  }
+}
+exports.default = Droppable;
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DroppableStopEvent = exports.DroppableReturnedEvent = exports.DroppableDroppedEvent = exports.DroppableStartEvent = exports.DroppableEvent = undefined;
+
+var _AbstractEvent = __webpack_require__(0);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Base droppable event
+ * @class DroppableEvent
+ * @module DroppableEvent
+ * @extends AbstractEvent
+ */
+class DroppableEvent extends _AbstractEvent2.default {
+
+  /**
+   * Original drag event that triggered this droppable event
+   * @property dragEvent
+   * @type {DragEvent}
+   * @readonly
+   */
+  get dragEvent() {
+    return this.data.dragEvent;
+  }
+}
+
+exports.DroppableEvent = DroppableEvent; /**
+                                          * Droppable start event
+                                          * @class DroppableStartEvent
+                                          * @module DroppableStartEvent
+                                          * @extends DroppableEvent
+                                          */
+
+DroppableEvent.type = 'droppable';
+class DroppableStartEvent extends DroppableEvent {
+
+  /**
+   * The initial dropzone element of the currently dragging draggable element
+   * @property dropzone
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get dropzone() {
+    return this.data.dropzone;
+  }
+}
+
+exports.DroppableStartEvent = DroppableStartEvent; /**
+                                                    * Droppable dropped event
+                                                    * @class DroppableDroppedEvent
+                                                    * @module DroppableDroppedEvent
+                                                    * @extends DroppableEvent
+                                                    */
+
+DroppableStartEvent.type = 'droppable:start';
+DroppableStartEvent.cancelable = true;
+class DroppableDroppedEvent extends DroppableEvent {
+
+  /**
+   * The dropzone element you dropped the draggable element into
+   * @property dropzone
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get dropzone() {
+    return this.data.dropzone;
+  }
+}
+
+exports.DroppableDroppedEvent = DroppableDroppedEvent; /**
+                                                        * Droppable returned event
+                                                        * @class DroppableReturnedEvent
+                                                        * @module DroppableReturnedEvent
+                                                        * @extends DroppableEvent
+                                                        */
+
+DroppableDroppedEvent.type = 'droppable:dropped';
+DroppableDroppedEvent.cancelable = true;
+class DroppableReturnedEvent extends DroppableEvent {
+
+  /**
+   * The dropzone element you dragged away from
+   * @property dropzone
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get dropzone() {
+    return this.data.dropzone;
+  }
+}
+
+exports.DroppableReturnedEvent = DroppableReturnedEvent; /**
+                                                          * Droppable stop event
+                                                          * @class DroppableStopEvent
+                                                          * @module DroppableStopEvent
+                                                          * @extends DroppableEvent
+                                                          */
+
+DroppableReturnedEvent.type = 'droppable:returned';
+DroppableReturnedEvent.cancelable = true;
+class DroppableStopEvent extends DroppableEvent {
+
+  /**
+   * The final dropzone element of the draggable element
+   * @property dropzone
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get dropzone() {
+    return this.data.dropzone;
+  }
+}
+exports.DroppableStopEvent = DroppableStopEvent;
+DroppableStopEvent.type = 'droppable:stop';
+DroppableStopEvent.cancelable = true;
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _DroppableEvent = __webpack_require__(11);
+
+Object.keys(_DroppableEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _DroppableEvent[key];
+    }
+  });
+});
+
+var _Droppable = __webpack_require__(32);
+
+var _Droppable2 = _interopRequireDefault(_Droppable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Droppable2.default;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * The Emitter is a simple emitter class that provides you with `on()`, `off()` and `trigger()` methods
+ * @class Emitter
+ * @module Emitter
+ */
+class Emitter {
+  constructor() {
+    this.callbacks = {};
+  }
+
+  /**
+   * Registers callbacks by event name
+   * @param {String} type
+   * @param {...Function} callbacks
+   */
+  on(type, ...callbacks) {
+    if (!this.callbacks[type]) {
+      this.callbacks[type] = [];
+    }
+
+    this.callbacks[type].push(...callbacks);
+
+    return this;
+  }
+
+  /**
+   * Unregisters callbacks by event name
+   * @param {String} type
+   * @param {Function} callback
+   */
+  off(type, callback) {
+    if (!this.callbacks[type]) {
+      return null;
+    }
+
+    const copy = this.callbacks[type].slice(0);
+
+    for (let i = 0; i < copy.length; i++) {
+      if (callback === copy[i]) {
+        this.callbacks[type].splice(i, 1);
+      }
+    }
+
+    return this;
+  }
+
+  /**
+   * Triggers event callbacks by event object
+   * @param {AbstractEvent} event
+   */
+  trigger(event) {
+    if (!this.callbacks[event.type]) {
+      return null;
+    }
+
+    const callbacks = [...this.callbacks[event.type]];
+    const caughtErrors = [];
+
+    for (let i = callbacks.length - 1; i >= 0; i--) {
+      const callback = callbacks[i];
+
+      try {
+        callback(event);
+      } catch (error) {
+        caughtErrors.push(error);
+      }
+    }
+
+    if (caughtErrors.length) {
+      /* eslint-disable no-console */
+      console.error(`Draggable caught errors while triggering '${event.type}'`, caughtErrors);
+      /* eslint-disable no-console */
+    }
+
+    return this;
+  }
+}
+exports.default = Emitter;
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Emitter = __webpack_require__(35);
+
+var _Emitter2 = _interopRequireDefault(_Emitter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Emitter2.default;
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _utils = __webpack_require__(2);
+
+var _Plugins = __webpack_require__(12);
+
+var _Emitter = __webpack_require__(36);
+
+var _Emitter2 = _interopRequireDefault(_Emitter);
+
+var _Sensors = __webpack_require__(6);
+
+var _DraggableEvent = __webpack_require__(13);
+
+var _DragEvent = __webpack_require__(14);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onDragStart = Symbol('onDragStart');
+const onDragMove = Symbol('onDragMove');
+const onDragStop = Symbol('onDragStop');
+const onDragPressure = Symbol('onDragPressure');
+
+/**
+ * @const {Object} defaultAnnouncements
+ * @const {Function} defaultAnnouncements['drag:start']
+ * @const {Function} defaultAnnouncements['drag:stop']
+ */
+const defaultAnnouncements = {
+  'drag:start': event => `Picked up ${event.source.textContent.trim() || event.source.id || 'draggable element'}`,
+  'drag:stop': event => `Released ${event.source.textContent.trim() || event.source.id || 'draggable element'}`
+};
+
+const defaultClasses = {
+  'container:dragging': 'draggable-container--is-dragging',
+  'source:dragging': 'draggable-source--is-dragging',
+  'source:placed': 'draggable-source--placed',
+  'container:placed': 'draggable-container--placed',
+  'body:dragging': 'draggable--is-dragging',
+  'draggable:over': 'draggable--over',
+  'container:over': 'draggable-container--over',
+  'source:original': 'draggable--original',
+  mirror: 'draggable-mirror'
+};
+
+const defaultOptions = exports.defaultOptions = {
+  draggable: '.draggable-source',
+  handle: null,
+  delay: 100,
+  placedTimeout: 800,
+  plugins: [],
+  sensors: []
+};
+
+/**
+ * This is the core draggable library that does the heavy lifting
+ * @class Draggable
+ * @module Draggable
+ */
+class Draggable {
+
+  /**
+   * Draggable constructor.
+   * @constructs Draggable
+   * @param {HTMLElement[]|NodeList|HTMLElement} containers - Draggable containers
+   * @param {Object} options - Options for draggable
+   */
+  constructor(containers = [document.body], options = {}) {
+    /**
+     * Draggable containers
+     * @property containers
+     * @type {HTMLElement[]}
+     */
+    if (containers instanceof NodeList || containers instanceof Array) {
+      this.containers = [...containers];
+    } else if (containers instanceof HTMLElement) {
+      this.containers = [containers];
+    } else {
+      throw new Error('Draggable containers are expected to be of type `NodeList`, `HTMLElement[]` or `HTMLElement`');
+    }
+
+    this.options = _extends({}, defaultOptions, options, {
+      classes: _extends({}, defaultClasses, options.classes || {}),
+      announcements: _extends({}, defaultAnnouncements, options.announcements || {})
+    });
+
+    /**
+     * Draggables event emitter
+     * @property emitter
+     * @type {Emitter}
+     */
+    this.emitter = new _Emitter2.default();
+
+    /**
+     * Current drag state
+     * @property dragging
+     * @type {Boolean}
+     */
+    this.dragging = false;
+
+    /**
+     * Active plugins
+     * @property plugins
+     * @type {Plugin[]}
+     */
+    this.plugins = [];
+
+    /**
+     * Active sensors
+     * @property sensors
+     * @type {Sensor[]}
+     */
+    this.sensors = [];
+
+    this[onDragStart] = this[onDragStart].bind(this);
+    this[onDragMove] = this[onDragMove].bind(this);
+    this[onDragStop] = this[onDragStop].bind(this);
+    this[onDragPressure] = this[onDragPressure].bind(this);
+
+    document.addEventListener('drag:start', this[onDragStart], true);
+    document.addEventListener('drag:move', this[onDragMove], true);
+    document.addEventListener('drag:stop', this[onDragStop], true);
+    document.addEventListener('drag:pressure', this[onDragPressure], true);
+
+    const defaultPlugins = Object.values(Draggable.Plugins).map(Plugin => Plugin);
+    const defaultSensors = [_Sensors.MouseSensor, _Sensors.TouchSensor];
+
+    this.addPlugin(...[...defaultPlugins, ...this.options.plugins]);
+    this.addSensor(...[...defaultSensors, ...this.options.sensors]);
+
+    const draggableInitializedEvent = new _DraggableEvent.DraggableInitializedEvent({
+      draggable: this
+    });
+
+    this.on('mirror:created', ({ mirror }) => this.mirror = mirror);
+    this.on('mirror:destroy', () => this.mirror = null);
+
+    this.trigger(draggableInitializedEvent);
+  }
+
+  /**
+   * Destroys Draggable instance. This removes all internal event listeners and
+   * deactivates sensors and plugins
+   */
+
+  /**
+   * Default plugins draggable uses
+   * @static
+   * @property {Object} Plugins
+   * @property {Announcement} Plugins.Announcement
+   * @property {Focusable} Plugins.Focusable
+   * @property {Mirror} Plugins.Mirror
+   * @property {Scrollable} Plugins.Scrollable
+   * @type {Object}
+   */
+  destroy() {
+    document.removeEventListener('drag:start', this[onDragStart], true);
+    document.removeEventListener('drag:move', this[onDragMove], true);
+    document.removeEventListener('drag:stop', this[onDragStop], true);
+    document.removeEventListener('drag:pressure', this[onDragPressure], true);
+
+    const draggableDestroyEvent = new _DraggableEvent.DraggableDestroyEvent({
+      draggable: this
+    });
+
+    this.trigger(draggableDestroyEvent);
+
+    this.removePlugin(...this.plugins.map(plugin => plugin.constructor));
+    this.removeSensor(...this.sensors.map(sensor => sensor.constructor));
+  }
+
+  /**
+   * Adds plugin to this draggable instance. This will end up calling the attach method of the plugin
+   * @param {...typeof Plugin} plugins - Plugins that you want attached to draggable
+   * @return {Draggable}
+   * @example draggable.addPlugin(CustomA11yPlugin, CustomMirrorPlugin)
+   */
+  addPlugin(...plugins) {
+    const activePlugins = plugins.map(Plugin => new Plugin(this));
+
+    activePlugins.forEach(plugin => plugin.attach());
+    this.plugins = [...this.plugins, ...activePlugins];
+
+    return this;
+  }
+
+  /**
+   * Removes plugins that are already attached to this draggable instance. This will end up calling
+   * the detach method of the plugin
+   * @param {...typeof Plugin} plugins - Plugins that you want detached from draggable
+   * @return {Draggable}
+   * @example draggable.removePlugin(MirrorPlugin, CustomMirrorPlugin)
+   */
+  removePlugin(...plugins) {
+    const removedPlugins = this.plugins.filter(plugin => plugins.includes(plugin.constructor));
+
+    removedPlugins.forEach(plugin => plugin.detach());
+    this.plugins = this.plugins.filter(plugin => !plugins.includes(plugin.constructor));
+
+    return this;
+  }
+
+  /**
+   * Adds sensors to this draggable instance. This will end up calling the attach method of the sensor
+   * @param {...typeof Sensor} sensors - Sensors that you want attached to draggable
+   * @return {Draggable}
+   * @example draggable.addSensor(ForceTouchSensor, CustomSensor)
+   */
+  addSensor(...sensors) {
+    const activeSensors = sensors.map(Sensor => new Sensor(this.containers, this.options));
+
+    activeSensors.forEach(sensor => sensor.attach());
+    this.sensors = [...this.sensors, ...activeSensors];
+
+    return this;
+  }
+
+  /**
+   * Removes sensors that are already attached to this draggable instance. This will end up calling
+   * the detach method of the sensor
+   * @param {...typeof Sensor} sensors - Sensors that you want attached to draggable
+   * @return {Draggable}
+   * @example draggable.removeSensor(TouchSensor, DragSensor)
+   */
+  removeSensor(...sensors) {
+    const removedSensors = this.sensors.filter(sensor => sensors.includes(sensor.constructor));
+
+    removedSensors.forEach(sensor => sensor.detach());
+    this.sensors = this.sensors.filter(sensor => !sensors.includes(sensor.constructor));
+
+    return this;
+  }
+
+  /**
+   * Adds container to this draggable instance
+   * @param {...HTMLElement} containers - Containers you want to add to draggable
+   * @return {Draggable}
+   * @example draggable.addContainer(document.body)
+   */
+  addContainer(...containers) {
+    this.containers = [...this.containers, ...containers];
+    this.sensors.forEach(sensor => sensor.addContainer(...containers));
+    return this;
+  }
+
+  /**
+   * Removes container from this draggable instance
+   * @param {...HTMLElement} containers - Containers you want to remove from draggable
+   * @return {Draggable}
+   * @example draggable.removeContainer(document.body)
+   */
+  removeContainer(...containers) {
+    this.containers = this.containers.filter(container => !containers.includes(container));
+    this.sensors.forEach(sensor => sensor.removeContainer(...containers));
+    return this;
+  }
+
+  /**
+   * Adds listener for draggable events
+   * @param {String} type - Event name
+   * @param {...Function} callbacks - Event callbacks
+   * @return {Draggable}
+   * @example draggable.on('drag:start', (dragEvent) => dragEvent.cancel());
+   */
+  on(type, ...callbacks) {
+    this.emitter.on(type, ...callbacks);
+    return this;
+  }
+
+  /**
+   * Removes listener from draggable
+   * @param {String} type - Event name
+   * @param {Function} callback - Event callback
+   * @return {Draggable}
+   * @example draggable.off('drag:start', handlerFunction);
+   */
+  off(type, callback) {
+    this.emitter.off(type, callback);
+    return this;
+  }
+
+  /**
+   * Triggers draggable event
+   * @param {AbstractEvent} event - Event instance
+   * @return {Draggable}
+   * @example draggable.trigger(event);
+   */
+  trigger(event) {
+    this.emitter.trigger(event);
+    return this;
+  }
+
+  /**
+   * Returns class name for class identifier
+   * @param {String} name - Name of class identifier
+   * @return {String|null}
+   */
+  getClassNameFor(name) {
+    return this.options.classes[name];
+  }
+
+  /**
+   * Returns true if this draggable instance is currently dragging
+   * @return {Boolean}
+   */
+  isDragging() {
+    return Boolean(this.dragging);
+  }
+
+  /**
+   * Returns all draggable elements
+   * @return {HTMLElement[]}
+   */
+  getDraggableElements() {
+    return this.containers.reduce((current, container) => {
+      return [...current, ...this.getDraggableElementsForContainer(container)];
+    }, []);
+  }
+
+  /**
+   * Returns draggable elements for a given container, excluding the mirror and
+   * original source element if present
+   * @param {HTMLElement} container
+   * @return {HTMLElement[]}
+   */
+  getDraggableElementsForContainer(container) {
+    const allDraggableElements = container.querySelectorAll(this.options.draggable);
+
+    return [...allDraggableElements].filter(childElement => {
+      return childElement !== this.originalSource && childElement !== this.mirror;
+    });
+  }
+
+  /**
+   * Drag start handler
+   * @private
+   * @param {Event} event - DOM Drag event
+   */
+  [onDragStart](event) {
+    const sensorEvent = getSensorEvent(event);
+    const { target, container } = sensorEvent;
+
+    if (!this.containers.includes(container)) {
+      return;
+    }
+
+    if (this.options.handle && target && !(0, _utils.closest)(target, this.options.handle)) {
+      sensorEvent.cancel();
+      return;
+    }
+
+    // Find draggable source element
+    this.originalSource = (0, _utils.closest)(target, this.options.draggable);
+    this.sourceContainer = container;
+
+    if (!this.originalSource) {
+      sensorEvent.cancel();
+      return;
+    }
+
+    if (this.lastPlacedSource && this.lastPlacedContainer) {
+      clearTimeout(this.placedTimeoutID);
+      this.lastPlacedSource.classList.remove(this.getClassNameFor('source:placed'));
+      this.lastPlacedContainer.classList.remove(this.getClassNameFor('container:placed'));
+    }
+
+    this.source = this.originalSource.cloneNode(true);
+    this.originalSource.parentNode.insertBefore(this.source, this.originalSource);
+    this.originalSource.style.display = 'none';
+
+    const dragEvent = new _DragEvent.DragStartEvent({
+      source: this.source,
+      originalSource: this.originalSource,
+      sourceContainer: container,
+      sensorEvent
+    });
+
+    this.trigger(dragEvent);
+
+    this.dragging = !dragEvent.canceled();
+
+    if (dragEvent.canceled()) {
+      this.source.parentNode.removeChild(this.source);
+      this.originalSource.style.display = null;
+      return;
+    }
+
+    this.originalSource.classList.add(this.getClassNameFor('source:original'));
+    this.source.classList.add(this.getClassNameFor('source:dragging'));
+    this.sourceContainer.classList.add(this.getClassNameFor('container:dragging'));
+    document.body.classList.add(this.getClassNameFor('body:dragging'));
+    applyUserSelect(document.body, 'none');
+
+    requestAnimationFrame(() => {
+      const oldSensorEvent = getSensorEvent(event);
+      const newSensorEvent = oldSensorEvent.clone({ target: this.source });
+
+      this[onDragMove](_extends({}, event, {
+        detail: newSensorEvent
+      }));
+    });
+  }
+
+  /**
+   * Drag move handler
+   * @private
+   * @param {Event} event - DOM Drag event
+   */
+  [onDragMove](event) {
+    if (!this.dragging) {
+      return;
+    }
+
+    const sensorEvent = getSensorEvent(event);
+    const { container } = sensorEvent;
+    let target = sensorEvent.target;
+
+    const dragMoveEvent = new _DragEvent.DragMoveEvent({
+      source: this.source,
+      originalSource: this.originalSource,
+      sourceContainer: container,
+      sensorEvent
+    });
+
+    this.trigger(dragMoveEvent);
+
+    if (dragMoveEvent.canceled()) {
+      sensorEvent.cancel();
+    }
+
+    target = (0, _utils.closest)(target, this.options.draggable);
+    const withinCorrectContainer = (0, _utils.closest)(sensorEvent.target, this.containers);
+    const overContainer = sensorEvent.overContainer || withinCorrectContainer;
+    const isLeavingContainer = this.currentOverContainer && overContainer !== this.currentOverContainer;
+    const isLeavingDraggable = this.currentOver && target !== this.currentOver;
+    const isOverContainer = overContainer && this.currentOverContainer !== overContainer;
+    const isOverDraggable = withinCorrectContainer && target && this.currentOver !== target;
+
+    if (isLeavingDraggable) {
+      const dragOutEvent = new _DragEvent.DragOutEvent({
+        source: this.source,
+        originalSource: this.originalSource,
+        sourceContainer: container,
+        sensorEvent,
+        over: this.currentOver
+      });
+
+      this.currentOver.classList.remove(this.getClassNameFor('draggable:over'));
+      this.currentOver = null;
+
+      this.trigger(dragOutEvent);
+    }
+
+    if (isLeavingContainer) {
+      const dragOutContainerEvent = new _DragEvent.DragOutContainerEvent({
+        source: this.source,
+        originalSource: this.originalSource,
+        sourceContainer: container,
+        sensorEvent,
+        overContainer: this.currentOverContainer
+      });
+
+      this.currentOverContainer.classList.remove(this.getClassNameFor('container:over'));
+      this.currentOverContainer = null;
+
+      this.trigger(dragOutContainerEvent);
+    }
+
+    if (isOverContainer) {
+      overContainer.classList.add(this.getClassNameFor('container:over'));
+
+      const dragOverContainerEvent = new _DragEvent.DragOverContainerEvent({
+        source: this.source,
+        originalSource: this.originalSource,
+        sourceContainer: container,
+        sensorEvent,
+        overContainer
+      });
+
+      this.currentOverContainer = overContainer;
+
+      this.trigger(dragOverContainerEvent);
+    }
+
+    if (isOverDraggable) {
+      target.classList.add(this.getClassNameFor('draggable:over'));
+
+      const dragOverEvent = new _DragEvent.DragOverEvent({
+        source: this.source,
+        originalSource: this.originalSource,
+        sourceContainer: container,
+        sensorEvent,
+        overContainer,
+        over: target
+      });
+
+      this.currentOver = target;
+
+      this.trigger(dragOverEvent);
+    }
+  }
+
+  /**
+   * Drag stop handler
+   * @private
+   * @param {Event} event - DOM Drag event
+   */
+  [onDragStop](event) {
+    if (!this.dragging) {
+      return;
+    }
+
+    this.dragging = false;
+
+    const dragStopEvent = new _DragEvent.DragStopEvent({
+      source: this.source,
+      originalSource: this.originalSource,
+      sensorEvent: event.sensorEvent,
+      sourceContainer: this.sourceContainer
+    });
+
+    this.trigger(dragStopEvent);
+
+    this.source.parentNode.insertBefore(this.originalSource, this.source);
+    this.source.parentNode.removeChild(this.source);
+    this.originalSource.style.display = '';
+
+    this.source.classList.remove(this.getClassNameFor('source:dragging'));
+    this.originalSource.classList.remove(this.getClassNameFor('source:original'));
+    this.originalSource.classList.add(this.getClassNameFor('source:placed'));
+    this.sourceContainer.classList.add(this.getClassNameFor('container:placed'));
+    this.sourceContainer.classList.remove(this.getClassNameFor('container:dragging'));
+    document.body.classList.remove(this.getClassNameFor('body:dragging'));
+    applyUserSelect(document.body, '');
+
+    if (this.currentOver) {
+      this.currentOver.classList.remove(this.getClassNameFor('draggable:over'));
+    }
+
+    if (this.currentOverContainer) {
+      this.currentOverContainer.classList.remove(this.getClassNameFor('container:over'));
+    }
+
+    this.lastPlacedSource = this.originalSource;
+    this.lastPlacedContainer = this.sourceContainer;
+
+    this.placedTimeoutID = setTimeout(() => {
+      if (this.lastPlacedSource) {
+        this.lastPlacedSource.classList.remove(this.getClassNameFor('source:placed'));
+      }
+
+      if (this.lastPlacedContainer) {
+        this.lastPlacedContainer.classList.remove(this.getClassNameFor('container:placed'));
+      }
+
+      this.lastPlacedSource = null;
+      this.lastPlacedContainer = null;
+    }, this.options.placedTimeout);
+
+    this.source = null;
+    this.originalSource = null;
+    this.currentOverContainer = null;
+    this.currentOver = null;
+    this.sourceContainer = null;
+  }
+
+  /**
+   * Drag pressure handler
+   * @private
+   * @param {Event} event - DOM Drag event
+   */
+  [onDragPressure](event) {
+    if (!this.dragging) {
+      return;
+    }
+
+    const sensorEvent = getSensorEvent(event);
+    const source = this.source || (0, _utils.closest)(sensorEvent.originalEvent.target, this.options.draggable);
+
+    const dragPressureEvent = new _DragEvent.DragPressureEvent({
+      sensorEvent,
+      source,
+      pressure: sensorEvent.pressure
+    });
+
+    this.trigger(dragPressureEvent);
+  }
+}
+
+exports.default = Draggable;
+Draggable.Plugins = { Announcement: _Plugins.Announcement, Focusable: _Plugins.Focusable, Mirror: _Plugins.Mirror, Scrollable: _Plugins.Scrollable };
+function getSensorEvent(event) {
+  return event.detail;
+}
+
+function applyUserSelect(element, value) {
+  element.style.webkitUserSelect = value;
+  element.style.mozUserSelect = value;
+  element.style.msUserSelect = value;
+  element.style.oUserSelect = value;
+  element.style.userSelect = value;
+}
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Sensor = __webpack_require__(4);
+
+var _Sensor2 = _interopRequireDefault(_Sensor);
+
+var _SensorEvent = __webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onMouseForceWillBegin = Symbol('onMouseForceWillBegin');
+const onMouseForceDown = Symbol('onMouseForceDown');
+const onMouseDown = Symbol('onMouseDown');
+const onMouseForceChange = Symbol('onMouseForceChange');
+const onMouseMove = Symbol('onMouseMove');
+const onMouseUp = Symbol('onMouseUp');
+const onMouseForceGlobalChange = Symbol('onMouseForceGlobalChange');
+
+/**
+ * This sensor picks up native force touch events and dictates drag operations
+ * @class ForceTouchSensor
+ * @module ForceTouchSensor
+ * @extends Sensor
+ */
+class ForceTouchSensor extends _Sensor2.default {
+  /**
+   * ForceTouchSensor constructor.
+   * @constructs ForceTouchSensor
+   * @param {HTMLElement[]|NodeList|HTMLElement} containers - Containers
+   * @param {Object} options - Options
+   */
+  constructor(containers = [], options = {}) {
+    super(containers, options);
+
+    /**
+     * Draggable element needs to be remembered to unset the draggable attribute after drag operation has completed
+     * @property mightDrag
+     * @type {Boolean}
+     */
+    this.mightDrag = false;
+
+    this[onMouseForceWillBegin] = this[onMouseForceWillBegin].bind(this);
+    this[onMouseForceDown] = this[onMouseForceDown].bind(this);
+    this[onMouseDown] = this[onMouseDown].bind(this);
+    this[onMouseForceChange] = this[onMouseForceChange].bind(this);
+    this[onMouseMove] = this[onMouseMove].bind(this);
+    this[onMouseUp] = this[onMouseUp].bind(this);
+  }
+
+  /**
+   * Attaches sensors event listeners to the DOM
+   */
+  attach() {
+    for (const container of this.containers) {
+      container.addEventListener('webkitmouseforcewillbegin', this[onMouseForceWillBegin], false);
+      container.addEventListener('webkitmouseforcedown', this[onMouseForceDown], false);
+      container.addEventListener('mousedown', this[onMouseDown], true);
+      container.addEventListener('webkitmouseforcechanged', this[onMouseForceChange], false);
+    }
+
+    document.addEventListener('mousemove', this[onMouseMove]);
+    document.addEventListener('mouseup', this[onMouseUp]);
+  }
+
+  /**
+   * Detaches sensors event listeners to the DOM
+   */
+  detach() {
+    for (const container of this.containers) {
+      container.removeEventListener('webkitmouseforcewillbegin', this[onMouseForceWillBegin], false);
+      container.removeEventListener('webkitmouseforcedown', this[onMouseForceDown], false);
+      container.removeEventListener('mousedown', this[onMouseDown], true);
+      container.removeEventListener('webkitmouseforcechanged', this[onMouseForceChange], false);
+    }
+
+    document.removeEventListener('mousemove', this[onMouseMove]);
+    document.removeEventListener('mouseup', this[onMouseUp]);
+  }
+
+  /**
+   * Mouse force will begin handler
+   * @private
+   * @param {Event} event - Mouse force will begin event
+   */
+  [onMouseForceWillBegin](event) {
+    event.preventDefault();
+    this.mightDrag = true;
+  }
+
+  /**
+   * Mouse force down handler
+   * @private
+   * @param {Event} event - Mouse force down event
+   */
+  [onMouseForceDown](event) {
+    if (this.dragging) {
+      return;
+    }
+
+    const target = document.elementFromPoint(event.clientX, event.clientY);
+    const container = event.currentTarget;
+
+    const dragStartEvent = new _SensorEvent.DragStartSensorEvent({
+      clientX: event.clientX,
+      clientY: event.clientY,
+      target,
+      container,
+      originalEvent: event
+    });
+
+    this.trigger(container, dragStartEvent);
+
+    this.currentContainer = container;
+    this.dragging = !dragStartEvent.canceled();
+    this.mightDrag = false;
+  }
+
+  /**
+   * Mouse up handler
+   * @private
+   * @param {Event} event - Mouse up event
+   */
+  [onMouseUp](event) {
+    if (!this.dragging) {
+      return;
+    }
+
+    const dragStopEvent = new _SensorEvent.DragStopSensorEvent({
+      clientX: event.clientX,
+      clientY: event.clientY,
+      target: null,
+      container: this.currentContainer,
+      originalEvent: event
+    });
+
+    this.trigger(this.currentContainer, dragStopEvent);
+
+    this.currentContainer = null;
+    this.dragging = false;
+    this.mightDrag = false;
+  }
+
+  /**
+   * Mouse down handler
+   * @private
+   * @param {Event} event - Mouse down event
+   */
+  [onMouseDown](event) {
+    if (!this.mightDrag) {
+      return;
+    }
+
+    // Need workaround for real click
+    // Cancel potential drag events
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    event.preventDefault();
+  }
+
+  /**
+   * Mouse move handler
+   * @private
+   * @param {Event} event - Mouse force will begin event
+   */
+  [onMouseMove](event) {
+    if (!this.dragging) {
+      return;
+    }
+
+    const target = document.elementFromPoint(event.clientX, event.clientY);
+
+    const dragMoveEvent = new _SensorEvent.DragMoveSensorEvent({
+      clientX: event.clientX,
+      clientY: event.clientY,
+      target,
+      container: this.currentContainer,
+      originalEvent: event
+    });
+
+    this.trigger(this.currentContainer, dragMoveEvent);
+  }
+
+  /**
+   * Mouse force change handler
+   * @private
+   * @param {Event} event - Mouse force change event
+   */
+  [onMouseForceChange](event) {
+    if (this.dragging) {
+      return;
+    }
+
+    const target = event.target;
+    const container = event.currentTarget;
+
+    const dragPressureEvent = new _SensorEvent.DragPressureSensorEvent({
+      pressure: event.webkitForce,
+      clientX: event.clientX,
+      clientY: event.clientY,
+      target,
+      container,
+      originalEvent: event
+    });
+
+    this.trigger(container, dragPressureEvent);
+  }
+
+  /**
+   * Mouse force global change handler
+   * @private
+   * @param {Event} event - Mouse force global change event
+   */
+  [onMouseForceGlobalChange](event) {
+    if (!this.dragging) {
+      return;
+    }
+
+    const target = event.target;
+
+    const dragPressureEvent = new _SensorEvent.DragPressureSensorEvent({
+      pressure: event.webkitForce,
+      clientX: event.clientX,
+      clientY: event.clientY,
+      target,
+      container: this.currentContainer,
+      originalEvent: event
+    });
+
+    this.trigger(this.currentContainer, dragPressureEvent);
+  }
+}
+exports.default = ForceTouchSensor;
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ForceTouchSensor = __webpack_require__(38);
+
+var _ForceTouchSensor2 = _interopRequireDefault(_ForceTouchSensor);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _ForceTouchSensor2.default;
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _utils = __webpack_require__(2);
+
+var _Sensor = __webpack_require__(4);
+
+var _Sensor2 = _interopRequireDefault(_Sensor);
+
+var _SensorEvent = __webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onMouseDown = Symbol('onMouseDown');
+const onMouseUp = Symbol('onMouseUp');
+const onDragStart = Symbol('onDragStart');
+const onDragOver = Symbol('onDragOver');
+const onDragEnd = Symbol('onDragEnd');
+const onDrop = Symbol('onDrop');
+const reset = Symbol('reset');
+
+/**
+ * This sensor picks up native browser drag events and dictates drag operations
+ * @class DragSensor
+ * @module DragSensor
+ * @extends Sensor
+ */
+class DragSensor extends _Sensor2.default {
+  /**
+   * DragSensor constructor.
+   * @constructs DragSensor
+   * @param {HTMLElement[]|NodeList|HTMLElement} containers - Containers
+   * @param {Object} options - Options
+   */
+  constructor(containers = [], options = {}) {
+    super(containers, options);
+
+    /**
+     * Mouse down timer which will end up setting the draggable attribute, unless canceled
+     * @property mouseDownTimeout
+     * @type {Number}
+     */
+    this.mouseDownTimeout = null;
+
+    /**
+     * Draggable element needs to be remembered to unset the draggable attribute after drag operation has completed
+     * @property draggableElement
+     * @type {HTMLElement}
+     */
+    this.draggableElement = null;
+
+    /**
+     * Native draggable element could be links or images, their draggable state will be disabled during drag operation
+     * @property nativeDraggableElement
+     * @type {HTMLElement}
+     */
+    this.nativeDraggableElement = null;
+
+    this[onMouseDown] = this[onMouseDown].bind(this);
+    this[onMouseUp] = this[onMouseUp].bind(this);
+    this[onDragStart] = this[onDragStart].bind(this);
+    this[onDragOver] = this[onDragOver].bind(this);
+    this[onDragEnd] = this[onDragEnd].bind(this);
+    this[onDrop] = this[onDrop].bind(this);
+  }
+
+  /**
+   * Attaches sensors event listeners to the DOM
+   */
+  attach() {
+    document.addEventListener('mousedown', this[onMouseDown], true);
+  }
+
+  /**
+   * Detaches sensors event listeners to the DOM
+   */
+  detach() {
+    document.removeEventListener('mousedown', this[onMouseDown], true);
+  }
+
+  /**
+   * Drag start handler
+   * @private
+   * @param {Event} event - Drag start event
+   */
+  [onDragStart](event) {
+    // Need for firefox. "text" key is needed for IE
+    event.dataTransfer.setData('text', '');
+    event.dataTransfer.effectAllowed = this.options.type;
+
+    const target = document.elementFromPoint(event.clientX, event.clientY);
+    this.currentContainer = (0, _utils.closest)(event.target, this.containers);
+
+    if (!this.currentContainer) {
+      return;
+    }
+
+    const dragStartEvent = new _SensorEvent.DragStartSensorEvent({
+      clientX: event.clientX,
+      clientY: event.clientY,
+      target,
+      container: this.currentContainer,
+      originalEvent: event
+    });
+
+    // Workaround
+    setTimeout(() => {
+      this.trigger(this.currentContainer, dragStartEvent);
+
+      if (dragStartEvent.canceled()) {
+        this.dragging = false;
+      } else {
+        this.dragging = true;
+      }
+    }, 0);
+  }
+
+  /**
+   * Drag over handler
+   * @private
+   * @param {Event} event - Drag over event
+   */
+  [onDragOver](event) {
+    if (!this.dragging) {
+      return;
+    }
+
+    const target = document.elementFromPoint(event.clientX, event.clientY);
+    const container = this.currentContainer;
+
+    const dragMoveEvent = new _SensorEvent.DragMoveSensorEvent({
+      clientX: event.clientX,
+      clientY: event.clientY,
+      target,
+      container,
+      originalEvent: event
+    });
+
+    this.trigger(container, dragMoveEvent);
+
+    if (!dragMoveEvent.canceled()) {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = this.options.type;
+    }
+  }
+
+  /**
+   * Drag end handler
+   * @private
+   * @param {Event} event - Drag end event
+   */
+  [onDragEnd](event) {
+    if (!this.dragging) {
+      return;
+    }
+
+    document.removeEventListener('mouseup', this[onMouseUp], true);
+
+    const target = document.elementFromPoint(event.clientX, event.clientY);
+    const container = this.currentContainer;
+
+    const dragStopEvent = new _SensorEvent.DragStopSensorEvent({
+      clientX: event.clientX,
+      clientY: event.clientY,
+      target,
+      container,
+      originalEvent: event
+    });
+
+    this.trigger(container, dragStopEvent);
+
+    this.dragging = false;
+
+    this[reset]();
+  }
+
+  /**
+   * Drop handler
+   * @private
+   * @param {Event} event - Drop event
+   */
+  [onDrop](event) {
+    // eslint-disable-line class-methods-use-this
+    event.preventDefault();
+  }
+
+  /**
+   * Mouse down handler
+   * @private
+   * @param {Event} event - Mouse down event
+   */
+  [onMouseDown](event) {
+    // Firefox bug for inputs within draggables https://bugzilla.mozilla.org/show_bug.cgi?id=739071
+    if (event.target && (event.target.form || event.target.contenteditable)) {
+      return;
+    }
+
+    const nativeDraggableElement = (0, _utils.closest)(event.target, element => element.draggable);
+
+    if (nativeDraggableElement) {
+      nativeDraggableElement.draggable = false;
+      this.nativeDraggableElement = nativeDraggableElement;
+    }
+
+    document.addEventListener('mouseup', this[onMouseUp], true);
+    document.addEventListener('dragstart', this[onDragStart], false);
+    document.addEventListener('dragover', this[onDragOver], false);
+    document.addEventListener('dragend', this[onDragEnd], false);
+    document.addEventListener('drop', this[onDrop], false);
+
+    const target = (0, _utils.closest)(event.target, this.options.draggable);
+
+    if (!target) {
+      return;
+    }
+
+    this.mouseDownTimeout = setTimeout(() => {
+      target.draggable = true;
+      this.draggableElement = target;
+    }, this.options.delay);
+  }
+
+  /**
+   * Mouse up handler
+   * @private
+   * @param {Event} event - Mouse up event
+   */
+  [onMouseUp]() {
+    this[reset]();
+  }
+
+  /**
+   * Mouse up handler
+   * @private
+   * @param {Event} event - Mouse up event
+   */
+  [reset]() {
+    clearTimeout(this.mouseDownTimeout);
+
+    document.removeEventListener('mouseup', this[onMouseUp], true);
+    document.removeEventListener('dragstart', this[onDragStart], false);
+    document.removeEventListener('dragover', this[onDragOver], false);
+    document.removeEventListener('dragend', this[onDragEnd], false);
+    document.removeEventListener('drop', this[onDrop], false);
+
+    if (this.nativeDraggableElement) {
+      this.nativeDraggableElement.draggable = true;
+      this.nativeDraggableElement = null;
+    }
+
+    if (this.draggableElement) {
+      this.draggableElement.draggable = false;
+      this.draggableElement = null;
+    }
+  }
+}
+exports.default = DragSensor;
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _DragSensor = __webpack_require__(40);
+
+var _DragSensor2 = _interopRequireDefault(_DragSensor);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _DragSensor2.default;
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _utils = __webpack_require__(2);
+
+var _Sensor = __webpack_require__(4);
+
+var _Sensor2 = _interopRequireDefault(_Sensor);
+
+var _SensorEvent = __webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onTouchStart = Symbol('onTouchStart');
+const onTouchHold = Symbol('onTouchHold');
+const onTouchEnd = Symbol('onTouchEnd');
+const onTouchMove = Symbol('onTouchMove');
+
+/**
+ * Prevents scrolling when set to true
+ * @var {Boolean} preventScrolling
+ */
+let preventScrolling = false;
+
+// WebKit requires cancelable `touchmove` events to be added as early as possible
+window.addEventListener('touchmove', event => {
+  if (!preventScrolling) {
+    return;
+  }
+
+  // Prevent scrolling
+  event.preventDefault();
+}, { passive: false });
+
+/**
+ * This sensor picks up native browser touch events and dictates drag operations
+ * @class TouchSensor
+ * @module TouchSensor
+ * @extends Sensor
+ */
+class TouchSensor extends _Sensor2.default {
+  /**
+   * TouchSensor constructor.
+   * @constructs TouchSensor
+   * @param {HTMLElement[]|NodeList|HTMLElement} containers - Containers
+   * @param {Object} options - Options
+   */
+  constructor(containers = [], options = {}) {
+    super(containers, options);
+
+    /**
+     * Closest scrollable container so accidental scroll can cancel long touch
+     * @property currentScrollableParent
+     * @type {HTMLElement}
+     */
+    this.currentScrollableParent = null;
+
+    /**
+     * TimeoutID for long touch
+     * @property tapTimeout
+     * @type {Number}
+     */
+    this.tapTimeout = null;
+
+    /**
+     * touchMoved indicates if touch has moved during tapTimeout
+     * @property touchMoved
+     * @type {Boolean}
+     */
+    this.touchMoved = false;
+
+    this[onTouchStart] = this[onTouchStart].bind(this);
+    this[onTouchHold] = this[onTouchHold].bind(this);
+    this[onTouchEnd] = this[onTouchEnd].bind(this);
+    this[onTouchMove] = this[onTouchMove].bind(this);
+  }
+
+  /**
+   * Attaches sensors event listeners to the DOM
+   */
+  attach() {
+    document.addEventListener('touchstart', this[onTouchStart]);
+  }
+
+  /**
+   * Detaches sensors event listeners to the DOM
+   */
+  detach() {
+    document.removeEventListener('touchstart', this[onTouchStart]);
+  }
+
+  /**
+   * Touch start handler
+   * @private
+   * @param {Event} event - Touch start event
+   */
+  [onTouchStart](event) {
+    const container = (0, _utils.closest)(event.target, this.containers);
+
+    if (!container) {
+      return;
+    }
+
+    document.addEventListener('touchmove', this[onTouchMove]);
+    document.addEventListener('touchend', this[onTouchEnd]);
+    document.addEventListener('touchcancel', this[onTouchEnd]);
+    container.addEventListener('contextmenu', onContextMenu);
+
+    this.currentContainer = container;
+    this.tapTimeout = setTimeout(this[onTouchHold](event, container), this.options.delay);
+  }
+
+  /**
+   * Touch hold handler
+   * @private
+   * @param {Event} event - Touch start event
+   * @param {HTMLElement} container - Container element
+   */
+  [onTouchHold](event, container) {
+    return () => {
+      if (this.touchMoved) {
+        return;
+      }
+
+      const touch = event.touches[0] || event.changedTouches[0];
+      const target = event.target;
+
+      const dragStartEvent = new _SensorEvent.DragStartSensorEvent({
+        clientX: touch.pageX,
+        clientY: touch.pageY,
+        target,
+        container,
+        originalEvent: event
+      });
+
+      this.trigger(container, dragStartEvent);
+
+      this.dragging = !dragStartEvent.canceled();
+      preventScrolling = this.dragging;
+    };
+  }
+
+  /**
+   * Touch move handler
+   * @private
+   * @param {Event} event - Touch move event
+   */
+  [onTouchMove](event) {
+    this.touchMoved = true;
+
+    if (!this.dragging) {
+      return;
+    }
+
+    const touch = event.touches[0] || event.changedTouches[0];
+    const target = document.elementFromPoint(touch.pageX - window.scrollX, touch.pageY - window.scrollY);
+
+    const dragMoveEvent = new _SensorEvent.DragMoveSensorEvent({
+      clientX: touch.pageX,
+      clientY: touch.pageY,
+      target,
+      container: this.currentContainer,
+      originalEvent: event
+    });
+
+    this.trigger(this.currentContainer, dragMoveEvent);
+  }
+
+  /**
+   * Touch end handler
+   * @private
+   * @param {Event} event - Touch end event
+   */
+  [onTouchEnd](event) {
+    this.touchMoved = false;
+    preventScrolling = false;
+
+    document.removeEventListener('touchend', this[onTouchEnd]);
+    document.removeEventListener('touchcancel', this[onTouchEnd]);
+    document.removeEventListener('touchmove', this[onTouchMove]);
+
+    if (this.currentContainer) {
+      this.currentContainer.removeEventListener('contextmenu', onContextMenu);
+    }
+
+    clearTimeout(this.tapTimeout);
+
+    if (!this.dragging) {
+      return;
+    }
+
+    const touch = event.touches[0] || event.changedTouches[0];
+    const target = document.elementFromPoint(touch.pageX - window.scrollX, touch.pageY - window.scrollY);
+
+    event.preventDefault();
+
+    const dragStopEvent = new _SensorEvent.DragStopSensorEvent({
+      clientX: touch.pageX,
+      clientY: touch.pageY,
+      target,
+      container: this.currentContainer,
+      originalEvent: event
+    });
+
+    this.trigger(this.currentContainer, dragStopEvent);
+
+    this.currentContainer = null;
+    this.dragging = false;
+  }
+}
+
+exports.default = TouchSensor;
+function onContextMenu(event) {
+  event.preventDefault();
+  event.stopPropagation();
+}
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _TouchSensor = __webpack_require__(42);
+
+var _TouchSensor2 = _interopRequireDefault(_TouchSensor);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _TouchSensor2.default;
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DragPressureSensorEvent = exports.DragStopSensorEvent = exports.DragMoveSensorEvent = exports.DragStartSensorEvent = exports.SensorEvent = undefined;
+
+var _AbstractEvent = __webpack_require__(0);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Base sensor event
+ * @class SensorEvent
+ * @module SensorEvent
+ * @extends AbstractEvent
+ */
+class SensorEvent extends _AbstractEvent2.default {
+  /**
+   * Original browser event that triggered a sensor
+   * @property originalEvent
+   * @type {Event}
+   * @readonly
+   */
+  get originalEvent() {
+    return this.data.originalEvent;
+  }
+
+  /**
+   * Normalized clientX for both touch and mouse events
+   * @property clientX
+   * @type {Number}
+   * @readonly
+   */
+  get clientX() {
+    return this.data.clientX;
+  }
+
+  /**
+   * Normalized clientY for both touch and mouse events
+   * @property clientY
+   * @type {Number}
+   * @readonly
+   */
+  get clientY() {
+    return this.data.clientY;
+  }
+
+  /**
+   * Normalized target for both touch and mouse events
+   * Returns the element that is behind cursor or touch pointer
+   * @property target
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get target() {
+    return this.data.target;
+  }
+
+  /**
+   * Container that initiated the sensor
+   * @property container
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get container() {
+    return this.data.container;
+  }
+
+  /**
+   * Trackpad pressure
+   * @property pressure
+   * @type {Number}
+   * @readonly
+   */
+  get pressure() {
+    return this.data.pressure;
+  }
+}
+
+exports.SensorEvent = SensorEvent; /**
+                                    * Drag start sensor event
+                                    * @class DragStartSensorEvent
+                                    * @module DragStartSensorEvent
+                                    * @extends SensorEvent
+                                    */
+
+class DragStartSensorEvent extends SensorEvent {}
+
+exports.DragStartSensorEvent = DragStartSensorEvent; /**
+                                                      * Drag move sensor event
+                                                      * @class DragMoveSensorEvent
+                                                      * @module DragMoveSensorEvent
+                                                      * @extends SensorEvent
+                                                      */
+
+DragStartSensorEvent.type = 'drag:start';
+class DragMoveSensorEvent extends SensorEvent {}
+
+exports.DragMoveSensorEvent = DragMoveSensorEvent; /**
+                                                    * Drag stop sensor event
+                                                    * @class DragStopSensorEvent
+                                                    * @module DragStopSensorEvent
+                                                    * @extends SensorEvent
+                                                    */
+
+DragMoveSensorEvent.type = 'drag:move';
+class DragStopSensorEvent extends SensorEvent {}
+
+exports.DragStopSensorEvent = DragStopSensorEvent; /**
+                                                    * Drag pressure sensor event
+                                                    * @class DragPressureSensorEvent
+                                                    * @module DragPressureSensorEvent
+                                                    * @extends SensorEvent
+                                                    */
+
+DragStopSensorEvent.type = 'drag:stop';
+class DragPressureSensorEvent extends SensorEvent {}
+exports.DragPressureSensorEvent = DragPressureSensorEvent;
+DragPressureSensorEvent.type = 'drag:pressure';
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _utils = __webpack_require__(2);
+
+var _Sensor = __webpack_require__(4);
+
+var _Sensor2 = _interopRequireDefault(_Sensor);
+
+var _SensorEvent = __webpack_require__(3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onContextMenuWhileDragging = Symbol('onContextMenuWhileDragging');
+const onMouseDown = Symbol('onMouseDown');
+const onMouseMove = Symbol('onMouseMove');
+const onMouseUp = Symbol('onMouseUp');
+
+/**
+ * This sensor picks up native browser mouse events and dictates drag operations
+ * @class MouseSensor
+ * @module MouseSensor
+ * @extends Sensor
+ */
+class MouseSensor extends _Sensor2.default {
+  /**
+   * MouseSensor constructor.
+   * @constructs MouseSensor
+   * @param {HTMLElement[]|NodeList|HTMLElement} containers - Containers
+   * @param {Object} options - Options
+   */
+  constructor(containers = [], options = {}) {
+    super(containers, options);
+
+    /**
+     * Indicates if mouse button is still down
+     * @property mouseDown
+     * @type {Boolean}
+     */
+    this.mouseDown = false;
+
+    /**
+     * Mouse down timer which will end up triggering the drag start operation
+     * @property mouseDownTimeout
+     * @type {Number}
+     */
+    this.mouseDownTimeout = null;
+
+    /**
+     * Indicates if context menu has been opened during drag operation
+     * @property openedContextMenu
+     * @type {Boolean}
+     */
+    this.openedContextMenu = false;
+
+    this[onContextMenuWhileDragging] = this[onContextMenuWhileDragging].bind(this);
+    this[onMouseDown] = this[onMouseDown].bind(this);
+    this[onMouseMove] = this[onMouseMove].bind(this);
+    this[onMouseUp] = this[onMouseUp].bind(this);
+  }
+
+  /**
+   * Attaches sensors event listeners to the DOM
+   */
+  attach() {
+    document.addEventListener('mousedown', this[onMouseDown], true);
+  }
+
+  /**
+   * Detaches sensors event listeners to the DOM
+   */
+  detach() {
+    document.removeEventListener('mousedown', this[onMouseDown], true);
+  }
+
+  /**
+   * Mouse down handler
+   * @private
+   * @param {Event} event - Mouse down event
+   */
+  [onMouseDown](event) {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey) {
+      return;
+    }
+
+    document.addEventListener('mouseup', this[onMouseUp]);
+
+    const target = document.elementFromPoint(event.clientX, event.clientY);
+    const container = (0, _utils.closest)(target, this.containers);
+
+    if (!container) {
+      return;
+    }
+
+    document.addEventListener('dragstart', preventNativeDragStart);
+
+    this.mouseDown = true;
+
+    clearTimeout(this.mouseDownTimeout);
+    this.mouseDownTimeout = setTimeout(() => {
+      if (!this.mouseDown) {
+        return;
+      }
+
+      const dragStartEvent = new _SensorEvent.DragStartSensorEvent({
+        clientX: event.clientX,
+        clientY: event.clientY,
+        target,
+        container,
+        originalEvent: event
+      });
+
+      this.trigger(container, dragStartEvent);
+
+      this.currentContainer = container;
+      this.dragging = !dragStartEvent.canceled();
+
+      if (this.dragging) {
+        document.addEventListener('contextmenu', this[onContextMenuWhileDragging]);
+        document.addEventListener('mousemove', this[onMouseMove]);
+      }
+    }, this.options.delay);
+  }
+
+  /**
+   * Mouse move handler
+   * @private
+   * @param {Event} event - Mouse move event
+   */
+  [onMouseMove](event) {
+    if (!this.dragging) {
+      return;
+    }
+
+    const target = document.elementFromPoint(event.clientX, event.clientY);
+
+    const dragMoveEvent = new _SensorEvent.DragMoveSensorEvent({
+      clientX: event.clientX,
+      clientY: event.clientY,
+      target,
+      container: this.currentContainer,
+      originalEvent: event
+    });
+
+    this.trigger(this.currentContainer, dragMoveEvent);
+  }
+
+  /**
+   * Mouse up handler
+   * @private
+   * @param {Event} event - Mouse up event
+   */
+  [onMouseUp](event) {
+    this.mouseDown = Boolean(this.openedContextMenu);
+
+    if (this.openedContextMenu) {
+      this.openedContextMenu = false;
+      return;
+    }
+
+    document.removeEventListener('mouseup', this[onMouseUp]);
+    document.removeEventListener('dragstart', preventNativeDragStart);
+
+    if (!this.dragging) {
+      return;
+    }
+
+    const target = document.elementFromPoint(event.clientX, event.clientY);
+
+    const dragStopEvent = new _SensorEvent.DragStopSensorEvent({
+      clientX: event.clientX,
+      clientY: event.clientY,
+      target,
+      container: this.currentContainer,
+      originalEvent: event
+    });
+
+    this.trigger(this.currentContainer, dragStopEvent);
+
+    document.removeEventListener('contextmenu', this[onContextMenuWhileDragging]);
+    document.removeEventListener('mousemove', this[onMouseMove]);
+
+    this.currentContainer = null;
+    this.dragging = false;
+  }
+
+  /**
+   * Context menu handler
+   * @private
+   * @param {Event} event - Context menu event
+   */
+  [onContextMenuWhileDragging](event) {
+    event.preventDefault();
+    this.openedContextMenu = true;
+  }
+}
+
+exports.default = MouseSensor;
+function preventNativeDragStart(event) {
+  event.preventDefault();
+}
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _MouseSensor = __webpack_require__(45);
+
+var _MouseSensor2 = _interopRequireDefault(_MouseSensor);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _MouseSensor2.default;
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+/**
+ * Base sensor class. Extend from this class to create a new or custom sensor
+ * @class Sensor
+ * @module Sensor
+ */
+class Sensor {
+  /**
+   * Sensor constructor.
+   * @constructs Sensor
+   * @param {HTMLElement[]|NodeList|HTMLElement} containers - Containers
+   * @param {Object} options - Options
+   */
+  constructor(containers = [], options = {}) {
+    /**
+     * Current containers
+     * @property containers
+     * @type {HTMLElement[]}
+     */
+    this.containers = [...containers];
+
+    /**
+     * Current options
+     * @property options
+     * @type {Object}
+     */
+    this.options = _extends({}, options);
+
+    /**
+     * Current drag state
+     * @property dragging
+     * @type {Boolean}
+     */
+    this.dragging = false;
+
+    /**
+     * Current container
+     * @property currentContainer
+     * @type {HTMLElement}
+     */
+    this.currentContainer = null;
+  }
+
+  /**
+   * Attaches sensors event listeners to the DOM
+   * @return {Sensor}
+   */
+  attach() {
+    return this;
+  }
+
+  /**
+   * Detaches sensors event listeners to the DOM
+   * @return {Sensor}
+   */
+  detach() {
+    return this;
+  }
+
+  /**
+   * Adds container to this sensor instance
+   * @param {...HTMLElement} containers - Containers you want to add to this sensor
+   * @example draggable.addContainer(document.body)
+   */
+  addContainer(...containers) {
+    this.containers = [...this.containers, ...containers];
+  }
+
+  /**
+   * Removes container from this sensor instance
+   * @param {...HTMLElement} containers - Containers you want to remove from this sensor
+   * @example draggable.removeContainer(document.body)
+   */
+  removeContainer(...containers) {
+    this.containers = this.containers.filter(container => !containers.includes(container));
+  }
+
+  /**
+   * Triggers event on target element
+   * @param {HTMLElement} element - Element to trigger event on
+   * @param {SensorEvent} sensorEvent - Sensor event to trigger
+   */
+  trigger(element, sensorEvent) {
+    const event = document.createEvent('Event');
+    event.detail = sensorEvent;
+    event.initEvent(sensorEvent.type, true, true);
+    element.dispatchEvent(event);
+    this.lastEvent = sensorEvent;
+
+    return sensorEvent;
+  }
+}
+exports.default = Sensor;
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = requestNextAnimationFrame;
+function requestNextAnimationFrame(callback) {
+  return requestAnimationFrame(() => {
+    requestAnimationFrame(callback);
+  });
+}
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _requestNextAnimationFrame = __webpack_require__(48);
+
+var _requestNextAnimationFrame2 = _interopRequireDefault(_requestNextAnimationFrame);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _requestNextAnimationFrame2.default;
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = closest;
+const matchFunction = Element.prototype.matches || Element.prototype.webkitMatchesSelector || Element.prototype.mozMatchesSelector || Element.prototype.msMatchesSelector;
+
+/**
+ * Get the closest parent element of a given element that matches the given
+ * selector string or matching function
+ *
+ * @param {Element} element The child element to find a parent of
+ * @param {String|Function} selector The string or function to use to match
+ *     the parent element
+ * @return {Element|null}
+ */
+function closest(element, value) {
+  if (!element) {
+    return null;
+  }
+
+  const selector = value;
+  const callback = value;
+  const nodeList = value;
+  const singleElement = value;
+
+  const isSelector = Boolean(typeof value === 'string');
+  const isFunction = Boolean(typeof value === 'function');
+  const isNodeList = Boolean(value instanceof NodeList || value instanceof Array);
+  const isElement = Boolean(value instanceof HTMLElement);
+
+  function conditionFn(currentElement) {
+    if (!currentElement) {
+      return currentElement;
+    } else if (isSelector) {
+      return matchFunction.call(currentElement, selector);
+    } else if (isNodeList) {
+      return [...nodeList].includes(currentElement);
+    } else if (isElement) {
+      return singleElement === currentElement;
+    } else if (isFunction) {
+      return callback(currentElement);
+    } else {
+      return null;
+    }
+  }
+
+  let current = element;
+
+  do {
+    current = current.correspondingUseElement || current.correspondingElement || current;
+
+    if (conditionFn(current)) {
+      return current;
+    }
+
+    current = current.parentNode;
+  } while (current && current !== document.body && current !== document);
+
+  return null;
+}
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _closest = __webpack_require__(50);
+
+var _closest2 = _interopRequireDefault(_closest);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _closest2.default;
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = exports.scroll = exports.onDragStop = exports.onDragMove = exports.onDragStart = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _AbstractPlugin = __webpack_require__(1);
+
+var _AbstractPlugin2 = _interopRequireDefault(_AbstractPlugin);
+
+var _utils = __webpack_require__(2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onDragStart = exports.onDragStart = Symbol('onDragStart');
+const onDragMove = exports.onDragMove = Symbol('onDragMove');
+const onDragStop = exports.onDragStop = Symbol('onDragStop');
+const scroll = exports.scroll = Symbol('scroll');
+
+/**
+ * Scrollable default options
+ * @property {Object} defaultOptions
+ * @property {Number} defaultOptions.speed
+ * @property {Number} defaultOptions.sensitivity
+ * @property {HTMLElement[]} defaultOptions.scrollableElements
+ * @type {Object}
+ */
+const defaultOptions = exports.defaultOptions = {
+  speed: 6,
+  sensitivity: 50,
+  scrollableElements: []
+};
+
+/**
+ * Scrollable plugin which scrolls the closest scrollable parent
+ * @class Scrollable
+ * @module Scrollable
+ * @extends AbstractPlugin
+ */
+class Scrollable extends _AbstractPlugin2.default {
+  /**
+   * Scrollable constructor.
+   * @constructs Scrollable
+   * @param {Draggable} draggable - Draggable instance
+   */
+  constructor(draggable) {
+    super(draggable);
+
+    /**
+     * Scrollable options
+     * @property {Object} options
+     * @property {Number} options.speed
+     * @property {Number} options.sensitivity
+     * @property {HTMLElement[]} options.scrollableElements
+     * @type {Object}
+     */
+    this.options = _extends({}, defaultOptions, this.getOptions());
+
+    /**
+     * Keeps current mouse position
+     * @property {Object} currentMousePosition
+     * @property {Number} currentMousePosition.clientX
+     * @property {Number} currentMousePosition.clientY
+     * @type {Object|null}
+     */
+    this.currentMousePosition = null;
+
+    /**
+     * Scroll animation frame
+     * @property scrollAnimationFrame
+     * @type {Number|null}
+     */
+    this.scrollAnimationFrame = null;
+
+    /**
+     * Closest scrollable element
+     * @property scrollableElement
+     * @type {HTMLElement|null}
+     */
+    this.scrollableElement = null;
+
+    /**
+     * Animation frame looking for the closest scrollable element
+     * @property findScrollableElementFrame
+     * @type {Number|null}
+     */
+    this.findScrollableElementFrame = null;
+
+    this[onDragStart] = this[onDragStart].bind(this);
+    this[onDragMove] = this[onDragMove].bind(this);
+    this[onDragStop] = this[onDragStop].bind(this);
+    this[scroll] = this[scroll].bind(this);
+  }
+
+  /**
+   * Attaches plugins event listeners
+   */
+  attach() {
+    this.draggable.on('drag:start', this[onDragStart]).on('drag:move', this[onDragMove]).on('drag:stop', this[onDragStop]);
+  }
+
+  /**
+   * Detaches plugins event listeners
+   */
+  detach() {
+    this.draggable.off('drag:start', this[onDragStart]).off('drag:move', this[onDragMove]).off('drag:stop', this[onDragStop]);
+  }
+
+  /**
+   * Returns options passed through draggable
+   * @return {Object}
+   */
+  getOptions() {
+    return this.draggable.options.scrollable || {};
+  }
+
+  /**
+   * Returns closest scrollable elements by element
+   * @param {HTMLElement} target
+   * @return {HTMLElement}
+   */
+  getScrollableElement(target) {
+    if (this.hasDefinedScrollableElements()) {
+      return (0, _utils.closest)(target, this.options.scrollableElements) || document.documentElement;
+    } else {
+      return closestScrollableElement(target);
+    }
+  }
+
+  /**
+   * Returns true if at least one scrollable element have been defined via options
+   * @param {HTMLElement} target
+   * @return {Boolean}
+   */
+  hasDefinedScrollableElements() {
+    return Boolean(this.options.scrollableElements.length !== 0);
+  }
+
+  /**
+   * Drag start handler. Finds closest scrollable parent in separate frame
+   * @param {DragStartEvent} dragEvent
+   * @private
+   */
+  [onDragStart](dragEvent) {
+    this.findScrollableElementFrame = requestAnimationFrame(() => {
+      this.scrollableElement = this.getScrollableElement(dragEvent.source);
+    });
+  }
+
+  /**
+   * Drag move handler. Remembers mouse position and initiates scrolling
+   * @param {DragMoveEvent} dragEvent
+   * @private
+   */
+  [onDragMove](dragEvent) {
+    this.findScrollableElementFrame = requestAnimationFrame(() => {
+      this.scrollableElement = this.getScrollableElement(dragEvent.sensorEvent.target);
+    });
+
+    if (!this.scrollableElement) {
+      return;
+    }
+
+    const sensorEvent = dragEvent.sensorEvent;
+    const scrollOffset = { x: 0, y: 0 };
+
+    if ('ontouchstart' in window) {
+      scrollOffset.y = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      scrollOffset.x = window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0;
+    }
+
+    this.currentMousePosition = {
+      clientX: sensorEvent.clientX - scrollOffset.x,
+      clientY: sensorEvent.clientY - scrollOffset.y
+    };
+
+    this.scrollAnimationFrame = requestAnimationFrame(this[scroll]);
+  }
+
+  /**
+   * Drag stop handler. Cancels scroll animations and resets state
+   * @private
+   */
+  [onDragStop]() {
+    cancelAnimationFrame(this.scrollAnimationFrame);
+    cancelAnimationFrame(this.findScrollableElementFrame);
+
+    this.scrollableElement = null;
+    this.scrollAnimationFrame = null;
+    this.findScrollableElementFrame = null;
+    this.currentMousePosition = null;
+  }
+
+  /**
+   * Scroll function that does the heavylifting
+   * @private
+   */
+  [scroll]() {
+    if (!this.scrollableElement || !this.currentMousePosition) {
+      return;
+    }
+
+    cancelAnimationFrame(this.scrollAnimationFrame);
+
+    const { speed, sensitivity } = this.options;
+
+    const rect = this.scrollableElement.getBoundingClientRect();
+    const bottomCutOff = rect.bottom > window.innerHeight;
+    const topCutOff = rect.top < 0;
+    const cutOff = topCutOff || bottomCutOff;
+
+    const documentScrollingElement = getDocumentScrollingElement();
+    const scrollableElement = this.scrollableElement;
+    const clientX = this.currentMousePosition.clientX;
+    const clientY = this.currentMousePosition.clientY;
+
+    if (scrollableElement !== document.body && scrollableElement !== document.documentElement && !cutOff) {
+      const { offsetHeight, offsetWidth } = scrollableElement;
+
+      if (rect.top + offsetHeight - clientY < sensitivity) {
+        scrollableElement.scrollTop += speed;
+      } else if (clientY - rect.top < sensitivity) {
+        scrollableElement.scrollTop -= speed;
+      }
+
+      if (rect.left + offsetWidth - clientX < sensitivity) {
+        scrollableElement.scrollLeft += speed;
+      } else if (clientX - rect.left < sensitivity) {
+        scrollableElement.scrollLeft -= speed;
+      }
+    } else {
+      const { innerHeight, innerWidth } = window;
+
+      if (clientY < sensitivity) {
+        documentScrollingElement.scrollTop -= speed;
+      } else if (innerHeight - clientY < sensitivity) {
+        documentScrollingElement.scrollTop += speed;
+      }
+
+      if (clientX < sensitivity) {
+        documentScrollingElement.scrollLeft -= speed;
+      } else if (innerWidth - clientX < sensitivity) {
+        documentScrollingElement.scrollLeft += speed;
+      }
+    }
+
+    this.scrollAnimationFrame = requestAnimationFrame(this[scroll]);
+  }
+}
+
+exports.default = Scrollable; /**
+                               * Returns true if the passed element has overflow
+                               * @param {HTMLElement} element
+                               * @return {Boolean}
+                               * @private
+                               */
+
+function hasOverflow(element) {
+  const overflowRegex = /(auto|scroll)/;
+  const computedStyles = getComputedStyle(element, null);
+
+  const overflow = computedStyles.getPropertyValue('overflow') + computedStyles.getPropertyValue('overflow-y') + computedStyles.getPropertyValue('overflow-x');
+
+  return overflowRegex.test(overflow);
+}
+
+/**
+ * Returns true if the passed element is statically positioned
+ * @param {HTMLElement} element
+ * @return {Boolean}
+ * @private
+ */
+function isStaticallyPositioned(element) {
+  const position = getComputedStyle(element).getPropertyValue('position');
+  return position === 'static';
+}
+
+/**
+ * Finds closest scrollable element
+ * @param {HTMLElement} element
+ * @return {HTMLElement}
+ * @private
+ */
+function closestScrollableElement(element) {
+  if (!element) {
+    return getDocumentScrollingElement();
+  }
+
+  const position = getComputedStyle(element).getPropertyValue('position');
+  const excludeStaticParents = position === 'absolute';
+
+  const scrollableElement = (0, _utils.closest)(element, parent => {
+    if (excludeStaticParents && isStaticallyPositioned(parent)) {
+      return false;
+    }
+    return hasOverflow(parent);
+  });
+
+  if (position === 'fixed' || !scrollableElement) {
+    return getDocumentScrollingElement();
+  } else {
+    return scrollableElement;
+  }
+}
+
+/**
+ * Returns element that scrolls document
+ * @return {HTMLElement}
+ * @private
+ */
+function getDocumentScrollingElement() {
+  return document.scrollingElement || document.documentElement;
+}
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = undefined;
+
+var _Scrollable = __webpack_require__(52);
+
+var _Scrollable2 = _interopRequireDefault(_Scrollable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Scrollable2.default;
+exports.defaultOptions = _Scrollable.defaultOptions;
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MirrorDestroyEvent = exports.MirrorMoveEvent = exports.MirrorAttachedEvent = exports.MirrorCreatedEvent = exports.MirrorCreateEvent = exports.MirrorEvent = undefined;
+
+var _AbstractEvent = __webpack_require__(0);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Base mirror event
+ * @class MirrorEvent
+ * @module MirrorEvent
+ * @extends AbstractEvent
+ */
+class MirrorEvent extends _AbstractEvent2.default {
+  /**
+   * Draggables source element
+   * @property source
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get source() {
+    return this.data.source;
+  }
+
+  /**
+   * Draggables original source element
+   * @property originalSource
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get originalSource() {
+    return this.data.originalSource;
+  }
+
+  /**
+   * Draggables source container element
+   * @property sourceContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get sourceContainer() {
+    return this.data.sourceContainer;
+  }
+
+  /**
+   * Sensor event
+   * @property sensorEvent
+   * @type {SensorEvent}
+   * @readonly
+   */
+  get sensorEvent() {
+    return this.data.sensorEvent;
+  }
+
+  /**
+   * Drag event
+   * @property dragEvent
+   * @type {DragEvent}
+   * @readonly
+   */
+  get dragEvent() {
+    return this.data.dragEvent;
+  }
+
+  /**
+   * Original event that triggered sensor event
+   * @property originalEvent
+   * @type {Event}
+   * @readonly
+   */
+  get originalEvent() {
+    if (this.sensorEvent) {
+      return this.sensorEvent.originalEvent;
+    }
+
+    return null;
+  }
+}
+
+exports.MirrorEvent = MirrorEvent; /**
+                                    * Mirror create event
+                                    * @class MirrorCreateEvent
+                                    * @module MirrorCreateEvent
+                                    * @extends MirrorEvent
+                                    */
+
+class MirrorCreateEvent extends MirrorEvent {}
+
+exports.MirrorCreateEvent = MirrorCreateEvent; /**
+                                                * Mirror created event
+                                                * @class MirrorCreatedEvent
+                                                * @module MirrorCreatedEvent
+                                                * @extends MirrorEvent
+                                                */
+
+MirrorCreateEvent.type = 'mirror:create';
+class MirrorCreatedEvent extends MirrorEvent {
+
+  /**
+   * Draggables mirror element
+   * @property mirror
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get mirror() {
+    return this.data.mirror;
+  }
+}
+
+exports.MirrorCreatedEvent = MirrorCreatedEvent; /**
+                                                  * Mirror attached event
+                                                  * @class MirrorAttachedEvent
+                                                  * @module MirrorAttachedEvent
+                                                  * @extends MirrorEvent
+                                                  */
+
+MirrorCreatedEvent.type = 'mirror:created';
+class MirrorAttachedEvent extends MirrorEvent {
+
+  /**
+   * Draggables mirror element
+   * @property mirror
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get mirror() {
+    return this.data.mirror;
+  }
+}
+
+exports.MirrorAttachedEvent = MirrorAttachedEvent; /**
+                                                    * Mirror move event
+                                                    * @class MirrorMoveEvent
+                                                    * @module MirrorMoveEvent
+                                                    * @extends MirrorEvent
+                                                    */
+
+MirrorAttachedEvent.type = 'mirror:attached';
+class MirrorMoveEvent extends MirrorEvent {
+
+  /**
+   * Draggables mirror element
+   * @property mirror
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get mirror() {
+    return this.data.mirror;
+  }
+}
+
+exports.MirrorMoveEvent = MirrorMoveEvent; /**
+                                            * Mirror destroy event
+                                            * @class MirrorDestroyEvent
+                                            * @module MirrorDestroyEvent
+                                            * @extends MirrorEvent
+                                            */
+
+MirrorMoveEvent.type = 'mirror:move';
+MirrorMoveEvent.cancelable = true;
+class MirrorDestroyEvent extends MirrorEvent {
+
+  /**
+   * Draggables mirror element
+   * @property mirror
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get mirror() {
+    return this.data.mirror;
+  }
+}
+exports.MirrorDestroyEvent = MirrorDestroyEvent;
+MirrorDestroyEvent.type = 'mirror:destroy';
+MirrorDestroyEvent.cancelable = true;
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _MirrorEvent = __webpack_require__(54);
+
+Object.keys(_MirrorEvent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _MirrorEvent[key];
+    }
+  });
+});
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = exports.getAppendableContainer = exports.onScroll = exports.onMirrorMove = exports.onMirrorCreated = exports.onDragStop = exports.onDragMove = exports.onDragStart = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _AbstractPlugin = __webpack_require__(1);
+
+var _AbstractPlugin2 = _interopRequireDefault(_AbstractPlugin);
+
+var _MirrorEvent = __webpack_require__(55);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+const onDragStart = exports.onDragStart = Symbol('onDragStart');
+const onDragMove = exports.onDragMove = Symbol('onDragMove');
+const onDragStop = exports.onDragStop = Symbol('onDragStop');
+const onMirrorCreated = exports.onMirrorCreated = Symbol('onMirrorCreated');
+const onMirrorMove = exports.onMirrorMove = Symbol('onMirrorMove');
+const onScroll = exports.onScroll = Symbol('onScroll');
+const getAppendableContainer = exports.getAppendableContainer = Symbol('getAppendableContainer');
+
+/**
+ * Mirror default options
+ * @property {Object} defaultOptions
+ * @property {Boolean} defaultOptions.constrainDimensions
+ * @property {Boolean} defaultOptions.xAxis
+ * @property {Boolean} defaultOptions.yAxis
+ * @property {null} defaultOptions.cursorOffsetX
+ * @property {null} defaultOptions.cursorOffsetY
+ * @type {Object}
+ */
+const defaultOptions = exports.defaultOptions = {
+  constrainDimensions: false,
+  xAxis: true,
+  yAxis: true,
+  cursorOffsetX: null,
+  cursorOffsetY: null
+};
+
+/**
+ * Mirror plugin which controls the mirror positioning while dragging
+ * @class Mirror
+ * @module Mirror
+ * @extends AbstractPlugin
+ */
+class Mirror extends _AbstractPlugin2.default {
+  /**
+   * Mirror constructor.
+   * @constructs Mirror
+   * @param {Draggable} draggable - Draggable instance
+   */
+  constructor(draggable) {
+    super(draggable);
+
+    /**
+     * Mirror options
+     * @property {Object} options
+     * @property {Boolean} options.constrainDimensions
+     * @property {Boolean} options.xAxis
+     * @property {Boolean} options.yAxis
+     * @property {Number|null} options.cursorOffsetX
+     * @property {Number|null} options.cursorOffsetY
+     * @property {String|HTMLElement|Function} options.appendTo
+     * @type {Object}
+     */
+    this.options = _extends({}, defaultOptions, this.getOptions());
+
+    /**
+     * Scroll offset for touch devices because the mirror is positioned fixed
+     * @property {Object} scrollOffset
+     * @property {Number} scrollOffset.x
+     * @property {Number} scrollOffset.y
+     */
+    this.scrollOffset = { x: 0, y: 0 };
+
+    /**
+     * Initial scroll offset for touch devices because the mirror is positioned fixed
+     * @property {Object} scrollOffset
+     * @property {Number} scrollOffset.x
+     * @property {Number} scrollOffset.y
+     */
+    this.initialScrollOffset = {
+      x: window.scrollX,
+      y: window.scrollY
+    };
+
+    this[onDragStart] = this[onDragStart].bind(this);
+    this[onDragMove] = this[onDragMove].bind(this);
+    this[onDragStop] = this[onDragStop].bind(this);
+    this[onMirrorCreated] = this[onMirrorCreated].bind(this);
+    this[onMirrorMove] = this[onMirrorMove].bind(this);
+    this[onScroll] = this[onScroll].bind(this);
+  }
+
+  /**
+   * Attaches plugins event listeners
+   */
+  attach() {
+    this.draggable.on('drag:start', this[onDragStart]).on('drag:move', this[onDragMove]).on('drag:stop', this[onDragStop]).on('mirror:created', this[onMirrorCreated]).on('mirror:move', this[onMirrorMove]);
+  }
+
+  /**
+   * Detaches plugins event listeners
+   */
+  detach() {
+    this.draggable.off('drag:start', this[onDragStart]).off('drag:move', this[onDragMove]).off('drag:stop', this[onDragStop]).off('mirror:created', this[onMirrorCreated]).off('mirror:move', this[onMirrorMove]);
+  }
+
+  /**
+   * Returns options passed through draggable
+   * @return {Object}
+   */
+  getOptions() {
+    return this.draggable.options.mirror || {};
+  }
+
+  [onDragStart](dragEvent) {
+    if (dragEvent.canceled()) {
+      return;
+    }
+
+    if ('ontouchstart' in window) {
+      document.addEventListener('scroll', this[onScroll], true);
+    }
+
+    this.initialScrollOffset = {
+      x: window.scrollX,
+      y: window.scrollY
+    };
+
+    const { source, originalSource, sourceContainer, sensorEvent } = dragEvent;
+
+    const mirrorCreateEvent = new _MirrorEvent.MirrorCreateEvent({
+      source,
+      originalSource,
+      sourceContainer,
+      sensorEvent,
+      dragEvent
+    });
+
+    this.draggable.trigger(mirrorCreateEvent);
+
+    if (isNativeDragEvent(sensorEvent) || mirrorCreateEvent.canceled()) {
+      return;
+    }
+
+    const appendableContainer = this[getAppendableContainer](source) || sourceContainer;
+    this.mirror = source.cloneNode(true);
+
+    const mirrorCreatedEvent = new _MirrorEvent.MirrorCreatedEvent({
+      source,
+      originalSource,
+      sourceContainer,
+      sensorEvent,
+      dragEvent,
+      mirror: this.mirror
+    });
+
+    const mirrorAttachedEvent = new _MirrorEvent.MirrorAttachedEvent({
+      source,
+      originalSource,
+      sourceContainer,
+      sensorEvent,
+      dragEvent,
+      mirror: this.mirror
+    });
+
+    this.draggable.trigger(mirrorCreatedEvent);
+    appendableContainer.appendChild(this.mirror);
+    this.draggable.trigger(mirrorAttachedEvent);
+  }
+
+  [onDragMove](dragEvent) {
+    if (!this.mirror || dragEvent.canceled()) {
+      return;
+    }
+
+    const { source, originalSource, sourceContainer, sensorEvent } = dragEvent;
+
+    const mirrorMoveEvent = new _MirrorEvent.MirrorMoveEvent({
+      source,
+      originalSource,
+      sourceContainer,
+      sensorEvent,
+      dragEvent,
+      mirror: this.mirror
+    });
+
+    this.draggable.trigger(mirrorMoveEvent);
+  }
+
+  [onDragStop](dragEvent) {
+    if ('ontouchstart' in window) {
+      document.removeEventListener('scroll', this[onScroll], true);
+    }
+
+    this.initialScrollOffset = { x: 0, y: 0 };
+    this.scrollOffset = { x: 0, y: 0 };
+
+    if (!this.mirror) {
+      return;
+    }
+
+    const { source, sourceContainer, sensorEvent } = dragEvent;
+
+    const mirrorDestroyEvent = new _MirrorEvent.MirrorDestroyEvent({
+      source,
+      mirror: this.mirror,
+      sourceContainer,
+      sensorEvent,
+      dragEvent
+    });
+
+    this.draggable.trigger(mirrorDestroyEvent);
+
+    if (!mirrorDestroyEvent.canceled()) {
+      this.mirror.parentNode.removeChild(this.mirror);
+    }
+  }
+
+  [onScroll]() {
+    this.scrollOffset = {
+      x: window.scrollX - this.initialScrollOffset.x,
+      y: window.scrollY - this.initialScrollOffset.y
+    };
+  }
+
+  /**
+   * Mirror created handler
+   * @param {MirrorCreatedEvent} mirrorEvent
+   * @return {Promise}
+   * @private
+   */
+  [onMirrorCreated]({ mirror, source, sensorEvent }) {
+    const mirrorClass = this.draggable.getClassNameFor('mirror');
+
+    const setState = (_ref) => {
+      let { mirrorOffset, initialX, initialY } = _ref,
+          args = _objectWithoutProperties(_ref, ['mirrorOffset', 'initialX', 'initialY']);
+
+      this.mirrorOffset = mirrorOffset;
+      this.initialX = initialX;
+      this.initialY = initialY;
+      return _extends({ mirrorOffset, initialX, initialY }, args);
+    };
+
+    const initialState = {
+      mirror,
+      source,
+      sensorEvent,
+      mirrorClass,
+      scrollOffset: this.scrollOffset,
+      options: this.options
+    };
+
+    return Promise.resolve(initialState)
+    // Fix reflow here
+    .then(computeMirrorDimensions).then(calculateMirrorOffset).then(resetMirror).then(addMirrorClasses).then(positionMirror({ initial: true })).then(removeMirrorID).then(setState);
+  }
+
+  /**
+   * Mirror move handler
+   * @param {MirrorMoveEvent} mirrorEvent
+   * @return {Promise|null}
+   * @private
+   */
+  [onMirrorMove](mirrorEvent) {
+    if (mirrorEvent.canceled()) {
+      return null;
+    }
+
+    const initialState = {
+      mirror: mirrorEvent.mirror,
+      sensorEvent: mirrorEvent.sensorEvent,
+      mirrorOffset: this.mirrorOffset,
+      options: this.options,
+      initialX: this.initialX,
+      initialY: this.initialY,
+      scrollOffset: this.scrollOffset
+    };
+
+    return Promise.resolve(initialState).then(positionMirror({ raf: true }));
+  }
+
+  /**
+   * Returns appendable container for mirror based on the appendTo option
+   * @private
+   * @param {Object} options
+   * @param {HTMLElement} options.source - Current source
+   * @return {HTMLElement}
+   */
+  [getAppendableContainer](source) {
+    const appendTo = this.options.appendTo;
+
+    if (typeof appendTo === 'string') {
+      return document.querySelector(appendTo);
+    } else if (appendTo instanceof HTMLElement) {
+      return appendTo;
+    } else if (typeof appendTo === 'function') {
+      return appendTo(source);
+    } else {
+      return source.parentNode;
+    }
+  }
+}
+
+exports.default = Mirror; /**
+                           * Computes mirror dimensions based on the source element
+                           * Adds sourceRect to state
+                           * @param {Object} state
+                           * @param {HTMLElement} state.source
+                           * @return {Promise}
+                           * @private
+                           */
+
+function computeMirrorDimensions(_ref2) {
+  let { source } = _ref2,
+      args = _objectWithoutProperties(_ref2, ['source']);
+
+  return withPromise(resolve => {
+    const sourceRect = source.getBoundingClientRect();
+    resolve(_extends({ source, sourceRect }, args));
+  });
+}
+
+/**
+ * Calculates mirror offset
+ * Adds mirrorOffset to state
+ * @param {Object} state
+ * @param {SensorEvent} state.sensorEvent
+ * @param {DOMRect} state.sourceRect
+ * @return {Promise}
+ * @private
+ */
+function calculateMirrorOffset(_ref3) {
+  let { sensorEvent, sourceRect, options } = _ref3,
+      args = _objectWithoutProperties(_ref3, ['sensorEvent', 'sourceRect', 'options']);
+
+  return withPromise(resolve => {
+    const top = options.cursorOffsetY === null ? sensorEvent.clientY - sourceRect.top : options.cursorOffsetY;
+    const left = options.cursorOffsetX === null ? sensorEvent.clientX - sourceRect.left : options.cursorOffsetX;
+
+    const mirrorOffset = { top, left };
+
+    resolve(_extends({ sensorEvent, sourceRect, mirrorOffset, options }, args));
+  });
+}
+
+/**
+ * Applys mirror styles
+ * @param {Object} state
+ * @param {HTMLElement} state.mirror
+ * @param {HTMLElement} state.source
+ * @param {Object} state.options
+ * @return {Promise}
+ * @private
+ */
+function resetMirror(_ref4) {
+  let { mirror, source, options } = _ref4,
+      args = _objectWithoutProperties(_ref4, ['mirror', 'source', 'options']);
+
+  return withPromise(resolve => {
+    let offsetHeight;
+    let offsetWidth;
+
+    if (options.constrainDimensions) {
+      const computedSourceStyles = getComputedStyle(source);
+      offsetHeight = computedSourceStyles.getPropertyValue('height');
+      offsetWidth = computedSourceStyles.getPropertyValue('width');
+    }
+
+    mirror.style.position = 'fixed';
+    mirror.style.pointerEvents = 'none';
+    mirror.style.top = 0;
+    mirror.style.left = 0;
+    mirror.style.margin = 0;
+
+    if (options.constrainDimensions) {
+      mirror.style.height = offsetHeight;
+      mirror.style.width = offsetWidth;
+    }
+
+    resolve(_extends({ mirror, source, options }, args));
+  });
+}
+
+/**
+ * Applys mirror class on mirror element
+ * @param {Object} state
+ * @param {HTMLElement} state.mirror
+ * @param {String} state.mirrorClass
+ * @return {Promise}
+ * @private
+ */
+function addMirrorClasses(_ref5) {
+  let { mirror, mirrorClass } = _ref5,
+      args = _objectWithoutProperties(_ref5, ['mirror', 'mirrorClass']);
+
+  return withPromise(resolve => {
+    mirror.classList.add(mirrorClass);
+    resolve(_extends({ mirror, mirrorClass }, args));
+  });
+}
+
+/**
+ * Removes source ID from cloned mirror element
+ * @param {Object} state
+ * @param {HTMLElement} state.mirror
+ * @return {Promise}
+ * @private
+ */
+function removeMirrorID(_ref6) {
+  let { mirror } = _ref6,
+      args = _objectWithoutProperties(_ref6, ['mirror']);
+
+  return withPromise(resolve => {
+    mirror.removeAttribute('id');
+    delete mirror.id;
+    resolve(_extends({ mirror }, args));
+  });
+}
+
+/**
+ * Positions mirror with translate3d
+ * @param {Object} state
+ * @param {HTMLElement} state.mirror
+ * @param {SensorEvent} state.sensorEvent
+ * @param {Object} state.mirrorOffset
+ * @param {Number} state.initialY
+ * @param {Number} state.initialX
+ * @param {Object} state.options
+ * @return {Promise}
+ * @private
+ */
+function positionMirror({ withFrame = false, initial = false } = {}) {
+  return (_ref7) => {
+    let { mirror, sensorEvent, mirrorOffset, initialY, initialX, scrollOffset, options } = _ref7,
+        args = _objectWithoutProperties(_ref7, ['mirror', 'sensorEvent', 'mirrorOffset', 'initialY', 'initialX', 'scrollOffset', 'options']);
+
+    return withPromise(resolve => {
+      const result = _extends({
+        mirror,
+        sensorEvent,
+        mirrorOffset,
+        options
+      }, args);
+
+      if (mirrorOffset) {
+        const x = sensorEvent.clientX - mirrorOffset.left - scrollOffset.x;
+        const y = sensorEvent.clientY - mirrorOffset.top - scrollOffset.y;
+
+        if (options.xAxis && options.yAxis || initial) {
+          mirror.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        } else if (options.xAxis && !options.yAxis) {
+          mirror.style.transform = `translate3d(${x}px, ${initialY}px, 0)`;
+        } else if (options.yAxis && !options.xAxis) {
+          mirror.style.transform = `translate3d(${initialX}px, ${y}px, 0)`;
+        }
+
+        if (initial) {
+          result.initialX = x;
+          result.initialY = y;
+        }
+      }
+
+      resolve(result);
+    }, { frame: withFrame });
+  };
+}
+
+/**
+ * Wraps functions in promise with potential animation frame option
+ * @param {Function} callback
+ * @param {Object} options
+ * @param {Boolean} options.raf
+ * @return {Promise}
+ * @private
+ */
+function withPromise(callback, { raf = false } = {}) {
+  return new Promise((resolve, reject) => {
+    if (raf) {
+      requestAnimationFrame(() => {
+        callback(resolve, reject);
+      });
+    } else {
+      callback(resolve, reject);
+    }
+  });
+}
+
+/**
+ * Returns true if the sensor event was triggered by a native browser drag event
+ * @param {SensorEvent} sensorEvent
+ */
+function isNativeDragEvent(sensorEvent) {
+  return (/^drag/.test(sensorEvent.originalEvent.type)
+  );
+}
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = undefined;
+
+var _Mirror = __webpack_require__(56);
+
+var _Mirror2 = _interopRequireDefault(_Mirror);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Mirror2.default;
+exports.defaultOptions = _Mirror.defaultOptions;
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _AbstractPlugin = __webpack_require__(1);
+
+var _AbstractPlugin2 = _interopRequireDefault(_AbstractPlugin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onInitialize = Symbol('onInitialize');
+const onDestroy = Symbol('onDestroy');
+
+/**
+ * Focusable default options
+ * @property {Object} defaultOptions
+ * @type {Object}
+ */
+const defaultOptions = {};
+
+/**
+ * Focusable plugin
+ * @class Focusable
+ * @module Focusable
+ * @extends AbstractPlugin
+ */
+class Focusable extends _AbstractPlugin2.default {
+  /**
+   * Focusable constructor.
+   * @constructs Focusable
+   * @param {Draggable} draggable - Draggable instance
+   */
+  constructor(draggable) {
+    super(draggable);
+
+    /**
+     * Focusable options
+     * @property {Object} options
+     * @type {Object}
+     */
+    this.options = _extends({}, defaultOptions, this.getOptions());
+
+    this[onInitialize] = this[onInitialize].bind(this);
+    this[onDestroy] = this[onDestroy].bind(this);
+  }
+
+  /**
+   * Attaches listeners to draggable
+   */
+  attach() {
+    this.draggable.on('draggable:initialize', this[onInitialize]).on('draggable:destroy', this[onDestroy]);
+  }
+
+  /**
+   * Detaches listeners from draggable
+   */
+  detach() {
+    this.draggable.off('draggable:initialize', this[onInitialize]).off('draggable:destroy', this[onDestroy]);
+  }
+
+  /**
+   * Returns options passed through draggable
+   * @return {Object}
+   */
+  getOptions() {
+    return this.draggable.options.focusable || {};
+  }
+
+  /**
+   * Returns draggable containers and elements
+   * @return {HTMLElement[]}
+   */
+  getElements() {
+    return [...this.draggable.containers, ...this.draggable.getDraggableElements()];
+  }
+
+  /**
+   * Intialize handler
+   * @private
+   */
+  [onInitialize]() {
+    // Can wait until the next best frame is available
+    requestAnimationFrame(() => {
+      this.getElements().forEach(element => decorateElement(element));
+    });
+  }
+
+  /**
+   * Destroy handler
+   * @private
+   */
+  [onDestroy]() {
+    // Can wait until the next best frame is available
+    requestAnimationFrame(() => {
+      this.getElements().forEach(element => stripElement(element));
+    });
+  }
+}
+
+exports.default = Focusable; /**
+                              * Keeps track of all the elements that are missing tabindex attributes
+                              * so they can be reset when draggable gets destroyed
+                              * @const {HTMLElement[]} elementsWithMissingTabIndex
+                              */
+
+const elementsWithMissingTabIndex = [];
+
+/**
+ * Decorates element with tabindex attributes
+ * @param {HTMLElement} element
+ * @return {Object}
+ * @private
+ */
+function decorateElement(element) {
+  const hasMissingTabIndex = Boolean(!element.getAttribute('tabindex') && element.tabIndex === -1);
+
+  if (hasMissingTabIndex) {
+    elementsWithMissingTabIndex.push(element);
+    element.tabIndex = 0;
+  }
+}
+
+/**
+ * Removes elements tabindex attributes
+ * @param {HTMLElement} element
+ * @private
+ */
+function stripElement(element) {
+  const tabIndexElementPosition = elementsWithMissingTabIndex.indexOf(element);
+
+  if (tabIndexElementPosition !== -1) {
+    element.tabIndex = -1;
+    elementsWithMissingTabIndex.splice(tabIndexElementPosition, 1);
+  }
+}
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Focusable = __webpack_require__(58);
+
+var _Focusable2 = _interopRequireDefault(_Focusable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Focusable2.default;
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * All draggable plugins inherit from this class.
+ * @abstract
+ * @class AbstractPlugin
+ * @module AbstractPlugin
+ */
+class AbstractPlugin {
+  /**
+   * AbstractPlugin constructor.
+   * @constructs AbstractPlugin
+   * @param {Draggable} draggable - Draggable instance
+   */
+  constructor(draggable) {
+    /**
+     * Draggable instance
+     * @property draggable
+     * @type {Draggable}
+     */
+    this.draggable = draggable;
+  }
+
+  /**
+   * Override to add listeners
+   * @abstract
+   */
+  attach() {
+    throw new Error('Not Implemented');
+  }
+
+  /**
+   * Override to remove listeners
+   * @abstract
+   */
+  detach() {
+    throw new Error('Not Implemented');
+  }
+}
+exports.default = AbstractPlugin;
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _AbstractPlugin = __webpack_require__(1);
+
+var _AbstractPlugin2 = _interopRequireDefault(_AbstractPlugin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const onInitialize = Symbol('onInitialize');
+const onDestroy = Symbol('onDestroy');
+const announceEvent = Symbol('announceEvent');
+const announceMessage = Symbol('announceMessage');
+
+const ARIA_RELEVANT = 'aria-relevant';
+const ARIA_ATOMIC = 'aria-atomic';
+const ARIA_LIVE = 'aria-live';
+const ROLE = 'role';
+
+/**
+ * Announcement default options
+ * @property {Object} defaultOptions
+ * @property {Number} defaultOptions.expire
+ * @type {Object}
+ */
+const defaultOptions = exports.defaultOptions = {
+  expire: 7000
+};
+
+/**
+ * Announcement plugin
+ * @class Announcement
+ * @module Announcement
+ * @extends AbstractPlugin
+ */
+class Announcement extends _AbstractPlugin2.default {
+  /**
+   * Announcement constructor.
+   * @constructs Announcement
+   * @param {Draggable} draggable - Draggable instance
+   */
+  constructor(draggable) {
+    super(draggable);
+
+    /**
+     * Plugin options
+     * @property options
+     * @type {Object}
+     */
+    this.options = _extends({}, defaultOptions, this.getOptions());
+
+    /**
+     * Original draggable trigger method. Hack until we have onAll or on('all')
+     * @property originalTriggerMethod
+     * @type {Function}
+     */
+    this.originalTriggerMethod = this.draggable.trigger;
+
+    this[onInitialize] = this[onInitialize].bind(this);
+    this[onDestroy] = this[onDestroy].bind(this);
+  }
+
+  /**
+   * Attaches listeners to draggable
+   */
+  attach() {
+    this.draggable.on('draggable:initialize', this[onInitialize]);
+  }
+
+  /**
+   * Detaches listeners from draggable
+   */
+  detach() {
+    this.draggable.off('draggable:destroy', this[onDestroy]);
+  }
+
+  /**
+   * Returns passed in options
+   */
+  getOptions() {
+    return this.draggable.options.announcements || {};
+  }
+
+  /**
+   * Announces event
+   * @private
+   * @param {AbstractEvent} event
+   */
+  [announceEvent](event) {
+    const message = this.options[event.type];
+
+    if (message && typeof message === 'string') {
+      this[announceMessage](message);
+    }
+
+    if (message && typeof message === 'function') {
+      this[announceMessage](message(event));
+    }
+  }
+
+  /**
+   * Announces message to screen reader
+   * @private
+   * @param {String} message
+   */
+  [announceMessage](message) {
+    announce(message, { expire: this.options.expire });
+  }
+
+  /**
+   * Initialize hander
+   * @private
+   */
+  [onInitialize]() {
+    // Hack until there is an api for listening for all events
+    this.draggable.trigger = event => {
+      try {
+        this[announceEvent](event);
+      } finally {
+        // Ensure that original trigger is called
+        this.originalTriggerMethod.call(this.draggable, event);
+      }
+    };
+  }
+
+  /**
+   * Destroy hander
+   * @private
+   */
+  [onDestroy]() {
+    this.draggable.trigger = this.originalTriggerMethod;
+  }
+}
+
+exports.default = Announcement; /**
+                                 * @const {HTMLElement} liveRegion
+                                 */
+
+const liveRegion = createRegion();
+
+/**
+ * Announces message via live region
+ * @param {String} message
+ * @param {Object} options
+ * @param {Number} options.expire
+ */
+function announce(message, { expire }) {
+  const element = document.createElement('div');
+
+  element.textContent = message;
+  liveRegion.appendChild(element);
+
+  return setTimeout(() => {
+    liveRegion.removeChild(element);
+  }, expire);
+}
+
+/**
+ * Creates region element
+ * @return {HTMLElement}
+ */
+function createRegion() {
+  const element = document.createElement('div');
+
+  element.setAttribute('id', 'draggable-live-region');
+  element.setAttribute(ARIA_RELEVANT, 'additions');
+  element.setAttribute(ARIA_ATOMIC, 'true');
+  element.setAttribute(ARIA_LIVE, 'assertive');
+  element.setAttribute(ROLE, 'log');
+
+  element.style.position = 'fixed';
+  element.style.width = '1px';
+  element.style.height = '1px';
+  element.style.top = '-1px';
+  element.style.overflow = 'hidden';
+
+  return element;
+}
+
+// Append live region element as early as possible
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.appendChild(liveRegion);
+});
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultOptions = undefined;
+
+var _Announcement = __webpack_require__(61);
+
+var _Announcement2 = _interopRequireDefault(_Announcement);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Announcement2.default;
+exports.defaultOptions = _Announcement.defaultOptions;
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DraggableDestroyEvent = exports.DraggableInitializedEvent = exports.DraggableEvent = undefined;
+
+var _AbstractEvent = __webpack_require__(0);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Base draggable event
+ * @class DraggableEvent
+ * @module DraggableEvent
+ * @extends AbstractEvent
+ */
+class DraggableEvent extends _AbstractEvent2.default {
+
+  /**
+   * Draggable instance
+   * @property draggable
+   * @type {Draggable}
+   * @readonly
+   */
+  get draggable() {
+    return this.data.draggable;
+  }
+}
+
+exports.DraggableEvent = DraggableEvent; /**
+                                          * Draggable initialized event
+                                          * @class DraggableInitializedEvent
+                                          * @module DraggableInitializedEvent
+                                          * @extends DraggableEvent
+                                          */
+
+DraggableEvent.type = 'draggable';
+class DraggableInitializedEvent extends DraggableEvent {}
+
+exports.DraggableInitializedEvent = DraggableInitializedEvent; /**
+                                                                * Draggable destory event
+                                                                * @class DraggableInitializedEvent
+                                                                * @module DraggableDestroyEvent
+                                                                * @extends DraggableDestroyEvent
+                                                                */
+
+DraggableInitializedEvent.type = 'draggable:initialize';
+class DraggableDestroyEvent extends DraggableEvent {}
+exports.DraggableDestroyEvent = DraggableDestroyEvent;
+DraggableDestroyEvent.type = 'draggable:destroy';
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+const canceled = Symbol('canceled');
+
+/**
+ * All events fired by draggable inherit this class. You can call `cancel()` to
+ * cancel a specific event or you can check if an event has been canceled by
+ * calling `canceled()`.
+ * @abstract
+ * @class AbstractEvent
+ * @module AbstractEvent
+ */
+class AbstractEvent {
+
+  /**
+   * AbstractEvent constructor.
+   * @constructs AbstractEvent
+   * @param {object} data - Event data
+   */
+
+  /**
+   * Event type
+   * @static
+   * @abstract
+   * @property type
+   * @type {String}
+   */
+  constructor(data) {
+    this[canceled] = false;
+    this.data = data;
+  }
+
+  /**
+   * Read-only type
+   * @abstract
+   * @return {String}
+   */
+
+
+  /**
+   * Event cancelable
+   * @static
+   * @abstract
+   * @property cancelable
+   * @type {Boolean}
+   */
+  get type() {
+    return this.constructor.type;
+  }
+
+  /**
+   * Read-only cancelable
+   * @abstract
+   * @return {Boolean}
+   */
+  get cancelable() {
+    return this.constructor.cancelable;
+  }
+
+  /**
+   * Cancels the event instance
+   * @abstract
+   */
+  cancel() {
+    this[canceled] = true;
+  }
+
+  /**
+   * Check if event has been canceled
+   * @abstract
+   * @return {Boolean}
+   */
+  canceled() {
+    return Boolean(this[canceled]);
+  }
+
+  /**
+   * Returns new event instance with existing event data.
+   * This method allows for overriding of event data.
+   * @param {Object} data
+   * @return {AbstractEvent}
+   */
+  clone(data) {
+    return new this.constructor(_extends({}, this.data, data));
+  }
+}
+exports.default = AbstractEvent;
+AbstractEvent.type = 'event';
+AbstractEvent.cancelable = false;
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DragStopEvent = exports.DragPressureEvent = exports.DragOutContainerEvent = exports.DragOverContainerEvent = exports.DragOutEvent = exports.DragOverEvent = exports.DragMoveEvent = exports.DragStartEvent = exports.DragEvent = undefined;
+
+var _AbstractEvent = __webpack_require__(0);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Base drag event
+ * @class DragEvent
+ * @module DragEvent
+ * @extends AbstractEvent
+ */
+class DragEvent extends _AbstractEvent2.default {
+
+  /**
+   * Draggables source element
+   * @property source
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get source() {
+    return this.data.source;
+  }
+
+  /**
+   * Draggables original source element
+   * @property originalSource
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get originalSource() {
+    return this.data.originalSource;
+  }
+
+  /**
+   * Draggables mirror element
+   * @property mirror
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get mirror() {
+    return this.data.mirror;
+  }
+
+  /**
+   * Draggables source container element
+   * @property sourceContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get sourceContainer() {
+    return this.data.sourceContainer;
+  }
+
+  /**
+   * Sensor event
+   * @property sensorEvent
+   * @type {SensorEvent}
+   * @readonly
+   */
+  get sensorEvent() {
+    return this.data.sensorEvent;
+  }
+
+  /**
+   * Original event that triggered sensor event
+   * @property originalEvent
+   * @type {Event}
+   * @readonly
+   */
+  get originalEvent() {
+    if (this.sensorEvent) {
+      return this.sensorEvent.originalEvent;
+    }
+
+    return null;
+  }
+}
+
+exports.DragEvent = DragEvent; /**
+                                * Drag start event
+                                * @class DragStartEvent
+                                * @module DragStartEvent
+                                * @extends DragEvent
+                                */
+
+DragEvent.type = 'drag';
+class DragStartEvent extends DragEvent {}
+
+exports.DragStartEvent = DragStartEvent; /**
+                                          * Drag move event
+                                          * @class DragMoveEvent
+                                          * @module DragMoveEvent
+                                          * @extends DragEvent
+                                          */
+
+DragStartEvent.type = 'drag:start';
+DragStartEvent.cancelable = true;
+class DragMoveEvent extends DragEvent {}
+
+exports.DragMoveEvent = DragMoveEvent; /**
+                                        * Drag over event
+                                        * @class DragOverEvent
+                                        * @module DragOverEvent
+                                        * @extends DragEvent
+                                        */
+
+DragMoveEvent.type = 'drag:move';
+class DragOverEvent extends DragEvent {
+
+  /**
+   * Draggable container you are over
+   * @property overContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get overContainer() {
+    return this.data.overContainer;
+  }
+
+  /**
+   * Draggable element you are over
+   * @property over
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get over() {
+    return this.data.over;
+  }
+}
+
+exports.DragOverEvent = DragOverEvent; /**
+                                        * Drag out event
+                                        * @class DragOutEvent
+                                        * @module DragOutEvent
+                                        * @extends DragEvent
+                                        */
+
+DragOverEvent.type = 'drag:over';
+DragOverEvent.cancelable = true;
+class DragOutEvent extends DragEvent {
+
+  /**
+   * Draggable container you are over
+   * @property overContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get overContainer() {
+    return this.data.overContainer;
+  }
+
+  /**
+   * Draggable element you left
+   * @property over
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get over() {
+    return this.data.over;
+  }
+}
+
+exports.DragOutEvent = DragOutEvent; /**
+                                      * Drag over container event
+                                      * @class DragOverContainerEvent
+                                      * @module DragOverContainerEvent
+                                      * @extends DragEvent
+                                      */
+
+DragOutEvent.type = 'drag:out';
+class DragOverContainerEvent extends DragEvent {
+
+  /**
+   * Draggable container you are over
+   * @property overContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get overContainer() {
+    return this.data.overContainer;
+  }
+}
+
+exports.DragOverContainerEvent = DragOverContainerEvent; /**
+                                                          * Drag out container event
+                                                          * @class DragOutContainerEvent
+                                                          * @module DragOutContainerEvent
+                                                          * @extends DragEvent
+                                                          */
+
+DragOverContainerEvent.type = 'drag:over:container';
+class DragOutContainerEvent extends DragEvent {
+
+  /**
+   * Draggable container you left
+   * @property overContainer
+   * @type {HTMLElement}
+   * @readonly
+   */
+  get overContainer() {
+    return this.data.overContainer;
+  }
+}
+
+exports.DragOutContainerEvent = DragOutContainerEvent; /**
+                                                        * Drag pressure event
+                                                        * @class DragPressureEvent
+                                                        * @module DragPressureEvent
+                                                        * @extends DragEvent
+                                                        */
+
+DragOutContainerEvent.type = 'drag:out:container';
+class DragPressureEvent extends DragEvent {
+
+  /**
+   * Pressure applied on draggable element
+   * @property pressure
+   * @type {Number}
+   * @readonly
+   */
+  get pressure() {
+    return this.data.pressure;
+  }
+}
+
+exports.DragPressureEvent = DragPressureEvent; /**
+                                                * Drag stop event
+                                                * @class DragStopEvent
+                                                * @module DragStopEvent
+                                                * @extends DragEvent
+                                                */
+
+DragPressureEvent.type = 'drag:pressure';
+class DragStopEvent extends DragEvent {}
+exports.DragStopEvent = DragStopEvent;
+DragStopEvent.type = 'drag:stop';
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Plugins = exports.Sensors = exports.Sortable = exports.Swappable = exports.Droppable = exports.Draggable = exports.BasePlugin = exports.BaseEvent = undefined;
+
+var _Draggable = __webpack_require__(5);
+
+Object.defineProperty(exports, 'Draggable', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Draggable).default;
+  }
+});
+
+var _Droppable = __webpack_require__(34);
+
+Object.defineProperty(exports, 'Droppable', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Droppable).default;
+  }
+});
+
+var _Swappable = __webpack_require__(31);
+
+Object.defineProperty(exports, 'Swappable', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Swappable).default;
+  }
+});
+
+var _Sortable = __webpack_require__(28);
+
+Object.defineProperty(exports, 'Sortable', {
+  enumerable: true,
+  get: function () {
+    return _interopRequireDefault(_Sortable).default;
+  }
+});
+
+var _AbstractEvent = __webpack_require__(0);
+
+var _AbstractEvent2 = _interopRequireDefault(_AbstractEvent);
+
+var _AbstractPlugin = __webpack_require__(1);
+
+var _AbstractPlugin2 = _interopRequireDefault(_AbstractPlugin);
+
+var _Sensors = __webpack_require__(6);
+
+var Sensors = _interopRequireWildcard(_Sensors);
+
+var _Plugins = __webpack_require__(25);
+
+var Plugins = _interopRequireWildcard(_Plugins);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.BaseEvent = _AbstractEvent2.default;
+exports.BasePlugin = _AbstractPlugin2.default;
+exports.Sensors = Sensors;
+exports.Plugins = Plugins;
+
+/***/ })
+/******/ ]);
+});
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex flex-col" }, [
+      _c("div", { staticClass: "flex flex-col" }, [
+        _c(
+          "div",
+          { staticClass: "swappable stat-box", attrs: { id: "strength" } },
+          [_vm._v("15")]
+        ),
+        _vm._v(" "),
+        _c("label", { staticClass: "form-label" }, [_vm._v("Strength")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex flex-col" }, [
+        _c(
+          "div",
+          { staticClass: "swappable stat-box", attrs: { id: "dexterity" } },
+          [_vm._v("16")]
+        ),
+        _vm._v(" "),
+        _c("label", { staticClass: "form-label" }, [_vm._v("Dexterity")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex flex-col" }, [
+        _c(
+          "div",
+          { staticClass: "swappable stat-box", attrs: { id: "constitution" } },
+          [_vm._v("17")]
+        ),
+        _vm._v(" "),
+        _c("label", { staticClass: "form-label" }, [_vm._v("Constitution")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex flex-col" }, [
+        _c(
+          "div",
+          { staticClass: "swappable stat-box", attrs: { id: "intelligence" } },
+          [_vm._v("10")]
+        ),
+        _vm._v(" "),
+        _c("label", { staticClass: "form-label" }, [_vm._v("Intelligence")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex flex-col" }, [
+        _c(
+          "div",
+          { staticClass: "swappable stat-box", attrs: { id: "wisdom" } },
+          [_vm._v("9")]
+        ),
+        _vm._v(" "),
+        _c("label", { staticClass: "form-label" }, [_vm._v("Wisdom")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flex flex-col" }, [
+        _c(
+          "div",
+          { staticClass: "swappable stat-box", attrs: { id: "charisma" } },
+          [_vm._v("8")]
+        ),
+        _vm._v(" "),
+        _c("label", { staticClass: "form-label" }, [_vm._v("Charisma")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-de3a9dec", module.exports)
+  }
+}
+
+/***/ }),
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43180,19 +50397,7 @@ var render = function() {
           : _vm._e()
       ]),
       _vm._v(" "),
-      _c("draggable", { attrs: { list: _vm.stats } }, [
-        _c("div", { staticClass: "stat-box" }, [_vm._v(_vm._s(_vm.stats[0]))]),
-        _vm._v(" "),
-        _c("div", { staticClass: "stat-box" }, [_vm._v(_vm._s(_vm.stats[1]))]),
-        _vm._v(" "),
-        _c("div", { staticClass: "stat-box" }, [_vm._v(_vm._s(_vm.stats[2]))]),
-        _vm._v(" "),
-        _c("div", { staticClass: "stat-box" }, [_vm._v(_vm._s(_vm.stats[3]))]),
-        _vm._v(" "),
-        _c("div", { staticClass: "stat-box" }, [_vm._v(_vm._s(_vm.stats[4]))]),
-        _vm._v(" "),
-        _c("div", { staticClass: "stat-box" }, [_vm._v(_vm._s(_vm.stats[5]))])
-      ]),
+      _c("stats-container"),
       _vm._v(" "),
       _c("div", { staticClass: "flex" }, [
         _c(
@@ -43238,7 +50443,7 @@ if (false) {
 }
 
 /***/ }),
-/* 86 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43357,15 +50562,15 @@ if (false) {
 }
 
 /***/ }),
-/* 87 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(88)
+var __vue_script__ = __webpack_require__(93)
 /* template */
-var __vue_template__ = __webpack_require__(89)
+var __vue_template__ = __webpack_require__(94)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43404,7 +50609,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 88 */
+/* 93 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43487,7 +50692,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 89 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43606,7 +50811,7 @@ if (false) {
 }
 
 /***/ }),
-/* 90 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43639,15 +50844,15 @@ if (false) {
 }
 
 /***/ }),
-/* 91 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(92)
+var __vue_script__ = __webpack_require__(97)
 /* template */
-var __vue_template__ = __webpack_require__(93)
+var __vue_template__ = __webpack_require__(98)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43686,7 +50891,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 92 */
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43763,7 +50968,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 93 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43889,15 +51094,15 @@ if (false) {
 }
 
 /***/ }),
-/* 94 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(95)
+var __vue_script__ = __webpack_require__(100)
 /* template */
-var __vue_template__ = __webpack_require__(96)
+var __vue_template__ = __webpack_require__(101)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -43936,7 +51141,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 95 */
+/* 100 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43996,7 +51201,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 96 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44117,15 +51322,15 @@ if (false) {
 }
 
 /***/ }),
-/* 97 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(98)
+var __vue_script__ = __webpack_require__(103)
 /* template */
-var __vue_template__ = __webpack_require__(99)
+var __vue_template__ = __webpack_require__(104)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44164,7 +51369,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 98 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44205,7 +51410,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 99 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44293,15 +51498,15 @@ if (false) {
 }
 
 /***/ }),
-/* 100 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(101)
+var __vue_script__ = __webpack_require__(106)
 /* template */
-var __vue_template__ = __webpack_require__(102)
+var __vue_template__ = __webpack_require__(107)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44340,7 +51545,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 101 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44375,7 +51580,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 102 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44407,15 +51612,15 @@ if (false) {
 }
 
 /***/ }),
-/* 103 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(104)
+var __vue_script__ = __webpack_require__(109)
 /* template */
-var __vue_template__ = __webpack_require__(105)
+var __vue_template__ = __webpack_require__(110)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44454,7 +51659,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 104 */
+/* 109 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44487,7 +51692,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 105 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44533,19 +51738,19 @@ if (false) {
 }
 
 /***/ }),
-/* 106 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(107)
+  __webpack_require__(112)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(109)
+var __vue_script__ = __webpack_require__(114)
 /* template */
-var __vue_template__ = __webpack_require__(110)
+var __vue_template__ = __webpack_require__(115)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44584,13 +51789,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 107 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(108);
+var content = __webpack_require__(113);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -44610,7 +51815,7 @@ if(false) {
 }
 
 /***/ }),
-/* 108 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -44624,7 +51829,7 @@ exports.push([module.i, "\n*[data-v-51d2d4f7] {\n  will-change: height;\n  -webk
 
 
 /***/ }),
-/* 109 */
+/* 114 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44682,7 +51887,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 110 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44710,15 +51915,15 @@ if (false) {
 }
 
 /***/ }),
-/* 111 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(112)
+var __vue_script__ = __webpack_require__(117)
 /* template */
-var __vue_template__ = __webpack_require__(113)
+var __vue_template__ = __webpack_require__(118)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44757,7 +51962,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 112 */
+/* 117 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44837,7 +52042,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 113 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -44893,19 +52098,19 @@ if (false) {
 }
 
 /***/ }),
-/* 114 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(115)
+  __webpack_require__(120)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(117)
+var __vue_script__ = __webpack_require__(122)
 /* template */
-var __vue_template__ = __webpack_require__(133)
+var __vue_template__ = __webpack_require__(138)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -44944,13 +52149,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 115 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(116);
+var content = __webpack_require__(121);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -44970,7 +52175,7 @@ if(false) {
 }
 
 /***/ }),
-/* 116 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -44984,14 +52189,14 @@ exports.push([module.i, "\n.is-selected {\n  z-index: 9900;\n  -webkit-transform
 
 
 /***/ }),
-/* 117 */
+/* 122 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flickity__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flickity__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flickity___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flickity__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flickity_dist_flickity_min_css__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flickity_dist_flickity_min_css__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flickity_dist_flickity_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_flickity_dist_flickity_min_css__);
 //
 //
@@ -45046,7 +52251,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 118 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -45067,12 +52272,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     // AMD
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
       __webpack_require__(4),
-      __webpack_require__(123),
-      __webpack_require__(125),
-      __webpack_require__(126),
-      __webpack_require__(127),
       __webpack_require__(128),
-      __webpack_require__(129)
+      __webpack_require__(130),
+      __webpack_require__(131),
+      __webpack_require__(132),
+      __webpack_require__(133),
+      __webpack_require__(134)
     ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
@@ -45097,7 +52302,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 119 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -45160,7 +52365,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 
 /***/ }),
-/* 120 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Flickity.Cell
@@ -45259,7 +52464,7 @@ return Cell;
 
 
 /***/ }),
-/* 121 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;// slide
@@ -45347,7 +52552,7 @@ return Slide;
 
 
 /***/ }),
-/* 122 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// animate
@@ -45548,7 +52753,7 @@ return proto;
 
 
 /***/ }),
-/* 123 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// drag
@@ -45559,7 +52764,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// drag
     // AMD
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
       __webpack_require__(4),
-      __webpack_require__(124),
+      __webpack_require__(129),
       __webpack_require__(2)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( Flickity, Unidragger, utils ) {
       return factory( window, Flickity, Unidragger, utils );
@@ -45952,7 +53157,7 @@ return Flickity;
 
 
 /***/ }),
-/* 124 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -46238,7 +53443,7 @@ return Unidragger;
 
 
 /***/ }),
-/* 125 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// prev/next buttons
@@ -46466,7 +53671,7 @@ return Flickity;
 
 
 /***/ }),
-/* 126 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// page dots
@@ -46657,7 +53862,7 @@ return Flickity;
 
 
 /***/ }),
-/* 127 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// player & autoPlay
@@ -46855,7 +54060,7 @@ return Flickity;
 
 
 /***/ }),
-/* 128 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// add, remove cell
@@ -47023,7 +54228,7 @@ return Flickity;
 
 
 /***/ }),
-/* 129 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// lazyload
@@ -47164,13 +54369,13 @@ return Flickity;
 
 
 /***/ }),
-/* 130 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(131);
+var content = __webpack_require__(136);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -47195,7 +54400,7 @@ if(false) {
 }
 
 /***/ }),
-/* 131 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -47209,7 +54414,7 @@ exports.push([module.i, "/*! Flickity v2.1.2\nhttps://flickity.metafizzy.co\n---
 
 
 /***/ }),
-/* 132 */
+/* 137 */
 /***/ (function(module, exports) {
 
 
@@ -47304,7 +54509,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 133 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47324,15 +54529,15 @@ if (false) {
 }
 
 /***/ }),
-/* 134 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(135)
+var __vue_script__ = __webpack_require__(140)
 /* template */
-var __vue_template__ = __webpack_require__(140)
+var __vue_template__ = __webpack_require__(145)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47371,14 +54576,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 135 */
+/* 140 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__glidejs_glide_dist_css_glide_core_min_css__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__glidejs_glide_dist_css_glide_core_min_css__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__glidejs_glide_dist_css_glide_core_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__glidejs_glide_dist_css_glide_core_min_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__glidejs_glide_dist_css_glide_theme_min_css__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__glidejs_glide_dist_css_glide_theme_min_css__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__glidejs_glide_dist_css_glide_theme_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__glidejs_glide_dist_css_glide_theme_min_css__);
 //
 //
@@ -47397,13 +54602,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 136 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(137);
+var content = __webpack_require__(142);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -47428,7 +54633,7 @@ if(false) {
 }
 
 /***/ }),
-/* 137 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -47442,13 +54647,13 @@ exports.push([module.i, ".glide{position:relative;width:100%;box-sizing:border-b
 
 
 /***/ }),
-/* 138 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(139);
+var content = __webpack_require__(144);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -47473,7 +54678,7 @@ if(false) {
 }
 
 /***/ }),
-/* 139 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -47487,7 +54692,7 @@ exports.push([module.i, ".glide__arrow{position:absolute;display:block;top:50%;z
 
 
 /***/ }),
-/* 140 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47528,1974 +54733,10 @@ if (false) {
 }
 
 /***/ }),
-/* 141 */
+/* 146 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 142 */,
-/* 143 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-(function () {
-  "use strict";
-
-  if (!Array.from) {
-    Array.from = function (object) {
-      return [].slice.call(object);
-    };
-  }
-
-  function buildAttribute(object, propName, value) {
-    if (value == undefined) {
-      return object;
-    }
-    object = object == null ? {} : object;
-    object[propName] = value;
-    return object;
-  }
-
-  function buildDraggable(Sortable) {
-    function removeNode(node) {
-      node.parentElement.removeChild(node);
-    }
-
-    function insertNodeAt(fatherNode, node, position) {
-      var refNode = position === 0 ? fatherNode.children[0] : fatherNode.children[position - 1].nextSibling;
-      fatherNode.insertBefore(node, refNode);
-    }
-
-    function computeVmIndex(vnodes, element) {
-      return vnodes.map(function (elt) {
-        return elt.elm;
-      }).indexOf(element);
-    }
-
-    function _computeIndexes(slots, children, isTransition) {
-      if (!slots) {
-        return [];
-      }
-
-      var elmFromNodes = slots.map(function (elt) {
-        return elt.elm;
-      });
-      var rawIndexes = [].concat(_toConsumableArray(children)).map(function (elt) {
-        return elmFromNodes.indexOf(elt);
-      });
-      return isTransition ? rawIndexes.filter(function (ind) {
-        return ind !== -1;
-      }) : rawIndexes;
-    }
-
-    function emit(evtName, evtData) {
-      var _this = this;
-
-      this.$nextTick(function () {
-        return _this.$emit(evtName.toLowerCase(), evtData);
-      });
-    }
-
-    function delegateAndEmit(evtName) {
-      var _this2 = this;
-
-      return function (evtData) {
-        if (_this2.realList !== null) {
-          _this2['onDrag' + evtName](evtData);
-        }
-        emit.call(_this2, evtName, evtData);
-      };
-    }
-
-    var eventsListened = ['Start', 'Add', 'Remove', 'Update', 'End'];
-    var eventsToEmit = ['Choose', 'Sort', 'Filter', 'Clone'];
-    var readonlyProperties = ['Move'].concat(eventsListened, eventsToEmit).map(function (evt) {
-      return 'on' + evt;
-    });
-    var draggingElement = null;
-
-    var props = {
-      options: Object,
-      list: {
-        type: Array,
-        required: false,
-        default: null
-      },
-      value: {
-        type: Array,
-        required: false,
-        default: null
-      },
-      noTransitionOnDrag: {
-        type: Boolean,
-        default: false
-      },
-      clone: {
-        type: Function,
-        default: function _default(original) {
-          return original;
-        }
-      },
-      element: {
-        type: String,
-        default: 'div'
-      },
-      move: {
-        type: Function,
-        default: null
-      },
-      componentData: {
-        type: Object,
-        required: false,
-        default: null
-      }
-    };
-
-    var draggableComponent = {
-      name: 'draggable',
-
-      props: props,
-
-      data: function data() {
-        return {
-          transitionMode: false,
-          noneFunctionalComponentMode: false,
-          init: false
-        };
-      },
-      render: function render(h) {
-        var slots = this.$slots.default;
-        if (slots && slots.length === 1) {
-          var child = slots[0];
-          if (child.componentOptions && child.componentOptions.tag === "transition-group") {
-            this.transitionMode = true;
-          }
-        }
-        var children = slots;
-        var footer = this.$slots.footer;
-
-        if (footer) {
-          children = slots ? [].concat(_toConsumableArray(slots), _toConsumableArray(footer)) : [].concat(_toConsumableArray(footer));
-        }
-        var attributes = null;
-        var update = function update(name, value) {
-          attributes = buildAttribute(attributes, name, value);
-        };
-        update('attrs', this.$attrs);
-        if (this.componentData) {
-          var _componentData = this.componentData,
-              on = _componentData.on,
-              _props = _componentData.props;
-
-          update('on', on);
-          update('props', _props);
-        }
-        return h(this.element, attributes, children);
-      },
-      mounted: function mounted() {
-        var _this3 = this;
-
-        this.noneFunctionalComponentMode = this.element.toLowerCase() !== this.$el.nodeName.toLowerCase();
-        if (this.noneFunctionalComponentMode && this.transitionMode) {
-          throw new Error('Transition-group inside component is not supported. Please alter element value or remove transition-group. Current element value: ' + this.element);
-        }
-        var optionsAdded = {};
-        eventsListened.forEach(function (elt) {
-          optionsAdded['on' + elt] = delegateAndEmit.call(_this3, elt);
-        });
-
-        eventsToEmit.forEach(function (elt) {
-          optionsAdded['on' + elt] = emit.bind(_this3, elt);
-        });
-
-        var options = _extends({}, this.options, optionsAdded, { onMove: function onMove(evt, originalEvent) {
-            return _this3.onDragMove(evt, originalEvent);
-          } });
-        !('draggable' in options) && (options.draggable = '>*');
-        this._sortable = new Sortable(this.rootContainer, options);
-        this.computeIndexes();
-      },
-      beforeDestroy: function beforeDestroy() {
-        this._sortable.destroy();
-      },
-
-
-      computed: {
-        rootContainer: function rootContainer() {
-          return this.transitionMode ? this.$el.children[0] : this.$el;
-        },
-        isCloning: function isCloning() {
-          return !!this.options && !!this.options.group && this.options.group.pull === 'clone';
-        },
-        realList: function realList() {
-          return !!this.list ? this.list : this.value;
-        }
-      },
-
-      watch: {
-        options: {
-          handler: function handler(newOptionValue) {
-            for (var property in newOptionValue) {
-              if (readonlyProperties.indexOf(property) == -1) {
-                this._sortable.option(property, newOptionValue[property]);
-              }
-            }
-          },
-
-          deep: true
-        },
-
-        realList: function realList() {
-          this.computeIndexes();
-        }
-      },
-
-      methods: {
-        getChildrenNodes: function getChildrenNodes() {
-          if (!this.init) {
-            this.noneFunctionalComponentMode = this.noneFunctionalComponentMode && this.$children.length == 1;
-            this.init = true;
-          }
-
-          if (this.noneFunctionalComponentMode) {
-            return this.$children[0].$slots.default;
-          }
-          var rawNodes = this.$slots.default;
-          return this.transitionMode ? rawNodes[0].child.$slots.default : rawNodes;
-        },
-        computeIndexes: function computeIndexes() {
-          var _this4 = this;
-
-          this.$nextTick(function () {
-            _this4.visibleIndexes = _computeIndexes(_this4.getChildrenNodes(), _this4.rootContainer.children, _this4.transitionMode);
-          });
-        },
-        getUnderlyingVm: function getUnderlyingVm(htmlElt) {
-          var index = computeVmIndex(this.getChildrenNodes() || [], htmlElt);
-          if (index === -1) {
-            //Edge case during move callback: related element might be
-            //an element different from collection
-            return null;
-          }
-          var element = this.realList[index];
-          return { index: index, element: element };
-        },
-        getUnderlyingPotencialDraggableComponent: function getUnderlyingPotencialDraggableComponent(_ref) {
-          var __vue__ = _ref.__vue__;
-
-          if (!__vue__ || !__vue__.$options || __vue__.$options._componentTag !== "transition-group") {
-            return __vue__;
-          }
-          return __vue__.$parent;
-        },
-        emitChanges: function emitChanges(evt) {
-          var _this5 = this;
-
-          this.$nextTick(function () {
-            _this5.$emit('change', evt);
-          });
-        },
-        alterList: function alterList(onList) {
-          if (!!this.list) {
-            onList(this.list);
-          } else {
-            var newList = [].concat(_toConsumableArray(this.value));
-            onList(newList);
-            this.$emit('input', newList);
-          }
-        },
-        spliceList: function spliceList() {
-          var _arguments = arguments;
-
-          var spliceList = function spliceList(list) {
-            return list.splice.apply(list, _arguments);
-          };
-          this.alterList(spliceList);
-        },
-        updatePosition: function updatePosition(oldIndex, newIndex) {
-          var updatePosition = function updatePosition(list) {
-            return list.splice(newIndex, 0, list.splice(oldIndex, 1)[0]);
-          };
-          this.alterList(updatePosition);
-        },
-        getRelatedContextFromMoveEvent: function getRelatedContextFromMoveEvent(_ref2) {
-          var to = _ref2.to,
-              related = _ref2.related;
-
-          var component = this.getUnderlyingPotencialDraggableComponent(to);
-          if (!component) {
-            return { component: component };
-          }
-          var list = component.realList;
-          var context = { list: list, component: component };
-          if (to !== related && list && component.getUnderlyingVm) {
-            var destination = component.getUnderlyingVm(related);
-            if (destination) {
-              return _extends(destination, context);
-            }
-          }
-
-          return context;
-        },
-        getVmIndex: function getVmIndex(domIndex) {
-          var indexes = this.visibleIndexes;
-          var numberIndexes = indexes.length;
-          return domIndex > numberIndexes - 1 ? numberIndexes : indexes[domIndex];
-        },
-        getComponent: function getComponent() {
-          return this.$slots.default[0].componentInstance;
-        },
-        resetTransitionData: function resetTransitionData(index) {
-          if (!this.noTransitionOnDrag || !this.transitionMode) {
-            return;
-          }
-          var nodes = this.getChildrenNodes();
-          nodes[index].data = null;
-          var transitionContainer = this.getComponent();
-          transitionContainer.children = [];
-          transitionContainer.kept = undefined;
-        },
-        onDragStart: function onDragStart(evt) {
-          this.context = this.getUnderlyingVm(evt.item);
-          evt.item._underlying_vm_ = this.clone(this.context.element);
-          draggingElement = evt.item;
-        },
-        onDragAdd: function onDragAdd(evt) {
-          var element = evt.item._underlying_vm_;
-          if (element === undefined) {
-            return;
-          }
-          removeNode(evt.item);
-          var newIndex = this.getVmIndex(evt.newIndex);
-          this.spliceList(newIndex, 0, element);
-          this.computeIndexes();
-          var added = { element: element, newIndex: newIndex };
-          this.emitChanges({ added: added });
-        },
-        onDragRemove: function onDragRemove(evt) {
-          insertNodeAt(this.rootContainer, evt.item, evt.oldIndex);
-          if (this.isCloning) {
-            removeNode(evt.clone);
-            return;
-          }
-          var oldIndex = this.context.index;
-          this.spliceList(oldIndex, 1);
-          var removed = { element: this.context.element, oldIndex: oldIndex };
-          this.resetTransitionData(oldIndex);
-          this.emitChanges({ removed: removed });
-        },
-        onDragUpdate: function onDragUpdate(evt) {
-          removeNode(evt.item);
-          insertNodeAt(evt.from, evt.item, evt.oldIndex);
-          var oldIndex = this.context.index;
-          var newIndex = this.getVmIndex(evt.newIndex);
-          this.updatePosition(oldIndex, newIndex);
-          var moved = { element: this.context.element, oldIndex: oldIndex, newIndex: newIndex };
-          this.emitChanges({ moved: moved });
-        },
-        computeFutureIndex: function computeFutureIndex(relatedContext, evt) {
-          if (!relatedContext.element) {
-            return 0;
-          }
-          var domChildren = [].concat(_toConsumableArray(evt.to.children)).filter(function (el) {
-            return el.style['display'] !== 'none';
-          });
-          var currentDOMIndex = domChildren.indexOf(evt.related);
-          var currentIndex = relatedContext.component.getVmIndex(currentDOMIndex);
-          var draggedInList = domChildren.indexOf(draggingElement) != -1;
-          return draggedInList || !evt.willInsertAfter ? currentIndex : currentIndex + 1;
-        },
-        onDragMove: function onDragMove(evt, originalEvent) {
-          var onMove = this.move;
-          if (!onMove || !this.realList) {
-            return true;
-          }
-
-          var relatedContext = this.getRelatedContextFromMoveEvent(evt);
-          var draggedContext = this.context;
-          var futureIndex = this.computeFutureIndex(relatedContext, evt);
-          _extends(draggedContext, { futureIndex: futureIndex });
-          _extends(evt, { relatedContext: relatedContext, draggedContext: draggedContext });
-          return onMove(evt, originalEvent);
-        },
-        onDragEnd: function onDragEnd(evt) {
-          this.computeIndexes();
-          draggingElement = null;
-        }
-      }
-    };
-    return draggableComponent;
-  }
-
-  if (true) {
-    var Sortable = __webpack_require__(144);
-    module.exports = buildDraggable(Sortable);
-  } else if (typeof define == "function" && define.amd) {
-    define(['sortablejs'], function (Sortable) {
-      return buildDraggable(Sortable);
-    });
-  } else if (window && window.Vue && window.Sortable) {
-    var draggable = buildDraggable(window.Sortable);
-    Vue.component('draggable', draggable);
-  }
-})();
-
-/***/ }),
-/* 144 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**!
- * Sortable
- * @author	RubaXa   <trash@rubaxa.org>
- * @license MIT
- */
-
-(function sortableModule(factory) {
-	"use strict";
-
-	if (true) {
-		!(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
-				__WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	}
-	else if (typeof module != "undefined" && typeof module.exports != "undefined") {
-		module.exports = factory();
-	}
-	else {
-		/* jshint sub:true */
-		window["Sortable"] = factory();
-	}
-})(function sortableFactory() {
-	"use strict";
-
-	if (typeof window === "undefined" || !window.document) {
-		return function sortableError() {
-			throw new Error("Sortable.js requires a window with a document");
-		};
-	}
-
-	var dragEl,
-		parentEl,
-		ghostEl,
-		cloneEl,
-		rootEl,
-		nextEl,
-		lastDownEl,
-
-		scrollEl,
-		scrollParentEl,
-		scrollCustomFn,
-
-		lastEl,
-		lastCSS,
-		lastParentCSS,
-
-		oldIndex,
-		newIndex,
-
-		activeGroup,
-		putSortable,
-
-		autoScroll = {},
-
-		tapEvt,
-		touchEvt,
-
-		moved,
-
-		/** @const */
-		R_SPACE = /\s+/g,
-		R_FLOAT = /left|right|inline/,
-
-		expando = 'Sortable' + (new Date).getTime(),
-
-		win = window,
-		document = win.document,
-		parseInt = win.parseInt,
-		setTimeout = win.setTimeout,
-
-		$ = win.jQuery || win.Zepto,
-		Polymer = win.Polymer,
-
-		captureMode = false,
-		passiveMode = false,
-
-		supportDraggable = ('draggable' in document.createElement('div')),
-		supportCssPointerEvents = (function (el) {
-			// false when IE11
-			if (!!navigator.userAgent.match(/(?:Trident.*rv[ :]?11\.|msie)/i)) {
-				return false;
-			}
-			el = document.createElement('x');
-			el.style.cssText = 'pointer-events:auto';
-			return el.style.pointerEvents === 'auto';
-		})(),
-
-		_silent = false,
-
-		abs = Math.abs,
-		min = Math.min,
-
-		savedInputChecked = [],
-		touchDragOverListeners = [],
-
-		_autoScroll = _throttle(function (/**Event*/evt, /**Object*/options, /**HTMLElement*/rootEl) {
-			// Bug: https://bugzilla.mozilla.org/show_bug.cgi?id=505521
-			if (rootEl && options.scroll) {
-				var _this = rootEl[expando],
-					el,
-					rect,
-					sens = options.scrollSensitivity,
-					speed = options.scrollSpeed,
-
-					x = evt.clientX,
-					y = evt.clientY,
-
-					winWidth = window.innerWidth,
-					winHeight = window.innerHeight,
-
-					vx,
-					vy,
-
-					scrollOffsetX,
-					scrollOffsetY
-				;
-
-				// Delect scrollEl
-				if (scrollParentEl !== rootEl) {
-					scrollEl = options.scroll;
-					scrollParentEl = rootEl;
-					scrollCustomFn = options.scrollFn;
-
-					if (scrollEl === true) {
-						scrollEl = rootEl;
-
-						do {
-							if ((scrollEl.offsetWidth < scrollEl.scrollWidth) ||
-								(scrollEl.offsetHeight < scrollEl.scrollHeight)
-							) {
-								break;
-							}
-							/* jshint boss:true */
-						} while (scrollEl = scrollEl.parentNode);
-					}
-				}
-
-				if (scrollEl) {
-					el = scrollEl;
-					rect = scrollEl.getBoundingClientRect();
-					vx = (abs(rect.right - x) <= sens) - (abs(rect.left - x) <= sens);
-					vy = (abs(rect.bottom - y) <= sens) - (abs(rect.top - y) <= sens);
-				}
-
-
-				if (!(vx || vy)) {
-					vx = (winWidth - x <= sens) - (x <= sens);
-					vy = (winHeight - y <= sens) - (y <= sens);
-
-					/* jshint expr:true */
-					(vx || vy) && (el = win);
-				}
-
-
-				if (autoScroll.vx !== vx || autoScroll.vy !== vy || autoScroll.el !== el) {
-					autoScroll.el = el;
-					autoScroll.vx = vx;
-					autoScroll.vy = vy;
-
-					clearInterval(autoScroll.pid);
-
-					if (el) {
-						autoScroll.pid = setInterval(function () {
-							scrollOffsetY = vy ? vy * speed : 0;
-							scrollOffsetX = vx ? vx * speed : 0;
-
-							if ('function' === typeof(scrollCustomFn)) {
-								return scrollCustomFn.call(_this, scrollOffsetX, scrollOffsetY, evt);
-							}
-
-							if (el === win) {
-								win.scrollTo(win.pageXOffset + scrollOffsetX, win.pageYOffset + scrollOffsetY);
-							} else {
-								el.scrollTop += scrollOffsetY;
-								el.scrollLeft += scrollOffsetX;
-							}
-						}, 24);
-					}
-				}
-			}
-		}, 30),
-
-		_prepareGroup = function (options) {
-			function toFn(value, pull) {
-				if (value === void 0 || value === true) {
-					value = group.name;
-				}
-
-				if (typeof value === 'function') {
-					return value;
-				} else {
-					return function (to, from) {
-						var fromGroup = from.options.group.name;
-
-						return pull
-							? value
-							: value && (value.join
-								? value.indexOf(fromGroup) > -1
-								: (fromGroup == value)
-							);
-					};
-				}
-			}
-
-			var group = {};
-			var originalGroup = options.group;
-
-			if (!originalGroup || typeof originalGroup != 'object') {
-				originalGroup = {name: originalGroup};
-			}
-
-			group.name = originalGroup.name;
-			group.checkPull = toFn(originalGroup.pull, true);
-			group.checkPut = toFn(originalGroup.put);
-			group.revertClone = originalGroup.revertClone;
-
-			options.group = group;
-		}
-	;
-
-	// Detect support a passive mode
-	try {
-		window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
-			get: function () {
-				// `false`, because everything starts to work incorrectly and instead of d'n'd,
-				// begins the page has scrolled.
-				passiveMode = false;
-				captureMode = {
-					capture: false,
-					passive: passiveMode
-				};
-			}
-		}));
-	} catch (err) {}
-
-	/**
-	 * @class  Sortable
-	 * @param  {HTMLElement}  el
-	 * @param  {Object}       [options]
-	 */
-	function Sortable(el, options) {
-		if (!(el && el.nodeType && el.nodeType === 1)) {
-			throw 'Sortable: `el` must be HTMLElement, and not ' + {}.toString.call(el);
-		}
-
-		this.el = el; // root element
-		this.options = options = _extend({}, options);
-
-
-		// Export instance
-		el[expando] = this;
-
-		// Default options
-		var defaults = {
-			group: Math.random(),
-			sort: true,
-			disabled: false,
-			store: null,
-			handle: null,
-			scroll: true,
-			scrollSensitivity: 30,
-			scrollSpeed: 10,
-			draggable: /[uo]l/i.test(el.nodeName) ? 'li' : '>*',
-			ghostClass: 'sortable-ghost',
-			chosenClass: 'sortable-chosen',
-			dragClass: 'sortable-drag',
-			ignore: 'a, img',
-			filter: null,
-			preventOnFilter: true,
-			animation: 0,
-			setData: function (dataTransfer, dragEl) {
-				dataTransfer.setData('Text', dragEl.textContent);
-			},
-			dropBubble: false,
-			dragoverBubble: false,
-			dataIdAttr: 'data-id',
-			delay: 0,
-			forceFallback: false,
-			fallbackClass: 'sortable-fallback',
-			fallbackOnBody: false,
-			fallbackTolerance: 0,
-			fallbackOffset: {x: 0, y: 0},
-			supportPointer: Sortable.supportPointer !== false
-		};
-
-
-		// Set default options
-		for (var name in defaults) {
-			!(name in options) && (options[name] = defaults[name]);
-		}
-
-		_prepareGroup(options);
-
-		// Bind all private methods
-		for (var fn in this) {
-			if (fn.charAt(0) === '_' && typeof this[fn] === 'function') {
-				this[fn] = this[fn].bind(this);
-			}
-		}
-
-		// Setup drag mode
-		this.nativeDraggable = options.forceFallback ? false : supportDraggable;
-
-		// Bind events
-		_on(el, 'mousedown', this._onTapStart);
-		_on(el, 'touchstart', this._onTapStart);
-		options.supportPointer && _on(el, 'pointerdown', this._onTapStart);
-
-		if (this.nativeDraggable) {
-			_on(el, 'dragover', this);
-			_on(el, 'dragenter', this);
-		}
-
-		touchDragOverListeners.push(this._onDragOver);
-
-		// Restore sorting
-		options.store && this.sort(options.store.get(this));
-	}
-
-
-	Sortable.prototype = /** @lends Sortable.prototype */ {
-		constructor: Sortable,
-
-		_onTapStart: function (/** Event|TouchEvent */evt) {
-			var _this = this,
-				el = this.el,
-				options = this.options,
-				preventOnFilter = options.preventOnFilter,
-				type = evt.type,
-				touch = evt.touches && evt.touches[0],
-				target = (touch || evt).target,
-				originalTarget = evt.target.shadowRoot && (evt.path && evt.path[0]) || target,
-				filter = options.filter,
-				startIndex;
-
-			_saveInputCheckedState(el);
-
-
-			// Don't trigger start event when an element is been dragged, otherwise the evt.oldindex always wrong when set option.group.
-			if (dragEl) {
-				return;
-			}
-
-			if (/mousedown|pointerdown/.test(type) && evt.button !== 0 || options.disabled) {
-				return; // only left button or enabled
-			}
-
-			// cancel dnd if original target is content editable
-			if (originalTarget.isContentEditable) {
-				return;
-			}
-
-			target = _closest(target, options.draggable, el);
-
-			if (!target) {
-				return;
-			}
-
-			if (lastDownEl === target) {
-				// Ignoring duplicate `down`
-				return;
-			}
-
-			// Get the index of the dragged element within its parent
-			startIndex = _index(target, options.draggable);
-
-			// Check filter
-			if (typeof filter === 'function') {
-				if (filter.call(this, evt, target, this)) {
-					_dispatchEvent(_this, originalTarget, 'filter', target, el, el, startIndex);
-					preventOnFilter && evt.preventDefault();
-					return; // cancel dnd
-				}
-			}
-			else if (filter) {
-				filter = filter.split(',').some(function (criteria) {
-					criteria = _closest(originalTarget, criteria.trim(), el);
-
-					if (criteria) {
-						_dispatchEvent(_this, criteria, 'filter', target, el, el, startIndex);
-						return true;
-					}
-				});
-
-				if (filter) {
-					preventOnFilter && evt.preventDefault();
-					return; // cancel dnd
-				}
-			}
-
-			if (options.handle && !_closest(originalTarget, options.handle, el)) {
-				return;
-			}
-
-			// Prepare `dragstart`
-			this._prepareDragStart(evt, touch, target, startIndex);
-		},
-
-		_prepareDragStart: function (/** Event */evt, /** Touch */touch, /** HTMLElement */target, /** Number */startIndex) {
-			var _this = this,
-				el = _this.el,
-				options = _this.options,
-				ownerDocument = el.ownerDocument,
-				dragStartFn;
-
-			if (target && !dragEl && (target.parentNode === el)) {
-				tapEvt = evt;
-
-				rootEl = el;
-				dragEl = target;
-				parentEl = dragEl.parentNode;
-				nextEl = dragEl.nextSibling;
-				lastDownEl = target;
-				activeGroup = options.group;
-				oldIndex = startIndex;
-
-				this._lastX = (touch || evt).clientX;
-				this._lastY = (touch || evt).clientY;
-
-				dragEl.style['will-change'] = 'all';
-
-				dragStartFn = function () {
-					// Delayed drag has been triggered
-					// we can re-enable the events: touchmove/mousemove
-					_this._disableDelayedDrag();
-
-					// Make the element draggable
-					dragEl.draggable = _this.nativeDraggable;
-
-					// Chosen item
-					_toggleClass(dragEl, options.chosenClass, true);
-
-					// Bind the events: dragstart/dragend
-					_this._triggerDragStart(evt, touch);
-
-					// Drag start event
-					_dispatchEvent(_this, rootEl, 'choose', dragEl, rootEl, rootEl, oldIndex);
-				};
-
-				// Disable "draggable"
-				options.ignore.split(',').forEach(function (criteria) {
-					_find(dragEl, criteria.trim(), _disableDraggable);
-				});
-
-				_on(ownerDocument, 'mouseup', _this._onDrop);
-				_on(ownerDocument, 'touchend', _this._onDrop);
-				_on(ownerDocument, 'touchcancel', _this._onDrop);
-				_on(ownerDocument, 'selectstart', _this);
-				options.supportPointer && _on(ownerDocument, 'pointercancel', _this._onDrop);
-
-				if (options.delay) {
-					// If the user moves the pointer or let go the click or touch
-					// before the delay has been reached:
-					// disable the delayed drag
-					_on(ownerDocument, 'mouseup', _this._disableDelayedDrag);
-					_on(ownerDocument, 'touchend', _this._disableDelayedDrag);
-					_on(ownerDocument, 'touchcancel', _this._disableDelayedDrag);
-					_on(ownerDocument, 'mousemove', _this._disableDelayedDrag);
-					_on(ownerDocument, 'touchmove', _this._disableDelayedDrag);
-					options.supportPointer && _on(ownerDocument, 'pointermove', _this._disableDelayedDrag);
-
-					_this._dragStartTimer = setTimeout(dragStartFn, options.delay);
-				} else {
-					dragStartFn();
-				}
-
-
-			}
-		},
-
-		_disableDelayedDrag: function () {
-			var ownerDocument = this.el.ownerDocument;
-
-			clearTimeout(this._dragStartTimer);
-			_off(ownerDocument, 'mouseup', this._disableDelayedDrag);
-			_off(ownerDocument, 'touchend', this._disableDelayedDrag);
-			_off(ownerDocument, 'touchcancel', this._disableDelayedDrag);
-			_off(ownerDocument, 'mousemove', this._disableDelayedDrag);
-			_off(ownerDocument, 'touchmove', this._disableDelayedDrag);
-			_off(ownerDocument, 'pointermove', this._disableDelayedDrag);
-		},
-
-		_triggerDragStart: function (/** Event */evt, /** Touch */touch) {
-			touch = touch || (evt.pointerType == 'touch' ? evt : null);
-
-			if (touch) {
-				// Touch device support
-				tapEvt = {
-					target: dragEl,
-					clientX: touch.clientX,
-					clientY: touch.clientY
-				};
-
-				this._onDragStart(tapEvt, 'touch');
-			}
-			else if (!this.nativeDraggable) {
-				this._onDragStart(tapEvt, true);
-			}
-			else {
-				_on(dragEl, 'dragend', this);
-				_on(rootEl, 'dragstart', this._onDragStart);
-			}
-
-			try {
-				if (document.selection) {
-					// Timeout neccessary for IE9
-					_nextTick(function () {
-						document.selection.empty();
-					});
-				} else {
-					window.getSelection().removeAllRanges();
-				}
-			} catch (err) {
-			}
-		},
-
-		_dragStarted: function () {
-			if (rootEl && dragEl) {
-				var options = this.options;
-
-				// Apply effect
-				_toggleClass(dragEl, options.ghostClass, true);
-				_toggleClass(dragEl, options.dragClass, false);
-
-				Sortable.active = this;
-
-				// Drag start event
-				_dispatchEvent(this, rootEl, 'start', dragEl, rootEl, rootEl, oldIndex);
-			} else {
-				this._nulling();
-			}
-		},
-
-		_emulateDragOver: function () {
-			if (touchEvt) {
-				if (this._lastX === touchEvt.clientX && this._lastY === touchEvt.clientY) {
-					return;
-				}
-
-				this._lastX = touchEvt.clientX;
-				this._lastY = touchEvt.clientY;
-
-				if (!supportCssPointerEvents) {
-					_css(ghostEl, 'display', 'none');
-				}
-
-				var target = document.elementFromPoint(touchEvt.clientX, touchEvt.clientY);
-				var parent = target;
-				var i = touchDragOverListeners.length;
-
-				if (target && target.shadowRoot) {
-					target = target.shadowRoot.elementFromPoint(touchEvt.clientX, touchEvt.clientY);
-					parent = target;
-				}
-
-				if (parent) {
-					do {
-						if (parent[expando]) {
-							while (i--) {
-								touchDragOverListeners[i]({
-									clientX: touchEvt.clientX,
-									clientY: touchEvt.clientY,
-									target: target,
-									rootEl: parent
-								});
-							}
-
-							break;
-						}
-
-						target = parent; // store last element
-					}
-					/* jshint boss:true */
-					while (parent = parent.parentNode);
-				}
-
-				if (!supportCssPointerEvents) {
-					_css(ghostEl, 'display', '');
-				}
-			}
-		},
-
-
-		_onTouchMove: function (/**TouchEvent*/evt) {
-			if (tapEvt) {
-				var	options = this.options,
-					fallbackTolerance = options.fallbackTolerance,
-					fallbackOffset = options.fallbackOffset,
-					touch = evt.touches ? evt.touches[0] : evt,
-					dx = (touch.clientX - tapEvt.clientX) + fallbackOffset.x,
-					dy = (touch.clientY - tapEvt.clientY) + fallbackOffset.y,
-					translate3d = evt.touches ? 'translate3d(' + dx + 'px,' + dy + 'px,0)' : 'translate(' + dx + 'px,' + dy + 'px)';
-
-				// only set the status to dragging, when we are actually dragging
-				if (!Sortable.active) {
-					if (fallbackTolerance &&
-						min(abs(touch.clientX - this._lastX), abs(touch.clientY - this._lastY)) < fallbackTolerance
-					) {
-						return;
-					}
-
-					this._dragStarted();
-				}
-
-				// as well as creating the ghost element on the document body
-				this._appendGhost();
-
-				moved = true;
-				touchEvt = touch;
-
-				_css(ghostEl, 'webkitTransform', translate3d);
-				_css(ghostEl, 'mozTransform', translate3d);
-				_css(ghostEl, 'msTransform', translate3d);
-				_css(ghostEl, 'transform', translate3d);
-
-				evt.preventDefault();
-			}
-		},
-
-		_appendGhost: function () {
-			if (!ghostEl) {
-				var rect = dragEl.getBoundingClientRect(),
-					css = _css(dragEl),
-					options = this.options,
-					ghostRect;
-
-				ghostEl = dragEl.cloneNode(true);
-
-				_toggleClass(ghostEl, options.ghostClass, false);
-				_toggleClass(ghostEl, options.fallbackClass, true);
-				_toggleClass(ghostEl, options.dragClass, true);
-
-				_css(ghostEl, 'top', rect.top - parseInt(css.marginTop, 10));
-				_css(ghostEl, 'left', rect.left - parseInt(css.marginLeft, 10));
-				_css(ghostEl, 'width', rect.width);
-				_css(ghostEl, 'height', rect.height);
-				_css(ghostEl, 'opacity', '0.8');
-				_css(ghostEl, 'position', 'fixed');
-				_css(ghostEl, 'zIndex', '100000');
-				_css(ghostEl, 'pointerEvents', 'none');
-
-				options.fallbackOnBody && document.body.appendChild(ghostEl) || rootEl.appendChild(ghostEl);
-
-				// Fixing dimensions.
-				ghostRect = ghostEl.getBoundingClientRect();
-				_css(ghostEl, 'width', rect.width * 2 - ghostRect.width);
-				_css(ghostEl, 'height', rect.height * 2 - ghostRect.height);
-			}
-		},
-
-		_onDragStart: function (/**Event*/evt, /**boolean*/useFallback) {
-			var _this = this;
-			var dataTransfer = evt.dataTransfer;
-			var options = _this.options;
-
-			_this._offUpEvents();
-
-			if (activeGroup.checkPull(_this, _this, dragEl, evt)) {
-				cloneEl = _clone(dragEl);
-
-				cloneEl.draggable = false;
-				cloneEl.style['will-change'] = '';
-
-				_css(cloneEl, 'display', 'none');
-				_toggleClass(cloneEl, _this.options.chosenClass, false);
-
-				// #1143: IFrame support workaround
-				_this._cloneId = _nextTick(function () {
-					rootEl.insertBefore(cloneEl, dragEl);
-					_dispatchEvent(_this, rootEl, 'clone', dragEl);
-				});
-			}
-
-			_toggleClass(dragEl, options.dragClass, true);
-
-			if (useFallback) {
-				if (useFallback === 'touch') {
-					// Bind touch events
-					_on(document, 'touchmove', _this._onTouchMove);
-					_on(document, 'touchend', _this._onDrop);
-					_on(document, 'touchcancel', _this._onDrop);
-
-					if (options.supportPointer) {
-						_on(document, 'pointermove', _this._onTouchMove);
-						_on(document, 'pointerup', _this._onDrop);
-					}
-				} else {
-					// Old brwoser
-					_on(document, 'mousemove', _this._onTouchMove);
-					_on(document, 'mouseup', _this._onDrop);
-				}
-
-				_this._loopId = setInterval(_this._emulateDragOver, 50);
-			}
-			else {
-				if (dataTransfer) {
-					dataTransfer.effectAllowed = 'move';
-					options.setData && options.setData.call(_this, dataTransfer, dragEl);
-				}
-
-				_on(document, 'drop', _this);
-
-				// #1143: Бывает элемент с IFrame внутри блокирует `drop`,
-				// поэтому если вызвался `mouseover`, значит надо отменять весь d'n'd.
-				// Breaking Chrome 62+
-				// _on(document, 'mouseover', _this);
-
-				_this._dragStartId = _nextTick(_this._dragStarted);
-			}
-		},
-
-		_onDragOver: function (/**Event*/evt) {
-			var el = this.el,
-				target,
-				dragRect,
-				targetRect,
-				revert,
-				options = this.options,
-				group = options.group,
-				activeSortable = Sortable.active,
-				isOwner = (activeGroup === group),
-				isMovingBetweenSortable = false,
-				canSort = options.sort;
-
-			if (evt.preventDefault !== void 0) {
-				evt.preventDefault();
-				!options.dragoverBubble && evt.stopPropagation();
-			}
-
-			if (dragEl.animated) {
-				return;
-			}
-
-			moved = true;
-
-			if (activeSortable && !options.disabled &&
-				(isOwner
-					? canSort || (revert = !rootEl.contains(dragEl)) // Reverting item into the original list
-					: (
-						putSortable === this ||
-						(
-							(activeSortable.lastPullMode = activeGroup.checkPull(this, activeSortable, dragEl, evt)) &&
-							group.checkPut(this, activeSortable, dragEl, evt)
-						)
-					)
-				) &&
-				(evt.rootEl === void 0 || evt.rootEl === this.el) // touch fallback
-			) {
-				// Smart auto-scrolling
-				_autoScroll(evt, options, this.el);
-
-				if (_silent) {
-					return;
-				}
-
-				target = _closest(evt.target, options.draggable, el);
-				dragRect = dragEl.getBoundingClientRect();
-
-				if (putSortable !== this) {
-					putSortable = this;
-					isMovingBetweenSortable = true;
-				}
-
-				if (revert) {
-					_cloneHide(activeSortable, true);
-					parentEl = rootEl; // actualization
-
-					if (cloneEl || nextEl) {
-						rootEl.insertBefore(dragEl, cloneEl || nextEl);
-					}
-					else if (!canSort) {
-						rootEl.appendChild(dragEl);
-					}
-
-					return;
-				}
-
-
-				if ((el.children.length === 0) || (el.children[0] === ghostEl) ||
-					(el === evt.target) && (_ghostIsLast(el, evt))
-				) {
-					//assign target only if condition is true
-					if (el.children.length !== 0 && el.children[0] !== ghostEl && el === evt.target) {
-						target = el.lastElementChild;
-					}
-
-					if (target) {
-						if (target.animated) {
-							return;
-						}
-
-						targetRect = target.getBoundingClientRect();
-					}
-
-					_cloneHide(activeSortable, isOwner);
-
-					if (_onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt) !== false) {
-						if (!dragEl.contains(el)) {
-							el.appendChild(dragEl);
-							parentEl = el; // actualization
-						}
-
-						this._animate(dragRect, dragEl);
-						target && this._animate(targetRect, target);
-					}
-				}
-				else if (target && !target.animated && target !== dragEl && (target.parentNode[expando] !== void 0)) {
-					if (lastEl !== target) {
-						lastEl = target;
-						lastCSS = _css(target);
-						lastParentCSS = _css(target.parentNode);
-					}
-
-					targetRect = target.getBoundingClientRect();
-
-					var width = targetRect.right - targetRect.left,
-						height = targetRect.bottom - targetRect.top,
-						floating = R_FLOAT.test(lastCSS.cssFloat + lastCSS.display)
-							|| (lastParentCSS.display == 'flex' && lastParentCSS['flex-direction'].indexOf('row') === 0),
-						isWide = (target.offsetWidth > dragEl.offsetWidth),
-						isLong = (target.offsetHeight > dragEl.offsetHeight),
-						halfway = (floating ? (evt.clientX - targetRect.left) / width : (evt.clientY - targetRect.top) / height) > 0.5,
-						nextSibling = target.nextElementSibling,
-						after = false
-					;
-
-					if (floating) {
-						var elTop = dragEl.offsetTop,
-							tgTop = target.offsetTop;
-
-						if (elTop === tgTop) {
-							after = (target.previousElementSibling === dragEl) && !isWide || halfway && isWide;
-						}
-						else if (target.previousElementSibling === dragEl || dragEl.previousElementSibling === target) {
-							after = (evt.clientY - targetRect.top) / height > 0.5;
-						} else {
-							after = tgTop > elTop;
-						}
-						} else if (!isMovingBetweenSortable) {
-						after = (nextSibling !== dragEl) && !isLong || halfway && isLong;
-					}
-
-					var moveVector = _onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt, after);
-
-					if (moveVector !== false) {
-						if (moveVector === 1 || moveVector === -1) {
-							after = (moveVector === 1);
-						}
-
-						_silent = true;
-						setTimeout(_unsilent, 30);
-
-						_cloneHide(activeSortable, isOwner);
-
-						if (!dragEl.contains(el)) {
-							if (after && !nextSibling) {
-								el.appendChild(dragEl);
-							} else {
-								target.parentNode.insertBefore(dragEl, after ? nextSibling : target);
-							}
-						}
-
-						parentEl = dragEl.parentNode; // actualization
-
-						this._animate(dragRect, dragEl);
-						this._animate(targetRect, target);
-					}
-				}
-			}
-		},
-
-		_animate: function (prevRect, target) {
-			var ms = this.options.animation;
-
-			if (ms) {
-				var currentRect = target.getBoundingClientRect();
-
-				if (prevRect.nodeType === 1) {
-					prevRect = prevRect.getBoundingClientRect();
-				}
-
-				_css(target, 'transition', 'none');
-				_css(target, 'transform', 'translate3d('
-					+ (prevRect.left - currentRect.left) + 'px,'
-					+ (prevRect.top - currentRect.top) + 'px,0)'
-				);
-
-				target.offsetWidth; // repaint
-
-				_css(target, 'transition', 'all ' + ms + 'ms');
-				_css(target, 'transform', 'translate3d(0,0,0)');
-
-				clearTimeout(target.animated);
-				target.animated = setTimeout(function () {
-					_css(target, 'transition', '');
-					_css(target, 'transform', '');
-					target.animated = false;
-				}, ms);
-			}
-		},
-
-		_offUpEvents: function () {
-			var ownerDocument = this.el.ownerDocument;
-
-			_off(document, 'touchmove', this._onTouchMove);
-			_off(document, 'pointermove', this._onTouchMove);
-			_off(ownerDocument, 'mouseup', this._onDrop);
-			_off(ownerDocument, 'touchend', this._onDrop);
-			_off(ownerDocument, 'pointerup', this._onDrop);
-			_off(ownerDocument, 'touchcancel', this._onDrop);
-			_off(ownerDocument, 'pointercancel', this._onDrop);
-			_off(ownerDocument, 'selectstart', this);
-		},
-
-		_onDrop: function (/**Event*/evt) {
-			var el = this.el,
-				options = this.options;
-
-			clearInterval(this._loopId);
-			clearInterval(autoScroll.pid);
-			clearTimeout(this._dragStartTimer);
-
-			_cancelNextTick(this._cloneId);
-			_cancelNextTick(this._dragStartId);
-
-			// Unbind events
-			_off(document, 'mouseover', this);
-			_off(document, 'mousemove', this._onTouchMove);
-
-			if (this.nativeDraggable) {
-				_off(document, 'drop', this);
-				_off(el, 'dragstart', this._onDragStart);
-			}
-
-			this._offUpEvents();
-
-			if (evt) {
-				if (moved) {
-					evt.preventDefault();
-					!options.dropBubble && evt.stopPropagation();
-				}
-
-				ghostEl && ghostEl.parentNode && ghostEl.parentNode.removeChild(ghostEl);
-
-				if (rootEl === parentEl || Sortable.active.lastPullMode !== 'clone') {
-					// Remove clone
-					cloneEl && cloneEl.parentNode && cloneEl.parentNode.removeChild(cloneEl);
-				}
-
-				if (dragEl) {
-					if (this.nativeDraggable) {
-						_off(dragEl, 'dragend', this);
-					}
-
-					_disableDraggable(dragEl);
-					dragEl.style['will-change'] = '';
-
-					// Remove class's
-					_toggleClass(dragEl, this.options.ghostClass, false);
-					_toggleClass(dragEl, this.options.chosenClass, false);
-
-					// Drag stop event
-					_dispatchEvent(this, rootEl, 'unchoose', dragEl, parentEl, rootEl, oldIndex);
-
-					if (rootEl !== parentEl) {
-						newIndex = _index(dragEl, options.draggable);
-
-						if (newIndex >= 0) {
-							// Add event
-							_dispatchEvent(null, parentEl, 'add', dragEl, parentEl, rootEl, oldIndex, newIndex);
-
-							// Remove event
-							_dispatchEvent(this, rootEl, 'remove', dragEl, parentEl, rootEl, oldIndex, newIndex);
-
-							// drag from one list and drop into another
-							_dispatchEvent(null, parentEl, 'sort', dragEl, parentEl, rootEl, oldIndex, newIndex);
-							_dispatchEvent(this, rootEl, 'sort', dragEl, parentEl, rootEl, oldIndex, newIndex);
-						}
-					}
-					else {
-						if (dragEl.nextSibling !== nextEl) {
-							// Get the index of the dragged element within its parent
-							newIndex = _index(dragEl, options.draggable);
-
-							if (newIndex >= 0) {
-								// drag & drop within the same list
-								_dispatchEvent(this, rootEl, 'update', dragEl, parentEl, rootEl, oldIndex, newIndex);
-								_dispatchEvent(this, rootEl, 'sort', dragEl, parentEl, rootEl, oldIndex, newIndex);
-							}
-						}
-					}
-
-					if (Sortable.active) {
-						/* jshint eqnull:true */
-						if (newIndex == null || newIndex === -1) {
-							newIndex = oldIndex;
-						}
-
-						_dispatchEvent(this, rootEl, 'end', dragEl, parentEl, rootEl, oldIndex, newIndex);
-
-						// Save sorting
-						this.save();
-					}
-				}
-
-			}
-
-			this._nulling();
-		},
-
-		_nulling: function() {
-			rootEl =
-			dragEl =
-			parentEl =
-			ghostEl =
-			nextEl =
-			cloneEl =
-			lastDownEl =
-
-			scrollEl =
-			scrollParentEl =
-
-			tapEvt =
-			touchEvt =
-
-			moved =
-			newIndex =
-
-			lastEl =
-			lastCSS =
-
-			putSortable =
-			activeGroup =
-			Sortable.active = null;
-
-			savedInputChecked.forEach(function (el) {
-				el.checked = true;
-			});
-			savedInputChecked.length = 0;
-		},
-
-		handleEvent: function (/**Event*/evt) {
-			switch (evt.type) {
-				case 'drop':
-				case 'dragend':
-					this._onDrop(evt);
-					break;
-
-				case 'dragover':
-				case 'dragenter':
-					if (dragEl) {
-						this._onDragOver(evt);
-						_globalDragOver(evt);
-					}
-					break;
-
-				case 'mouseover':
-					this._onDrop(evt);
-					break;
-
-				case 'selectstart':
-					evt.preventDefault();
-					break;
-			}
-		},
-
-
-		/**
-		 * Serializes the item into an array of string.
-		 * @returns {String[]}
-		 */
-		toArray: function () {
-			var order = [],
-				el,
-				children = this.el.children,
-				i = 0,
-				n = children.length,
-				options = this.options;
-
-			for (; i < n; i++) {
-				el = children[i];
-				if (_closest(el, options.draggable, this.el)) {
-					order.push(el.getAttribute(options.dataIdAttr) || _generateId(el));
-				}
-			}
-
-			return order;
-		},
-
-
-		/**
-		 * Sorts the elements according to the array.
-		 * @param  {String[]}  order  order of the items
-		 */
-		sort: function (order) {
-			var items = {}, rootEl = this.el;
-
-			this.toArray().forEach(function (id, i) {
-				var el = rootEl.children[i];
-
-				if (_closest(el, this.options.draggable, rootEl)) {
-					items[id] = el;
-				}
-			}, this);
-
-			order.forEach(function (id) {
-				if (items[id]) {
-					rootEl.removeChild(items[id]);
-					rootEl.appendChild(items[id]);
-				}
-			});
-		},
-
-
-		/**
-		 * Save the current sorting
-		 */
-		save: function () {
-			var store = this.options.store;
-			store && store.set(this);
-		},
-
-
-		/**
-		 * For each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree.
-		 * @param   {HTMLElement}  el
-		 * @param   {String}       [selector]  default: `options.draggable`
-		 * @returns {HTMLElement|null}
-		 */
-		closest: function (el, selector) {
-			return _closest(el, selector || this.options.draggable, this.el);
-		},
-
-
-		/**
-		 * Set/get option
-		 * @param   {string} name
-		 * @param   {*}      [value]
-		 * @returns {*}
-		 */
-		option: function (name, value) {
-			var options = this.options;
-
-			if (value === void 0) {
-				return options[name];
-			} else {
-				options[name] = value;
-
-				if (name === 'group') {
-					_prepareGroup(options);
-				}
-			}
-		},
-
-
-		/**
-		 * Destroy
-		 */
-		destroy: function () {
-			var el = this.el;
-
-			el[expando] = null;
-
-			_off(el, 'mousedown', this._onTapStart);
-			_off(el, 'touchstart', this._onTapStart);
-			_off(el, 'pointerdown', this._onTapStart);
-
-			if (this.nativeDraggable) {
-				_off(el, 'dragover', this);
-				_off(el, 'dragenter', this);
-			}
-
-			// Remove draggable attributes
-			Array.prototype.forEach.call(el.querySelectorAll('[draggable]'), function (el) {
-				el.removeAttribute('draggable');
-			});
-
-			touchDragOverListeners.splice(touchDragOverListeners.indexOf(this._onDragOver), 1);
-
-			this._onDrop();
-
-			this.el = el = null;
-		}
-	};
-
-
-	function _cloneHide(sortable, state) {
-		if (sortable.lastPullMode !== 'clone') {
-			state = true;
-		}
-
-		if (cloneEl && (cloneEl.state !== state)) {
-			_css(cloneEl, 'display', state ? 'none' : '');
-
-			if (!state) {
-				if (cloneEl.state) {
-					if (sortable.options.group.revertClone) {
-						rootEl.insertBefore(cloneEl, nextEl);
-						sortable._animate(dragEl, cloneEl);
-					} else {
-						rootEl.insertBefore(cloneEl, dragEl);
-					}
-				}
-			}
-
-			cloneEl.state = state;
-		}
-	}
-
-
-	function _closest(/**HTMLElement*/el, /**String*/selector, /**HTMLElement*/ctx) {
-		if (el) {
-			ctx = ctx || document;
-
-			do {
-				if ((selector === '>*' && el.parentNode === ctx) || _matches(el, selector)) {
-					return el;
-				}
-				/* jshint boss:true */
-			} while (el = _getParentOrHost(el));
-		}
-
-		return null;
-	}
-
-
-	function _getParentOrHost(el) {
-		var parent = el.host;
-
-		return (parent && parent.nodeType) ? parent : el.parentNode;
-	}
-
-
-	function _globalDragOver(/**Event*/evt) {
-		if (evt.dataTransfer) {
-			evt.dataTransfer.dropEffect = 'move';
-		}
-		evt.preventDefault();
-	}
-
-
-	function _on(el, event, fn) {
-		el.addEventListener(event, fn, captureMode);
-	}
-
-
-	function _off(el, event, fn) {
-		el.removeEventListener(event, fn, captureMode);
-	}
-
-
-	function _toggleClass(el, name, state) {
-		if (el) {
-			if (el.classList) {
-				el.classList[state ? 'add' : 'remove'](name);
-			}
-			else {
-				var className = (' ' + el.className + ' ').replace(R_SPACE, ' ').replace(' ' + name + ' ', ' ');
-				el.className = (className + (state ? ' ' + name : '')).replace(R_SPACE, ' ');
-			}
-		}
-	}
-
-
-	function _css(el, prop, val) {
-		var style = el && el.style;
-
-		if (style) {
-			if (val === void 0) {
-				if (document.defaultView && document.defaultView.getComputedStyle) {
-					val = document.defaultView.getComputedStyle(el, '');
-				}
-				else if (el.currentStyle) {
-					val = el.currentStyle;
-				}
-
-				return prop === void 0 ? val : val[prop];
-			}
-			else {
-				if (!(prop in style)) {
-					prop = '-webkit-' + prop;
-				}
-
-				style[prop] = val + (typeof val === 'string' ? '' : 'px');
-			}
-		}
-	}
-
-
-	function _find(ctx, tagName, iterator) {
-		if (ctx) {
-			var list = ctx.getElementsByTagName(tagName), i = 0, n = list.length;
-
-			if (iterator) {
-				for (; i < n; i++) {
-					iterator(list[i], i);
-				}
-			}
-
-			return list;
-		}
-
-		return [];
-	}
-
-
-
-	function _dispatchEvent(sortable, rootEl, name, targetEl, toEl, fromEl, startIndex, newIndex) {
-		sortable = (sortable || rootEl[expando]);
-
-		var evt = document.createEvent('Event'),
-			options = sortable.options,
-			onName = 'on' + name.charAt(0).toUpperCase() + name.substr(1);
-
-		evt.initEvent(name, true, true);
-
-		evt.to = toEl || rootEl;
-		evt.from = fromEl || rootEl;
-		evt.item = targetEl || rootEl;
-		evt.clone = cloneEl;
-
-		evt.oldIndex = startIndex;
-		evt.newIndex = newIndex;
-
-		rootEl.dispatchEvent(evt);
-
-		if (options[onName]) {
-			options[onName].call(sortable, evt);
-		}
-	}
-
-
-	function _onMove(fromEl, toEl, dragEl, dragRect, targetEl, targetRect, originalEvt, willInsertAfter) {
-		var evt,
-			sortable = fromEl[expando],
-			onMoveFn = sortable.options.onMove,
-			retVal;
-
-		evt = document.createEvent('Event');
-		evt.initEvent('move', true, true);
-
-		evt.to = toEl;
-		evt.from = fromEl;
-		evt.dragged = dragEl;
-		evt.draggedRect = dragRect;
-		evt.related = targetEl || toEl;
-		evt.relatedRect = targetRect || toEl.getBoundingClientRect();
-		evt.willInsertAfter = willInsertAfter;
-
-		fromEl.dispatchEvent(evt);
-
-		if (onMoveFn) {
-			retVal = onMoveFn.call(sortable, evt, originalEvt);
-		}
-
-		return retVal;
-	}
-
-
-	function _disableDraggable(el) {
-		el.draggable = false;
-	}
-
-
-	function _unsilent() {
-		_silent = false;
-	}
-
-
-	/** @returns {HTMLElement|false} */
-	function _ghostIsLast(el, evt) {
-		var lastEl = el.lastElementChild,
-			rect = lastEl.getBoundingClientRect();
-
-		// 5 — min delta
-		// abs — нельзя добавлять, а то глюки при наведении сверху
-		return (evt.clientY - (rect.top + rect.height) > 5) ||
-			(evt.clientX - (rect.left + rect.width) > 5);
-	}
-
-
-	/**
-	 * Generate id
-	 * @param   {HTMLElement} el
-	 * @returns {String}
-	 * @private
-	 */
-	function _generateId(el) {
-		var str = el.tagName + el.className + el.src + el.href + el.textContent,
-			i = str.length,
-			sum = 0;
-
-		while (i--) {
-			sum += str.charCodeAt(i);
-		}
-
-		return sum.toString(36);
-	}
-
-	/**
-	 * Returns the index of an element within its parent for a selected set of
-	 * elements
-	 * @param  {HTMLElement} el
-	 * @param  {selector} selector
-	 * @return {number}
-	 */
-	function _index(el, selector) {
-		var index = 0;
-
-		if (!el || !el.parentNode) {
-			return -1;
-		}
-
-		while (el && (el = el.previousElementSibling)) {
-			if ((el.nodeName.toUpperCase() !== 'TEMPLATE') && (selector === '>*' || _matches(el, selector))) {
-				index++;
-			}
-		}
-
-		return index;
-	}
-
-	function _matches(/**HTMLElement*/el, /**String*/selector) {
-		if (el) {
-			selector = selector.split('.');
-
-			var tag = selector.shift().toUpperCase(),
-				re = new RegExp('\\s(' + selector.join('|') + ')(?=\\s)', 'g');
-
-			return (
-				(tag === '' || el.nodeName.toUpperCase() == tag) &&
-				(!selector.length || ((' ' + el.className + ' ').match(re) || []).length == selector.length)
-			);
-		}
-
-		return false;
-	}
-
-	function _throttle(callback, ms) {
-		var args, _this;
-
-		return function () {
-			if (args === void 0) {
-				args = arguments;
-				_this = this;
-
-				setTimeout(function () {
-					if (args.length === 1) {
-						callback.call(_this, args[0]);
-					} else {
-						callback.apply(_this, args);
-					}
-
-					args = void 0;
-				}, ms);
-			}
-		};
-	}
-
-	function _extend(dst, src) {
-		if (dst && src) {
-			for (var key in src) {
-				if (src.hasOwnProperty(key)) {
-					dst[key] = src[key];
-				}
-			}
-		}
-
-		return dst;
-	}
-
-	function _clone(el) {
-		if (Polymer && Polymer.dom) {
-			return Polymer.dom(el).cloneNode(true);
-		}
-		else if ($) {
-			return $(el).clone(true)[0];
-		}
-		else {
-			return el.cloneNode(true);
-		}
-	}
-
-	function _saveInputCheckedState(root) {
-		var inputs = root.getElementsByTagName('input');
-		var idx = inputs.length;
-
-		while (idx--) {
-			var el = inputs[idx];
-			el.checked && savedInputChecked.push(el);
-		}
-	}
-
-	function _nextTick(fn) {
-		return setTimeout(fn, 0);
-	}
-
-	function _cancelNextTick(id) {
-		return clearTimeout(id);
-	}
-
-	// Fixed #973:
-	_on(document, 'touchmove', function (evt) {
-		if (Sortable.active) {
-			evt.preventDefault();
-		}
-	});
-
-	// Export utils
-	Sortable.utils = {
-		on: _on,
-		off: _off,
-		css: _css,
-		find: _find,
-		is: function (el, selector) {
-			return !!_closest(el, selector, el);
-		},
-		extend: _extend,
-		throttle: _throttle,
-		closest: _closest,
-		toggleClass: _toggleClass,
-		clone: _clone,
-		index: _index,
-		nextTick: _nextTick,
-		cancelNextTick: _cancelNextTick
-	};
-
-
-	/**
-	 * Create sortable instance
-	 * @param {HTMLElement}  el
-	 * @param {Object}      [options]
-	 */
-	Sortable.create = function (el, options) {
-		return new Sortable(el, options);
-	};
-
-
-	// Export
-	Sortable.version = '1.7.0';
-	return Sortable;
-});
-
 
 /***/ })
 /******/ ]);
